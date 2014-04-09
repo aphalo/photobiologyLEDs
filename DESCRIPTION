@@ -1,9 +1,18 @@
 Package: photobiologyLEDs
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
-Date: 2014-02-03
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Title: Spectral data for lamp emission
+Version: 0.1.0
+Date: 2013-02-22
+Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
+Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
+Description: This package provides data for some frequently used lamps.
+License: GPL (>= 3)
+VignetteBuilder: knitr
+Depends: R (>= 3.0.0), photobiology (>= 0.2.12)
+Suggests: knitr, photobiologygg, photobiologyVIS, ggplot2
+LazyLoad: yes
+LazyData: yes
+ByteCompile: true
+Encoding: UTF-8
+URL: http://r4photobiology.wordpress.com, https://bitbucket.org/aphalo/photobiology
+BugReports: https://bitbucket.org/aphalo/photobiology
