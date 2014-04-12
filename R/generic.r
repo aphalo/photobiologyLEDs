@@ -1,8 +1,9 @@
-#' Spectral data for LEDs array supplied by Shezhen Weili Optical
+#' Spectral data for LEDs array of unknwon manufacturer
 #'
 #' Datasets containing the wavelengths and
-#' tabulated values spectral emittance for different light emitting diodes (LEDs) arrays
-#' from Shezhen Weili Optical Ltd.
+#' tabulated values spectral emittance for different light emitting diodes (LEDs)
+#' from without type specifications. Bought from shops like Chlass Ohlson or hobby targetted
+#' electronic suppliers.
 #' Absolute values are not meaningful as the measuring distances are variable, and in most cases unknown.
 #' 
 #' The variables are as follows:
@@ -23,7 +24,7 @@
 #' @keywords datasets
 #' @format A data frame with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
 #' 
-#' @name shezhen.weili.LEDs
+#' @name generic.LEDs
 #' @aliases 
-#'  SW_UVA365.data
+#'  white.data
 NULL

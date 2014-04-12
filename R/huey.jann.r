@@ -1,8 +1,8 @@
-#' Spectral data for LEDs array supplied by Norlux
+#' Spectral data for LEDs array supplied by Huey Jann
 #'
 #' Datasets containing the wavelengths and
 #' tabulated values spectral emittance for different light emitting diodes (LEDs) arrays
-#' from Norlux (USA).
+#' from Huey Jann Electronics Industry Co., Ltd. (Taiwan).
 #' Absolute values are not meaningful as the measuring distances are variable, and in most cases unknown.
 #' 
 #' The variables are as follows:
@@ -21,9 +21,10 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A data frame with 1637 observations (200 nm to 900 nm, at steps < 1 nm)
+#' @format A data frame with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
 #' 
-#' @name norlux.LEDs
+#' @name huey.jann.LEDs
 #' @aliases 
-#' Norlux_R.data Norlux_G.data Norlux_B.data
+#'  HJ_Blue.data
+#'  
 NULL

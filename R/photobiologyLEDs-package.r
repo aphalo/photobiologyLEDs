@@ -14,7 +14,7 @@
 #' @author Pedro J. Aphalo
 #' @details
 #' \tabular{ll}{
-#' Package: \tab photobiologyLamps\cr
+#' Package: \tab photobiologyLEDs\cr
 #' Type: \tab Package\cr
 #' Version: \tab 0.1.0\cr
 #' Date: \tab 2014-04-12\cr

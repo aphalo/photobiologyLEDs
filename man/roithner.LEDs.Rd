@@ -14,9 +14,10 @@
 \description{
 Datasets containing the wavelengths and tabulated values
 for spectral emittance for different light emitting diodes
-(LEDs) and LED arrays. Absolute values are not meaningful
-as the measuring distances and driving current are
-variable, and in most cases unknown.
+(LEDs) and LED arrays supplied by Roithener Laser
+(Austria). Absolute values are not meaningful as the
+measuring distances and driving current are variable, and
+in most cases unknown.
 }
 \details{
 The variables are as follows: \itemize{ \item w.length (nm)

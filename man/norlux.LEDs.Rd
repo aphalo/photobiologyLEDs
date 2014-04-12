@@ -9,9 +9,9 @@
 \description{
 Datasets containing the wavelengths and tabulated values
 spectral emittance for different light emitting diodes
-(LEDs) arrays from Shezhen Weili Optical Ltd. Absolute
-values are not meaningful as the measuring distances are
-variable, and in most cases unknown.
+(LEDs) arrays from Norlux (USA). Absolute values are not
+meaningful as the measuring distances are variable, and in
+most cases unknown.
 }
 \details{
 The variables are as follows: \itemize{ \item w.length (nm)

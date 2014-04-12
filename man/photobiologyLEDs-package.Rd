@@ -16,7 +16,7 @@ suitability when planning experiments, or for use in
 training, as examples for exercises.
 }
 \details{
-\tabular{ll}{ Package: \tab photobiologyLamps\cr Type: \tab
+\tabular{ll}{ Package: \tab photobiologyLEDs\cr Type: \tab
 Package\cr Version: \tab 0.1.0\cr Date: \tab 2014-04-12\cr
 License: \tab GPL (>= 3)\cr URL: \tab
 \url{http://uv4growth.dyndns.org},\cr \tab
