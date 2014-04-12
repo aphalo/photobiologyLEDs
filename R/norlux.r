@@ -19,9 +19,6 @@
 #' comments with additional information for each measurement.
 #' Measurements done by Pedro J. Aphalo.
 #'
-#' @references
-#' 
-#' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 1637 observations (200 nm to 900 nm, at steps < 1 nm)

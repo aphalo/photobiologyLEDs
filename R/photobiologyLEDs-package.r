@@ -38,4 +38,7 @@
 #' library(photobiologyVIS)
 #' with(white.data, photon_ratio(w.length, s.e.irrad, Blue(), Green()))
 #' plot(s.e.irrad~w.length, data=white.data, main=comment(white.data), type="l")
+#' 
+#' @import photobiology
+#' 
 NULL
