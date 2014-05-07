@@ -1,5 +1,6 @@
 library(MayaCalc)
 library(photobiology)
+library(data.table)
 
 oldwd <- setwd("raw.data/Maya/examples")
 
@@ -9,7 +10,9 @@ oldwd <- setwd("raw.data/Maya/examples")
 for (led in c("BS436", "CB30", "LED405", "LED740", "UV395", "white", "XSL365", "XSL370", "XSL375", "white")) {
   temp.led.dt <- process_maya_files(paste(led, ".txt", sep=""), paste(led, "dark.txt", sep=""), 
                                                          method="full", decimal=",")
-  temp.led.dt$s.q.irrad <- with(temp.led.dt, as_quantum_mol(w.length, s.e.irrad))
+  setDT(temp.led.dt)
+  temp.led.dt[ , s.q.irrad := as_quantum_mol(w.length, s.e.irrad)]
+  temp.led.dt[ , s.e.irrad.good := NULL]
   dt.name <- paste(led, "data", sep=".")
   assign(dt.name, temp.led.dt)
   save(list=dt.name, file=paste(oldwd, "/data/", led, ".data.rda", sep=""))
@@ -30,6 +33,9 @@ setwd(oldwd)
 setwd("raw.data/Maya/Huey_Jann")
 
 HJ_Blue.data <- process_maya_files("BLUE_short.txt", "dark_short.txt", "PC_long.txt", "BLUE_long.txt", "dark_long.txt", decimal=",", method="sun")
+setDT(HJ_Blue.data)
+HJ_Blue.data[ , s.q.irrad := as_quantum_mol(w.length, s.e.irrad)]
+HJ_Blue.data[ , s.e.irrad.good := NULL]
 save(HJ_Blue.data, file=paste(oldwd, "/data/HJ_Blue.data.rda", sep=""))
 
 setwd(oldwd)
@@ -37,6 +43,9 @@ setwd(oldwd)
 setwd("raw.data/Maya/Shenzhen_Weili")
 
 SW_UVA365.data <- process_maya_files("UVA_short.txt", "dark_short.txt", "PC_long.txt", "UVA_long.txt", "dark_long.txt", decimal=",", method="sun")
+setDT(SW_UVA365.data)
+SW_UVA365.data[ , s.q.irrad := as_quantum_mol(w.length, s.e.irrad)]
+SW_UVA365.data[ , s.e.irrad.good := NULL]
 save(SW_UVA365.data, file=paste(oldwd, "/data/SW_UVA365.data.rda", sep=""))
 
 setwd(oldwd)

@@ -1,0 +1,114 @@
+%\VignetteEngine{knitr}
+%\VignetteIndexEntry{UV-radiation quantification with R: Catalogue of lamps}
+%\VignetteDepends{knitr, photobiology, photobiologyLamps, photobiologyLEDs, photobiologygg, ggplot2}
+%\VignetteKeyword{misc}
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{abbrev}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{breakurl}
+
+\newcommand{\PB}{\textsf{photobiology}\xspace}
+\newcommand{\PBVIS}{\textsf{photobiologyVIS}\xspace}
+\newcommand{\PBUV}{\textsf{photobiologyUV}\xspace}
+\newcommand{\PBPHY}{\textsf{photobiologyPhy}\xspace}
+\newcommand{\PBCRY}{\textsf{photobiologyCry}\xspace}
+\newcommand{\PBFil}{\textsf{photobiologyFilters}\xspace}
+\newcommand{\PBLam}{\textsf{photobiologyLamps}\xspace}
+\newcommand{\PBSen}{\textsf{photobiologySensors}\xspace}
+ 
+\begin{document}
+
+\title{\PBLam Version 0.1.1\\ Catalogue of LEDs}
+\author{Pedro J. Aphalo}
+
+\maketitle
+
+\section{Introduction}
+
+We will plot the emission spectra of the different LEDs for which data is provided in the pacakge. We plot the spectra as spectral energy irradiance. All spectra are normalized to an area of one under the whole curve.
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",
+               fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
+@
+
+<<example-0, eval=TRUE>>=
+library(ggplot2)
+library(photobiology)
+library(photobiologyLamps)
+library(photobiologyLEDs)
+library(photobiologygg)
+@
+
+We define a function to do the actual plotting so as to not repeat code, and to make changes easier in the future.
+
+<<setup-function>>=
+lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
+w.length.out <- seq(from=w.low, to=w.high, length.out=300)
+e.spectrum.data <- calc_lamp_output(w.length.out=w.length.out, lamp.name=lamp.name, unit.out="energy", scaled=scaled, fill=0.0)
+# q.spectrum.data <- calc_lamp_output(w.length.out=w.length.out, lamp.name=lamp.name, unit.out="photon", scaled=scaled)
+e.spectrum.data <- na.omit(e.spectrum.data)
+# q.spectrum.data <- na.omit(q.spectrum.data)
+fig_energy <- ggplot(aes(x=w.length, y=s.irrad), data=e.spectrum.data) + xlim(w.low, w.high) +
+  labs(x="Wavelength (nm)", y="Spectral energy irradiance\n(rel. units)", title=lamp.name) + 
+  geom_line() + stat_peaks(ignore_threshold=0.33, colour="red")
+# fig_photon <- ggplot(aes(x=w.length, y=s.irrad), data=q.spectrum.data) + xlim(w.low, w.high) +
+#   labs(x="Wavelength (nm)", y="Spectral photon irradiance\n(rel. units)", title=lamp.name) + 
+#   geom_line() + stat_peaks(ignore_threshold=0.33, colour="red")
+print(fig_energy)
+# print(fig_photon)
+}
+@
+
+\newpage
+
+\section{Norlux LED arrays}
+
+RGB array
+
+<<plot-RGB-Norlux>>=
+Norlux.LEDs <- c("Norlux_R", "Norlux_G", "Norlux_B")
+for (lamp in Norlux.LEDs) {
+  lamp.plotter(lamp.name=lamp)
+}
+@
+
+\section{Huey-Jann LED arrays}
+
+<<plot-HJ>>=
+HJ.LEDs <- c("HJ_Blue")
+for (lamp in HJ.LEDs) {
+  lamp.plotter(lamp.name=lamp)
+}
+@
+
+\section{Shezhen Weili LED arrays}
+
+<<plot-SW>>=
+SW.LEDs <- c("SW_UVA365")
+for (lamp in SW.LEDs) {
+  lamp.plotter(lamp.name=lamp)
+}
+@
+
+\section{Roithner Laser LEDs and LED arrays}
+
+\subsection{UV}
+
+<<plot-Roith>>=
+RL.UV.LEDs <- c("XSL365", "XSL370", "XSL375", "UV395")
+for (lamp in RL.UV.LEDs) {
+  lamp.plotter(lamp.name=lamp)
+}
+@
+
+\end{document}
