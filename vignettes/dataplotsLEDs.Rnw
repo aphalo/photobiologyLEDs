@@ -54,14 +54,12 @@ We define a function to do the actual plotting so as to not repeat code, and to 
 <<setup-function>>=
 lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
 w.length.out <- seq(from=w.low, to=w.high, length.out=300)
-e.spectrum.data <- calc_lamp_output(w.length.out=w.length.out, lamp.name=lamp.name, unit.out="energy", scaled=scaled, fill=0.0)
-# q.spectrum.data <- calc_lamp_output(w.length.out=w.length.out, lamp.name=lamp.name, unit.out="photon", scaled=scaled)
-e.spectrum.data <- na.omit(e.spectrum.data)
-# q.spectrum.data <- na.omit(q.spectrum.data)
-fig_energy <- ggplot(aes(x=w.length, y=s.irrad), data=e.spectrum.data) + xlim(w.low, w.high) +
+spectrum.data <- calc_source_output(w.length.out=w.length.out, source.name=lamp.name, scaled=scaled, fill=0.0)
+spectrum.data <- na.omit(spectrum.data)
+fig_energy <- ggplot(aes(x=w.length, y=s.e.irrad), data=spectrum.data) + xlim(w.low, w.high) +
   labs(x="Wavelength (nm)", y="Spectral energy irradiance\n(rel. units)", title=lamp.name) + 
   geom_line() + stat_peaks(ignore_threshold=0.33, colour="red")
-# fig_photon <- ggplot(aes(x=w.length, y=s.irrad), data=q.spectrum.data) + xlim(w.low, w.high) +
+# fig_photon <- ggplot(aes(x=w.length, y=s.q.irrad), data=spectrum.data) + xlim(w.low, w.high) +
 #   labs(x="Wavelength (nm)", y="Spectral photon irradiance\n(rel. units)", title=lamp.name) + 
 #   geom_line() + stat_peaks(ignore_threshold=0.33, colour="red")
 print(fig_energy)
