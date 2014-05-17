@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{UV-radiation quantification with R: Catalogue of lamps}
-%\VignetteDepends{knitr, photobiology, photobiologyLamps, photobiologyLEDs, photobiologygg, ggplot2}
+%\VignetteDepends{knitr, photobiology, photobiologyLEDs, photobiologygg, ggplot2}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
@@ -44,7 +44,6 @@ opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size
 <<example-0, eval=TRUE>>=
 library(ggplot2)
 library(photobiology)
-library(photobiologyLamps)
 library(photobiologyLEDs)
 library(photobiologygg)
 @
