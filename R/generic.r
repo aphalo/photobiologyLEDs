@@ -22,9 +22,9 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A data frame with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
+#' @format A data table with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
 #' 
 #' @name generic.LEDs
 #' @aliases 
-#'  white.data
+#'  white.dt
 NULL

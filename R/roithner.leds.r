@@ -21,8 +21,8 @@
 #' 
 #' @docType data
 #' @keywords datasets
-#' @format A data frame with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
+#' @format A data table with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
 #' @name roithner.LEDs
 #' @aliases 
-#'  BS436.data CB30.data LED405.data LED740.data UV395.data XSL365.data XSL370.data XSL375.data
+#'  BS436.dt CB30.dt LED405.dt LED740.dt UV395.dt XSL365.dt XSL370.dt XSL375.dt
 NULL

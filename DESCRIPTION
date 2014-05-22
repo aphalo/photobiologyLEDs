@@ -8,7 +8,7 @@ Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: This package provides data for some frequently used lamps.
 License: GPL (>= 3)
 VignetteBuilder: knitr
-Depends: R (>= 3.0.0), photobiology (>= 0.2.21)
+Depends: R (>= 3.0.0), photobiology (>= 0.3.0)
 Suggests: knitr, photobiologyLamps (>= 0.1.8), photobiologyLEDs, photobiologyVIS, photobiologygg, ggplot2
 LazyLoad: yes
 LazyData: yes

@@ -21,9 +21,9 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A data frame with 1637 observations (200 nm to 900 nm, at steps < 1 nm)
+#' @format A data table with 1637 observations (200 nm to 900 nm, at steps < 1 nm)
 #' 
 #' @name norlux.LEDs
 #' @aliases 
-#' Norlux_R.data Norlux_G.data Norlux_B.data
+#' Norlux_R.dt Norlux_G.dt Norlux_B.dt
 NULL
