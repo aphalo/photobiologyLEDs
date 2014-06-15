@@ -25,5 +25,5 @@
 #' 
 #' @name shezhen.weili.LEDs
 #' @aliases 
-#'  SW_UVA365.data
+#'  SW_UVA365.dt
 NULL
