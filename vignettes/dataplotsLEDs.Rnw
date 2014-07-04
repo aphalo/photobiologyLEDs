@@ -1,5 +1,5 @@
 %\VignetteEngine{knitr}
-%\VignetteIndexEntry{UV-radiation quantification with R: Catalogue of lamps}
+%\VignetteIndexEntry{Catalogue of LED emission spectra}
 %\VignetteDepends{knitr, photobiology, photobiologyLEDs, photobiologygg, ggplot2}
 %\VignetteKeyword{misc}
 
