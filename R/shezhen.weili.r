@@ -21,9 +21,9 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A data frame with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
+#' @format A source.spct with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
 #' 
 #' @name shezhen.weili.LEDs
 #' @aliases 
-#'  SW_UVA365.dt
+#'  SW_UVA365.spct
 NULL

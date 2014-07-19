@@ -21,8 +21,8 @@
 #' 
 #' @docType data
 #' @keywords datasets
-#' @format A data table with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
+#' @format A source.spct with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
 #' @name roithner.LEDs
 #' @aliases 
-#'  BS436.dt CB30.dt LED405.dt LED740.dt UV395.dt XSL365.dt XSL370.dt XSL375.dt
+#'  BS436.spct CB30.spct LED405.spct LED740.spct UV395.spct XSL365.spct XSL370.spct XSL375.spct
 NULL

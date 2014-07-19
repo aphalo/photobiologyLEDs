@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBLam Version 0.1.1\\ Catalogue of LEDs}
+\title{\PBLam Version 0.1.2\\ Catalogue of LEDs}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -53,16 +53,19 @@ We define a function to do the actual plotting so as to not repeat code, and to 
 <<setup-function>>=
 lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
 w.length.out <- seq(from=w.low, to=w.high, length.out=300)
-spectrum.data <- calc_source_output(w.length.out=w.length.out, source.name=lamp.name, scaled=scaled, fill=0.0)
-spectrum.data <- na.omit(spectrum.data)
-fig_energy <- ggplot(aes(x=w.length, y=s.e.irrad), data=spectrum.data) + xlim(w.low, w.high) +
-  labs(x="Wavelength (nm)", y="Spectral energy irradiance\n(rel. units)", title=lamp.name) + 
+temp.spct <- setSourceSpct(
+  calc_source_output(w.length.out=w.length.out, 
+                     source.name=lamp.name, 
+                     scaled=scaled, 
+                     fill=0.0)
+)
+#spectrum.data <- na.omit(spectrum.data)
+fig_energy <- ggplot(aes(x=w.length, y=s.e.irrad), data=temp.spct) + 
+  xlim(w.low, w.high) +
+  labs(x="Wavelength (nm)", y="Spectral energy irradiance\n(rel. units)", 
+       title=lamp.name) + 
   geom_line() + stat_peaks(ignore_threshold=0.33, colour="red")
-# fig_photon <- ggplot(aes(x=w.length, y=s.q.irrad), data=spectrum.data) + xlim(w.low, w.high) +
-#   labs(x="Wavelength (nm)", y="Spectral photon irradiance\n(rel. units)", title=lamp.name) + 
-#   geom_line() + stat_peaks(ignore_threshold=0.33, colour="red")
 print(fig_energy)
-# print(fig_photon)
 }
 @
 

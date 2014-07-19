@@ -16,8 +16,8 @@ for exercises.
 \tabular{ll}{
 Package: \tab photobiologyLEDs\cr
 Type: \tab Package\cr
-Version: \tab 0.1.1\cr
-Date: \tab 2014-05-07\cr
+Version: \tab 0.1.2\cr
+Date: \tab 2014-07-19\cr
 License: \tab GPL (>= 3)\cr
 URL: \tab \url{http://uv4growth.dyndns.org},\cr \tab \url{http://openinstruments.dyndns.org},\cr
 \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
@@ -25,10 +25,11 @@ BugReports: \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
 }
 }
 \examples{
-library(photobiologyLEDs)
 library(photobiologyVIS)
-with(white.dt, photon_ratio(w.length, s.e.irrad, Blue(), Green()))
-plot(s.e.irrad~w.length, data=white.dt, main=comment(white.dt), type="l")
+q_ratio_spct(white.spct, Blue(), Red())
+q_irrad_spct(white.spct, PAR()) * 1e6
+plot(s.e.irrad~w.length, data=white.spct, main="White LED 5mm", type="l")
+plot(s.e.irrad~w.length, data=white.spct + LED740.spct, main="White + far-red LEDs", type="l")
 }
 \author{
 Pedro J. Aphalo

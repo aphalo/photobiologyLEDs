@@ -21,9 +21,9 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A data table with 1637 observations (200 nm to 900 nm, at steps < 1 nm)
+#' @format A source.spct with 1637 observations (200 nm to 900 nm, at steps < 1 nm)
 #' 
 #' @name norlux.LEDs
 #' @aliases 
-#' Norlux_R.dt Norlux_G.dt Norlux_B.dt
+#' Norlux_R.spct Norlux_G.spct Norlux_B.spct
 NULL

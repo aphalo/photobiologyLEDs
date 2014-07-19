@@ -21,10 +21,10 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A data table with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
+#' @format A source.spct with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
 #' 
 #' @name huey.jann.LEDs
 #' @aliases 
-#'  HJ_Blue.dt
+#'  HJ_Blue.spct
 #'  
 NULL
