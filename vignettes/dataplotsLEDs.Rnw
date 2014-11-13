@@ -22,11 +22,30 @@
 \newcommand{\PBCRY}{\textsf{photobiologyCry}\xspace}
 \newcommand{\PBFil}{\textsf{photobiologyFilters}\xspace}
 \newcommand{\PBLam}{\textsf{photobiologyLamps}\xspace}
+\newcommand{\PBLED}{\textsf{photobiologyLEDs}\xspace}
 \newcommand{\PBSen}{\textsf{photobiologySensors}\xspace}
  
 \begin{document}
 
-\title{\PBLam Version 0.1.2\\ Catalogue of LEDs}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",
+               fig.width=8, fig.height=4, out.width='.9\\textwidth', dev='cairo_pdf')
+@
+
+<<example-0-hiden, eval=TRUE, include=FALSE, warning=FALSE>>=
+library(ggplot2)
+library(photobiology)
+library(photobiologyLEDs)
+library(photobiologygg)
+@
+
+<<own-set-up, echo=FALSE, include=FALSE>>=
+my_version <- packageVersion("photobiologyLEDs")
+@
+
+\title{\PBLED Version \Sexpr{my_version}\\ Catalogue of LEDs}
+
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -35,13 +54,7 @@
 
 We will plot the emission spectra of the different LEDs for which data is provided in the pacakge. We plot the spectra as spectral energy irradiance. All spectra are normalized to an area of one under the whole curve.
 
-<<setup, include=FALSE, cache=FALSE>>=
-library(knitr)
-opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",
-               fig.width=7, fig.height=4, out.width='.9\\textwidth', dev='cairo_pdf')
-@
-
-<<example-0, eval=TRUE, warning=FALSE>>=
+<<example-0, eval=FALSE>>=
 library(ggplot2)
 library(photobiology)
 library(photobiologyLEDs)
@@ -108,9 +121,9 @@ for (lamp in RL.UV.LEDs) {
 
 \subsection{UV}
 
-<<plot-TaoYuan,eval=FALSE>>=
-TY.UV.LEDs <- c("")
-for (lamp in TYL.UV.LEDs) {
+<<plot-TaoYuan>>=
+TY.UV.LEDs <- c("TY_UV310nm")
+for (lamp in TY.UV.LEDs) {
   lamp.plotter(lamp.name=lamp)
 }
 @
