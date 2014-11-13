@@ -38,10 +38,10 @@ We will plot the emission spectra of the different LEDs for which data is provid
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
 opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",
-               fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
+               fig.width=7, fig.height=4, out.width='.9\\textwidth', dev='cairo_pdf')
 @
 
-<<example-0, eval=TRUE>>=
+<<example-0, eval=TRUE, warning=FALSE>>=
 library(ggplot2)
 library(photobiology)
 library(photobiologyLEDs)
@@ -52,20 +52,13 @@ We define a function to do the actual plotting so as to not repeat code, and to 
 
 <<setup-function>>=
 lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
-w.length.out <- seq(from=w.low, to=w.high, length.out=300)
-temp.spct <- setSourceSpct(
-  calc_source_output(w.length.out=w.length.out, 
-                     source.name=lamp.name, 
-                     scaled=scaled, 
-                     fill=0.0)
-)
-#spectrum.data <- na.omit(spectrum.data)
-fig_energy <- ggplot(aes(x=w.length, y=s.e.irrad), data=temp.spct) + 
-  xlim(w.low, w.high) +
-  labs(x="Wavelength (nm)", y="Spectral energy irradiance\n(rel. units)", 
-       title=lamp.name) + 
-  geom_line() + stat_peaks(ignore_threshold=0.33, colour="red")
-print(fig_energy)
+  w.band <- waveband(c(w.low, w.high))
+  object.name <- paste(lamp.name, ".spct", sep="")
+a.spct <- copy(get(object.name))
+# a.spct <- trim_spct(a.spct, w.band, fill = NA)
+e2q(a.spct, byref=TRUE)
+print(plot(a.spct, unit="energy") + labs(title=object.name) + theme_grey(10))
+# print(plot(a.spct, unit="photon") + labs(title=object.name) + theme_grey(10))
 }
 @
 
@@ -107,6 +100,28 @@ for (lamp in SW.LEDs) {
 <<plot-Roith>>=
 RL.UV.LEDs <- c("XSL365", "XSL370", "XSL375", "UV395")
 for (lamp in RL.UV.LEDs) {
+  lamp.plotter(lamp.name=lamp)
+}
+@
+
+\section{Tao Yuan LEDs}
+
+\subsection{UV}
+
+<<plot-TaoYuan,eval=FALSE>>=
+TY.UV.LEDs <- c("")
+for (lamp in TYL.UV.LEDs) {
+  lamp.plotter(lamp.name=lamp)
+}
+@
+
+\section{Other LEDs and LED arrays}
+
+\subsection{UV}
+
+<<plot-other>>=
+other.LEDs <- c("white", "LED740", "LED405", "CB30", "BS436")
+for (lamp in other.LEDs) {
   lamp.plotter(lamp.name=lamp)
 }
 @

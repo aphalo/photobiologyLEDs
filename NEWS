@@ -1,3 +1,10 @@
+photobiologyLEDs Ver 0.1.2
+==========================
+
+Data updated by reprocessing raw measurements using current version of MayaCalc.
+Rebuilt spectral objects with current version of photobiology package.
+Revised the vignette to use the new plot.source.spct() function.
+
 photobiologyLEDs Ver 0.1.1
 ==========================
 

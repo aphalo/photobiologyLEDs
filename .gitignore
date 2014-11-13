@@ -7,3 +7,4 @@ man
 *.synctex.gz
 *.synctex
 *.log
+vignettes/figure/*.pdf
