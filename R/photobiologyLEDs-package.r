@@ -16,8 +16,8 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyLEDs\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.1.4\cr
-#' Date: \tab 2014-11-14\cr
+#' Version: \tab 0.2.0\cr
+#' Date: \tab 2014-12-15\cr
 #' License: \tab GPL (>= 3)\cr
 #' URL: \tab \url{http://uv4growth.dyndns.org},\cr \tab \url{http://openinstruments.dyndns.org},\cr
 #' \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
@@ -34,9 +34,9 @@
 #' \url{http://hdl.handle.net/10138/37558}
 #' 
 #' @examples
-#' library(photobiologyVIS)
-#' q_ratio_spct(white.spct, Blue(), Red())
-#' q_irrad_spct(white.spct, PAR()) * 1e6
+#' library(photobiologyWavebands)
+#' q_ratio(white.spct, Blue(), Red())
+#' q_irrad(white.spct, PAR()) * 1e6
 #' plot(s.e.irrad~w.length, data=white.spct, main="White LED 5mm", type="l")
 #' plot(s.e.irrad~w.length, data=white.spct + LED740.spct, main="White + far-red LEDs", type="l")
 #' 

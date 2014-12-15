@@ -70,8 +70,8 @@ lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
 a.spct <- copy(get(object.name))
 # a.spct <- trim_spct(a.spct, w.band, fill = NA)
 e2q(a.spct, byref=TRUE)
-print(plot(a.spct, unit="energy") + labs(title=object.name) + theme_grey(10))
-# print(plot(a.spct, unit="photon") + labs(title=object.name) + theme_grey(10))
+print(plot(a.spct, unit.out="energy") + labs(title=object.name) + theme_grey(10))
+# print(plot(a.spct, unit.out="photon") + labs(title=object.name) + theme_grey(10))
 }
 @
 
