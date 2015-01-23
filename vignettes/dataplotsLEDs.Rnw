@@ -30,7 +30,7 @@
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
 opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",
-               fig.width=8, fig.height=4, out.width='.9\\textwidth', dev='cairo_pdf')
+               fig.width=8, fig.height=4, out.width='.9\\textwidth')
 @
 
 <<example-0-hiden, eval=TRUE, include=FALSE, warning=FALSE>>=
@@ -61,82 +61,55 @@ library(photobiologyLEDs)
 library(photobiologygg)
 @
 
-We define a function to do the actual plotting so as to not repeat code, and to make changes easier in the future.
-
-<<setup-function>>=
-lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
-  w.band <- waveband(c(w.low, w.high))
-  object.name <- paste(lamp.name, ".spct", sep="")
-a.spct <- copy(get(object.name))
-# a.spct <- trim_spct(a.spct, w.band, fill = NA)
-e2q(a.spct, byref=TRUE)
-print(plot(a.spct, unit.out="energy") + labs(title=object.name) + theme_grey(10))
-# print(plot(a.spct, unit.out="photon") + labs(title=object.name) + theme_grey(10))
-}
-@
-
-\newpage
-
 \section{Norlux LED arrays}
 
-RGB array
+\subsection{RGB array}
 
 <<plot-RGB-Norlux>>=
-Norlux.LEDs <- c("Norlux_R", "Norlux_G", "Norlux_B")
-for (lamp in Norlux.LEDs) {
-  lamp.plotter(lamp.name=lamp)
-}
+plot(Norlux_R.spct)
+plot(Norlux_G.spct)
+plot(Norlux_B.spct)
 @
 
 \section{Huey-Jann LED arrays}
 
 <<plot-HJ>>=
-HJ.LEDs <- c("HJ_Blue")
-for (lamp in HJ.LEDs) {
-  lamp.plotter(lamp.name=lamp)
-}
+plot(HJ_Blue.spct)
 @
 
 \section{Shezhen Weili LED arrays}
 
 <<plot-SW>>=
-SW.LEDs <- c("SW_UVA365")
-for (lamp in SW.LEDs) {
-  lamp.plotter(lamp.name=lamp)
-}
+plot(SW_UVA365.spct)
 @
 
 \section{Roithner Laser LEDs and LED arrays}
 
-\subsection{UV}
+\subsection{UV-A}
 
 <<plot-Roith>>=
-RL.UV.LEDs <- c("XSL365", "XSL370", "XSL375", "UV395")
-for (lamp in RL.UV.LEDs) {
-  lamp.plotter(lamp.name=lamp)
-}
+plot(XSL365.spct)
+plot(XSL370.spct)
+plot(XSL375.spct)
+plot(UV395.spct)
 @
 
 \section{Tao Yuan LEDs}
 
-\subsection{UV}
+\subsection{UV-B}
 
 <<plot-TaoYuan>>=
-TY.UV.LEDs <- c("TY_UV310nm")
-for (lamp in TY.UV.LEDs) {
-  lamp.plotter(lamp.name=lamp)
-}
+plot(TY_UV310nm.spct)
 @
 
 \section{Other LEDs and LED arrays}
 
-\subsection{UV}
-
 <<plot-other>>=
-other.LEDs <- c("white", "LED740", "LED405", "CB30", "BS436")
-for (lamp in other.LEDs) {
-  lamp.plotter(lamp.name=lamp)
-}
+plot(white.spct)
+plot(LED405.spct)
+plot(LED740.spct)
+plot(CB30.spct)
+plot(BS436.spct)
 @
 
 \end{document}
