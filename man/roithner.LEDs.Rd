@@ -7,6 +7,8 @@
 \alias{LED405.spct}
 \alias{LED740.spct}
 \alias{UV395.spct}
+\alias{UVMAX305.spct}
+\alias{UVMAX340.spct}
 \alias{XSL365.spct}
 \alias{XSL370.spct}
 \alias{XSL375.spct}

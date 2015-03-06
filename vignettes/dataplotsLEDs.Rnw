@@ -61,14 +61,21 @@ library(photobiologyLEDs)
 library(photobiologygg)
 @
 
+<<>>=
+options(photobiology.plot.annotations = c("boxes", "labels", "colour.guide", "peaks", "title"))
+@
+
 \section{Norlux LED arrays}
 
 \subsection{RGB array}
 
 <<plot-RGB-Norlux>>=
-plot(Norlux_R.spct)
-plot(Norlux_G.spct)
-plot(Norlux_B.spct)
+Norlux.spct <- rbindspct(list(R = Norlux_R.spct, G = Norlux_G.spct, B = Norlux_B.spct),
+                         idfactor = "channel")
+figNorlux <- ggplot(Norlux.spct, aes(w.length, s.e.irrad, colour = channel)) +
+  geom_line()
+figNorlux
+add_color_guide(figNorlux)
 @
 
 \section{Huey-Jann LED arrays}
@@ -92,6 +99,15 @@ plot(XSL365.spct)
 plot(XSL370.spct)
 plot(XSL375.spct)
 plot(UV395.spct)
+@
+
+<<>>=
+plot(UVMAX340.spct)
+@
+
+\subsection{UV-B}
+<<>>=
+plot(UVMAX305.spct)
 @
 
 \section{Tao Yuan LEDs}

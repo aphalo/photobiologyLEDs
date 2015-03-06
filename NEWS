@@ -1,7 +1,12 @@
+photobiologyLEDs 0.2.2
+======================
+
+Added data for UVMAX LEDs.
+
 photobiologyLEDs 0.2.1
 ======================
 
-REbuilt data objects with photobiology 0.5.7 and updated the vignettes to use photobiologygg 0.2.5 functions.
+Rebuilt data objects with photobiology 0.5.7 and updated the vignettes to use photobiologygg 0.2.5 functions.
 
 photobiologyLEDs 0.2.0
 ======================

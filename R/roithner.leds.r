@@ -24,5 +24,5 @@
 #' @format A source.spct with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
 #' @name roithner.LEDs
 #' @aliases 
-#'  BS436.spct CB30.spct LED405.spct LED740.spct UV395.spct XSL365.spct XSL370.spct XSL375.spct
+#'  BS436.spct CB30.spct LED405.spct LED740.spct UV395.spct XSL365.spct XSL370.spct XSL375.spct UVMAX305.spct UVMAX340.spct
 NULL
