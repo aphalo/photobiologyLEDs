@@ -84,7 +84,7 @@ add_color_guide(figNorlux)
 plot(HJ_Blue.spct)
 @
 
-\section{Shezhen Weili LED arrays}
+\section{Shenzhen Weili LED arrays}
 
 <<plot-SW>>=
 plot(SW_UVA365.spct)
