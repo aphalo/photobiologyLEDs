@@ -19,9 +19,9 @@
 #' Version: \tab 0.2.2\cr
 #' Date: \tab 2015-03-06\cr
 #' License: \tab GPL (>= 3)\cr
-#' URL: \tab \url{http://uv4growth.dyndns.org},\cr \tab \url{http://openinstruments.dyndns.org},\cr
+#' URL: \tab \url{http://www.r4photobiology.info},\cr
 #' \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
-#' BugReports: \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
+#' BugReports: \tab \url{https://bitbucket.org/aphalo/photobiologyLEDs}\cr
 #' }
 #' 
 #' @references
