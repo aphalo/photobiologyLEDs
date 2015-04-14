@@ -51,6 +51,7 @@ setwd(oldwd)
 setwd("raw.data/Maya/LED_measurements_11_2014")
 
 if (exists("TY_UV310nm.spct")) {
+  upgrade(TY_UV310nm.spct)
   save(TY_UV310nm.spct, file=paste(oldwd, "/data/TY_UV310nm.spct.rda", sep=""))
 } 
 

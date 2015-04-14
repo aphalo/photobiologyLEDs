@@ -1,19 +1,23 @@
 Package: photobiologyLEDs
 Type: Package
 Title: Spectral data for lamp emission
-Version: 0.2.2
-Date: 2015-03-06
+Version: 0.3.0
+Date: 2015-04-13
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: This package provides data for some frequently used lamps.
 License: GPL (>= 3)
 VignetteBuilder: knitr
-Depends: R (>= 3.0.0), photobiology (>= 0.5.15)
-Suggests: knitr, photobiologyLEDs, photobiologyWavebands, photobiologygg (>= 0.2.8), ggplot2
+Depends: R (>= 3.1.0), photobiology (>= 0.6.0)
+Suggests: knitr (>= 1.9), 
+          photobiologyLEDs, 
+          photobiologyWavebands (>= 0.3.0), 
+          photobiologygg (>= 0.3.0), 
+          ggplot2 (>= 1.0.1)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true
 Encoding: UTF-8
-URL: http://r4photobiology.wordpress.com, https://bitbucket.org/aphalo/photobiology
-BugReports: https://bitbucket.org/aphalo/photobiology
+URL: http://www.r4photobiology.info, https://bitbucket.org/aphalo/photobiologyLEDs
+BugReports: https://bitbucket.org/aphalo/photobiologyLEDs
 Roxygen: list(wrap = FALSE)

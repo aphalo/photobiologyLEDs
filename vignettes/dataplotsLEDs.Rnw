@@ -118,6 +118,14 @@ plot(UVMAX305.spct)
 plot(TY_UV310nm.spct)
 @
 
+\section{LUMITRONIX LED arrays}
+
+\subsection{Natural white}
+
+<<plot-LMTRX>>=
+plot(LUMITRONIX_white.spct)
+@
+
 \section{Other LEDs and LED arrays}
 
 <<plot-other>>=
