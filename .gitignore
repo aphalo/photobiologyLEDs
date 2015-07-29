@@ -8,3 +8,4 @@ man
 *.synctex
 *.log
 vignettes/figure/*.pdf
+vignettes/dataplotsLEDs.pdf
