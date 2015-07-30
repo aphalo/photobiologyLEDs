@@ -9,8 +9,8 @@ oldwd <- setwd("raw.data/Maya/examples")
 for (led in c("BS436", "CB30", "LED405", "LED740", "UV395", "white", "XSL365", "XSL370", "XSL375", "white")) {
   temp.led.df <- process_maya_files(paste(led, ".txt", sep=""), paste(led, "dark.txt", sep=""), 
                                                          method="full", decimal=",")
+  temp.led.df <- temp.led.df[ , c("w.length", "s.e.irrad")]
   temp.led.spct <- e2q(setSourceSpct(temp.led.df))
-  temp.led.spct[ , s.e.irrad.good := NULL]
   spct.name <- paste(led, "spct", sep=".")
   assign(spct.name, temp.led.spct)
   save(list=spct.name, file=paste(oldwd, "/data/", spct.name, ".rda", sep=""))
@@ -33,8 +33,8 @@ setwd(oldwd)
 setwd("raw.data/Maya/Huey_Jann")
 
 HJ_Blue.df <- process_maya_files("BLUE_short.txt", "dark_short.txt", "PC_long.txt", "BLUE_long.txt", "dark_long.txt", decimal=",", method="sun")
+HJ_Blue.spct <- HJ_Blue.spct[ , c("w.length", "s.e.irrad")]
 HJ_Blue.spct <- e2q(setSourceSpct(HJ_Blue.df))
-HJ_Blue.spct[ , s.e.irrad.good := NULL]
 save(HJ_Blue.spct, file=paste(oldwd, "/data/HJ_Blue.spct.rda", sep=""))
 
 setwd(oldwd)
@@ -42,8 +42,8 @@ setwd(oldwd)
 setwd("raw.data/Maya/Shenzhen_Weili")
 
 SW_UVA365.df <- process_maya_files("UVA_short.txt", "dark_short.txt", "PC_long.txt", "UVA_long.txt", "dark_long.txt", decimal=",", method="sun")
+SW_UVA365.spct <- SW_UVA365.spct[ , c("w.length", "s.e.irrad")]
 SW_UVA365.spct <- e2q(setSourceSpct(SW_UVA365.df))
-SW_UVA365.spct[ , s.e.irrad.good := NULL]
 save(SW_UVA365.spct, file=paste(oldwd, "/data/SW_UVA365.spct.rda", sep=""))
 
 setwd(oldwd)
@@ -51,7 +51,7 @@ setwd(oldwd)
 setwd("raw.data/Maya/LED_measurements_11_2014")
 
 if (exists("TY_UV310nm.spct")) {
-  upgrade(TY_UV310nm.spct)
+  upgrade_spct(TY_UV310nm.spct)
   save(TY_UV310nm.spct, file=paste(oldwd, "/data/TY_UV310nm.spct.rda", sep=""))
 } 
 

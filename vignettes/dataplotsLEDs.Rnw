@@ -54,11 +54,7 @@ my_version <- packageVersion("photobiologyLEDs")
 
 We will plot the emission spectra of the different LEDs for which data is provided in the pacakge. We plot the spectra as spectral energy irradiance. All spectra are normalized to an area of one under the whole curve.
 
-<<example-0, eval=FALSE>>=
-library(ggplot2)
-library(photobiology)
-library(photobiologyLEDs)
-library(photobiologygg)
+<<example-0-hiden, eval=FALSE>>=
 @
 
 <<>>=

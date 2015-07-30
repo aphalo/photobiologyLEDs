@@ -1,8 +1,13 @@
+photobiologyLEDs 0.3.1
+======================
+
+Rebuild all data and the package with photobiology 0.8.0.
+
 photobiologyLEDs 0.3.0
 ======================
 
 Added data for LUMITRONIX LED array.
-Rebuilty all data and the package with photobiology 0.6.0.
+Rebuild all data and the package with photobiology 0.6.0.
 
 photobiologyLEDs 0.2.2
 ======================
