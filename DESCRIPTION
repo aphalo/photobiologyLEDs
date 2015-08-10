@@ -1,8 +1,8 @@
 Package: photobiologyLEDs
 Type: Package
 Title: Spectral data for lamp emission
-Version: 0.3.1
-Date: 2015-07-30
+Version: 0.3.2
+Date: 2015-08-10
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: This package provides data for some frequently used lamps.

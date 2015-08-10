@@ -1,10 +1,11 @@
 #' Spectral data for LED array from LUMITRONIX
 #' 
-#' Datasets containing the wavelengths and tabulated values spectral emittance
-#' for different light emitting diodes (LEDs) from LUMITRONIX. A 39 W
-#' (electrical power ) array of NICHIA natural white LEDs.
+#' Dataset containing the wavelengths and tabulated values spectral emittance 
+#' for a high power light emitting diode (LED) array from LUMITRONIX  based 
+#' NICHIA's high efficiency natural white SMT LEDs. Specifications: LUMITRONIX
+#' SmartArray Q36 LED-Module, 4247 lm, 4000K, 39W electrical
 #' 
-#' Absolute values are not meaningful as the measuring distances are variable,
+#' Absolute values are not meaningful as the measuring distances are variable, 
 #' and in most cases unknown.
 #' 
 #' The variables are as follows: 

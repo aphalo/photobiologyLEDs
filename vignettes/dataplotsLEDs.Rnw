@@ -66,12 +66,18 @@ options(photobiology.plot.annotations = c("boxes", "labels", "colour.guide", "pe
 \subsection{RGB array}
 
 <<plot-RGB-Norlux>>=
-Norlux.spct <- rbindspct(list(R = Norlux_R.spct, G = Norlux_G.spct, B = Norlux_B.spct),
-                         idfactor = "channel")
-figNorlux <- ggplot(Norlux.spct, aes(w.length, s.e.irrad, colour = channel)) +
+Norlux.spct <- rbindspct(Norlux_RGB.mspct, idfactor = "channel")
+ ggplot(Norlux.spct, aes(w.length, s.e.irrad, colour = channel)) +
   geom_line()
-figNorlux
-add_color_guide(figNorlux)
+@
+
+<<plot-RGB-Norlux-normalized>>=
+Norlux.spct <- rbindspct(list(R = normalize(Norlux_R.spct), 
+                              G = normalize(Norlux_G.spct), 
+                              B = normalize(Norlux_B.spct) ),
+                         idfactor = "channel")
+ggplot(Norlux.spct, aes(w.length, s.e.irrad, colour = channel)) +
+  geom_line()
 @
 
 \section{Huey-Jann LED arrays}

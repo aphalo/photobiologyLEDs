@@ -18,15 +18,25 @@ for (led in c("BS436", "CB30", "LED405", "LED740", "UV395", "white", "XSL365", "
 
 setwd(oldwd)
 
-setwd("raw.data")
+oldwd <- setwd("raw.data")
 
 Norlux_R.df <- read.table("NHXRGB0905005_RED.txt", col.names=c("w.length", "s.e.irrad"))
 Norlux_G.df <- read.table("NHXRGB0905005_GREEN.txt", col.names=c("w.length", "s.e.irrad"))
 Norlux_B.df <- read.table("NHXRGB0905005_BLUE.txt", col.names=c("w.length", "s.e.irrad"))
 Norlux_R.spct <- e2q(setSourceSpct(Norlux_R.df))
+trim_spct(Norlux_R.spct, range = c(250,900), byref = TRUE)
+comment(Norlux_R.spct) <- "Norlux 90 die LED array type NHXRGB0905005, red channel"
 Norlux_G.spct <- e2q(setSourceSpct(Norlux_G.df))
+trim_spct(Norlux_G.spct, range = c(250,900), byref = TRUE)
+comment(Norlux_G.spct) <- "Norlux 90 die LED array type NHXRGB0905005, green channel"
 Norlux_B.spct <- e2q(setSourceSpct(Norlux_B.df))
-save(Norlux_R.spct, Norlux_G.spct, Norlux_B.spct, file=paste(oldwd, "/data/Norlux_RGB.spct.rda", sep=""))
+trim_spct(Norlux_B.spct, range = c(250,900), byref = TRUE)
+comment(Norlux_B.spct) <- "Norlux 90 die LED array type NHXRGB0905005, blue channel"
+Norlux_RGB.mspct <- source_mspct(list(red = Norlux_R.spct, 
+                                      green = Norlux_G.spct, 
+                                      blue = Norlux_B.spct))
+save(Norlux_R.spct, Norlux_G.spct, Norlux_B.spct, Norlux_RGB.mspct,
+     file=paste(oldwd, "/data/Norlux_RGB.spct.rda", sep=""))
 
 setwd(oldwd)
 

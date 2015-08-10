@@ -1,3 +1,10 @@
+photobiologyLEDs 0.3.2
+======================
+
+Trimmed Norlux data to 250..900 nm, and added source_mspct
+objects for multi-channel arrays.
+Rebuild all data and the package with photobiology 0.8.3.
+
 photobiologyLEDs 0.3.1
 ======================
 
@@ -17,7 +24,8 @@ Added data for UVMAX LEDs.
 photobiologyLEDs 0.2.1
 ======================
 
-Rebuilt data objects with photobiology 0.5.7 and updated the vignettes to use photobiologygg 0.2.5 functions.
+Rebuilt data objects with photobiology 0.5.7 and updated 
+the vignettes to use photobiologygg 0.2.5 functions.
 
 photobiologyLEDs 0.2.0
 ======================
