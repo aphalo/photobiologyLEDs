@@ -3,7 +3,8 @@ photobiologyLEDs 0.3.2
 
 Trimmed Norlux data to 250..900 nm, and added source_mspct
 objects for multi-channel arrays.
-Rebuild all data and the package with photobiology 0.8.3.
+
+Rebuild data and the package with photobiology 0.8.5.
 
 photobiologyLEDs 0.3.1
 ======================

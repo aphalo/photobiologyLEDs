@@ -43,7 +43,7 @@ setwd(oldwd)
 setwd("raw.data/Maya/Huey_Jann")
 
 HJ_Blue.df <- process_maya_files("BLUE_short.txt", "dark_short.txt", "PC_long.txt", "BLUE_long.txt", "dark_long.txt", decimal=",", method="sun")
-HJ_Blue.spct <- HJ_Blue.spct[ , c("w.length", "s.e.irrad")]
+HJ_Blue.df <- HJ_Blue.df[ , c("w.length", "s.e.irrad")]
 HJ_Blue.spct <- e2q(setSourceSpct(HJ_Blue.df))
 save(HJ_Blue.spct, file=paste(oldwd, "/data/HJ_Blue.spct.rda", sep=""))
 
@@ -52,7 +52,7 @@ setwd(oldwd)
 setwd("raw.data/Maya/Shenzhen_Weili")
 
 SW_UVA365.df <- process_maya_files("UVA_short.txt", "dark_short.txt", "PC_long.txt", "UVA_long.txt", "dark_long.txt", decimal=",", method="sun")
-SW_UVA365.spct <- SW_UVA365.spct[ , c("w.length", "s.e.irrad")]
+SW_UVA365.df <- SW_UVA365.df[ , c("w.length", "s.e.irrad")]
 SW_UVA365.spct <- e2q(setSourceSpct(SW_UVA365.df))
 save(SW_UVA365.spct, file=paste(oldwd, "/data/SW_UVA365.spct.rda", sep=""))
 
