@@ -1,14 +1,14 @@
 Package: photobiologyLEDs
 Type: Package
 Title: Spectral data for lamp emission
-Version: 0.3.2
-Date: 2015-09-05
+Version: 0.4.0
+Date: 2015-11-30
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: This package provides data for some frequently used lamps.
 License: GPL (>= 3)
 VignetteBuilder: knitr
-Depends: R (>= 3.2.0), photobiology (>= 0.8.0)
+Depends: R (>= 3.2.0), photobiology (>= 0.8.11)
 Suggests: knitr (>= 0.1.10), 
           photobiologyLEDs, 
           photobiologyWavebands (>= 0.3.1), 

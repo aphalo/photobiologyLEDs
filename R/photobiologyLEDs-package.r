@@ -43,3 +43,7 @@
 #' @import photobiology
 #' 
 NULL
+
+.onAttach <- function(libname, pkgname) {
+  packageStartupMessage("photobiologyFilters: As of version >= 4.0 spectral data are stored in collections of spectra, and individual spectra are accessed through indexing. Indexing should be done with character strings to ensure long-term repeatability. This new scheme is not backwards compatible with earlier versions.")
+}
