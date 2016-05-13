@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{Catalogue of LED emission spectra}
-%\VignetteDepends{knitr, photobiology, photobiologyLEDs, photobiologygg, ggplot2}
+%\VignetteDepends{knitr, photobiology, photobiologyLEDs, ggspectra, ggplot2}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
@@ -37,7 +37,7 @@ opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size
 library(ggplot2)
 library(photobiology)
 library(photobiologyLEDs)
-library(photobiologygg)
+library(ggspectra)
 @
 
 <<own-set-up, echo=FALSE, include=FALSE>>=
