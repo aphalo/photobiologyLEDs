@@ -2,15 +2,18 @@ library(MayaCalc)
 library(photobiology)
 library(dplyr)
 
-oldwd <- setwd("raw.data/Maya/examples")
+oldwd <- setwd("data-raw/Maya/examples")
 
 # BS436.data <- process_maya_files("BS436.txt", "BS436dark.txt", method="sun", decimal=",")
 # plot(BS436.data, type="l")
 
 led_lowpower.lst <- list()
-for (led in c("BS436", "CB30", "LED405", "LED740", "UV395", "white", "XSL365", "XSL370", "XSL375", "white")) {
-  temp.led.df <- process_maya_files(paste(led, ".txt", sep=""), paste(led, "dark.txt", sep=""), 
-                                                         method="full", decimal=",")
+for (led in c("BS436", "CB30", "LED405", "LED740", "UV395", "white", 
+              "XSL365", "XSL370", "XSL375", "white")) {
+  temp.led.df <- 
+    process_maya_files(paste(led, ".txt", sep=""), 
+                       paste(led, "dark.txt", sep=""), 
+                       method="full", decimal=",")
   temp.led.df <- temp.led.df[ , c("w.length", "s.e.irrad")]
 #  temp.led.spct <- e2q(setSourceSpct(temp.led.df))
   setSourceSpct("temp.led.df", time.unit = "second")
@@ -68,7 +71,7 @@ save(Shenzhen_Weili.mspct, file=paste(oldwd, "/data/Shenzhen.Weili.mspct.rda", s
 
 setwd(oldwd)
 
-setwd("raw.data/Maya/LED_measurements_11_2014")
+setwd("data-raw/Maya/LED_measurements_11_2014")
 
 if (exists("TY_UV310nm.spct")) {
   UV310nm.spct <- upgrade_spct(TY_UV310nm.spct)
