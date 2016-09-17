@@ -1,8 +1,8 @@
-#' Spectral data for LEDs array supplied by Norlux
-#' 
+#' Spectral data for LEDs array supplied by Shenzhen Weili Optical
+#'
 #' Datasets containing the wavelengths and tabulated values spectral emittance 
-#' for the NHXRGB0905005 light emitting diodes (LEDs) arrays from Norlux (USA). 
-#' Data are normalized to one at the wavelength of maximum emission.
+#' for different light emitting diodes (LEDs) arrays from Shenzhen Weili Optical
+#' Ltd.  Data are normalized to one at the wavelength of maximum emission.
 #' 
 #' The variables are as follows:
 #' \itemize{
@@ -14,4 +14,5 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
-"norlux"
+#' @aliases shenzhen_weilli
+"leds_global"

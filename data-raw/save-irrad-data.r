@@ -18,9 +18,19 @@ for (l in led.files) {
 }
 
 led.spct.lst <- mget(leds)
+
 names(led.spct.lst) <- sub(".spct", "", names(led.spct.lst))
 
 leds.mspct <- source_mspct(led.spct.lst)
+
+leds.mspct <- normalize(leds.mspct)
+
+NHXRGB090.spct <- rbindspct(list(R = leds.mspct$NHXRGB090_R,
+                                 G = leds.mspct$NHXRGB090_G,
+                                 B = leds.mspct$NHXRGB090_B),
+                            idfactor = "channel")
+
+leds.mspct[["NHXRGB090"]] <- NHXRGB090.spct
 
 save(leds.mspct, file = "leds-mspct.rda")
 
@@ -30,10 +40,12 @@ load(file = "shafi-mspct.rda")
 
 setwd(oldwd)
 
+shafi.mspct <- normalize(shafi.mspct)
+
 leds.mspct <- c(leds.mspct, shafi.mspct) 
 
 roithner_laser <- 
-  c("BS436", "CB30", "LED405", "LED740", "UV395", "LED435_66_60",
+  c("BS436", "LED405", "LED740", "UV395", "LED435_66_60",
     "LED740_01AV", "B5_436_30D", "UVMAX340", "UVMAX305", 
     "XSL365", "XSL370", "XSL375")
 seti <- c("UVMAX340", "UVMAX305", "XSL365", "XSL370", "XSL375")
@@ -44,7 +56,7 @@ hewlett_packard <- agilent <- c("HLMB_CB30", "HLMP_CB31", "HLMP_CM30",
                                 "HLMP_CM31", "HLMP_DJ32", "HLMP_DL32")
 quantum_devices <- c("QDDH66002", "QDDH68002", "QDDH70002", "QDDH73502")
 osram <- "LY5436"
-norlux <- c("NHXRGB090_R", "NHXRGB090_G", "NHXRGB090_B")
+norlux <- c("NHXRGB090_R", "NHXRGB090_G", "NHXRGB090_B", "NHXRGB090")
 shenzhen_weilli <- leds_global <- ("G_P30R140A1_XT")
 huey_jann <- "HPR40E-48K30BG"
 led_engin <- NA
@@ -57,9 +69,11 @@ amber_leds <- c("LY5436")
 green_leds <- c("NHXRGB090_G")
 blue_leds <- c("NHXRGB090_B", "LED435_66_60")
 
+oo_maya_leds <- names(leds.mspct)
+
 save(leds.mspct, roithner_laser, seti, tao_yuan, unknown, lumitronix,
      hewlett_packard, quantum_devices, osram, norlux, shenzhen_weilli,
-     leds_global, huey_jann, led_engin,
+     leds_global, huey_jann, led_engin, oo_maya_leds,
      uv_leds, red_leds, amber_leds, green_leds, blue_leds,
      file = "data/leds-mspct.rda")
 

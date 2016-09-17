@@ -1,7 +1,7 @@
-#' Spectral data for LEDs array supplied by Norlux
+#' Spectral data for LEDs array supplied by Osram
 #' 
 #' Datasets containing the wavelengths and tabulated values spectral emittance 
-#' for the NHXRGB0905005 light emitting diodes (LEDs) arrays from Norlux (USA). 
+#' for the NHXRGB0905005 light emitting diodes (LEDs) arrays from Osram. 
 #' Data are normalized to one at the wavelength of maximum emission.
 #' 
 #' The variables are as follows:
@@ -14,4 +14,4 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
-"norlux"
+"osram"

@@ -1,0 +1,139 @@
+---
+title: "`photobiologyLEDs` `r packageVersion('photobiologyLEDs')`<br>User Guide"
+author: "Pedro J. Aphalo"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{User Guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+knitr::opts_chunk$set(fig.width=8, fig.height=4)
+```
+
+```{r}
+library(photobiology)
+library(photobiologyWavebands)
+library(photobiologyLEDs)
+```
+
+## Introduction
+
+In this very brief User Guide we describe how to re-scale the normalized
+spectra, and how to access individual spectra or subsets of spectra.
+
+## Accessing individual spectra
+
+The `source_spct` member objects in `leds.mspct` can be accessed through their
+names or through a numeric index. As the numeric indexes are likely to change 
+with updates to the package, their use is discouraged. Names as character
+strings should be used instead. The names are listed in the documentation
+and also available through the "Data Catalogue" vignette. They can also be
+listed with method `names()`.
+
+```{r}
+names(leds.mspct)
+```
+
+We can use a character string as index to extract an individual `source_spct`
+object.
+
+```{r}
+leds.mspct$UV395
+```
+
+```{r}
+leds.mspct[["UV395"]]
+```
+
+Be aware that according to R's rules, using single square brackets will return
+a `source_mspct` object possibly of length one. This statement is not equivalent
+to the one in the chunk immediately above.
+
+```{r}
+leds.mspct["UV395"]
+```
+
+## Accessing subsets of spectra
+
+We can subset the `source_mspct` object by indexing with vectors of character
+strings. The package provides some predefined ones, and users can easily
+define their own, either as constants or through computation. Here we use
+a vector defined by the package.
+
+```{r}
+leds.mspct[norlux]
+```
+
+And below we use a computed one. In this case we extract the member spectra
+with names containing the string "osram".
+
+```{r}
+leds.mspct[grep("QDDH", names(leds.mspct))]
+```
+## Calculating summaries from the normalized data
+
+The spectra are normalized, and consequently, several summaries expressed in
+absolute units are undefined, and trigger errors. Summaries like ratios which
+are not affected by normalization are allowed and valid. The data have been
+normalized as the measuring conditions used are not all the same, and in many
+cases not well characterized (e.g. distance to nearby reflecting walls, or exact 
+alignment of the spectrometer input optics with respect to light sources).
+
+What we will do in this section is to rescale the spectral data so that after 
+conversion a given target value for a summary quantity will be true. As an 
+example, we will rescale one spectrum so that it yields an energy irradiance of
+100 W m-2 for the range 315 to 400 nm.
+
+```{r}
+my.spct <- fscale(leds.mspct$UV395,
+                  range = c(315, 400),
+                  e_irrad,
+                  target = 10
+                  )
+e_irrad(my.spct, waveband(c(315,400)))
+```
+If for some obscure reason we want to simply "pretend" that the spectral data
+have not been normalized, we can temporarily override the attribute. Most of the
+time this is a very bad idea!
+
+```{r}
+e_irrad(setNormalized(leds.mspct$UV395))
+```
+As mentioned above, ratios can be calculated directly as they are not affected
+by normalization.
+
+```{r}
+q_ratio(leds.mspct$UV395, UVB(), UVA())
+```
+## Using the data in other contexts
+
+As `source_spct` is a class derived from `list`, and `source_spct` is derived from
+`tibble::tible` which is a compatible reimplementation of `data.frame` the
+data can be used very easily with any R function.
+
+```{r}
+head(as.data.frame(leds.mspct$UV395))
+```
+
+Of course `attach` and `with` also work as expected.
+```{r}
+attach(leds.mspct)
+q_irrad(setNormalized(UV395)) * 1e6
+detach(leds.mspct)
+```
+```{r}
+attach(leds.mspct)
+with(UV395, max(w.length))
+detach(leds.mspct)
+```
+
+```{r}
+with(leds.mspct, q_irrad(setNormalized(UV395)) * 1e6)
+```
+
+
+
+

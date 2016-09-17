@@ -10,7 +10,6 @@
 #' \itemize{
 #'   \item w.length (nm)  
 #'   \item s.e.irrad (W m-2 nm-1)
-#'   \item s.q.irrad (mol m-2 s-1 nm-1) 
 #' }
 #' 
 #' @note
@@ -22,9 +21,6 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A source.spct with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
+#' @format A vector of character strings.
 #' 
-#' @name generic.LEDs
-#' @aliases 
-#'  white.spct
-NULL
+"unknown"

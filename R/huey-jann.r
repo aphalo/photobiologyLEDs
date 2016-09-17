@@ -1,15 +1,14 @@
-#' Spectral data for LEDs array supplied by Shenzhen Weili Optical
+#' Spectral data for LEDs array supplied by Huey Jann
 #'
 #' Datasets containing the wavelengths and
 #' tabulated values spectral emittance for different light emitting diodes (LEDs) arrays
-#' from Shenzhen Weili Optical Ltd.
+#' from Huey Jann Electronics Industry Co., Ltd. (Taiwan).
 #' Absolute values are not meaningful as the measuring distances are variable, and in most cases unknown.
 #' 
 #' The variables are as follows:
 #' \itemize{
 #'   \item w.length (nm)  
 #'   \item s.e.irrad (W m-2 nm-1)
-#'   \item s.q.irrad (mol m-2 s-1 nm-1) 
 #' }
 #' 
 #' @note
@@ -21,9 +20,6 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A source.spct with 1425 observations (250 nm to 900 nm, at steps < 1 nm)
+#' @format A vector of character strings.
 #' 
-#' @name shenzhen.weili.LEDs
-#' @aliases 
-#'  SW_UVA365.spct
-NULL
+"huey_jann"

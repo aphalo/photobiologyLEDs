@@ -3,14 +3,15 @@ photobiologyLEDs 0.4.2
 
 Store spectral data in a single collection of spectra.
 Provide vectors of names to extract non-ortogonal subsets. At the moment by
-color and by manufacturer. (others planned)
+color and by manufacturer.
 Add spectral data for additional LEDs.
+Convert vignette to Rmarkdown. Add User Guide.
 
-photobiologyLEDs 0.4.1-0.4.2
-============================
+photobiologyLEDs 0.4.1
+======================
 
 Not submitted to CRAN and very short lived.
-They were a bad start into a major reorganization of the data.
+It was a bad start into a major reorganization of the data.
 
 photobiologyLEDs 0.3.2
 ======================
