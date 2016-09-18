@@ -12,8 +12,8 @@ sd_section("Spectral data", "",
 
 sd_section("Selectors", "",
            c(
-             "oo_maya",
-             "colors",
+             "oo_maya_leds",
+             "uv_leds",
              "hewlett_packard",
              "huey_jann",
              "led_engin",
@@ -23,7 +23,7 @@ sd_section("Selectors", "",
              "quantum_devices",
              "roithner_laser",
              "seti",
-             "shenzhen_weilli",
+             "leds_global",
              "tao_yuan"
            )
 )
