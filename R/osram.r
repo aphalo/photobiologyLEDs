@@ -14,4 +14,12 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
+#' @examples 
+#' osram
+#' leds.mspct[osram]
+#' 
+#' @note 
+#' Current trade name is Osram Opto Semiconductors
+#' \url{http://www.osram-os.com/}
+#' 
 "osram"

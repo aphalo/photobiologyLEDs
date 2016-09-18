@@ -16,4 +16,8 @@
 #' 
 #' @aliases amber_leds blue_leds green_leds red_leds
 #' 
+#' @examples 
+#' amber_leds
+#' leds.mspct[amber_leds]
+#' 
 "uv_leds"

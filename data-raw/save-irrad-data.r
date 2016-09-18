@@ -57,7 +57,7 @@ hewlett_packard <- agilent <- c("HLMB_CB30", "HLMP_CB31", "HLMP_CM30",
 quantum_devices <- c("QDDH66002", "QDDH68002", "QDDH70002", "QDDH73502")
 osram <- "LY5436"
 norlux <- c("NHXRGB090_R", "NHXRGB090_G", "NHXRGB090_B", "NHXRGB090")
-shenzhen_weilli <- leds_global <- ("G_P30R140A1_XT")
+shenzhen_weili <- leds_global <- ("G_P30R140A1_XT")
 huey_jann <- "HPR40E-48K30BG"
 led_engin <- NA
 
@@ -72,7 +72,7 @@ blue_leds <- c("NHXRGB090_B", "LED435_66_60")
 oo_maya_leds <- names(leds.mspct)
 
 save(leds.mspct, roithner_laser, seti, tao_yuan, unknown, lumitronix,
-     hewlett_packard, quantum_devices, osram, norlux, shenzhen_weilli,
+     hewlett_packard, quantum_devices, osram, norlux, shenzhen_weili,
      leds_global, huey_jann, led_engin, oo_maya_leds,
      uv_leds, red_leds, amber_leds, green_leds, blue_leds,
      file = "data/leds-mspct.rda")

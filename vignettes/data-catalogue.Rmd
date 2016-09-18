@@ -20,7 +20,7 @@ This is a catalogue of all data sets included in the package. You will find belo
 
 The spectral data have been acquired mostly with one instrument. However, some
 spectra haver been measured with a spectrometer that has lower wavelength 
-resolution giving for the same leds measured peaks of slightly different width. 
+resolution giving for the same LEDs measured peaks of slightly different width. 
 This is an inevitable artefact of spectral measurements, but as LEDs have 
 relatively wide peaks the distortion is small.
 

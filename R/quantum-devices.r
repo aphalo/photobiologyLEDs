@@ -14,4 +14,12 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
+#' @examples 
+#' quantum_devices
+#' leds.mspct[quantum_devices]
+#' 
+#' @note 
+#' Quantum Devices produces both individual LEDs and luminaires.
+#' \url{http://www.quantumdev.com/} 
+#' 
 "quantum_devices"

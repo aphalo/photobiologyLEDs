@@ -16,4 +16,12 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #'   
+#' @examples 
+#' lumitronix
+#' leds.mspct[lumitronix]
+#' 
+#' @note
+#' Lumitronix is a supplier of LED arrays, and a distributor of LEDs.
+#' \url{http://www.leds.de/}
+#' 
 "lumitronix"

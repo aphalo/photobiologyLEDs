@@ -14,4 +14,12 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
+#' @examples 
+#' norlux
+#' leds.mspct[norlux]
+#' 
+#' @note
+#' Norlux is now part of Thomas Research Products.
+#' \url{http://www.trpssl.com/}
+#' 
 "norlux"

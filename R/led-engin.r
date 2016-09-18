@@ -14,4 +14,12 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
+#' @examples 
+#' led_engin
+#' # leds.mspct[led_engin]
+#' 
+#'  @note
+#'  Led Engin is a supplier of power LEDs of high efficiency.
+#'  \url{http://www.ledengin.com/}
+#'   
 "led_engin"

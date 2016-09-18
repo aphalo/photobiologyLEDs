@@ -12,14 +12,15 @@
 #' }
 #' 
 #' @note
-#' Instrument used: Ocean Optics Maya2000 Pro single-monochromator array spectroradiometer with
-#' a cosine corrected input optics. With a complex set of corrections and calibrated in an
-#' optical bench. Raw spectral data processed with R package MayaCalc. Dataframes have
-#' comments with additional information for each measurement.
-#' Measurements done by Pedro J. Aphalo.
+#' Huey Jann was a Taiwanese supplier of LED array. It is no longer in
+#' business.
 #'
 #' @docType data
 #' @keywords datasets
 #' @format A vector of character strings.
+#' 
+#' @examples 
+#' huey_jann
+#' leds.mspct[huey_jann]
 #' 
 "huey_jann"
