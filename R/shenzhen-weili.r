@@ -16,7 +16,7 @@
 #'
 #' @aliases shenzhen_weili
 #' @examples
-#' shenzhen_weilli
+#' shenzhen_weili
 #' leds_global
 #' leds.mspct[leds_global]
 #'
