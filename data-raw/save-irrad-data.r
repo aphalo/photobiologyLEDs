@@ -77,5 +77,5 @@ save(leds.mspct, roithner_laser, seti, tao_yuan, unknown, lumitronix,
      uv_leds, red_leds, amber_leds, green_leds, blue_leds,
      file = "data/leds-mspct.rda")
 
-
-
+tools::resaveRdaFiles("data", compress="auto")
+print(tools::checkRdaFiles("data"))

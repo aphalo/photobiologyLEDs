@@ -95,12 +95,25 @@ my.spct <- fscale(leds.mspct$UV395,
                   )
 e_irrad(my.spct, waveband(c(315,400)))
 ```
-If for some obscure reason we want to simply "pretend" that the spectral data
-have not been normalized, we can temporarily override the attribute. Most of the
-time this is a very bad idea!
+
+If we want to treat the rescaled spectral data, as if they were true readings
+with no scaling we can reset the attribute with method `setScaled()`. With 
+method `getScaled()` we can test if a spectrun has been scaled.
 
 ```{r}
-e_irrad(setNormalized(leds.mspct$UV395))
+getScaled(my.spct)
+setScaled(my.spct)
+getScaled(my.spct)
+```
+
+If for some obscure reason we want to simply "pretend" that the spectral data
+have not been normalized, we can permanently override the attribute on a copy 
+of the data. Most of the time this is a very bad idea!
+
+```{r}
+my.UV395 <- leds.mspct$UV395
+setNormalized(my.UV395)
+e_irrad(my.UV395)
 ```
 As mentioned above, ratios can be calculated directly as they are not affected
 by normalization.

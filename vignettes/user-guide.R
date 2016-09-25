@@ -33,7 +33,14 @@ my.spct <- fscale(leds.mspct$UV395,
 e_irrad(my.spct, waveband(c(315,400)))
 
 ## ------------------------------------------------------------------------
-e_irrad(setNormalized(leds.mspct$UV395))
+getScaled(my.spct)
+setScaled(my.spct)
+getScaled(my.spct)
+
+## ------------------------------------------------------------------------
+my.UV395 <- leds.mspct$UV395
+setNormalized(my.UV395)
+e_irrad(my.UV395)
 
 ## ------------------------------------------------------------------------
 q_ratio(leds.mspct$UV395, UVB(), UVA())
