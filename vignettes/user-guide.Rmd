@@ -115,6 +115,7 @@ my.UV395 <- leds.mspct$UV395
 setNormalized(my.UV395)
 e_irrad(my.UV395)
 ```
+
 As mentioned above, ratios can be calculated directly as they are not affected
 by normalization.
 
@@ -134,9 +135,10 @@ head(as.data.frame(leds.mspct$UV395))
 Of course `attach` and `with` also work as expected.
 ```{r}
 attach(leds.mspct)
-q_irrad(setNormalized(UV395)) * 1e6
+q_ratio(UV395, UVB(), UVA())
 detach(leds.mspct)
 ```
+
 ```{r}
 attach(leds.mspct)
 with(UV395, max(w.length))
@@ -144,7 +146,7 @@ detach(leds.mspct)
 ```
 
 ```{r}
-with(leds.mspct, q_irrad(setNormalized(UV395)) * 1e6)
+with(leds.mspct, q_ratio(UV395, UVB(), UVA()))
 ```
 
 

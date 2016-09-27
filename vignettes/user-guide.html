@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2016-09-24" />
+<meta name="date" content="2016-09-25" />
 
 <title>photobiologyLEDs 0.4.1.9001 User Guide</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore"><code>photobiologyLEDs</code> 0.4.1.9001<br>User Guide</h1>
 <h4 class="author"><em>Pedro J. Aphalo</em></h4>
-<h4 class="date"><em>2016-09-24</em></h4>
+<h4 class="date"><em>2016-09-25</em></h4>
 
 
 
@@ -371,7 +371,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## [1] 0.7190004
 ## 
 ## $f
-## [1] &quot;a user supplied R function&quot;</code></pre>
+## [1] &quot;a user supplied R function&quot;
+## 
+## $range
+## [1] 315 400
+## 
+## $target
+## [1] 10</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setScaled</span>(my.spct)
 <span class="kw">getScaled</span>(my.spct)</code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
@@ -405,25 +411,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## 6   252.42         0</code></pre>
 <p>Of course <code>attach</code> and <code>with</code> also work as expected.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attach</span>(leds.mspct)
-<span class="kw">q_irrad</span>(<span class="kw">setNormalized</span>(UV395)) *<span class="st"> </span><span class="fl">1e6</span></code></pre></div>
-<pre><code>##   Total 
-## 52.7623 
-## attr(,&quot;time.unit&quot;)
-## [1] &quot;second&quot;
+<span class="kw">q_ratio</span>(UV395, <span class="kw">UVB</span>(), <span class="kw">UVA</span>())</code></pre></div>
+<pre><code>##  UVB.ISO: UVA.ISO(q:q) 
+##                      0 
 ## attr(,&quot;radiation.unit&quot;)
-## [1] &quot;photon irradiance total&quot;</code></pre>
+## [1] &quot;q:q ratio&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">detach</span>(leds.mspct)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attach</span>(leds.mspct)
 <span class="kw">with</span>(UV395, <span class="kw">max</span>(w.length))</code></pre></div>
 <pre><code>## [1] 899.78</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">detach</span>(leds.mspct)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(leds.mspct, <span class="kw">q_irrad</span>(<span class="kw">setNormalized</span>(UV395)) *<span class="st"> </span><span class="fl">1e6</span>)</code></pre></div>
-<pre><code>##   Total 
-## 52.7623 
-## attr(,&quot;time.unit&quot;)
-## [1] &quot;second&quot;
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(leds.mspct, <span class="kw">q_ratio</span>(UV395, <span class="kw">UVB</span>(), <span class="kw">UVA</span>()))</code></pre></div>
+<pre><code>##  UVB.ISO: UVA.ISO(q:q) 
+##                      0 
 ## attr(,&quot;radiation.unit&quot;)
-## [1] &quot;photon irradiance total&quot;</code></pre>
+## [1] &quot;q:q ratio&quot;</code></pre>
 </div>
 
 

@@ -50,7 +50,7 @@ head(as.data.frame(leds.mspct$UV395))
 
 ## ------------------------------------------------------------------------
 attach(leds.mspct)
-q_irrad(setNormalized(UV395)) * 1e6
+q_ratio(UV395, UVB(), UVA())
 detach(leds.mspct)
 
 ## ------------------------------------------------------------------------
@@ -59,5 +59,5 @@ with(UV395, max(w.length))
 detach(leds.mspct)
 
 ## ------------------------------------------------------------------------
-with(leds.mspct, q_irrad(setNormalized(UV395)) * 1e6)
+with(leds.mspct, q_ratio(UV395, UVB(), UVA()))
 

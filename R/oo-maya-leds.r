@@ -23,6 +23,7 @@
 #' @format A vector of character strings.
 #'
 #' @examples
+#' oo_maya_leds
 #' leds.mspct[oo_maya_leds]
 #' leds.mspct[["white"]]
 #' leds.mspct$white

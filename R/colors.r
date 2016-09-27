@@ -14,10 +14,17 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
-#' @aliases amber_leds blue_leds green_leds red_leds
+#' @aliases amber_leds blue_leds green_leds red_leds white_leds multichannel_leds
 #' 
 #' @examples 
+#' uv_leds
+#' blue_leds
+#' green_leds
 #' amber_leds
+#' red_leds
+#' white_leds
+#' multichannel_leds
+#' # select LEDs emitting in the amber, yellow, orange region
 #' leds.mspct[amber_leds]
 #' 
 "uv_leds"
