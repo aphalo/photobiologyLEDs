@@ -12,9 +12,9 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2016-09-25" />
+<meta name="date" content="2016-10-22" />
 
-<title>photobiologyLEDs 0.4.1.9001 User Guide</title>
+<title>photobiologyLEDs 0.4.2 User Guide</title>
 
 
 
@@ -68,9 +68,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 
-<h1 class="title toc-ignore"><code>photobiologyLEDs</code> 0.4.1.9001<br>User Guide</h1>
+<h1 class="title toc-ignore"><code>photobiologyLEDs</code> 0.4.2<br>User Guide</h1>
 <h4 class="author"><em>Pedro J. Aphalo</em></h4>
-<h4 class="date"><em>2016-09-25</em></h4>
+<h4 class="date"><em>2016-10-22</em></h4>
 
 
 
@@ -90,14 +90,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##  [4] &quot;LED740&quot;          &quot;UV395&quot;           &quot;white&quot;          
 ##  [7] &quot;XSL365&quot;          &quot;XSL370&quot;          &quot;XSL375&quot;         
 ## [10] &quot;UVMAX340&quot;        &quot;UVMAX305&quot;        &quot;TY_UV310nm&quot;     
-## [13] &quot;white&quot;           &quot;Q36_4000K&quot;       &quot;G_P30R140A1_XT&quot; 
-## [16] &quot;HPR40E_48K30BG&quot;  &quot;NHXRGB090_R&quot;     &quot;NHXRGB090_G&quot;    
-## [19] &quot;NHXRGB090_B&quot;     &quot;NHXRGB090&quot;       &quot;B5_436_30D&quot;     
-## [22] &quot;FR_OLD&quot;          &quot;HLMB_CB30&quot;       &quot;HLMB_CD31_take2&quot;
-## [25] &quot;HLMP_CB31&quot;       &quot;HLMP_CM30&quot;       &quot;HLMP_CM31&quot;      
-## [28] &quot;HLMP_DJ32&quot;       &quot;HLMP_DL32&quot;       &quot;LED435_66_60&quot;   
-## [31] &quot;LED740_01AV&quot;     &quot;LY5436&quot;          &quot;QDDH66002&quot;      
-## [34] &quot;QDDH68002&quot;       &quot;QDDH70002&quot;       &quot;QDDH73502&quot;</code></pre>
+## [13] &quot;white&quot;           &quot;Q36_4000K&quot;       &quot;LZ1_10DB00&quot;     
+## [16] &quot;LZ1_10UA00_00U8&quot; &quot;LZ1_10UA00_00U4&quot; &quot;LZ1_10UV00&quot;     
+## [19] &quot;LZ1_10R302&quot;      &quot;G_P30R140A1_XT&quot;  &quot;weili430nm&quot;     
+## [22] &quot;weili540nm&quot;      &quot;weili665nm&quot;      &quot;weili740nm&quot;     
+## [25] &quot;HPR40E_48K30BG&quot;  &quot;NHXRGB090_R&quot;     &quot;NHXRGB090_G&quot;    
+## [28] &quot;NHXRGB090_B&quot;     &quot;NHXRGB090&quot;       &quot;B5_436_30D&quot;     
+## [31] &quot;FR_OLD&quot;          &quot;HLMB_CB30&quot;       &quot;HLMB_CD31_take2&quot;
+## [34] &quot;HLMP_CB31&quot;       &quot;HLMP_CM30&quot;       &quot;HLMP_CM31&quot;      
+## [37] &quot;HLMP_DJ32&quot;       &quot;HLMP_DL32&quot;       &quot;LED435_66_60&quot;   
+## [40] &quot;LED740_01AV&quot;     &quot;LY5436&quot;          &quot;QDDH66002&quot;      
+## [43] &quot;QDDH68002&quot;       &quot;QDDH70002&quot;       &quot;QDDH73502&quot;</code></pre>
 <p>We can use a character string as index to extract an individual <code>source_spct</code> object.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">leds.mspct$UV395</code></pre></div>
 <pre><code>## Object: source_spct [1,425 x 2]
