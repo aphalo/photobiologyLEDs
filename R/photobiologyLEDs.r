@@ -1,5 +1,5 @@
 #' @details
-#' This package contains emission spectra for different types of LEDs.
+#' Data for emission spectra of different types of LEDs.
 #'
 #' The package contains one collection of spectra for different leds all of them
 #' measured at room temperature and a series of vectors to be used as indexes to

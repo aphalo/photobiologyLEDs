@@ -1,6 +1,6 @@
 Package: photobiologyLEDs
 Type: Package
-Title: Spectral data for light-emitting-diodes
+Title: Spectral Data for Light-Emitting-Diodes
 Version: 0.4.2
 Date: 2016-10-22
 Authors@R:
@@ -9,7 +9,7 @@ Authors@R:
     person("Shafiuddin", "Ahmed", role = "ctb")
     )
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
-Description: This package provides data for some frequently used light emitting
+Description: Spectral emission data for some frequently used light emitting
     diodes.
 License: GPL (>= 3)
 VignetteBuilder: knitr
