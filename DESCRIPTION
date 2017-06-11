@@ -1,8 +1,8 @@
 Package: photobiologyLEDs
 Type: Package
 Title: Spectral Data for Light-Emitting-Diodes
-Version: 0.4.2.9000
-Date: 2016-12-18
+Version: 0.4.2.9001
+Date: 2017-06-11
 Authors@R:
    c(
     person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre")),
@@ -14,13 +14,13 @@ Description: Spectral emission data for some frequently used light emitting
 License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
-    R (>= 3.2.0),
-    photobiology (>= 0.9.11)
+    R (>= 3.3.0),
+    photobiology (>= 0.9.15)
 Suggests:
-    knitr (>= 1.14),
-    photobiologyWavebands (>= 0.4.1),
-    ggspectra (>= 0.1.10),
-    ggplot2 (>= 2.1.0)
+    knitr (>= 1.16),
+    photobiologyWavebands (>= 0.4.2),
+    ggspectra (>= 0.2.1),
+    ggplot2 (>= 2.2.1)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true
@@ -28,4 +28,4 @@ Encoding: UTF-8
 URL: http://www.r4photobiology.info, https://bitbucket.org/aphalo/photobiologyleds
 BugReports: https://bitbucket.org/aphalo/photobiologyleds/issues
 Roxygen: list(wrap = FALSE)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

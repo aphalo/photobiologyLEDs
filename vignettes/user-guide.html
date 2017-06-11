@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -12,9 +12,9 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2016-10-22" />
+<meta name="date" content="2017-06-11" />
 
-<title>photobiologyLEDs 0.4.2 User Guide</title>
+<title>photobiologyLEDs 0.4.2.9001 User Guide</title>
 
 
 
@@ -68,13 +68,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 
-<h1 class="title toc-ignore"><code>photobiologyLEDs</code> 0.4.2<br>User Guide</h1>
+<h1 class="title toc-ignore"><code>photobiologyLEDs</code> 0.4.2.9001<br>User Guide</h1>
 <h4 class="author"><em>Pedro J. Aphalo</em></h4>
-<h4 class="date"><em>2016-10-22</em></h4>
+<h4 class="date"><em>2017-06-11</em></h4>
 
 
+<div id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#accessing-individual-spectra">Accessing individual spectra</a></li>
+<li><a href="#accessing-subsets-of-spectra">Accessing subsets of spectra</a></li>
+<li><a href="#calculating-summaries-from-the-normalized-data">Calculating summaries from the normalized data</a></li>
+<li><a href="#using-the-data-in-other-contexts">Using the data in other contexts</a></li>
+</ul>
+</div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::opts_chunk$<span class="kw">set</span>(<span class="dt">fig.width=</span><span class="dv">8</span>, <span class="dt">fig.height=</span><span class="dv">4</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">fig.width=</span><span class="dv">8</span>, <span class="dt">fig.height=</span><span class="dv">4</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(photobiology)
 <span class="kw">library</span>(photobiologyWavebands)
 <span class="kw">library</span>(photobiologyLEDs)</code></pre></div>
@@ -102,24 +111,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## [40] &quot;LED740_01AV&quot;     &quot;LY5436&quot;          &quot;QDDH66002&quot;      
 ## [43] &quot;QDDH68002&quot;       &quot;QDDH70002&quot;       &quot;QDDH73502&quot;</code></pre>
 <p>We can use a character string as index to extract an individual <code>source_spct</code> object.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">leds.mspct$UV395</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">leds.mspct<span class="op">$</span>UV395</code></pre></div>
 <pre><code>## Object: source_spct [1,425 x 2]
 ## Wavelength range 250.05 to 899.78 nm, step 0.43 to 0.48 nm 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 391.03 nm 
 ## 
-## # A tibble: 1,425 × 2
+## # A tibble: 1,425 x 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
-## 1    250.05         0
-## 2    250.52         0
-## 3    251.00         0
-## 4    251.47         0
-## 5    251.95         0
-## 6    252.42         0
-## 7    252.90         0
-## 8    253.37         0
-## 9    253.85         0
+##  1   250.05         0
+##  2   250.52         0
+##  3   251.00         0
+##  4   251.47         0
+##  5   251.95         0
+##  6   252.42         0
+##  7   252.90         0
+##  8   253.37         0
+##  9   253.85         0
 ## 10   254.32         0
 ## # ... with 1,415 more rows</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">leds.mspct[[<span class="st">&quot;UV395&quot;</span>]]</code></pre></div>
@@ -128,18 +137,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## Time unit 1s
 ## Spectral data normalized to 1 at 391.03 nm 
 ## 
-## # A tibble: 1,425 × 2
+## # A tibble: 1,425 x 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
-## 1    250.05         0
-## 2    250.52         0
-## 3    251.00         0
-## 4    251.47         0
-## 5    251.95         0
-## 6    252.42         0
-## 7    252.90         0
-## 8    253.37         0
-## 9    253.85         0
+##  1   250.05         0
+##  2   250.52         0
+##  3   251.00         0
+##  4   251.47         0
+##  5   251.95         0
+##  6   252.42         0
+##  7   252.90         0
+##  8   253.37         0
+##  9   253.85         0
 ## 10   254.32         0
 ## # ... with 1,415 more rows</code></pre>
 <p>Be aware that according to R’s rules, using single square brackets will return a <code>source_mspct</code> object possibly of length one. This statement is not equivalent to the one in the chunk immediately above.</p>
@@ -151,18 +160,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## Time unit 1s
 ## Spectral data normalized to 1 at 391.03 nm 
 ## 
-## # A tibble: 1,425 × 2
+## # A tibble: 1,425 x 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
-## 1    250.05         0
-## 2    250.52         0
-## 3    251.00         0
-## 4    251.47         0
-## 5    251.95         0
-## 6    252.42         0
-## 7    252.90         0
-## 8    253.37         0
-## 9    253.85         0
+##  1   250.05         0
+##  2   250.52         0
+##  3   251.00         0
+##  4   251.47         0
+##  5   251.95         0
+##  6   252.42         0
+##  7   252.90         0
+##  8   253.37         0
+##  9   253.85         0
 ## 10   254.32         0
 ## # ... with 1,415 more rows
 ## 
@@ -179,18 +188,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## Time unit 1s
 ## Spectral data normalized to 1 at 643.08 nm 
 ## 
-## # A tibble: 1,445 × 2
+## # A tibble: 1,445 x 2
 ##    w.length s.e.irrad
-## *     &lt;dbl&gt;     &lt;dbl&gt;
-## 1    250.00         0
-## 2    250.01         0
-## 3    250.48         0
-## 4    250.95         0
-## 5    251.42         0
-## 6    251.89         0
-## 7    252.36         0
-## 8    252.83         0
-## 9    253.30         0
+##  *    &lt;dbl&gt;     &lt;dbl&gt;
+##  1   250.00         0
+##  2   250.01         0
+##  3   250.48         0
+##  4   250.95         0
+##  5   251.42         0
+##  6   251.89         0
+##  7   252.36         0
+##  8   252.83         0
+##  9   253.30         0
 ## 10   253.77         0
 ## # ... with 1,435 more rows
 ## --- Member: NHXRGB090_G ---
@@ -199,18 +208,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## Time unit 1s
 ## Spectral data normalized to 1 at 515.52 nm 
 ## 
-## # A tibble: 1,445 × 2
+## # A tibble: 1,445 x 2
 ##    w.length s.e.irrad
-## *     &lt;dbl&gt;     &lt;dbl&gt;
-## 1    250.00         0
-## 2    250.01         0
-## 3    250.48         0
-## 4    250.95         0
-## 5    251.42         0
-## 6    251.89         0
-## 7    252.36         0
-## 8    252.83         0
-## 9    253.30         0
+##  *    &lt;dbl&gt;     &lt;dbl&gt;
+##  1   250.00         0
+##  2   250.01         0
+##  3   250.48         0
+##  4   250.95         0
+##  5   251.42         0
+##  6   251.89         0
+##  7   252.36         0
+##  8   252.83         0
+##  9   253.30         0
 ## 10   253.77         0
 ## # ... with 1,435 more rows
 ## --- Member: NHXRGB090_B ---
@@ -219,18 +228,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## Time unit 1s
 ## Spectral data normalized to 1 at 462.59 nm 
 ## 
-## # A tibble: 1,445 × 2
+## # A tibble: 1,445 x 2
 ##    w.length s.e.irrad
-## *     &lt;dbl&gt;     &lt;dbl&gt;
-## 1    250.00         0
-## 2    250.01         0
-## 3    250.48         0
-## 4    250.95         0
-## 5    251.42         0
-## 6    251.89         0
-## 7    252.36         0
-## 8    252.83         0
-## 9    253.30         0
+##  *    &lt;dbl&gt;     &lt;dbl&gt;
+##  1   250.00         0
+##  2   250.01         0
+##  3   250.48         0
+##  4   250.95         0
+##  5   251.42         0
+##  6   251.89         0
+##  7   252.36         0
+##  8   252.83         0
+##  9   253.30         0
 ## 10   253.77         0
 ## # ... with 1,435 more rows
 ## --- Member: NHXRGB090 ---
@@ -240,18 +249,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## Time unit 1s
 ## Spectral data normalized to 1 at TRUE 
 ## 
-## # A tibble: 4,335 × 3
+## # A tibble: 4,335 x 3
 ##    w.length s.e.irrad channel
 ##       &lt;dbl&gt;     &lt;dbl&gt;  &lt;fctr&gt;
-## 1    250.00         0       R
-## 2    250.01         0       R
-## 3    250.48         0       R
-## 4    250.95         0       R
-## 5    251.42         0       R
-## 6    251.89         0       R
-## 7    252.36         0       R
-## 8    252.83         0       R
-## 9    253.30         0       R
+##  1   250.00         0       R
+##  2   250.01         0       R
+##  3   250.48         0       R
+##  4   250.95         0       R
+##  5   251.42         0       R
+##  6   251.89         0       R
+##  7   252.36         0       R
+##  8   252.83         0       R
+##  9   253.30         0       R
 ## 10   253.77         0       R
 ## # ... with 4,325 more rows
 ## 
@@ -262,89 +271,89 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## --- Member: QDDH66002 ---
 ## Object: source_spct [1,445 x 2]
 ## Wavelength range 250 to 900 nm, step 0.01 to 0.47 nm 
-## Label: LED, type  QDDH66002
-## Measured on 2016-07-05 10:00:00 UTC
+## Label: LED, type  QDDH66002 
+## Measured on 2016-07-05 10:00:00 UTC 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 652.01 nm 
 ## 
-## # A tibble: 1,445 × 2
+## # A tibble: 1,445 x 2
 ##    w.length   s.e.irrad
-## *     &lt;dbl&gt;       &lt;dbl&gt;
-## 1    250.00 0.000000000
-## 2    250.01 0.000000000
-## 3    250.48 0.002665560
-## 4    250.95 0.001561842
-## 5    251.42 0.000000000
-## 6    251.89 0.000000000
-## 7    252.36 0.010471852
-## 8    252.83 0.000000000
-## 9    253.30 0.000000000
+##  *    &lt;dbl&gt;       &lt;dbl&gt;
+##  1   250.00 0.000000000
+##  2   250.01 0.000000000
+##  3   250.48 0.002665560
+##  4   250.95 0.001561842
+##  5   251.42 0.000000000
+##  6   251.89 0.000000000
+##  7   252.36 0.010471852
+##  8   252.83 0.000000000
+##  9   253.30 0.000000000
 ## 10   253.77 0.000000000
 ## # ... with 1,435 more rows
 ## --- Member: QDDH68002 ---
 ## Object: source_spct [1,445 x 2]
 ## Wavelength range 250 to 900 nm, step 0.01 to 0.47 nm 
-## Label: LED, type  QDDH68002
-## Measured on 2016-07-05 10:00:00 UTC
+## Label: LED, type  QDDH68002 
+## Measured on 2016-07-05 10:00:00 UTC 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 673.4 nm 
 ## 
-## # A tibble: 1,445 × 2
+## # A tibble: 1,445 x 2
 ##    w.length   s.e.irrad
-## *     &lt;dbl&gt;       &lt;dbl&gt;
-## 1    250.00 0.000000000
-## 2    250.01 0.000000000
-## 3    250.48 0.000000000
-## 4    250.95 0.006025027
-## 5    251.42 0.000000000
-## 6    251.89 0.000000000
-## 7    252.36 0.003916701
-## 8    252.83 0.000000000
-## 9    253.30 0.000000000
+##  *    &lt;dbl&gt;       &lt;dbl&gt;
+##  1   250.00 0.000000000
+##  2   250.01 0.000000000
+##  3   250.48 0.000000000
+##  4   250.95 0.006025027
+##  5   251.42 0.000000000
+##  6   251.89 0.000000000
+##  7   252.36 0.003916701
+##  8   252.83 0.000000000
+##  9   253.30 0.000000000
 ## 10   253.77 0.000000000
 ## # ... with 1,435 more rows
 ## --- Member: QDDH70002 ---
 ## Object: source_spct [1,445 x 2]
 ## Wavelength range 250 to 900 nm, step 0.01 to 0.47 nm 
-## Label: LED, type  QDDH70002
-## Measured on 2016-07-05 10:00:00 UTC
+## Label: LED, type  QDDH70002 
+## Measured on 2016-07-05 10:00:00 UTC 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 707.13 nm 
 ## 
-## # A tibble: 1,445 × 2
+## # A tibble: 1,445 x 2
 ##    w.length s.e.irrad
-## *     &lt;dbl&gt;     &lt;dbl&gt;
-## 1    250.00         0
-## 2    250.01         0
-## 3    250.48         0
-## 4    250.95         0
-## 5    251.42         0
-## 6    251.89         0
-## 7    252.36         0
-## 8    252.83         0
-## 9    253.30         0
+##  *    &lt;dbl&gt;     &lt;dbl&gt;
+##  1   250.00         0
+##  2   250.01         0
+##  3   250.48         0
+##  4   250.95         0
+##  5   251.42         0
+##  6   251.89         0
+##  7   252.36         0
+##  8   252.83         0
+##  9   253.30         0
 ## 10   253.77         0
 ## # ... with 1,435 more rows
 ## --- Member: QDDH73502 ---
 ## Object: source_spct [1,445 x 2]
 ## Wavelength range 250 to 900 nm, step 0.01 to 0.47 nm 
-## Label: LED, type  QDDH73502
-## Measured on 2016-07-05 10:00:00 UTC
+## Label: LED, type  QDDH73502 
+## Measured on 2016-07-05 10:00:00 UTC 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 746.42 nm 
 ## 
-## # A tibble: 1,445 × 2
+## # A tibble: 1,445 x 2
 ##    w.length   s.e.irrad
-## *     &lt;dbl&gt;       &lt;dbl&gt;
-## 1    250.00 0.008072251
-## 2    250.01 0.008247735
-## 3    250.48 0.000000000
-## 4    250.95 0.000000000
-## 5    251.42 0.000000000
-## 6    251.89 0.000000000
-## 7    252.36 0.000000000
-## 8    252.83 0.000000000
-## 9    253.30 0.000000000
+##  *    &lt;dbl&gt;       &lt;dbl&gt;
+##  1   250.00 0.008072251
+##  2   250.01 0.008247735
+##  3   250.48 0.000000000
+##  4   250.95 0.000000000
+##  5   251.42 0.000000000
+##  6   251.89 0.000000000
+##  7   252.36 0.000000000
+##  8   252.83 0.000000000
+##  9   253.30 0.000000000
 ## 10   253.77 0.000000000
 ## # ... with 1,435 more rows
 ## 
@@ -354,7 +363,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2>Calculating summaries from the normalized data</h2>
 <p>The spectra are normalized, and consequently, several summaries expressed in absolute units are undefined, and trigger errors. Summaries like ratios which are not affected by normalization are allowed and valid. The data have been normalized as the measuring conditions used are not all the same, and in many cases not well characterized (e.g. distance to nearby reflecting walls, or exact alignment of the spectrometer input optics with respect to light sources).</p>
 <p>What we will do in this section is to rescale the spectral data so that after conversion a given target value for a summary quantity will be true. As an example, we will rescale one spectrum so that it yields an energy irradiance of 100 W m-2 for the range 315 to 400 nm.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.spct &lt;-<span class="st"> </span><span class="kw">fscale</span>(leds.mspct$UV395,
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.spct &lt;-<span class="st"> </span><span class="kw">fscale</span>(leds.mspct<span class="op">$</span>UV395,
                   <span class="dt">range =</span> <span class="kw">c</span>(<span class="dv">315</span>, <span class="dv">400</span>),
                   e_irrad,
                   <span class="dt">target =</span> <span class="dv">10</span>
@@ -385,7 +394,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">getScaled</span>(my.spct)</code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>If for some obscure reason we want to simply “pretend” that the spectral data have not been normalized, we can permanently override the attribute on a copy of the data. Most of the time this is a very bad idea!</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.UV395 &lt;-<span class="st"> </span>leds.mspct$UV395
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.UV395 &lt;-<span class="st"> </span>leds.mspct<span class="op">$</span>UV395
 <span class="kw">setNormalized</span>(my.UV395)
 <span class="kw">e_irrad</span>(my.UV395)</code></pre></div>
 <pre><code>##    Total 
@@ -395,7 +404,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;energy irradiance total&quot;</code></pre>
 <p>As mentioned above, ratios can be calculated directly as they are not affected by normalization.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">q_ratio</span>(leds.mspct$UV395, <span class="kw">UVB</span>(), <span class="kw">UVA</span>())</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">q_ratio</span>(leds.mspct<span class="op">$</span>UV395, <span class="kw">UVB</span>(), <span class="kw">UVA</span>())</code></pre></div>
 <pre><code>##  UVB.ISO: UVA.ISO(q:q) 
 ##                      0 
 ## attr(,&quot;radiation.unit&quot;)
@@ -404,7 +413,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="using-the-data-in-other-contexts" class="section level2">
 <h2>Using the data in other contexts</h2>
 <p>As <code>source_spct</code> is a class derived from <code>list</code>, and <code>source_spct</code> is derived from <code>tibble::tible</code> which is a compatible reimplementation of <code>data.frame</code> the data can be used very easily with any R function.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">as.data.frame</span>(leds.mspct$UV395))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">as.data.frame</span>(leds.mspct<span class="op">$</span>UV395))</code></pre></div>
 <pre><code>##   w.length s.e.irrad
 ## 1   250.05         0
 ## 2   250.52         0
@@ -438,7 +447,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
