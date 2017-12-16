@@ -63,7 +63,7 @@ osram <- "LY5436"
 norlux <- c("NHXRGB090_R", "NHXRGB090_G", "NHXRGB090_B", "NHXRGB090")
 shenzhen_weili <- leds_global <- 
   c("G_P30R140A1_XT", "weili430nm", "weili540nm", "weili665nm", "weili740nm")
-huey_jann <- "HPR40E-48K30BG"
+huey_jann <- "HPR40E_48K30BG"
 led_engin <- c("LZ1_10DB00", "LZ1_10UA00_00U8", "LZ1_10UA00_00U4", 
                "LZ1_10UV00", "LZ1_10R302")
 

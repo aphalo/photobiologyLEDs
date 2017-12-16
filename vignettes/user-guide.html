@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2017-06-11" />
+<meta name="date" content="2017-07-05" />
 
 <title>photobiologyLEDs 0.4.2.9001 User Guide</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore"><code>photobiologyLEDs</code> 0.4.2.9001<br>User Guide</h1>
 <h4 class="author"><em>Pedro J. Aphalo</em></h4>
-<h4 class="date"><em>2017-06-11</em></h4>
+<h4 class="date"><em>2017-07-05</em></h4>
 
 
 <div id="TOC">
@@ -246,6 +246,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## Object: source_spct [4,335 x 3]
 ## containing 3 spectra in long form
 ## Wavelength range 250 to 900 nm, step 0.01 to 0.47 nm 
+## R measured at NA N, NA E
+## G measured at NA N, NA E
+## B measured at NA N, NA E 
 ## Time unit 1s
 ## Spectral data normalized to 1 at TRUE 
 ## 
@@ -265,7 +268,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## # ... with 4,325 more rows
 ## 
 ## --- END ---</code></pre>
-<p>And below we use a computed one. In this case we extract the member spectra with names containing the string “osram”.</p>
+<p>And below we use a computed one. In this case we extract the member spectra with names containing the string “QDDH”.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">leds.mspct[<span class="kw">grep</span>(<span class="st">&quot;QDDH&quot;</span>, <span class="kw">names</span>(leds.mspct))]</code></pre></div>
 <pre><code>## Object: source_mspct [4 x 1]
 ## --- Member: QDDH66002 ---
@@ -377,7 +380,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;energy irradiance total&quot;</code></pre>
-<p>If we want to treat the rescaled spectral data, as if they were true readings with no scaling we can reset the attribute with method <code>setScaled()</code>. With method <code>getScaled()</code> we can test if a spectrun has been scaled.</p>
+<p>If we want to treat the rescaled spectral data, as if they were true readings with no scaling we can reset the attribute with method <code>setScaled()</code>. With method <code>getScaled()</code> we can test if a spectrum has been scaled.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getScaled</span>(my.spct)</code></pre></div>
 <pre><code>## $multiplier
 ## [1] 0.7190004

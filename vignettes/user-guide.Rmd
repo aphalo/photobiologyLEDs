@@ -70,11 +70,12 @@ leds.mspct[norlux]
 ```
 
 And below we use a computed one. In this case we extract the member spectra
-with names containing the string "osram".
+with names containing the string "QDDH".
 
 ```{r}
 leds.mspct[grep("QDDH", names(leds.mspct))]
 ```
+
 ## Calculating summaries from the normalized data
 
 The spectra are normalized, and consequently, several summaries expressed in
@@ -100,7 +101,7 @@ e_irrad(my.spct, waveband(c(315,400)))
 
 If we want to treat the rescaled spectral data, as if they were true readings
 with no scaling we can reset the attribute with method `setScaled()`. With 
-method `getScaled()` we can test if a spectrun has been scaled.
+method `getScaled()` we can test if a spectrum has been scaled.
 
 ```{r}
 getScaled(my.spct)

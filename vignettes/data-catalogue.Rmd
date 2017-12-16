@@ -15,7 +15,6 @@ vignette: >
 knitr::opts_chunk$set(fig.width=8, fig.height=4)
 ```
 
-
 ## Introduction
 
 This is a catalogue of all data sets included in the package. You will find below plots of the emission spectra of different lamps. All spectra are normalized to an area of one at the peak of the curve.

@@ -2,6 +2,7 @@ photobiologyLEDs 0.4.3
 ======================
 
 Add data for additional LEDs, and rebuild all data objects.
+Fix minor bug.
 
 photobiologyLEDs 0.4.2
 ======================
