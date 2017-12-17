@@ -1,9 +1,9 @@
 #' @details
 #' Data for emission spectra of different types of LEDs.
 #'
-#' The package contains one collection of spectra for different leds all of them
+#' The package contains one collection of spectra for different LEDSs all of them
 #' measured at room temperature and a series of vectors to be used as indexes to
-#' extract different subsets of spectra. These spectral data are normalized to
+#' extract different subsets of spectra. In many cases spectral data are normalized to
 #' spectral energy irradiance equal to one at the wavelength of maximum spectral
 #' energy irradiance (strongest emission peak).
 #'
@@ -26,8 +26,29 @@
 #' @examples
 #' library(photobiology)
 #' library(photobiologyWavebands)
+#' library(ggspectra)
+#' 
 #' names(leds.mspct)
+#' 
 #' q_ratio(leds.mspct$white, Blue(), Red())
+#' 
+#' peaks(leds.mspct$white, span = 101)
+#' 
+#' plot(leds.mspct$white)
+#' 
 #' q_ratio(leds.mspct$Q36_4000K, Blue(), Red())
-#'
+#' 
+#' plot(leds.mspct$Q36_4000K)
+#' 
+#' q_ratio(leds.mspct$NS6L183AT_H1, Blue(), Red())
+#' 
+#' plot(leds.mspct$NS6L183AT_H1)
+#' 
+#' plot(leds.mspct$NS6L183AT_H1, unit.out = "photon")
+#' 
+#' plot(leds.mspct$NS6L183AT_H1, 
+#'      range = VIS(), 
+#'      w.band = VIS_bands(),
+#'      span = 101)
+#' 
 "_PACKAGE"

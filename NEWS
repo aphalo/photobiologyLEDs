@@ -1,14 +1,15 @@
 photobiologyLEDs 0.4.3
 ======================
 
-Add data for additional LEDs, and rebuild all data objects.
-Fix minor bug.
+Add data for additional LED types, and rebuild all data objects.
+Fix minor bug. 
+Revise User Guide and remove the Catalogue of data vignette.
 
 photobiologyLEDs 0.4.2
 ======================
 
 Store spectral data in a single collection of spectra.
-Provide vectors of names to extract non-ortogonal subsets. At the moment by
+Provide vectors of names to extract non-orthogonal subsets. At the moment by
 color and by manufacturer.
 Add spectral data for additional LEDs.
 Convert vignette to Rmarkdown. Add User Guide.

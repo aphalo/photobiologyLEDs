@@ -1,14 +1,8 @@
 #' Spectral data for LEDs array supplied by Osram
 #' 
-#' Datasets containing the wavelengths and tabulated values spectral emittance 
-#' for the NHXRGB0905005 light emitting diodes (LEDs) arrays from Osram. 
+#' Names of datasets containing the wavelengths and tabulated values spectral emittance 
+#' for light emitting diodes (LEDs) from Osram. 
 #' Data are normalized to one at the wavelength of maximum emission.
-#' 
-#' The variables are as follows:
-#' \itemize{
-#'   \item w.length (nm)  
-#'   \item s.e.irrad (W m-2 nm-1)
-#' }
 #' 
 #' @docType data
 #' @keywords datasets
@@ -18,8 +12,12 @@
 #' osram
 #' leds.mspct[osram]
 #' 
-#' @note 
-#' Current trade name is Osram Opto Semiconductors
-#' \url{http://www.osram-os.com/}
+#' @note Current trade name is Osram Opto Semiconductors
+#' 
+#' @references \url{http:/www.osram-os.com/}
+#' 
+#' @seealso \code{\link{leds.mspct}}
+#' 
+#' @family manufacturers
 #' 
 "osram"

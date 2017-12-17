@@ -19,12 +19,42 @@ knitr::opts_chunk$set(fig.width=8, fig.height=4)
 library(photobiology)
 library(photobiologyWavebands)
 library(photobiologyLEDs)
+library(ggplot2)
+library(ggspectra)
 ```
 
 ## Introduction
 
 In this very brief User Guide we describe how to re-scale the normalized
 spectra, and how to access individual spectra or subsets of spectra.
+
+## The data
+
+The spectral data have been acquired mostly with one instrument, an array
+spectrometer. However, some spectra haver been measured with another 
+spectrometers that has lower wavelength resolution. This difference in
+resolution and slit function can give, for the same LED, measured peaks 
+of slightly different width. This is an inevitable artefact of spectral 
+measurements, but as LEDs have relatively wide peaks the distortion is small.
+With well calibrated spectrometers, the area under a peak should not be
+affected by the difference in wavelength resolution.
+
+All the spectral data in this package are stored in a single R object, a
+collection of spectra of class `source_spct`. Individual or subsets of
+spectra can be retrieved by _name_. The package includes also several
+`character` vectors of _names_, each one containing names for LEDs of a 
+given _color_ or from a given _manufacturer_. These are listed in the 
+help index for the package. The _names_ used are in most cases the codes
+used by the manufacturers for the given type. Any dashes in these codes
+have been replaced by underscores.
+
+```{r}
+blue_leds
+```
+
+```{r}
+led_engin
+```
 
 ## Accessing individual spectra
 
@@ -51,12 +81,14 @@ leds.mspct[["UV395"]]
 ```
 
 Be aware that according to R's rules, using single square brackets will return
-a `source_mspct` object possibly of length one. This statement is not equivalent
-to the one in the chunk immediately above.
+a `source_mspct` object, a collection of spectra, possibly of length one. This 
+statement is not equivalent to the one in the chunk immediately above.
 
 ```{r}
 leds.mspct["UV395"]
 ```
+
+Of course, with this syntax it is possible to use a vector of member names.
 
 ## Accessing subsets of spectra
 
@@ -76,19 +108,55 @@ with names containing the string "QDDH".
 leds.mspct[grep("QDDH", names(leds.mspct))]
 ```
 
+## Querying metadata
+
+If package 'photobiology' is loaded then the specialised `ptint()` method will be
+used and a summary of the metadata will be included in the header of the
+printout.
+
+```{r}
+leds.mspct$LZ1_10R302
+```
+
+```{r}
+getWhatMeasured(leds.mspct$LZ1_10R302)
+getWhenMeasured(leds.mspct$LZ1_10R302)
+```
+
+```{r}
+getInstrDesc(leds.mspct$LZ1_10R302)
+```
+
+```{r}
+getInstrSettings(leds.mspct$LZ1_10R302)
+```
+
+```{r}
+is_normalized(leds.mspct$LZ1_10R302)
+```
+
+```{r}
+leds.mspct$UVMAX305
+```
+
+```{r}
+is_normalized(leds.mspct$UVMAX305)
+```
+
 ## Calculating summaries from the normalized data
 
-The spectra are normalized, and consequently, several summaries expressed in
+Many of the spectra are normalized, and consequently, several summaries expressed in
 absolute units are undefined, and trigger errors. Summaries like ratios which
 are not affected by normalization are allowed and valid. The data have been
-normalized as the measuring conditions used are not all the same, and in many
-cases not well characterized (e.g. distance to nearby reflecting walls, or exact 
-alignment of the spectrometer input optics with respect to light sources).
+normalized when the measuring conditions used are not well known, and in many
+cases not well characterized (e.g. distance from LED to cosine diffuser or exact 
+alignment of the spectrometer input optics with respect to light source was
+not recorded or attempted at the time of measurement).
 
 What we will do in this section is to rescale the spectral data so that after 
 conversion a given target value for a summary quantity will be true. As an 
 example, we will rescale one spectrum so that it yields an energy irradiance of
-100 W m-2 for the range 315 to 400 nm.
+10 W m-2 for the range 315 to 400 nm.
 
 ```{r}
 my.spct <- fscale(leds.mspct$UV395,
@@ -125,10 +193,33 @@ by normalization.
 ```{r}
 q_ratio(leds.mspct$UV395, UVB(), UVA())
 ```
+
+## Plotting
+
+The discussed in the next section, spectra can be plotted as data stored in
+data frames with any of base R graphics, package 'lattice' or 'ggplot2'. Another
+package in out suite, 'ggspectra', built as an extension to 'ggplot2' makes 
+plotting spectra extremely easy.
+
+`plot()` methods use the metadata in the objects to set labels and decorations,
+as well as automatically setting the mapping of the _x_ and _y_ aesthetics.
+
+```{r}
+plot(leds.mspct$LZ1_10R302)
+```
+
+Package 'ggspectra' also defines specializations of the `ggplot()` for 
+spectra.
+
+```{r}
+ggplot(leds.mspct$LZ1_10R302) +
+  geom_line()
+```
+
 ## Using the data in other contexts
 
 As `source_spct` is a class derived from `list`, and `source_spct` is derived from
-`tibble::tible` which is a compatible reimplementation of `data.frame` the
+`tibble::tible` which is a rather compatible reimplementation of `data.frame` the
 data can be used very easily with any R function.
 
 ```{r}
@@ -136,6 +227,7 @@ head(as.data.frame(leds.mspct$UV395))
 ```
 
 Of course `attach` and `with` also work as expected.
+
 ```{r}
 attach(leds.mspct)
 q_ratio(UV395, UVB(), UVA())
@@ -152,6 +244,13 @@ detach(leds.mspct)
 with(leds.mspct, q_ratio(UV395, UVB(), UVA()))
 ```
 
+## The R4Photobiology suite
 
+This package, is a data only package, part of a suite, which has package 
+'photobiology' at its core. Please visit (http://www.r4photobiology.info/) 
+for more details. For more details on plotting spectra, please consult the 
+documentation for package 'ggspectra', and for information on the calculation 
+of summaries and maths operations  between spectra, please, consult the 
+documentation for package 'photobiology'.
 
 

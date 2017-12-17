@@ -9,23 +9,20 @@
 #'   \code{\link{leds.mspct}}.
 #'
 #' The variables in each member spectrum are as follows: \itemize{ \item
-#' w.length (nm) \item s.e.irrad (relative energy based units) }
+#' w.length (nm) \item s.e.irrad }
 #'
 #' @note Instrument used: Ocean Optics Maya2000 Pro single-monochromator array
 #'   spectroradiometer with a Bentham cosine corrected input optics. A complex
 #'   set of corrections and calibration procedure used. Raw spectral data
-#'   processed with R packages 'MayaCalc' or 'ooacquire'. The \code{source_spct}
-#'   object contains a comment with additional information on the measurement
-#'   and data processing. Measurements done by Pedro J. Aphalo.
+#'   processed with R packages 'MayaCalc' or 'ooacquire'.
 #'
 #' @docType data
-#' @keywords datasets
+#' @keywords datasets internal
 #' @format A vector of character strings.
 #'
 #' @examples
 #' oo_maya_leds
-#' leds.mspct[oo_maya_leds]
-#' leds.mspct[["white"]]
-#' leds.mspct$white
 #'
+#' @seealso \code{\link{leds.mspct}}
+#' 
 "oo_maya_leds"

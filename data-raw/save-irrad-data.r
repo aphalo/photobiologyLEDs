@@ -4,7 +4,7 @@ library(dplyr)
 
 oldwd <- setwd("data-raw/Rda/")
 
-leds <- paste(c("BS436", "CB30", "LED405", "LED740", "UV395", "white", 
+leds <- paste(c("BS436", "CB30", "LED405", "LED740", "UV395",
                 "XSL365", "XSL370", "XSL375", 
                 "UVMAX340", "UVMAX305", "TY_UV310nm",
                 "white", "Q36_4000K",

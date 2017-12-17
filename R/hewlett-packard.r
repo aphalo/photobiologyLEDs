@@ -1,14 +1,8 @@
 #' Spectral data for LEDs array supplied by Agilent/Hewlett Packard
 #' 
-#' Datasets containing the wavelengths and tabulated values spectral emittance 
-#' for the NHXRGB0905005 light emitting diodes (LEDs) arrays from Osram. 
+#' Names of datasets containing the wavelengths and tabulated values spectral emittance 
+#' for light emitting diodes (LEDs) from Agilent/Hewlett Packard. 
 #' Data are normalized to one at the wavelength of maximum emission.
-#' 
-#' The variables are as follows:
-#' \itemize{
-#'   \item w.length (nm)  
-#'   \item s.e.irrad (W m-2 nm-1)
-#' }
 #' 
 #' @docType data
 #' @keywords datasets
@@ -16,7 +10,6 @@
 #' 
 #' @examples 
 #' hewlett_packard
-#' leds.mspct[hewlett_packard]
 #' 
 #' @note
 #' The division of Hewlett Packard which supplied these LEDs became part of
@@ -24,6 +17,10 @@
 #' the electronic components division of Agilent became Avago Technologies
 #' which still supplies some of these LEDs or similar improved types.
 #' 
-#' \url{http://www.avagotech.com/}
+#' @references \url{https:/www.broadcom.com/products/leds-and-displays/}
+#' 
+#' @seealso \code{\link{leds.mspct}}
+#' 
+#' @family manufacturers
 #' 
 "hewlett_packard"

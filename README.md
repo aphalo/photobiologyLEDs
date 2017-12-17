@@ -1,4 +1,4 @@
-# photobiologyLEDs #
+# photobiologyLEDs
 
 [![](http://www.r-pkg.org/badges/version/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs) [![](http://cranlogs.r-pkg.org/badges/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs) [![](http://cranlogs.r-pkg.org/badges/grand-total/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs)
 

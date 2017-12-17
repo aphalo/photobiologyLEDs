@@ -3,3 +3,4 @@
 ^data-raw/*
 ^\.git/*
 ^vignettes/figure
+^docs$

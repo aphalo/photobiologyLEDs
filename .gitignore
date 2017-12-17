@@ -3,6 +3,7 @@
 .RData
 NAMESPACE
 man
+docs
 *.tex
 *.synctex.gz
 *.synctex
