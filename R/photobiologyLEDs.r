@@ -38,17 +38,25 @@
 #' 
 #' q_ratio(leds.mspct$Q36_4000K, Blue(), Red())
 #' 
+#' \dontrun{
 #' plot(leds.mspct$Q36_4000K)
+#' }
 #' 
 #' q_ratio(leds.mspct$NS6L183AT_H1, Blue(), Red())
 #' 
+#' \dontrun{
 #' plot(leds.mspct$NS6L183AT_H1)
+#' }
 #' 
+#' \dontrun{
 #' plot(leds.mspct$NS6L183AT_H1, unit.out = "photon")
+#' }
 #' 
+#' \dontrun{
 #' plot(leds.mspct$NS6L183AT_H1, 
 #'      range = VIS(), 
 #'      w.band = VIS_bands(),
 #'      span = 101)
+#' }
 #' 
 "_PACKAGE"

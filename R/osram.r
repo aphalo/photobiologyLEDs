@@ -10,11 +10,10 @@
 #' 
 #' @examples 
 #' osram
-#' leds.mspct[osram]
 #' 
 #' @note Current trade name is Osram Opto Semiconductors
 #' 
-#' @references \url{http:/www.osram-os.com/}
+#' @references \url{http://www.osram-os.com/}
 #' 
 #' @seealso \code{\link{leds.mspct}}
 #' 

@@ -11,7 +11,7 @@
 #' @examples 
 #' marktech
 #' 
-#' @references \url{http:/www.marktechopto.com/}
+#' @references \url{http://www.marktechopto.com/}
 #' 
 #' @seealso \code{\link{leds.mspct}}
 #' 

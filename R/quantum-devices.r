@@ -10,12 +10,11 @@
 #' 
 #' @examples 
 #' quantum_devices
-#' leds.mspct[quantum_devices]
 #' 
 #' @note 
 #' Quantum Devices produces both individual LEDs and luminaires.
 #' 
-#' @references \url{http:/www.quantumdev.com/} 
+#' @references \url{http://www.quantumdev.com/} 
 #' 
 #' @seealso \code{\link{leds.mspct}}
 #' 

@@ -17,7 +17,7 @@
 #' the electronic components division of Agilent became Avago Technologies
 #' which still supplies some of these LEDs or similar improved types.
 #' 
-#' @references \url{https:/www.broadcom.com/products/leds-and-displays/}
+#' @references \url{https://www.broadcom.com/products/leds-and-displays/}
 #' 
 #' @seealso \code{\link{leds.mspct}}
 #' 

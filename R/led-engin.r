@@ -14,7 +14,7 @@
 #' @note
 #' Led Engin is a supplier of power LEDs of high efficiency.
 #' 
-#' @references \url{http:/www.ledengin.com/}
+#' @references \url{http://www.ledengin.com/}
 #'   
 #' @seealso \code{\link{leds.mspct}}
 #' 

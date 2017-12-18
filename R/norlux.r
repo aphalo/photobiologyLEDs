@@ -14,7 +14,7 @@
 #' @note
 #' Norlux is now part of Thomas Research Products.
 #'
-#' @references  \url{http:/www.trpssl.com/}
+#' @references  \url{http://www.trpssl.com/}
 #' 
 #' @seealso \code{\link{leds.mspct}}
 #' 

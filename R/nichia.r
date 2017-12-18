@@ -11,7 +11,7 @@
 #' @examples 
 #' nichia
 #' 
-#' @references \url{http:/www.nichia.com/}
+#' @references \url{http://www.nichia.com/}
 #' 
 #' @seealso \code{\link{leds.mspct}}
 #' 

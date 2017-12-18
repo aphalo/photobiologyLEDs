@@ -18,7 +18,7 @@
 #' arrays. They sell both standard types and also assemble customized arrays
 #' upon request. Customized arrays may have up to five independent channels.
 #'
-#' @references \url{http:/www.leds-global.com/}
+#' @references \url{http://www.leds-global.com/}
 #'
 #' @seealso \code{\link{leds.mspct}}
 #' 
