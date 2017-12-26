@@ -1,8 +1,8 @@
 Package: photobiologyLEDs
 Type: Package
 Title: Spectral Data for Light-Emitting-Diodes
-Version: 0.4.3
-Date: 2017-12-17
+Version: 0.4.3-1.9000
+Date: 2017-12-26
 Authors@R:
    c(
     person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre")),
@@ -14,7 +14,7 @@ Description: Spectral emission data for some frequently used light emitting
 License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
-    R (>= 3.3.3),
+    R (>= 3.3.0),
     photobiology (>= 0.9.17)
 Suggests:
     knitr (>= 1.17),
