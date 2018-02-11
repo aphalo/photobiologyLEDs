@@ -7,7 +7,7 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
-#' @aliases amber_leds blue_leds green_leds red_leds white_leds cyan_leds violet_leds multichannel_leds
+#' @aliases 'leds by color' 
 #' 
 #' @examples 
 #' uv_leds
@@ -26,3 +26,28 @@
 #' @seealso \code{\link{leds.mspct}}
 #' 
 "uv_leds"
+
+#' @rdname uv_leds
+"amber_leds"
+
+#' @rdname uv_leds
+"blue_leds"
+
+#' @rdname uv_leds
+"green_leds"
+
+#' @rdname uv_leds
+"red_leds"
+
+#' @rdname uv_leds
+"white_leds"
+
+#' @rdname uv_leds
+"cyan_leds"
+
+#' @rdname uv_leds
+"violet_leds"
+
+#' @rdname uv_leds
+"multichannel_leds"
+

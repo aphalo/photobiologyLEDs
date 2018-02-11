@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2018-01-14" />
+<meta name="date" content="2018-02-11" />
 
 <title>User Guide</title>
 
@@ -69,9 +69,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 <h1 class="title toc-ignore">User Guide</h1>
-<h3 class="subtitle"><em>Package ‘photobiologyLEDs’ 0.4.3.1</em></h3>
+<h3 class="subtitle"><em>Package ‘photobiologyLEDs’ 0.4.3.1.9001</em></h3>
 <h4 class="author"><em>Pedro J. Aphalo</em></h4>
-<h4 class="date"><em>2018-01-14</em></h4>
+<h4 class="date"><em>2018-02-11</em></h4>
 
 
 <div id="TOC">
@@ -84,22 +84,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#calculating-summaries-from-the-normalized-data">Calculating summaries from the normalized data</a></li>
 <li><a href="#plotting">Plotting</a></li>
 <li><a href="#using-the-data-in-other-contexts">Using the data in other contexts</a></li>
-<li><a href="#the-r4photobiology-suite">The R4Photobiology suite</a></li>
 </ul>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">fig.width=</span><span class="dv">8</span>, <span class="dt">fig.height=</span><span class="dv">4</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(photobiology)
-<span class="kw">library</span>(photobiologyWavebands)</code></pre></div>
-<pre><code>## For news about 'photobiologyWavebands', please, see http://www.r4photobiology.info/</code></pre>
-<pre><code>## For on-line documentation see http://docs.r4photobiology.info/photobiologyWavebands/</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(photobiologyLEDs)
-<span class="kw">library</span>(ggplot2)
-<span class="kw">library</span>(ggspectra)</code></pre></div>
-<pre><code>## For news about 'ggspectra', please, see http://www.r4photobiology.info/</code></pre>
-<pre><code>## For on-line documentation see http://docs.r4photobiology.info/ggspectra/</code></pre>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
+<p>This package, is a data only package, part of a suite, which has package ‘photobiology’ at its core. Please visit (<a href="http://www.r4photobiology.info/" class="uri">http://www.r4photobiology.info/</a>) for more details. For more details on plotting spectra, please consult the documentation for package ‘ggspectra’, and for information on the calculation of summaries and maths operations between spectra, please, consult the documentation for package ‘photobiology’.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(photobiology)
+<span class="kw">library</span>(photobiologyWavebands)
+<span class="kw">library</span>(photobiologyLEDs)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(ggspectra)</code></pre></div>
 <p>In this very brief User Guide we describe how to re-scale the normalized spectra, and how to access individual spectra or subsets of spectra.</p>
 </div>
 <div id="the-data" class="section level2">
@@ -309,7 +304,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## 
 ## # A tibble: 4,335 x 3
 ##    w.length s.e.irrad channel
-##       &lt;dbl&gt;     &lt;dbl&gt; &lt;fctr&gt; 
+##       &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt;  
 ##  1      250         0 R      
 ##  2      250         0 R      
 ##  3      250         0 R      
@@ -569,10 +564,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##                      0 
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;q:q ratio&quot;</code></pre>
-</div>
-<div id="the-r4photobiology-suite" class="section level2">
-<h2>The R4Photobiology suite</h2>
-<p>This package, is a data only package, part of a suite, which has package ‘photobiology’ at its core. Please visit (<a href="http://www.r4photobiology.info/" class="uri">http://www.r4photobiology.info/</a>) for more details. For more details on plotting spectra, please consult the documentation for package ‘ggspectra’, and for information on the calculation of summaries and maths operations between spectra, please, consult the documentation for package ‘photobiology’.</p>
 </div>
 
 

@@ -1,12 +1,20 @@
 #' @details
 #' Data for emission spectra of different types of LEDs.
 #'
-#' The package contains one collection of spectra for different LEDSs all of them
-#' measured at room temperature and a series of vectors to be used as indexes to
-#' extract different subsets of spectra. In many cases spectral data are normalized to
-#' spectral energy irradiance equal to one at the wavelength of maximum spectral
-#' energy irradiance (strongest emission peak).
+#' The package contains one collection of spectra for different LEDs available
+#' as electronic components requiring separate electronic driver modules or
+#' circuits for their use. Data for LED bulbs are included in package 
+#' \code{\link[photobiologyLamps]{photobiologyLamps}}. 
+#' 
+#' In addition to the spectra the packages provides character vectors of names
+#' to be used as indexes to subset groups of spectra. In many cases spectral
+#' data are normalized to spectral energy irradiance equal to one at the
+#' wavelength of maximum spectral energy irradiance (strongest emission peak).
 #'
+#' All LEDs have been measured at room temperature mounted on passive heatsinks
+#' and driven at or below their maximum current rating. High precision power
+#' supplies were used to drive them.
+#' 
 #' @section Warning!:
 #' None of the spectral data included in this package are based on supplier's
 #' specifications and are only for information. The exact emission spectrum
