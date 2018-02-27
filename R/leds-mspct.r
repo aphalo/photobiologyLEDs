@@ -3,12 +3,8 @@
 #' @description A collection of emission spectra of light-emitting-diodes
 #'   from different suppliers.
 #'
-#' @details The \code{"source_mspct"} object contains \code{"source_spct"}
-#'   objects with spectral emission data.
-#'
-#'   The variables in each member spectrum are as follows: \itemize{ \item
-#'   w.length (nm) \item s.e.irrad (absolute or normalized). }
-#'   
+#' @details The \code{"leds.mspct"} object contains \code{"source_spct"}
+#'   objects with spectral irradiance data.
 #'   When the exact distance from LED to cosine diffuser is not known precisely
 #'   or when the driving current is unknown, the spectra have been normalized
 #'   to spectral energy irradiance equal to 1 W m-2 nm-1 at the wavelength
@@ -21,10 +17,10 @@
 #'   relied upon as measurements were done with well calibrated instruments.
 #'
 #' @note Please see the metadata in each spectrum and the help pages 
-#' corresponding to each supplier for contact information. The metadate is
+#' corresponding to each supplier for contact information. The metadata is
 #' stored in attributes and can accessed with functions 
 #' \code{\link[photobiology]{getWhatMeasured}} and
-#' \code{\link[photobiology]{getWhenMeasured}}. Sone spectra also contain
+#' \code{\link[photobiology]{getWhenMeasured}}. Some of the spectra also contain
 #' information on the measurement accessible with 
 #' \code{\link[photobiology]{getInstrDesc}} and
 #' \code{\link[photobiology]{getInstrSettings}}.

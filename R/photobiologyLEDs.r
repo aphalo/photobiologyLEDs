@@ -15,6 +15,10 @@
 #' and driven at or below their maximum current rating. High precision power
 #' supplies were used to drive them.
 #' 
+#' @references
+#' Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
+#' 21-29. \url{http://doi.org/10.19232/uv4pb.2015.1.14}.
+#'
 #' @section Warning!:
 #' None of the spectral data included in this package are based on supplier's
 #' specifications and are only for information. The exact emission spectrum
