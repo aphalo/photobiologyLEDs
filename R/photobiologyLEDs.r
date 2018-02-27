@@ -4,7 +4,7 @@
 #' The package contains one collection of spectra for different LEDs available
 #' as electronic components requiring separate electronic driver modules or
 #' circuits for their use. Data for LED bulbs are included in package 
-#' \code{\link[photobiologyLamps]{photobiologyLamps}}. 
+#' \code{\link[photobiologyLamps]{photobiologyLamps-package}}. 
 #' 
 #' In addition to the spectra the packages provides character vectors of names
 #' to be used as indexes to subset groups of spectra. In many cases spectral
