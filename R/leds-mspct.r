@@ -54,7 +54,7 @@
 #' 
 #' stepsize(leds.mspct$white)
 #' 
-#' plot(leds.mspct$white)
+#' autoplot(leds.mspct$white)
 #' 
 #' intersect(led_engin, blue_leds)
 #' 

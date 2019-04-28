@@ -15,13 +15,12 @@ Description: Spectral emission data for some frequently used light emitting
 License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
-    R (>= 3.3.0),
-    photobiology (>= 0.9.18)
+    R (>= 3.5.0),
+    photobiology (>= 0.9.27)
 Suggests:
-    knitr (>= 1.19),
-    photobiologyWavebands (>= 0.4.2),
-    ggspectra (>= 0.2.2),
-    ggplot2 (>= 2.2.1)
+    knitr (>= 1.22),
+    photobiologyWavebands (>= 0.4.3),
+    ggspectra (>= 0.3.1)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true

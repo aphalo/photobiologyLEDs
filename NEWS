@@ -1,10 +1,11 @@
-photobiologyLEDs 0.4.4
-======================
+photobiologyLEDs 0.4.4 (2019-04-xx)
+===================================
 
+Revise for ggspectra (>= 0.3.1), and rebuild all data objects with photobiology
+(== 0.9.27).
 
-
-photobiologyLEDs 0.4.3-1
-========================
+photobiologyLEDs 0.4.3-1 (2018-01-14)
+=====================================
 
 Fix dependency on a non-.0 version.
 

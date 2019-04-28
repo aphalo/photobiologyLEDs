@@ -17,7 +17,7 @@
 #' 
 #' @references
 #' Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
-#' 21-29. \url{http://doi.org/10.19232/uv4pb.2015.1.14}.
+#' 21-29. \url{https://doi.org/10.19232/uv4pb.2015.1.14}.
 #'
 #' @section Warning!:
 #' None of the spectral data included in this package are based on supplier's
@@ -46,26 +46,26 @@
 #' 
 #' peaks(leds.mspct$white, span = 101)
 #' 
-#' plot(leds.mspct$white)
+#' autoplot(leds.mspct$white, annotations = c("+", "title:what"))
 #' 
 #' q_ratio(leds.mspct$Q36_4000K, Blue(), Red())
 #' 
 #' \dontrun{
-#' plot(leds.mspct$Q36_4000K)
+#' autoplot(leds.mspct$Q36_4000K)
 #' }
 #' 
 #' q_ratio(leds.mspct$NS6L183AT_H1, Blue(), Red())
 #' 
 #' \dontrun{
-#' plot(leds.mspct$NS6L183AT_H1)
+#' autoplot(leds.mspct$NS6L183AT_H1)
 #' }
 #' 
 #' \dontrun{
-#' plot(leds.mspct$NS6L183AT_H1, unit.out = "photon")
+#' autoplot(leds.mspct$NS6L183AT_H1, unit.out = "photon")
 #' }
 #' 
 #' \dontrun{
-#' plot(leds.mspct$NS6L183AT_H1, 
+#' autoplot(leds.mspct$NS6L183AT_H1, 
 #'      range = VIS(), 
 #'      w.band = VIS_bands(),
 #'      span = 101)
