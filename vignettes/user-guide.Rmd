@@ -29,7 +29,6 @@ documentation for package 'photobiology'.
 library(photobiology)
 library(photobiologyWavebands)
 library(photobiologyLEDs)
-library(ggplot2)
 library(ggspectra)
 ```
 

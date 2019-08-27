@@ -93,12 +93,19 @@ load(file = "LEDEngin2017.mspct.rda")
 load(file = "Nichia_white.mspct.rda")
 load(file = "weili_3W.mspct.rda")
 load(file = "Marktech.mspct.rda")
+load(file = "zhaga.mspct.rda")
 
 setwd(oldwd)
 
 shafi.mspct <- normalize(shafi.mspct)
 
-leds.mspct <- c(leds.mspct, shafi.mspct, LEDEngin2017.mspct, Nichia_white.mspct, weili_3w.mspct, Marktech.mspct) 
+leds.mspct <- c(leds.mspct, 
+                shafi.mspct, 
+                LEDEngin2017.mspct,
+                Nichia_white.mspct, 
+                weili_3w.mspct, 
+                Marktech.mspct,
+                zhaga.mspct) 
 
 length(leds.mspct)
 
@@ -136,7 +143,7 @@ green_leds <- c("NHXRGB090_G", "weili540nm", "G_P3V140A1_YG", "G_P3V140A1_YG1")
 cyan_leds <- c("G_P3V140B1_G" , "G_P3V140B1_GT")
 blue_leds <- c("NHXRGB090_B", "LED435_66_60", "weili430nm", "LZ1_10UA00_00U8", "LZ1_10DB00")
 violet_leds <- c("LZ1_10UA00_U4", "LZ1_10UA00_U8")
-white_leds <- c("white", "Q36_4000K")
+white_leds <- c("white", "Q36_4000K", zhaga_names)
 multichannel_leds <- c("NHXRGB090")
 
 oo_maya_leds <- names(leds.mspct)

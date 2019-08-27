@@ -5,7 +5,6 @@ knitr::opts_chunk$set(fig.width=8, fig.height=4)
 library(photobiology)
 library(photobiologyWavebands)
 library(photobiologyLEDs)
-library(ggplot2)
 library(ggspectra)
 
 ## ------------------------------------------------------------------------

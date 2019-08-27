@@ -1,3 +1,11 @@
+destination: ../photobiologyFilters-docs
+
+home:
+  strip_header: true
+  links:
+  - text: Photobiology packages
+    href: https://www.r4photobiology.info/
+
 reference:
   - title: Package overview
     contents:

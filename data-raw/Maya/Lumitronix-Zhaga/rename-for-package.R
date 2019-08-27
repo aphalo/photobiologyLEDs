@@ -10,7 +10,7 @@ what <- gsub("horticulture", "757 Rsp0a for horticulture, in Lumitronix Zhaga mo
 what <- gsub("OptiSolis", "757G Optisolis Solar White CRI98+, in Lumitronix Zhaga module", what)
 how <- "Array spectrometer using integration time bracketing."
 
-zhaga_names <- paste(zhaga_names, ".spct")
+# zhaga_names <- paste(zhaga_names, ".spct", sep = "")
 zhaga.mspct <- source_mspct()
 for (i in seq_along(files)) {
   load(file = files[i])
@@ -20,8 +20,8 @@ for (i in seq_along(files)) {
   trimInstrSettings(tmp)
   setWhatMeasured(tmp, what[i])
   setHowMeasured(tmp, how[i])
-  assign(zhaga_names[i], tmp)
+  zhaga.mspct[[zhaga_names[i]]] <- tmp
 }
 
-save(list = c(zhaga_names, "zhaga_names"), file = "./data-raw/Rda/zhaga.mspct.rda")
+save(zhaga_names, zhaga.mspct, file = "./data-raw/Rda/zhaga.mspct.rda")
 
