@@ -208,11 +208,11 @@ data frames, using base R graphics, package 'lattice' or 'ggplot2'. However, ano
 package in our suite, 'ggspectra', built as an extension to 'ggplot2' makes 
 plotting spectra even easier.
 
-`plot()` methods use the metadata in the objects to set labels and decorations,
+`autoplot()` methods use the metadata in the objects to set labels and decorations,
 as well as automatically setting the mapping of the _x_ and _y_ aesthetics.
 
 ```{r}
-plot(leds.mspct$LZ1_10R302)
+autoplot(leds.mspct$LZ1_10R302)
 ```
 
 Package 'ggspectra' also defines specializations of method `ggplot()` for 

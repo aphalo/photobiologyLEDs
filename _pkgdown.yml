@@ -1,4 +1,4 @@
-destination: ../photobiologyFilters-docs
+destination: ../photobiologyLEDs-docs
 
 home:
   strip_header: true
