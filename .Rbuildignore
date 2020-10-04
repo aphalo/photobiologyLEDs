@@ -2,7 +2,5 @@
 ^\.Rproj\.user$
 ^data-raw/*
 ^\.git/*
-^vignettes/figure
-^docs$
 ^_pkgdown\.yml$
 ^README.Rmd
