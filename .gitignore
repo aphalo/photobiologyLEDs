@@ -1,12 +1,3 @@
 .Rproj.user
 .Rhistory
 .RData
-NAMESPACE
-man
-docs
-*.tex
-*.synctex.gz
-*.synctex
-*.log
-vignettes/figure/*.pdf
-vignettes/dataplotsLEDs.pdf

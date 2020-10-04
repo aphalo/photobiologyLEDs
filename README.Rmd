@@ -23,38 +23,38 @@ Package '**photobiologyLEDs**' contains spectral emission data for diverse types
 ## Examples
 
 ```{r example-02, message=FALSE}
-library(photobiologyFilters)
+library(photobiologyLEDs)
 ```
 
 How many spectra are included in the current version of 'photobiologyFilters'?
 
 ```{r example-03}
-length(filters.mspct)
+length(leds.mspct)
 ```
 
 What are the names of available spectra. We use `head()` to limit the output.
 
 ```{r example-04}
-# list names of the first 10 filters
-head(names(filters.mspct), 10)
+# list names of the first 10 LEDs
+head(names(leds.mspct), 10)
 ```
 
-To subset based on different criteria we can use predefined character vectors of filter names. For example, vector `polyester` lists the names of the spectra for filters made of polyester (PET). 
+To subset based on different criteria we can use predefined character vectors of LED names. For example, vector `nichia` lists the names of the spectra for filters made by NIchia. 
 
 ```{r example-05}
-polyester_filters
+nichia
 ```
 
 We can use the vector to extract all these spectra as a collection.
 
 ```{r example-05a}
-filters.mspct[polyester_filters]
+leds.mspct[nichia]
 ```
 
 The package includes a character vector with the names of these vectors of names that are available.
 
 ```{r example-05b}
-all_filter_accessors
+all_led_accessors
 ```
 
 Please, see the _User Guide_ or documentation
@@ -64,8 +64,7 @@ the spectrum.
 Summary calculations can be easily done with methods from package 'photobiology'. Here we calculate mean transmittance for two regions of the spectrum given by wavelengths in nanometres.
 
 ```{r example-06}
-transmittance(filters.mspct[["Foiltek_Clear_PET_G"]], 
-              list(waveband(c(250, 315)), waveband(c(500,600))))
+q_irrad(leds.mspct[["NS6L183AT_H1"]]) * 1e6
 ```
 
 The `autoplot()` methods from package 'ggspectra' can be used for plotting one or more spectra at a time. The classes of the objects used to store the spectral data are derived from `"data.frame"` making direct use of the data easy with functions and methods 
@@ -76,19 +75,19 @@ from base R and various packages.
 Installation of the most recent stable version from CRAN:
 
 ```{r, eval=FALSE}
-install.packages("photobiologyFilters")
+install.packages("photobiologyLEDs")
 ```
 
 Installation of the current unstable version from Bitbucket:
 
 ```{r, eval=FALSE}
 # install.packages("devtools")
-devtools::install_bitbucket("aphalo/photobiologyfilters")
+devtools::install_bitbucket("aphalo/photobiologyleds")
 ```
 
 ## Documentation 
 
-HTML documentation is available at (https://docs.r4photobiology.info/photobiologyFilters/), including a _User Guide_.
+HTML documentation is available at (https://docs.r4photobiology.info/photobiologyLEDs/), including a _User Guide_.
 
 News on updates to the different packages of the 'r4photobiology' suite are regularly posted at (https://www.r4photobiology.info/).
 
@@ -109,9 +108,9 @@ Pull requests, bug reports, and feature requests are welcome at (https://bitbuck
 If you use this package to produce scientific or commercial publications, please cite according to:
 
 ```{r}
-citation("photobiologyFilters")
+citation("photobiologyLEDs")
 ```
 
 ## License
 
-© 2012-2019 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2012-2020 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.

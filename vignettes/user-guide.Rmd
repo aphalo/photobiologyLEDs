@@ -126,7 +126,10 @@ leds.mspct$LZ1_10R302
 ```
 
 ```{r}
-getWhatMeasured(leds.mspct$LZ1_10R302)
+cat(getWhatMeasured(leds.mspct$LZ1_10R302))
+```
+
+```{r}
 getWhenMeasured(leds.mspct$LZ1_10R302)
 ```
 
@@ -174,14 +177,30 @@ my.spct <- fscale(leds.mspct$UV395,
 e_irrad(my.spct, waveband(c(315,400)))
 ```
 
-If we want to treat the rescaled spectral data, as if they were true readings
-with no scaling we can reset the attribute with method `setScaled()`. With 
+The default of `fscale()` is to treat rescaled spectral data as if they were 
+true readings unless `target = 1` is passed. In this last case, the metadata
+will be set to indicate that the data is in relative units and this will
+generate a warning during computation of irradiance. Other methods such as 
+`integrate_spct()` will still function silently.
+
+```{r}
+my.spct <- fscale(leds.mspct$UV395,
+                  range = c(315, 400),
+                  e_irrad,
+                  target = 1
+                  )
+integrate_spct(my.spct)
+```
+
+We can reset the attribute with method `setScaled()`. With 
 method `getScaled()` we can test if a spectrum has been scaled.
 
 ```{r}
-getScaled(my.spct)
 setScaled(my.spct)
 getScaled(my.spct)
+```
+```{r}
+e_irrad(my.spct, waveband(c(315,400)))
 ```
 
 If for some obscure reason we want to simply "pretend" that the spectral data
@@ -212,7 +231,7 @@ plotting spectra even easier.
 as well as automatically setting the mapping of the _x_ and _y_ aesthetics.
 
 ```{r}
-autoplot(leds.mspct$LZ1_10R302)
+autoplot(leds.mspct$LZ1_10R302, annotations = c("+", "wls"), )
 ```
 
 Package 'ggspectra' also defines specializations of method `ggplot()` for 

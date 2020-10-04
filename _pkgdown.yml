@@ -1,4 +1,5 @@
 destination: ../photobiologyLEDs-docs
+url: https://docs.r4photobiology.info/photobiologyLEDs/
 
 home:
   strip_header: true

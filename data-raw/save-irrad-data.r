@@ -42,6 +42,8 @@ save(leds.mspct, file = "leds-mspct.rda")
 
 load(file = "shafi-mspct.rda")
 
+load(file = "MArktech.mspct.rda")
+
 setwd(oldwd)
 
 shafi.mspct <- normalize(shafi.mspct)
@@ -80,11 +82,18 @@ multichannel_leds <- c("NHXRGB090")
 
 oo_maya_leds <- names(leds.mspct)
 
+all_led_accessors <- 
+  c("roithner_laser", "seti", "tao_yuan", "unknown", "lumitronix",
+    "hewlett_packard", "quantum_devices", "osram", "norlux", "shenzhen_weili",
+    "leds_global", "huey_jann", "led_engin", "oo_maya_leds",
+    "uv_leds", "red_leds", "amber_leds", "green_leds", "blue_leds",
+    "white_leds", "multichannel_leds")
+
 save(leds.mspct, roithner_laser, seti, tao_yuan, unknown, lumitronix,
      hewlett_packard, quantum_devices, osram, norlux, shenzhen_weili,
      leds_global, huey_jann, led_engin, oo_maya_leds,
      uv_leds, red_leds, amber_leds, green_leds, blue_leds,
-     white_leds, multichannel_leds,
+     white_leds, multichannel_leds, all_led_accessors,
      file = "data/leds-mspct.rda")
 
 tools::resaveRdaFiles("data", compress="auto")
