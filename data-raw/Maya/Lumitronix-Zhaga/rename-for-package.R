@@ -9,8 +9,8 @@ zhaga_names <- gsub("horticulture", "Rsp0A", zhaga_names)
 zhaga_names <- gsub("Nichia.", "", zhaga_names)
 what <- gsub("[.]", " ", zhaga_names)
 what <- gsub("SunLike", "Toshiba-SSC SunLike TRI-R CRI97+, in Lumitronix Zhaga module", what)
-what <- gsub("Rsp0A", "757 Rsp0A for horticulture, in Lumitronix Zhaga module", what)
-what <- gsub("OptiSolis", "757G Optisolis Solar White CRI98+, in Lumitronix Zhaga module", what)
+what <- gsub("Rsp0A", "Nichia 757 Rsp0A for horticulture, in Lumitronix Zhaga module", what)
+what <- gsub("OptiSolis", "Nichia 757G Optisolis Solar White CRI98+, in Lumitronix Zhaga module", what)
 how <- "Ocean Optics Maya 2000Pro (HDR used)."
 
 

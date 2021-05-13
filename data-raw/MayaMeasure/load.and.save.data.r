@@ -3,8 +3,8 @@ library(lubridate)
 
 rm(list = ls(pattern = "*"))
 load(file = "data-raw/MayaMeasure/Lumitronix39W.cal.spcs.Rda")
-LUMITRONIX_white.spct <- as.source_spct(`full power DIM open.cal.spc`) %>%
-  dplyr::select(-s.e.irrad.good)
+LUMITRONIX_white.spct <- as.source_spct(`full power DIM open.cal.spc`)
+LUMITRONIX_white.spct <- LUMITRONIX_white.spct[ , c("w.length", "s.e.irrad")]
 # if (is.old_spct(LUMITRONIX_white.spct)) upgrade_spct(LUMITRONIX_white.spct)
 comment(LUMITRONIX_white.spct) <- "LUMITRONIX SmartArray Q36 LED-Module, 4247 lm, 4000K, 39W electrical"
 setWhatMeasured(LUMITRONIX_white.spct, "LUMITRONIX SmartArray Q36 4000K")
@@ -21,8 +21,8 @@ LUMITRONIX_white.spct
 rm(list = ls(pattern = "*"))
 load(file = "data-raw/MayaMeasure/uvmax1.cal.spcs.Rda")
 
-UVMAX305.spct <- as.source_spct(uvmax305_10cm.cal.spc) %>%
-  dplyr::select(-s.e.irrad.good)
+UVMAX305.spct <- as.source_spct(uvmax305_10cm.cal.spc)
+UVMAX305.spct <- UVMAX305.spct[ , c("w.length", "s.e.irrad")]
 # upgrade_spct(UVMAX305.spct)
 comment(UVMAX305.spct) <- "Roithner-Laser (SeTi UVCLEAN) UVMAX305-HL-15 (hemispherical lens), 310 nm nominal, 10-15 mW optical, at 100 mm distance"
 setWhatMeasured(UVMAX305.spct, "Roithner-Laser UVMAX305-HL-15")
@@ -34,8 +34,8 @@ cat(comment(UVMAX305.spct))
 cat(class(UVMAX305.spct), "\n")
 save(UVMAX305.spct, file = "data-raw/Rda/UVMAX305.spct.rda")
 
-UVMAX340.spct <- as.source_spct(uvmax340_10cm.cal.spc) %>%
-  dplyr::select(-s.e.irrad.good)
+UVMAX340.spct <- as.source_spct(uvmax340_10cm.cal.spc)
+UVMAX340.spct <- UVMAX340.spct[ , c("w.length", "s.e.irrad")]
 # upgrade_spct(UVMAX340.spct)
 comment(UVMAX340.spct) <- "Roithner-Laser (SeTi UVCLEAN) UVMAX340-HL-15 (hemispherical lens), 340 nm, 10-15 mW optical, at 100 mm distance"
 setWhatMeasured(UVMAX305.spct, "Roithner-Laser UVMAX340-HL-15")

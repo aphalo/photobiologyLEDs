@@ -1,6 +1,5 @@
-library(r4photobiology)
+library(photobiology)
 library(tibble)
-
 
 # NICHIA ------------------------------------------------------------------
 

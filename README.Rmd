@@ -1,7 +1,6 @@
 ---
 output:
-  github_document:
-    html_preview: false
+  github_document
 ---
 
 ```{r readme-01, echo = FALSE}
@@ -13,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# photobiologyLEDs
+# photobiologyLEDs <img src="man/figures/logo.png" align="right" width="120" />
 
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs) 
 [![cran checks](https://cranchecks.info/badges/worst/photobiologyLEDs)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html)

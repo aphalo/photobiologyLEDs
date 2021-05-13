@@ -40,9 +40,9 @@ save(leds.mspct, file = "leds-mspct.rda")
 
 # merge
 
-load(file = "shafi-mspct.rda")
+#load(file = "shafi-mspct.rda")
 
-load(file = "MArktech.mspct.rda")
+# load(file = "Marktech.mspct.rda")
 
 setwd(oldwd)
 
@@ -68,7 +68,9 @@ shenzhen_weili <- leds_global <-
 huey_jann <- "HPR40E_48K30BG"
 led_engin <- c("LZ1_10DB00", "LZ1_10UA00_00U8", "LZ1_10UA00_00U4", 
                "LZ1_10UV00", "LZ1_10R302")
-
+marktech <- "MTSM340UV_F5120"
+nichia <- ""
+  
 uv_leds <- c("UVMAX340", "UVMAX305", "XSL365", "XSL370", "XSL375",
              "G_P30R140A1_XT", "LZ1_10UA00_00U4", "LZ1_10UV00")
 red_leds <- c("QDDH66002", "QDDH68002", "QDDH70002", "QDDH73502", 
@@ -91,7 +93,7 @@ all_led_accessors <-
 
 save(leds.mspct, roithner_laser, seti, tao_yuan, unknown, lumitronix,
      hewlett_packard, quantum_devices, osram, norlux, shenzhen_weili,
-     leds_global, huey_jann, led_engin, oo_maya_leds,
+     leds_global, huey_jann, led_engin, marktech, nichia, oo_maya_leds,
      uv_leds, red_leds, amber_leds, green_leds, blue_leds,
      white_leds, multichannel_leds, all_led_accessors,
      file = "data/leds-mspct.rda")

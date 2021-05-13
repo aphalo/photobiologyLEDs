@@ -1,6 +1,10 @@
 photobiologyLEDs 0.4.4 (2019-08-27)
 ===================================
 
+
+photobiologyLEDs 0.4.4 (2019-08-27)
+===================================
+
 Revise for ggspectra (>= 0.3.1), and rebuild all data objects with photobiology
 (== 0.9.30).
 Add data for additional LED types.

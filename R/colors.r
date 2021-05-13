@@ -11,9 +11,7 @@
 #' 
 #' @examples 
 #' uv_leds
-#' violet_leds
 #' blue_leds
-#' cyan_leds
 #' green_leds
 #' amber_leds
 #' red_leds
@@ -41,12 +39,6 @@
 
 #' @rdname uv_leds
 "white_leds"
-
-#' @rdname uv_leds
-"cyan_leds"
-
-#' @rdname uv_leds
-"violet_leds"
 
 #' @rdname uv_leds
 "multichannel_leds"
