@@ -1,0 +1,83 @@
+---
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+# photobiologyLEDs 0.4.4
+
+Update to fix missing 'rmarkdown' in suggests.
+
+Revise for ggspectra (\>= 0.3.1), and rebuild all data objects with photobiology (== 0.9.28).
+Add data for additional LED types.
+
+# photobiologyLEDs 0.4.3-1
+
+Fix dependency on a non-.0 version of R.
+
+# photobiologyLEDs 0.4.3
+
+Add data for additional LED types, and rebuild all data objects.
+Fix minor bug.
+Revise User Guide and remove the Catalogue of data vignette.
+
+# photobiologyLEDs 0.4.2
+
+Store spectral data in a single collection of spectra.
+Provide vectors of names to extract non-orthogonal subsets.
+At the moment by color and by manufacturer.
+Add spectral data for additional LEDs.
+Convert vignette to Rmarkdown.
+Add User Guide.
+
+# photobiologyLEDs 0.4.1
+
+Not submitted to CRAN and very short lived.
+It was a bad start into a major reorganization of the data.
+
+# photobiologyLEDs 0.3.2
+
+Trimmed Norlux data to 250..900 nm, and added source_mspct objects for multi-channel arrays.
+
+Rebuild data and the package with photobiology 0.8.5.
+
+# photobiologyLEDs 0.3.1
+
+Rebuild all data and the package with photobiology 0.8.0.
+
+# photobiologyLEDs 0.3.0
+
+Added data for LUMITRONIX LED array.
+Rebuild all data and the package with photobiology 0.6.0.
+
+# photobiologyLEDs 0.2.2
+
+Added data for UVMAX LEDs.
+
+# photobiologyLEDs 0.2.1
+
+Rebuilt data objects with photobiology 0.5.7 and updated the vignettes to use photobiologygg 0.2.5 functions.
+
+# photobiologyLEDs 0.2.0
+
+Updated required version of photobiology package to 0.5.1, which required a small edit to the User Guide.
+
+# photobiologyLEDs 0.1.3
+
+Updated required version of photobiology package.
+
+# photobiologyLEDs 0.1.2
+
+Data updated by reprocessing raw measurements using current version of MayaCalc.
+Rebuilt spectral objects with current version of photobiology package.
+Revised the vignette to use the new plot.source.spct() function.
+Added data for Tao Yuan UVB LED.
+
+# photobiologyLEDs 0.1.1
+
+Data updated by reprocessing raw measurements using current version of MayaCalc.
+Added a vignette.
+
+# photobiologyLEDs 0.1.0
+
+First version.

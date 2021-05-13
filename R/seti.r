@@ -17,7 +17,7 @@
 #' LEDs are also sold under different type denominations by Roithner
 #' LaserTechnik.
 #' 
-#' @references \url{http://www.s-et.com/}
+#' @references \url{https://www.s-et.com/}
 #'
 #' @seealso \code{\link{leds.mspct}}
 #' 

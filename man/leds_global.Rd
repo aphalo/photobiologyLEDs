@@ -27,7 +27,7 @@ leds_global
 
 }
 \references{
-\url{http://www.leds-global.com/}
+\url{https://www.leds-global.com/}
 }
 \seealso{
 \code{\link{leds.mspct}}

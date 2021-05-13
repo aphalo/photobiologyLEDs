@@ -26,7 +26,7 @@ roithner_laser
 
 }
 \references{
-\url{http://www.roithner-laser.com/}
+\url{https://www.roithner-laser.com/}
 }
 \seealso{
 \code{\link{leds.mspct}}

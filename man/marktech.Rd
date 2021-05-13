@@ -20,7 +20,7 @@ marktech
 
 }
 \references{
-\url{http://www.marktechopto.com/}
+\url{https://www.marktechopto.com/}
 }
 \seealso{
 \code{\link{leds.mspct}}

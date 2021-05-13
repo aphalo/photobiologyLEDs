@@ -26,7 +26,7 @@ seti
 
 }
 \references{
-\url{http://www.s-et.com/}
+\url{https://www.s-et.com/}
 }
 \seealso{
 \code{\link{leds.mspct}}

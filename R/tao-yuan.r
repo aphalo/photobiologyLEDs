@@ -14,7 +14,7 @@
 #' @note
 #' TaoYuan Electron (HK) is a supplier of LEDs and LED arrays.
 #' 
-#' @references \url{http://www.ledwv.com/en/}
+#' @references \url{https://www.ledwv.com/en/}
 #'
 #' @seealso \code{\link{leds.mspct}}
 #' 

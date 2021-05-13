@@ -23,7 +23,7 @@ tao_yuan
 
 }
 \references{
-\url{http://www.ledwv.com/en/}
+\url{https://www.ledwv.com/en/}
 }
 \seealso{
 \code{\link{leds.mspct}}

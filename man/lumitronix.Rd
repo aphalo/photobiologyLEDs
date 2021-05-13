@@ -25,7 +25,7 @@ lumitronix
 
 }
 \references{
-\url{http://www.leds.de/}
+\url{https://www.leds.de/}
 }
 \seealso{
 \code{\link{leds.mspct}}
