@@ -8,7 +8,7 @@ editor_options:
 
 Update to fix missing 'rmarkdown' in suggests.
 
-Revise for ggspectra (\>= 0.3.1), and rebuild all data objects with photobiology (== 0.9.28).
+Revise for ggspectra (>= 0.3.1), and rebuild all data objects with photobiology (== 0.9.28).
 Add data for additional LED types.
 
 # photobiologyLEDs 0.4.3-1
