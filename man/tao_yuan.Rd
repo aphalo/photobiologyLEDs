@@ -23,7 +23,11 @@ tao_yuan
 
 }
 \references{
+<<<<<<< HEAD
 \url{http://www.ledwv.com/en/}
+=======
+\url{https://www.ledwv.com/en/}
+>>>>>>> minimal.fix.for.CRAN
 }
 \seealso{
 \code{\link{leds.mspct}}

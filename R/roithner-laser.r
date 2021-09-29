@@ -17,7 +17,7 @@
 #' lasers. They have a very extensive catalogue covering almost wavelengths for
 #' which LEDs are manufactured.
 #' 
-#' @references \url{http://www.roithner-laser.com/}
+#' @references \url{https://www.roithner-laser.com/}
 #'
 #' @seealso \code{\link{leds.mspct}}
 #' 

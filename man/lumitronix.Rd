@@ -25,7 +25,11 @@ lumitronix
 
 }
 \references{
+<<<<<<< HEAD
 \url{http://www.leds.de/}
+=======
+\url{https://www.leds.de/}
+>>>>>>> minimal.fix.for.CRAN
 }
 \seealso{
 \code{\link{leds.mspct}}

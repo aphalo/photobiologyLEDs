@@ -26,7 +26,11 @@ roithner_laser
 
 }
 \references{
+<<<<<<< HEAD
 \url{http://www.roithner-laser.com/}
+=======
+\url{https://www.roithner-laser.com/}
+>>>>>>> minimal.fix.for.CRAN
 }
 \seealso{
 \code{\link{leds.mspct}}

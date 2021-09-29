@@ -20,7 +20,11 @@ marktech
 
 }
 \references{
+<<<<<<< HEAD
 \url{http://www.marktechopto.com/}
+=======
+\url{https://www.marktechopto.com/}
+>>>>>>> minimal.fix.for.CRAN
 }
 \seealso{
 \code{\link{leds.mspct}}

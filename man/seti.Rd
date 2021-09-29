@@ -26,7 +26,11 @@ seti
 
 }
 \references{
+<<<<<<< HEAD
 \url{http://www.s-et.com/}
+=======
+\url{https://www.s-et.com/}
+>>>>>>> minimal.fix.for.CRAN
 }
 \seealso{
 \code{\link{leds.mspct}}

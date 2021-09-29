@@ -27,7 +27,11 @@ leds_global
 
 }
 \references{
+<<<<<<< HEAD
 \url{http://www.leds-global.com/}
+=======
+\url{https://www.leds-global.com/}
+>>>>>>> minimal.fix.for.CRAN
 }
 \seealso{
 \code{\link{leds.mspct}}

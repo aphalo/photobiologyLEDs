@@ -35,9 +35,13 @@ leds.mspct[grep("QDDH", names(leds.mspct))]
 leds.mspct$LZ1_10R302
 
 ## -----------------------------------------------------------------------------
+<<<<<<< HEAD
 cat(getWhatMeasured(leds.mspct$LZ1_10R302))
 
 ## -----------------------------------------------------------------------------
+=======
+getWhatMeasured(leds.mspct$LZ1_10R302)
+>>>>>>> minimal.fix.for.CRAN
 getWhenMeasured(leds.mspct$LZ1_10R302)
 
 ## -----------------------------------------------------------------------------
@@ -64,6 +68,7 @@ my.spct <- fscale(leds.mspct$UV395,
 e_irrad(my.spct, waveband(c(315,400)))
 
 ## -----------------------------------------------------------------------------
+<<<<<<< HEAD
 my.spct <- fscale(leds.mspct$UV395,
                   range = c(315, 400),
                   e_irrad,
@@ -72,13 +77,19 @@ my.spct <- fscale(leds.mspct$UV395,
 integrate_spct(my.spct)
 
 ## -----------------------------------------------------------------------------
+=======
+getScaled(my.spct)
+>>>>>>> minimal.fix.for.CRAN
 setScaled(my.spct)
 getScaled(my.spct)
 
 ## -----------------------------------------------------------------------------
+<<<<<<< HEAD
 e_irrad(my.spct, waveband(c(315,400)))
 
 ## -----------------------------------------------------------------------------
+=======
+>>>>>>> minimal.fix.for.CRAN
 my.UV395 <- leds.mspct$UV395
 setNormalized(my.UV395)
 e_irrad(my.UV395)
@@ -87,7 +98,11 @@ e_irrad(my.UV395)
 q_ratio(leds.mspct$UV395, UVB(), UVA())
 
 ## -----------------------------------------------------------------------------
+<<<<<<< HEAD
 autoplot(leds.mspct$LZ1_10R302, annotations = c("+", "wls"), )
+=======
+autoplot(leds.mspct$LZ1_10R302)
+>>>>>>> minimal.fix.for.CRAN
 
 ## -----------------------------------------------------------------------------
 ggplot(leds.mspct$LZ1_10R302) +

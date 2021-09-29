@@ -15,7 +15,7 @@
 #' 
 #' @note
 #' Lumitronix is a supplier of LED arrays, and a distributor of LEDs.
-#' @references \url{http://www.leds.de/}
+#' @references \url{https://www.leds.de/}
 #' 
 #' @seealso \code{\link{leds.mspct}}
 #' 

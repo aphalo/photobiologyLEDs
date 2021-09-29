@@ -3,4 +3,4 @@
 ^data-raw/*
 ^\.git/*
 ^_pkgdown\.yml$
-^README.Rmd
+^README.Rmd$
