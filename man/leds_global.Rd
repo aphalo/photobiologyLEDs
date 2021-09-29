@@ -28,7 +28,11 @@ leds_global
 }
 \references{
 <<<<<<< HEAD
+<<<<<<< HEAD
 \url{http://www.leds-global.com/}
+=======
+\url{https://www.leds-global.com/}
+>>>>>>> minimal.fix.for.CRAN
 =======
 \url{https://www.leds-global.com/}
 >>>>>>> minimal.fix.for.CRAN

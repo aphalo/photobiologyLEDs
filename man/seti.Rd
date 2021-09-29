@@ -27,7 +27,11 @@ seti
 }
 \references{
 <<<<<<< HEAD
+<<<<<<< HEAD
 \url{http://www.s-et.com/}
+=======
+\url{https://www.s-et.com/}
+>>>>>>> minimal.fix.for.CRAN
 =======
 \url{https://www.s-et.com/}
 >>>>>>> minimal.fix.for.CRAN

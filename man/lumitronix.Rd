@@ -26,7 +26,11 @@ lumitronix
 }
 \references{
 <<<<<<< HEAD
+<<<<<<< HEAD
 \url{http://www.leds.de/}
+=======
+\url{https://www.leds.de/}
+>>>>>>> minimal.fix.for.CRAN
 =======
 \url{https://www.leds.de/}
 >>>>>>> minimal.fix.for.CRAN

@@ -24,7 +24,11 @@ tao_yuan
 }
 \references{
 <<<<<<< HEAD
+<<<<<<< HEAD
 \url{http://www.ledwv.com/en/}
+=======
+\url{https://www.ledwv.com/en/}
+>>>>>>> minimal.fix.for.CRAN
 =======
 \url{https://www.ledwv.com/en/}
 >>>>>>> minimal.fix.for.CRAN

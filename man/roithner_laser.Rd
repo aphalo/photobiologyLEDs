@@ -27,7 +27,11 @@ roithner_laser
 }
 \references{
 <<<<<<< HEAD
+<<<<<<< HEAD
 \url{http://www.roithner-laser.com/}
+=======
+\url{https://www.roithner-laser.com/}
+>>>>>>> minimal.fix.for.CRAN
 =======
 \url{https://www.roithner-laser.com/}
 >>>>>>> minimal.fix.for.CRAN

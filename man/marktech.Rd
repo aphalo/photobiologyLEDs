@@ -21,7 +21,11 @@ marktech
 }
 \references{
 <<<<<<< HEAD
+<<<<<<< HEAD
 \url{http://www.marktechopto.com/}
+=======
+\url{https://www.marktechopto.com/}
+>>>>>>> minimal.fix.for.CRAN
 =======
 \url{https://www.marktechopto.com/}
 >>>>>>> minimal.fix.for.CRAN
