@@ -48,8 +48,8 @@ for (i in seq_along(files)) {
                      " from ", supplier, "; ca. ", vintage, sep = "")
   print(what.text)
   setWhatMeasured(temp.spct, what.text)
-  setHowMeasured(temp.spct,
-               "Array spectrometer, Ocean Optics Maya 2000 Pro, s/n: MAY")
+  setHowMeasured(temp.spct, 
+                 "Array spectrometer, Ocean Optics Maya 2000 Pro, Bentham D7H cosine corrected diffuser.")
   comment(temp.spct) <-
     "Measured by Shafiuddin Ahmed\nat SenPEP, OEB, FBES, Univ. of Helsinki"
   temp.spct <- clean(temp.spct)
@@ -59,6 +59,7 @@ for (i in seq_along(files)) {
 }
 
 summary(shafi.mspct)
+autoplot(shafi.mspct)
 
 for (s in shafi.mspct) {
   print(autoplot(s, annotations = c("+", "title:what:when")))

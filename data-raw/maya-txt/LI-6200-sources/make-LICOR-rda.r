@@ -38,14 +38,22 @@ for (f in files) {
   temp.spct <- normalize(temp.spct)
   temp.spct <- thin_wl(temp.spct)
   setWhatMeasured(temp.spct, 
-                  paste("NHXRGB090 RGB LED array, ", 
+                  paste("90 die RGB LED array type NHXRGB0905005, ", 
                         channels.map[f], " channel, ",
                         "from Norlux, USA; ca. 1990", sep = ""))
-  setHowMeasured(temp.spct, "Array spectrometer, Ocean Optics Maya 2000 Pro")
+  setHowMeasured(temp.spct, "Array spectrometer, Ocean Optics Maya 2000 Pro, Bentham D7H cosine corrected diffuser.")
   trimInstrDesc(temp.spct)
   trimInstrSettings(temp.spct)
   norlux.mspct[[names.map[f]]] <- temp.spct
 }
+
+NHXRGB090.spct <- rbindspct(list(R = norlux.mspct$NHXRGB090_R,
+                                 G = norlux.mspct$NHXRGB090_G,
+                                 B = norlux.mspct$NHXRGB090_B),
+                            idfactor = "channel")
+
+norlux.mspct[["NHXRGB090"]] <- NHXRGB090.spct
+getWhenMeasured(norlux.mspct[["NHXRGB090"]])
 
 names(norlux.mspct)
 
@@ -57,4 +65,5 @@ for (s in norlux.mspct) {
 }
 
 save(norlux.mspct, file = "data-raw/rda2merge/norlux-mspct.rda")
+
 
