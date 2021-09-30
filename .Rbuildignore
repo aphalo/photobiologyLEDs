@@ -1,6 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^data-raw/*
+^data-raw-old/*
 ^\.git/*
+^\.gitignore$
 ^_pkgdown\.yml$
 ^README.Rmd$
