@@ -1,0 +1,2 @@
+Lumitronix PowerBar far-read 730 nm uses 12 SMD LEDs
+Osram OSLON SSL 150, type GF CSHPM2.24-2T4T-1 (most likely) 720-740 nm.
