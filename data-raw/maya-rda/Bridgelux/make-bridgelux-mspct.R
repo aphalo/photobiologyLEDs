@@ -21,7 +21,7 @@ how.measured <- "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine 
 comment.text <- "3W SMD LED from Bridgelux https://www.bridgelux.com\nSupplied by AliExpress seller 'YTLEDONE Official Store' in 2021\nsoldered on 20 mm starboard mounted on heat sink."
 what.measured <- "3W SMD LED from Bridgelux"
 
-epileds.mspct <- source_mspct()
+bridgelux.mspct <- source_mspct()
 for (s in spectra) {
   temp.spct <- get(s)
   temp.spct <- normalize(temp.spct)
@@ -34,12 +34,22 @@ for (s in spectra) {
   trimInstrSettings(temp.spct)
   print(str(get_attributes(temp.spct)))
   print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment")))
-  epileds.mspct[[new.names[s]]] <- temp.spct
+  bridgelux.mspct[[new.names[s]]] <- temp.spct
   readline("next:")
 }
 
-autoplot(epileds.mspct)
+autoplot(bridgelux.mspct)
 
-epileds <- names(epileds.mspct)
+keepers <- 1
+names <- "Bridgelux_3W_450nm"
 
-save(epileds, epileds.mspct, file = "data-raw/rda2merge/epileds-mspct.rda")
+cat("Keeping only:", keepers, "\n")
+
+bridgelux.mspct <- bridgelux.mspct[keepers]
+names(bridgelux.mspct) <- names
+
+bridgelux <- names(bridgelux.mspct)
+
+cat("Saving:", bridgelux, sep = "\n")
+
+save(bridgelux, bridgelux.mspct, file = "data-raw/rda2merge/bridgelux-mspct.rda")

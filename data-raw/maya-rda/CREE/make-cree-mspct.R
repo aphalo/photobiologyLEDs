@@ -41,6 +41,11 @@ for (s in spectra) {
 
 autoplot(cree.mspct)
 
+keepers <- "CREE_XPE_480nm"
+cat("Keeping only:", keepers)
+
+cree.mspct <- cree.mspct[keepers]
+
 cree <- names(cree.mspct)
 
 save(cree, cree.mspct, file = "data-raw/rda2merge/cree-mspct.rda")

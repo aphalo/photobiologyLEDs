@@ -1,4 +1,3 @@
 PowerBar V3 uses 12 SMD LEDs (derated to 700 mA)
 365nm: Nichia NVSU233B U365
 385nm: Nichia NVSU119C U385
-
