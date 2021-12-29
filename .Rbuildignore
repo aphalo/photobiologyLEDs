@@ -6,3 +6,5 @@
 ^\.gitignore$
 ^_pkgdown\.yml$
 ^README.Rmd$
+^CITATION\.cff$
+^\.github$

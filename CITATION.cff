@@ -1,0 +1,41 @@
+# -----------------------------------------------------------
+# CITATION file created with {cffr} R package, v0.1.1
+# See also: https://docs.ropensci.org/cffr/
+# -----------------------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "photobiologyLEDs" in publications use:'
+type: software
+license: GPL-2.0-or-later
+title: 'photobiologyLEDs: Spectral Data for Light-Emitting-Diodes'
+version: 0.4.5
+doi: 10.19232/uv4pb.2015.1.14
+abstract: Spectral emission data for some frequently used light emitting diodes available
+  as electronic components. Part of the 'r4photobiology' suite, Aphalo P. J. (2015)
+  <doi:10.19232/uv4pb.2015.1.14>.
+authors:
+- family-names: Aphalo
+  given-names: Pedro J.
+  email: pedro.aphalo@helsinki.fi
+  orcid: https://orcid.org/0000-0003-3385-972X
+preferred-citation:
+  type: article
+  title: The r4photobiology suite
+  authors:
+  - family-names: Aphalo
+    given-names: Pedro J.
+  journal: UV4Plants Bulletin
+  volume: '2015'
+  number: '1'
+  pages: 21-29
+  year: '2015'
+  doi: 10.19232/uv4pb.2015.1.14
+repository: https://CRAN.R-project.org/package=photobiologyLEDs
+repository-code: https://bitbucket.org/aphalo/photobiologyleds
+url: https://docs.r4photobiology.info/photobiologyLEDs
+date-released: '2021-05-14'
+contact:
+- family-names: Aphalo
+  given-names: Pedro J.
+  email: pedro.aphalo@helsinki.fi
+  orcid: https://orcid.org/0000-0003-3385-972X
