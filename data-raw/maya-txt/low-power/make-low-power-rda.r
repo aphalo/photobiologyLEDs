@@ -33,7 +33,7 @@ for (led in c("BS436", "CB30", "LED740")) {
   temp.spct <-clean(temp.spct)
   temp.spct <-normalize(temp.spct)
   temp.spct <-thin_wl(temp.spct)
-  setWhatMeasured(temp.spct, led)
+  setWhatMeasured(temp.spct, paste("LED type", led, "from Roithner Laser, Austria; ca. 2005"))
   setHowMeasured(temp.spct, "Ocean Optics Maya 2000Pro")
   trimInstrDesc(temp.spct)
   trimInstrSettings(temp.spct)
@@ -48,5 +48,5 @@ for (i in seq_along(led_lowpower.mspct)) {
   readline("next:")
 }
 
-# save(led_lowpower.mspct, file = "./data-raw/rda2merge/led-lowpower-mspct.rda")
+save(led_lowpower.mspct, file = "./data-raw/rda2merge/led-lowpower-mspct.rda")
 

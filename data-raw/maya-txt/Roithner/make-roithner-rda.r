@@ -46,6 +46,6 @@ for (s in roithner_low_power.mspct) {
   readline("next:")
 }
 
-save(roithner_low_power.mspct, 
-     file = paste(path, "roithner-low-power-mspct.rda", sep = ""))
+# save(roithner_low_power.mspct, 
+#      file = paste(path, "roithner-low-power-mspct.rda", sep = ""))
 

@@ -27,7 +27,7 @@ for (s in spectra) {
                         ifelse(grepl("SMB1N|DUV", s), 350, "NA"), "mA.", sep = "")
   comment.text <- paste("LED type",
                         types[s],
-                        "from Roithner-LaserTechnik (http://roithner-laser.com/) ca. ", ifelse(grepl("SMB1N|DUV", s), "2020-2021", "2000-2005"),
+                        "from Roithner-LaserTechnik, Austria; ca. ", ifelse(grepl("SMB1N|DUV", s), "2020-2021", "2000-2005"),
                         ".", sep = "")
   what.measured <- paste("LED type", types[s], "from Roithner-Laser")
   temp.spct <- get(s)

@@ -44,7 +44,7 @@ for (s in type2name.map) {
   comment.text <- paste("LED type",
                         name2type.map[s], "SunLike series from Seoul Semiconductor (https://www.seoulsemicon./)\nin", 
                         type2pwrchar.map[name2type.map[s]], type2pkgchar.map[name2type.map[s]], 
-                        "from Lumitronix (https://www.lumitronix.com/en_gb/) ca. 2018-2019.")
+                        "from Lumitronix, Germany; ca. 2018-2019.")
   what.measured <- paste("LED type", name2type.map[s], "from Seoul Semiconductor")
   temp.spct <- get(s)
   temp.spct <- normalize(temp.spct)

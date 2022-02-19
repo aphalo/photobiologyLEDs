@@ -40,7 +40,7 @@ for (f in files) {
   setWhatMeasured(temp.spct, 
                   paste("90 die RGB LED array type NHXRGB0905005, ", 
                         channels.map[f], " channel, ",
-                        "from Norlux, USA; ca. 1990", sep = ""))
+                        "from Norlux, USA; ca. 1995", sep = ""))
   setHowMeasured(temp.spct, "Array spectrometer, Ocean Optics Maya 2000 Pro, Bentham D7H cosine corrected diffuser.")
   trimInstrDesc(temp.spct)
   trimInstrSettings(temp.spct)

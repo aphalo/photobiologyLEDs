@@ -29,16 +29,16 @@ for (i in seq_along(files)) {
  
   if (grepl("^QDD", spct.names[i])) {
     supplier <- "Quantum Devices, USA"
-    vintage <- "1990"
-  } else if (grepl("^HLMP", spct.names[i])) {
+    vintage <- "1995"
+  } else if (grepl("^HLM", spct.names[i])) {
     supplier <- "Hewlett-Packard/Agilent"
-    vintage <- "1990"
+    vintage <- "1995"
   } else if (grepl("^NHX", spct.names[i])) {
     supplier <- "Norlux, USA"
     vintage <- "1995"
   } else if (grepl("^LY", spct.names[i])) {
     supplier <- "Osram"
-    vintage <- "1990"
+    vintage <- "1995"
   } else {
     supplier <- "Roithner-Laser, Austria"
     vintage <- "2005"
