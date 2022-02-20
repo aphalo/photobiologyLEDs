@@ -19,13 +19,24 @@ spectra <- ls(pattern = "\\.spct")
 
 stopifnot(length(spectra) == 3)
 
+RGB.spct <- rbindspct(list(R = red.spct,
+                           G = green.spct,
+                           B = blue.spct),
+                      idfactor = "channel")
+
+spectra <- ls(pattern = "\\.spct")
+
+stopifnot(length(spectra) == 4)
+
 new.names <- gsub("\\.spct", "", spectra)
 new.names <- paste("Norlux_NHXRGB090S00S", new.names, sep = "_")
 names(new.names) <- spectra
 
+
 how.measured <- "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H."
 comment.text <- "12W Red-Green-Blue 90 die metal-core COB LED type NHXRGB090S00S from Norlux, Illinois, USA (out of bussiness)\nsupplied by Norlux ca. 2002-2005 \n."
 what.measured <- "12W RGB LED COB Type NHXRGB090S00S from Norlux"
+when.measured <- when_measured(red.spct)
 
 norlux.mspct <- source_mspct()
 for (s in spectra) {
@@ -35,6 +46,7 @@ for (s in spectra) {
   temp.spct <- thin_wl(temp.spct)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)
+  setWhenMeasured(temp.spct, when.measured)
   comment(temp.spct) <- comment.text
   trimInstrDesc(temp.spct)
   trimInstrSettings(temp.spct)
@@ -44,9 +56,9 @@ for (s in spectra) {
   readline("next:")
 }
 
-autoplot(norlux.mspct)
-autoplot(Norlux_RGB.mspct)
-attributes(Norlux_RGB.mspct$red)
+autoplot(norlux.mspct[new.names[1:3]])
+autoplot(norlux.mspct[[new.names[4]]])
+
 norlux <- names(norlux.mspct)
 
 cat("Saving:", norlux, sep = "\n")

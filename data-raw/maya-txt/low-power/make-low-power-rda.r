@@ -20,6 +20,7 @@ path <- "data-raw/maya-txt/low-power/"
 a.method <- MAYP11278_ylianttila.mthd
 a.descriptor <- which_descriptor(ymd("2012-05-06"))
 
+
 led_lowpower.mspct <- source_mspct()
 for (led in c("BS436", "CB30", "LED740")) {
   # , "LED405", "UV395", "XSL365", "XSL370", "XSL375", "white"
@@ -37,7 +38,7 @@ for (led in c("BS436", "CB30", "LED740")) {
   setHowMeasured(temp.spct, "Ocean Optics Maya 2000Pro")
   trimInstrDesc(temp.spct)
   trimInstrSettings(temp.spct)
-  led_lowpower.mspct[[led]] <- temp.spct
+  led_lowpower.mspct[[led_names[led]]] <- temp.spct
 #  assign(paste(led, "spct", sep="."), temp.led.spct)
 }
 

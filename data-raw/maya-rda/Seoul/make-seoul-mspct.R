@@ -34,7 +34,7 @@ type2pkgchar.map <- c(
   NFSW757G_Rsp0a = "52 x SMD LinearZ"
 )
 
-new.names <- paste("Seoul Semicon", name2type.map, sep = "_")
+new.names <- paste("SeoulSemicon", name2type.map, sep = "_")
 names(new.names) <- type2name.map
 
 how.measured <- "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H; distance unknown; LED current 350 mA."
