@@ -43,8 +43,8 @@ for (s in spectra) {
 
 autoplot(marktech.mspct)
 
-marktech <- names(marktech.mspct)
+Marktech_leds <- names(marktech.mspct)
 
-cat("Saving:", marktech, sep = "\n")
+cat("Saving:", Marktech_leds, sep = "\n")
 
-save(marktech, marktech.mspct, file = "data-raw/rda2merge/marktech-mspct.rda")
+save(Marktech_leds, marktech.mspct, file = "data-raw/rda2merge/marktech-mspct.rda")

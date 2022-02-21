@@ -6,26 +6,36 @@
 \alias{photobiologyLEDs-package}
 \title{photobiologyLEDs: Spectral Data for Light-Emitting-Diodes}
 \description{
-Spectral emission data for some frequently used light emitting
-    diodes available as electronic components. Part of the 'r4photobiology' 
-    suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
+Spectral emission data for some frequently used light emitting diodes available as electronic components. Part of the 'r4photobiology' suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.
 }
 \details{
-Data for emission spectra of different types of LEDs.
+Data for emission spectra of different types of LEDs and LED arrays.
 
 The package contains one collection of spectra for different LEDs available
 as electronic components requiring separate electronic driver modules or
 circuits for their use. Data for LED bulbs are included in package 
 \code{\link[photobiologyLamps]{photobiologyLamps-package}}. 
 
-In addition to the spectra the packages provides character vectors of names
-to be used as indexes to subset groups of spectra. In many cases spectral
+In addition to the spectra the package provides character vectors of names
+to be used as indexes to subset groups of spectra. In all cases spectral
 data are normalized to spectral energy irradiance equal to one at the
 wavelength of maximum spectral energy irradiance (strongest emission peak).
+In most cases the multiplier used for normalization can be obtained by
+quering the object. However, this is useful only in those cases where the
+distance from source to entrance optics of the spectrometer and alignment 
+were recorded. 
 
 All LEDs have been measured at room temperature mounted on passive heatsinks
 and driven at or below their maximum current rating. High precision power
-supplies were used to drive them.
+supplies or LED drivers were used to drive them.
+
+The number of different LED types available is enormous, and this collection
+attempts only to provide examples for some of them. Which types are included
+is the result of what has been bought for specific uses at my lab or out of
+curiosity since 1995 to the present. Which brands and LED types are included,
+should not be interpreted as endorsement of them.
 }
 \section{Warning!}{
 
@@ -50,47 +60,37 @@ library(ggspectra)
 
 names(leds.mspct)
 
-q_ratio(leds.mspct$white, Blue(), Red())
+led_brands
 
-peaks(leds.mspct$white, span = 101)
+white_leds
 
-autoplot(leds.mspct$white, annotations = c("+", "title:what"))
+q_ratio(leds.mspct$Nichia_NS6L183AT_H1_sw, Blue(), Red())
 
-q_ratio(leds.mspct$Q36_4000K, Blue(), Red())
-
-\dontrun{
-autoplot(leds.mspct$Q36_4000K)
-}
-
-q_ratio(leds.mspct$NS6L183AT_H1, Blue(), Red())
+autoplot(leds.mspct$Nichia_NS6L183AT_H1_sw)
 
 \dontrun{
-autoplot(leds.mspct$NS6L183AT_H1)
+autoplot(leds.mspct$Nichia_NS6L183AT_H1_sw, unit.out = "photon")
 }
 
 \dontrun{
-autoplot(leds.mspct$NS6L183AT_H1, unit.out = "photon")
-}
-
-\dontrun{
-autoplot(leds.mspct$NS6L183AT_H1, 
+autoplot(leds.mspct$Nichia_NS6L183AT_H1_sw, 
      range = VIS(), 
      w.band = VIS_bands(),
      span = 101)
 }
 
+is_normalized(leds.mspct$Nichia_NS6L183AT_H1_sw)
+
+cat(comment(leds.mspct$Nichia_NS6L183AT_H1_sw))
+
+when_measured(leds.mspct$Nichia_NS6L183AT_H1_sw)
+
+how_measured(leds.mspct$Nichia_NS6L183AT_H1_sw)
+
 }
 \references{
 Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
-<<<<<<< HEAD
-<<<<<<< HEAD
-21-29. \url{https://doi.org/10.19232/uv4pb.2015.1.14}.
-=======
 21-29. \doi{10.19232/uv4pb.2015.1.14}.
->>>>>>> minimal.fix.for.CRAN
-=======
-21-29. \doi{10.19232/uv4pb.2015.1.14}.
->>>>>>> minimal.fix.for.CRAN
 }
 \seealso{
 Useful links:

@@ -3,7 +3,7 @@
 \docType{data}
 \name{oo_maya_leds}
 \alias{oo_maya_leds}
-\title{Spectra acquired with Ocean Optics Maya2000 Pro}
+\title{Spectra acquired with an Ocean Optics Maya2000 Pro spectrometer}
 \format{
 A vector of character strings.
 }
@@ -11,27 +11,30 @@ A vector of character strings.
 oo_maya_leds
 }
 \description{
-Dataset containing the wavelengths and tabulated values spectral
-  emittance for LEDs. Data for both low power single-die devices and high
-  power LEDs arrays are included. The data are normalized to the peak of
-  maximum spectral energy irradiance.
+The collection of spectra \code{\link{leds.mspct}} contains spectra for some
+COB arrays of light emitting diodes (LEDs) from multiple sources. Most of
+them were measured with the same spectrometer. Data are normalized to one at
+the wavelength of maximum emission. The character vector \code{oo_maya_leds}
+contains the names of the spectra to facilitate their extraction from the
+collection. The vector \code{oo_maya_leds} contains the names of
+the spectra acquired with an Ocean Optics Maya2000
+Pro spectrometer to facilitate their extraction from the collection..
 }
 \details{
-\code{oo_maya_leds} is a character vector with indexes to members of
-  \code{\link{leds.mspct}}.
-
-The variables in each member spectrum are as follows: \itemize{ \item
-w.length (nm) \item s.e.irrad }
-}
-\note{
-Instrument used: Ocean Optics Maya2000 Pro single-monochromator array
+Instrument used is an Ocean Optics Maya2000 Pro single-monochromator array
   spectroradiometer with a Bentham cosine corrected input optics. A complex
   set of corrections and calibration procedure used. Raw spectral data
-  processed with R packages 'MayaCalc' or 'ooacquire'.
+  were acquired and/or processed with R package 'ooacquire'.
+}
+\note{
+Ocean Optics is now named Ocean Insight.
 }
 \examples{
 oo_maya_leds
 
+}
+\references{
+\url{https://www.oceaninsight.com/}
 }
 \seealso{
 \code{\link{leds.mspct}}

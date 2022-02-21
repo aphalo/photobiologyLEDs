@@ -1,6 +1,7 @@
 library(photobiology)
 library(photobiologyWavebands)
 library(dplyr)
+library(stringr)
 
 rm(list = ls(pattern = "*"))
 
@@ -24,20 +25,6 @@ for (mspct in mget(collections2bind)) {
 rm(list = c(collections2bind, "mspct"))
 
 names(leds.mspct)
-
-# leds.mspct <- leds.mspct[order(names(leds.mspct))]
-# 
-# names(leds.mspct)
-
-# normalize all spectra to their maxima
-
-# leds.mspct <- normalize(leds.mspct)
-
-# names(leds.mspct)
-
-# save collection
-
-# save(leds.mspct, file = "leds-mspct.rda")
 
 # metadata
 
@@ -78,47 +65,50 @@ what_measured.ls <- list()
 for (s in names(leds.mspct)) {
   what_measured.ls[[s]] <- getWhatMeasured(leds.mspct[[s]])
 }
-# na_what <- names(what_measured.ls)[is.na(what_measured.ls)]
-# short_what <- names(what_measured.ls)[grepl("^LED, type  ", what_measured.ls)]
-# replace_what <- intersect(names(leds.mspct), names(led.whats))
-# 
-# for (s in replace_what) {
-#   what_measured(leds.mspct[[s]]) <- led.whats[[s]]
-# }
 
 leds.mspct <- leds.mspct[order(names(leds.mspct))]
 
-# Create category index vectors
+# Distinguish by number of channels
+multi_channel_leds <- grep("RGB", names(leds.mspct), value = TRUE)
+single_channel_leds <- grep("RGB", names(leds.mspct), value = TRUE, invert = TRUE)
 
-# Assemble lists based on peak wavelengths
+# Assemble vectors of names based on peak wavelengths
 
-uv_leds <- names(leds.mspct)[peak.wl <= wl_max(UV())]
-purple_leds <- names(leds.mspct)[peak.wl > wl_min(Purple()) &
-                                   peak.wl <= wl_max(Purple())]
-blue_leds <- names(leds.mspct)[peak.wl > wl_min(Blue()) &
-                                   peak.wl <= wl_max(Blue())]
-green_leds <- names(leds.mspct)[peak.wl > wl_min(Green()) &
-                                  peak.wl <= wl_max(Green())]
-yellow_leds <- names(leds.mspct)[peak.wl > wl_min(Yellow()) &
-                                   peak.wl <= wl_max(Yellow())]
-orange_leds <- names(leds.mspct)[peak.wl > wl_min(Orange()) &
-                                   peak.wl <= wl_max(Orange())]
-red_leds <-  names(leds.mspct)[peak.wl > wl_min(Red()) &
-                                 peak.wl <= wl_max(Red())]
+# as the spectra are normalised, a broad spectrum with have a large integral
+white_leds <- single_channel_leds[q_irrad(leds.mspct[single_channel_leds], allow.scaled = TRUE)[["Q_Total"]] > 3e-4]
+
+names_single <- setdiff(single_channel_leds, white_leds)
+
+peak.wl_single <- peak.wl[names_single]
+names_single == names(peak.wl_single)
+peak.wl_single <- unname(peak.wl_single)
+
+uv_leds <- names_single[peak.wl_single <= wl_max(UV())]
+ir_leds <- names_single[peak.wl_single > 700]
+purple_leds <- names_single[peak.wl_single > wl_max(UV()) &
+                              peak.wl_single <= wl_max(Purple())]
+blue_leds <- names_single[peak.wl_single > wl_min(Blue()) &
+                            peak.wl_single <= wl_max(Blue())]
+green_leds <- names_single[peak.wl_single > wl_min(Green()) &
+                             peak.wl_single <= wl_max(Green())]
+yellow_leds <- names_single[peak.wl_single > wl_min(Yellow()) &
+                              peak.wl_single <= wl_max(Yellow())]
+orange_leds <- names_single[peak.wl_single > wl_min(Orange()) &
+                              peak.wl_single <= wl_max(Orange())]
+red_leds <-  names_single[peak.wl_single > wl_min(Red()) &
+                            peak.wl_single <= wl_max(Red())]
 amber_leds <- sort(c(yellow_leds, orange_leds))
-white_leds <- character()
-grow_leds <- character()
 
-multichannel_leds <- grep("RGB", names(leds.mspct), value = TRUE)
+# Vector of brands as used when naming member spectra
 
-brands <- unique(character())
-  
-oo_maya_leds <- names(leds.mspct)
+led_brands <- unique(str_split(names(leds.mspct), "_", simplify = TRUE)[ , 1])
 
-save(leds.mspct,  oo_maya_leds, multichannel_leds,
-     uv_leds, purple_leds, blue_leds, green_leds, yellow_leds, 
-     orange_leds, red_leds, amber_leds,
-     white_leds,
+# Vectors based on how spectra were acquired  
+oo_maya_leds <- names(leds.mspct)[grep("Maya", how_measured(leds.mspct)[["how.measured"]])]
+
+objects_to_save <- c("leds.mspct", "led_brands", ls(pattern = "_leds$"))
+
+save(list = objects_to_save,
      file = "data/leds-mspct.rda")
 
 tools::resaveRdaFiles("data", compress="auto")

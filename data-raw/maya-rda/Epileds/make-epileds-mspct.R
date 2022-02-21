@@ -45,6 +45,6 @@ for (s in spectra) {
 
 autoplot(epileds.mspct)
 
-epileds <- names(epileds.mspct)
+Epileds_leds <- names(epileds.mspct)
 
-save(epileds, epileds.mspct, file = "data-raw/rda2merge/epileds-mspct.rda")
+save(Epileds_leds, epileds.mspct, file = "data-raw/rda2merge/epileds-mspct.rda")

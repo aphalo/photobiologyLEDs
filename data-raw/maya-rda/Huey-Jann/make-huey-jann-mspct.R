@@ -20,7 +20,7 @@ spectra <- ls(pattern = "HPR")
 
 types <- gsub(".spct", "", spectra)
 names(types) <- spectra
-new.names <- paste("Huey_Jann_", types, sep = "")
+new.names <- paste("HueyJann_", types, sep = "")
 names(new.names) <- spectra
 when.measured <- ymd("2013-11-27", "2014-01-16")
 names(when.measured) <- spectra
@@ -51,6 +51,6 @@ for (s in spectra) {
 
 autoplot(huey_jann.mspct)
 
-huey_jann <- names(huey_jann.mspct)
+HueyJann_leds <- names(huey_jann.mspct)
 
-save(huey_jann, huey_jann.mspct, file = "data-raw/rda2merge/huey_jann-mspct.rda")
+save(HueyJann_leds, huey_jann.mspct, file = "data-raw/rda2merge/huey_jann-mspct.rda")

@@ -48,6 +48,6 @@ keepers <- grepl("410|460|470|445", names(epileds.mspct))
 
 epileds2.mspct <- epileds.mspct[keepers]
 
-epileds2 <- names(epileds2.mspct)
+Epileds_leds2 <- names(epileds2.mspct)
 
-save(epileds2, epileds2.mspct, file = "data-raw/rda2merge/epileds2-mspct.rda")
+save(Epileds_leds2, epileds2.mspct, file = "data-raw/rda2merge/epileds2-mspct.rda")

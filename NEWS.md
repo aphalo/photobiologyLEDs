@@ -6,8 +6,9 @@ editor_options:
 
 # photobiologyLEDs 0.5.0
 
--   Revise for ggspectra (\>= 0.3.1).
--   Rebuild all data objects with photobiology (== 0.10.9).
+-   Revise for 'ggspectra' (\>= 0.3.1).
+-   Rebuild all data objects with 'photobiology' (== 0.10.9) taking care that all spectra are normalized.
+-   Apply function `photobiology::thin_wl()` to all spectra to reduce their stored size.
 -   Add data for new LED types and update the metadata of several of those carried over from earlier versions.
 -   CODE BREAKING: change naming convention for members of the collection of spectra. Now names consist of "brand" and type.
 -   CODE BREAKING: lists of LEDs by colour are now based on the wavelength at the peak of emission. We use ISO-standard wavelength boundaries for colours of visible radiation, except for purple \< 400 nm. For ultraviolet we follow ISO. All broad-spectrum LEDs are listed as white.

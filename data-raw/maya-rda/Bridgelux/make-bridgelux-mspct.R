@@ -48,8 +48,8 @@ cat("Keeping only:", keepers, "\n")
 bridgelux.mspct <- bridgelux.mspct[keepers]
 names(bridgelux.mspct) <- names
 
-bridgelux <- names(bridgelux.mspct)
+Bridgelux_leds <- names(bridgelux.mspct)
 
-cat("Saving:", bridgelux, sep = "\n")
+cat("Saving:", Bridgelux_leds, sep = "\n")
 
-save(bridgelux, bridgelux.mspct, file = "data-raw/rda2merge/bridgelux-mspct.rda")
+save(Bridgelux_leds, bridgelux.mspct, file = "data-raw/rda2merge/bridgelux-mspct.rda")

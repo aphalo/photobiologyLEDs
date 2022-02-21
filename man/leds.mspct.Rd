@@ -51,21 +51,21 @@ library(ggspectra)
 
 names(leds.mspct)
 
-leds.mspct$white
+leds.mspct$Nichia_NS6L183AT_H1_sw
 
-cat(getWhatMeasured(leds.mspct$white))
+cat(getWhatMeasured(leds.mspct$Nichia_NS6L183AT_H1_sw))
 
-peaks(leds.mspct$white, span = 100)
+peaks(leds.mspct$Nichia_NS6L183AT_H1_sw, span = 100)
 
-range(leds.mspct$white)
+range(leds.mspct$Nichia_NS6L183AT_H1_sw)
 
-stepsize(leds.mspct$white)
+stepsize(leds.mspct$Nichia_NS6L183AT_H1_sw)
 
-autoplot(leds.mspct$white)
+autoplot(leds.mspct$Nichia_NS6L183AT_H1_sw)
 
-intersect(led_engin, blue_leds)
+intersect(LedEngin_leds, blue_leds)
 
-leds.mspct[intersect(led_engin, blue_leds)]
+leds.mspct[intersect(LedEngin_leds, blue_leds)]
 
 }
 \seealso{

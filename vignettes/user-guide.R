@@ -11,59 +11,52 @@ library(ggspectra)
 blue_leds
 
 ## -----------------------------------------------------------------------------
-led_engin
+LedEngin_leds
 
 ## -----------------------------------------------------------------------------
 names(leds.mspct)
 
 ## -----------------------------------------------------------------------------
-leds.mspct$UV395
+leds.mspct$Roithner_UV395
 
 ## -----------------------------------------------------------------------------
-leds.mspct[["UV395"]]
+leds.mspct[["Roithner_UV395"]]
 
 ## -----------------------------------------------------------------------------
-leds.mspct["UV395"]
+leds.mspct["Roithner_UV395"]
 
 ## -----------------------------------------------------------------------------
-leds.mspct[norlux]
+leds.mspct[Norlux_leds]
 
 ## -----------------------------------------------------------------------------
 leds.mspct[grep("QDDH", names(leds.mspct))]
 
 ## -----------------------------------------------------------------------------
-leds.mspct$LZ1_10R302
+leds.mspct$LedEngin_LZ1_10R302_740nm
 
 ## -----------------------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
-cat(getWhatMeasured(leds.mspct$LZ1_10R302))
+cat(getWhatMeasured(leds.mspct$LedEngin_LZ1_10R302_740nm))
 
 ## -----------------------------------------------------------------------------
-=======
-=======
->>>>>>> minimal.fix.for.CRAN
-getWhatMeasured(leds.mspct$LZ1_10R302)
->>>>>>> minimal.fix.for.CRAN
-getWhenMeasured(leds.mspct$LZ1_10R302)
+getWhenMeasured(leds.mspct$LedEngin_LZ1_10R302_740nm)
 
 ## -----------------------------------------------------------------------------
-getInstrDesc(leds.mspct$LZ1_10R302)
+getInstrDesc(leds.mspct$LedEngin_LZ1_10R302_740nm)
 
 ## -----------------------------------------------------------------------------
-getInstrSettings(leds.mspct$LZ1_10R302)
+getInstrSettings(leds.mspct$LedEngin_LZ1_10R302_740nm)
 
 ## -----------------------------------------------------------------------------
-is_normalized(leds.mspct$LZ1_10R302)
+is_normalized(leds.mspct$LedEngin_LZ1_10R302_740nm)
 
 ## -----------------------------------------------------------------------------
-leds.mspct$UVMAX305
+leds.mspct$Roithner_UVMAX305
 
 ## -----------------------------------------------------------------------------
-is_normalized(leds.mspct$UVMAX305)
+is_normalized(leds.mspct$Roithner_UVMAX305)
 
 ## -----------------------------------------------------------------------------
-my.spct <- fscale(leds.mspct$UV395,
+my.spct <- fscale(leds.mspct$Roithner_UV395,
                   range = c(315, 400),
                   e_irrad,
                   target = 10
@@ -71,9 +64,7 @@ my.spct <- fscale(leds.mspct$UV395,
 e_irrad(my.spct, waveband(c(315,400)))
 
 ## -----------------------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
-my.spct <- fscale(leds.mspct$UV395,
+my.spct <- fscale(leds.mspct$Roithner_UV395,
                   range = c(315, 400),
                   e_irrad,
                   target = 1
@@ -81,59 +72,40 @@ my.spct <- fscale(leds.mspct$UV395,
 integrate_spct(my.spct)
 
 ## -----------------------------------------------------------------------------
-=======
-=======
->>>>>>> minimal.fix.for.CRAN
-getScaled(my.spct)
->>>>>>> minimal.fix.for.CRAN
 setScaled(my.spct)
 getScaled(my.spct)
 
 ## -----------------------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
 e_irrad(my.spct, waveband(c(315,400)))
 
 ## -----------------------------------------------------------------------------
-=======
->>>>>>> minimal.fix.for.CRAN
-=======
->>>>>>> minimal.fix.for.CRAN
-my.UV395 <- leds.mspct$UV395
+my.UV395 <- leds.mspct$Roithner_UV395
 setNormalized(my.UV395)
 e_irrad(my.UV395)
 
 ## -----------------------------------------------------------------------------
-q_ratio(leds.mspct$UV395, UVB(), UVA())
+q_ratio(leds.mspct$Roithner_UV395, UVB(), UVA())
 
 ## -----------------------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
-autoplot(leds.mspct$LZ1_10R302, annotations = c("+", "wls"), )
-=======
-autoplot(leds.mspct$LZ1_10R302)
->>>>>>> minimal.fix.for.CRAN
-=======
-autoplot(leds.mspct$LZ1_10R302)
->>>>>>> minimal.fix.for.CRAN
+autoplot(leds.mspct$LedEngin_LZ1_10R302_740nm, annotations = c("+", "wls"), )
 
 ## -----------------------------------------------------------------------------
-ggplot(leds.mspct$LZ1_10R302) +
+ggplot(leds.mspct$LedEngin_LZ1_10R302_740nm) +
   geom_line()
 
 ## -----------------------------------------------------------------------------
-head(as.data.frame(leds.mspct$UV395))
+head(as.data.frame(leds.mspct$LedEngin_LZ1_10R302_740nm))
 
 ## -----------------------------------------------------------------------------
 attach(leds.mspct)
-q_ratio(UV395, UVB(), UVA())
+q_ratio(Roithner_UV395, UVB(), UVA())
 detach(leds.mspct)
 
 ## -----------------------------------------------------------------------------
 attach(leds.mspct)
-with(UV395, max(w.length))
+with(Roithner_UV395, max(w.length))
 detach(leds.mspct)
 
 ## -----------------------------------------------------------------------------
-with(leds.mspct, q_ratio(UV395, UVB(), UVA()))
+with(leds.mspct, q_ratio(Roithner_UV395, UVB(), UVA()))
 

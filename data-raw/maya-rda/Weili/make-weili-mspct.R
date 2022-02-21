@@ -2,7 +2,7 @@ library(photobiology)
 library(ggspectra)
 library(lubridate)
 
-photon_as_default()
+# photon_as_default()
 
 # clear workspace
 rm(list = ls(pattern = "*"))
@@ -22,19 +22,33 @@ wavelengths <- sort(wavelengths)
 # names <- gsub(".spct", "", spct.names)
 # names <- gsub("[wW]eilli", "weili", names)
 
-names <- paste("weili.3W.nominal.", wavelengths, "nm", sep = "")
-weili.mspct <- source_mspct(mget(spct.names))
-names(weili.mspct) <- names
-names(weili.mspct)
+new.names <- paste("Weili_3W.nominal.", wavelengths, "nm", sep = "")
+names(new.names) <- spct.names
 
-for (s in names) {
-  how_measured(weili.mspct[[s]]) <-
-    "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H; distance 50mm; LED current 350 mA."
-  what_measured(weili.mspct[[s]]) <- "LED type unknown, rated at 3W, \"bat wing\" package; supplied by Shenzhen Weili Optical, Shenzhen, China; ca. 2015"
- print(autoplot(weili.mspct[[s]]) + ggtitle(s))
-  readline("next: ")
+how.measured <- "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H."
+
+weili.mspct <- source_mspct()
+for (s in spct.names) {
+  comment.text <- paste("LED type unknown, rated at 3W, \"bat wing\" package; supplied by Shenzhen Weili Optical, Shenzhen, China; ca. 2015")
+  what.measured <- "LED type unknown, rated at 3W, \"bat wing\" package"
+  temp.spct <- get(s)
+  temp.spct <- normalize(temp.spct)
+  temp.spct <- smooth_spct(temp.spct)
+  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- trim_wl(temp.spct, range = c(300, 900), fill = 0)
+  setHowMeasured(temp.spct, how.measured)
+  setWhatMeasured(temp.spct, what.measured)
+  comment(temp.spct) <- comment.text
+  trimInstrDesc(temp.spct)
+  trimInstrSettings(temp.spct)
+  print(str(get_attributes(temp.spct)))
+  print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment")))
+  weili.mspct[[new.names[s]]] <- temp.spct
+  readline("next:")
 }
 
-weili <- names(weili.mspct)
+autoplot(weili.mspct)
 
-save(weili, weili, file = "data-raw/rda2merge/weili-mspct.rda")
+Weili_leds <- names(weili.mspct)
+
+save(Weili_leds, weili.mspct, file = "data-raw/rda2merge/weili-mspct.rda")

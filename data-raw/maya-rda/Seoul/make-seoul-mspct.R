@@ -63,6 +63,6 @@ for (s in type2name.map) {
 
 autoplot(seoul.mspct)
 
-seoul <- names(seoul.mspct)
+SeoulSemicon_leds <- names(seoul.mspct)
 
-save(seoul, seoul.mspct, file = "data-raw/rda2merge/seoul-mspct.rda")
+save(SeoulSemicon_leds, seoul.mspct, file = "data-raw/rda2merge/seoul-mspct.rda")

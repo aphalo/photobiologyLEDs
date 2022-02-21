@@ -41,8 +41,8 @@ for (s in spectra) {
 
 autoplot(epistar.mspct)
 
-epistar <- names(epistar.mspct)
+Epistar_leds <- names(epistar.mspct)
 
-cat("Saving:", epistar, sep = "\n")
+cat("Saving:", Epistar_leds, sep = "\n")
 
-save(epistar, epistar.mspct, file = "data-raw/rda2merge/epistar-mspct.rda")
+save(Epistar_leds, epistar.mspct, file = "data-raw/rda2merge/epistar-mspct.rda")

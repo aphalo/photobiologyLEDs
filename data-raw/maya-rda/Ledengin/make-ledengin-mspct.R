@@ -82,6 +82,7 @@ for (s in spectra) {
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)
+  temp.spct <- trim_wl(temp.spct, range = c(300, 900), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)
   comment(temp.spct) <- comment.text
@@ -95,6 +96,6 @@ for (s in spectra) {
 
 autoplot(ledengin.mspct)
 
-ledengin <- names(ledengin.mspct)
+LedEngin_leds <- names(ledengin.mspct)
 
-save(ledengin, ledengin.mspct, file = "data-raw/rda2merge/ledengin-mspct.rda")
+save(LedEngin_leds, ledengin.mspct, file = "data-raw/rda2merge/ledengin-mspct.rda")

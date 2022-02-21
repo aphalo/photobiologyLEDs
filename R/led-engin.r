@@ -1,23 +1,25 @@
 #' Spectral data for LEDs array supplied by Led Engin
 #' 
-#' Names of datasets containing the wavelengths and tabulated values spectral emittance 
-#' for light emitting diodes (LEDs) and arrays from Led Engin (USA). Data are
-#' normalized to one at the wavelength of maximum emission.
+#' The collection of spectra \code{\link{leds.mspct}} contains spectra for 
+#' some light emitting diodes (LEDs) from LED Engin, U.S.A. 
+#' Data are normalized to one at the wavelength of maximum emission. The
+#' character vector \code{LedEngin_leds} contains the names of the spectra to
+#' facilitate their extraction from the collection.
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
-#' @examples 
-#' led_engin
+#' @examples
+#' LedEngin_leds
 #' 
 #' @note
-#' Led Engin is a supplier of power LEDs of high efficiency.
+#' Led Engin was a supplier of power LEDs. It is now part of Osram.
 #' 
-#' @references \url{http://www.ledengin.com/}
+#' @references \url{https://www.osram.us/ledengin/}
 #'   
 #' @seealso \code{\link{leds.mspct}}
 #' 
 #' @family manufacturers
 #' 
-"led_engin"
+"LedEngin_leds"

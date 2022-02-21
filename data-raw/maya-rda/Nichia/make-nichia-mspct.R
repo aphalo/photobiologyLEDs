@@ -78,6 +78,7 @@ for (s in type2name.map) {
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)
+  temp.spct <- trim_wl(temp.spct, c(330, 900), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)
   if (is.na(getWhenMeasured(temp.spct))) {
@@ -94,6 +95,6 @@ for (s in type2name.map) {
 
 autoplot(nichia.mspct)
 
-nichia <- names(nichia.mspct)
+Nichia_leds <- names(nichia.mspct)
 
-save(nichia, nichia.mspct, file = "data-raw/rda2merge/nichia-mspct.rda")
+save(Nichia_leds, nichia.mspct, file = "data-raw/rda2merge/nichia-mspct.rda")

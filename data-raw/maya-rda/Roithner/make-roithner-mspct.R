@@ -47,6 +47,6 @@ for (s in spectra) {
 
 autoplot(roithner.mspct)
 
-roithner <- names(roithner.mspct)
+Roithner_leds <- names(roithner.mspct)
 
-save(roithner, roithner.mspct, file = "data-raw/rda2merge/roithner-mspct.rda")
+save(Roithner_leds, roithner.mspct, file = "data-raw/rda2merge/roithner-mspct.rda")

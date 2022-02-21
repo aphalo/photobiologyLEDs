@@ -5,7 +5,7 @@ library(ggspectra)
 rm(list = ls(pattern = "*"))
 
 files <- list.files(path = "data-raw/maya-rda/CREE",
-                    pattern = ".spct.[Rr]da",
+                    pattern = "LED.spct.[Rr]da",
                     full.names = TRUE)
 
 for (f in files) {
@@ -46,6 +46,6 @@ cat("Keeping only:", keepers)
 
 cree.mspct <- cree.mspct[keepers]
 
-cree <- names(cree.mspct)
+CREE_leds <- names(cree.mspct)
 
-save(cree, cree.mspct, file = "data-raw/rda2merge/cree-mspct.rda")
+save(CREE_leds, cree.mspct, file = "data-raw/rda2merge/cree-mspct.rda")

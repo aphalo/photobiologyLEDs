@@ -59,8 +59,8 @@ for (s in spectra) {
 autoplot(norlux.mspct[new.names[1:3]])
 autoplot(norlux.mspct[[new.names[4]]])
 
-norlux <- names(norlux.mspct)
+Norlux_leds <- names(norlux.mspct)
 
-cat("Saving:", norlux, sep = "\n")
+cat("Saving:", Norlux_leds, sep = "\n")
 
-save(norlux, norlux.mspct, file = "data-raw/rda2merge/norlux-mspct.rda")
+save(Norlux_leds, norlux.mspct, file = "data-raw/rda2merge/norlux-mspct.rda")

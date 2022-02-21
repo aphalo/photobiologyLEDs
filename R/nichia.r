@@ -1,20 +1,25 @@
-#' Spectral data for LEDs array supplied by NICHIA
+#' Spectral data for LEDs from NICHIA
 #' 
-#' Names of datasets containing the wavelengths and tabulated values spectral emittance 
-#' for light emitting diodes (LEDs) from NICHIA. 
-#' Data are normalized to one at the wavelength of maximum emission.
+#' The collection of spectra \code{\link{leds.mspct}} contains spectra for 
+#' some light emitting diodes (LEDs) from Nichia, Japan. 
+#' Data are normalized to one at the wavelength of maximum emission. The
+#' character vector \code{Nichia_leds} contains the names of the spectra to
+#' facilitate their extraction from the collection.
+#' 
+#' @note Some of these LEDs were supplied by LUMITRONIX, Germany, assembled in
+#' arrays of the series names SmartArray and LinearZ.
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
 #' @examples 
-#' nichia
+#' Nichia_leds
 #' 
-#' @references \url{http://www.nichia.com/}
+#' @references \url{https://www.nichia.com/}, \url{https://www.leds.de/}
 #' 
 #' @seealso \code{\link{leds.mspct}}
 #' 
 #' @family manufacturers
 #' 
-"nichia"
+"Nichia_leds"

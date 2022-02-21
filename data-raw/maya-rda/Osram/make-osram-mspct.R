@@ -64,6 +64,7 @@ for (s in type2name.map) {
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)
+  temp.spct <- trim_wl(temp.spct, range = c(320.1, 900.1), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)
   comment(temp.spct) <- comment.text
@@ -77,6 +78,6 @@ for (s in type2name.map) {
 
 autoplot(osram.mspct)
 
-osram <- names(osram.mspct)
+Osram_leds <- names(osram.mspct)
 
-save(osram, osram.mspct, file = "data-raw/rda2merge/osram-mspct.rda")
+save(Osram_leds, osram.mspct, file = "data-raw/rda2merge/osram-mspct.rda")

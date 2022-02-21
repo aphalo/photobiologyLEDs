@@ -77,10 +77,12 @@ for (s in shafi.mspct) {
 }
 
 agilent.mspct <- shafi.mspct[agilent]
-save(agilent, agilent.mspct, file = "data-raw/rda2merge/agilent-mspct.rda")
+Agilent_leds <- names(agilent.mspct)
+save(Agilent_leds, agilent.mspct, file = "data-raw/rda2merge/agilent-mspct.rda")
 
 quantum_devices.mspct <- shafi.mspct[quantum_devices]
-save(quantum_devices, quantum_devices.mspct, file = "data-raw/rda2merge/quantum-devices-mspct.rda")
+QuantumDevices_leds <- names(quantum_devices.mspct)
+save(QuantumDevices_leds, quantum_devices.mspct, file = "data-raw/rda2merge/quantum-devices-mspct.rda")
 
 assign(paste(osram, ".spct", sep = ""), shafi.mspct[[osram]])
 save(list = paste(osram, ".spct", sep = ""), 

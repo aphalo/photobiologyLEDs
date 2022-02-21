@@ -1,9 +1,10 @@
-#' Spectral data for LEDs array supplied by Huey Jann
+#' Spectral data for LEDs arrays supplied by Huey Jann
 #'
-#' Names of datasets containing the wavelengths and
-#' tabulated values spectral emittance for different light emitting diodes (LEDs) arrays
-#' from Huey Jann Electronics Industry Co., Ltd. (Taiwan).
-#' Absolute values are not meaningful as the measuring distances are variable, and in most cases unknown.
+#' The collection of spectra \code{\link{leds.mspct}} contains spectra for some
+#' arrays of light emitting diodes (LEDs) from Huey Jann Electronics Industry
+#' Co., Ltd. (Taiwan). Data are normalized to one at the wavelength of maximum
+#' emission. The character vector \code{HueyJann_leds} contains the names of the
+#' spectra to facilitate their extraction from the collection.
 #' 
 #' @note
 #' Huey Jann was a Taiwanese supplier of LED array. It is no longer in
@@ -14,10 +15,10 @@
 #' @format A vector of character strings.
 #' 
 #' @examples 
-#' huey_jann
+#' HueyJann_leds
 #' 
 #' @seealso \code{\link{leds.mspct}}
 #' 
 #' @family manufacturers
 #' 
-"huey_jann"
+"HueyJann_leds"

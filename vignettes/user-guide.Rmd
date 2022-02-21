@@ -60,7 +60,7 @@ blue_leds
 ```
 
 ```{r}
-led_engin
+LedEngin_leds
 ```
 
 ## Accessing individual spectra
@@ -80,11 +80,11 @@ We can use a character string as index to extract an individual `source_spct`
 object.
 
 ```{r}
-leds.mspct$UV395
+leds.mspct$Roithner_UV395
 ```
 
 ```{r}
-leds.mspct[["UV395"]]
+leds.mspct[["Roithner_UV395"]]
 ```
 
 Be aware that according to R's rules, using single square brackets will return
@@ -92,7 +92,7 @@ a `source_mspct` object, a collection of spectra, possibly of length one. This
 statement is not equivalent to the one in the chunk immediately above.
 
 ```{r}
-leds.mspct["UV395"]
+leds.mspct["Roithner_UV395"]
 ```
 
 Of course, with this syntax it is possible to use a vector of member names.
@@ -105,7 +105,7 @@ define their own, either as constants or through computation. Here we use
 a vector defined by the package.
 
 ```{r}
-leds.mspct[norlux]
+leds.mspct[Norlux_leds]
 ```
 
 And below we use a computed one. In this case we extract the member spectra
@@ -122,35 +122,35 @@ used and a summary of the metadata will be included in the header of the
 printout.
 
 ```{r}
-leds.mspct$LZ1_10R302
+leds.mspct$LedEngin_LZ1_10R302_740nm
 ```
 
 ```{r}
-cat(getWhatMeasured(leds.mspct$LZ1_10R302))
+cat(getWhatMeasured(leds.mspct$LedEngin_LZ1_10R302_740nm))
 ```
 
 ```{r}
-getWhenMeasured(leds.mspct$LZ1_10R302)
+getWhenMeasured(leds.mspct$LedEngin_LZ1_10R302_740nm)
 ```
 
 ```{r}
-getInstrDesc(leds.mspct$LZ1_10R302)
+getInstrDesc(leds.mspct$LedEngin_LZ1_10R302_740nm)
 ```
 
 ```{r}
-getInstrSettings(leds.mspct$LZ1_10R302)
+getInstrSettings(leds.mspct$LedEngin_LZ1_10R302_740nm)
 ```
 
 ```{r}
-is_normalized(leds.mspct$LZ1_10R302)
+is_normalized(leds.mspct$LedEngin_LZ1_10R302_740nm)
 ```
 
 ```{r}
-leds.mspct$UVMAX305
+leds.mspct$Roithner_UVMAX305
 ```
 
 ```{r}
-is_normalized(leds.mspct$UVMAX305)
+is_normalized(leds.mspct$Roithner_UVMAX305)
 ```
 
 ## Calculating summaries from the normalized data
@@ -169,7 +169,7 @@ example, we will rescale one spectrum so that it yields an energy irradiance of
 10 W m-2 for the range 315 to 400 nm.
 
 ```{r}
-my.spct <- fscale(leds.mspct$UV395,
+my.spct <- fscale(leds.mspct$Roithner_UV395,
                   range = c(315, 400),
                   e_irrad,
                   target = 10
@@ -184,7 +184,7 @@ generate a warning during computation of irradiance. Other methods such as
 `integrate_spct()` will still function silently.
 
 ```{r}
-my.spct <- fscale(leds.mspct$UV395,
+my.spct <- fscale(leds.mspct$Roithner_UV395,
                   range = c(315, 400),
                   e_irrad,
                   target = 1
@@ -208,7 +208,7 @@ have not been normalized, we can permanently override the attribute on a copy
 of the data. Most of the time this is a very bad idea!
 
 ```{r}
-my.UV395 <- leds.mspct$UV395
+my.UV395 <- leds.mspct$Roithner_UV395
 setNormalized(my.UV395)
 e_irrad(my.UV395)
 ```
@@ -217,7 +217,7 @@ As mentioned above, ratios can be calculated directly as they are not affected
 by normalization.
 
 ```{r}
-q_ratio(leds.mspct$UV395, UVB(), UVA())
+q_ratio(leds.mspct$Roithner_UV395, UVB(), UVA())
 ```
 
 ## Plotting
@@ -231,14 +231,14 @@ plotting spectra even easier.
 as well as automatically setting the mapping of the _x_ and _y_ aesthetics.
 
 ```{r}
-autoplot(leds.mspct$LZ1_10R302, annotations = c("+", "wls"), )
+autoplot(leds.mspct$LedEngin_LZ1_10R302_740nm, annotations = c("+", "wls"), )
 ```
 
 Package 'ggspectra' also defines specializations of method `ggplot()` for 
 spectra.
 
 ```{r}
-ggplot(leds.mspct$LZ1_10R302) +
+ggplot(leds.mspct$LedEngin_LZ1_10R302_740nm) +
   geom_line()
 ```
 
@@ -249,24 +249,24 @@ As `source_spct` is a class derived from `list`, and `source_spct` is derived fr
 data can be used very easily with any R function.
 
 ```{r}
-head(as.data.frame(leds.mspct$UV395))
+head(as.data.frame(leds.mspct$LedEngin_LZ1_10R302_740nm))
 ```
 
 Of course `attach` and `with` also work as expected.
 
 ```{r}
 attach(leds.mspct)
-q_ratio(UV395, UVB(), UVA())
+q_ratio(Roithner_UV395, UVB(), UVA())
 detach(leds.mspct)
 ```
 
 ```{r}
 attach(leds.mspct)
-with(UV395, max(w.length))
+with(Roithner_UV395, max(w.length))
 detach(leds.mspct)
 ```
 
 ```{r}
-with(leds.mspct, q_ratio(UV395, UVB(), UVA()))
+with(leds.mspct, q_ratio(Roithner_UV395, UVB(), UVA()))
 ```
 

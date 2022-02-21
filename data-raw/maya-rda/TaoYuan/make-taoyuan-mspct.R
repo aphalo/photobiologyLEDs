@@ -17,7 +17,7 @@ names(taoyuan.mspct) <- "TaoYuan_LED_310nm"
 
 uncollect2spct(taoyuan.mspct)
 
-taoyuan <- "TaoYuan_LED_310nm"
+TaoYuan_leds <- "TaoYuan_LED_310nm"
 
 how_measured(taoyuan.mspct[["TaoYuan_LED_310nm"]]) <- 
   "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H; distance unknown; LED current 18 mA."
@@ -27,4 +27,4 @@ when_measured(taoyuan.mspct[["TaoYuan_LED_310nm"]]) <- ymd("2015-07-30")
 
 autoplot(taoyuan.mspct)
 
-save(taoyuan, taoyuan.mspct, file = "data-raw/rda2merge/taoyuan-mspct.rda")
+save(TaoYuan_leds, taoyuan.mspct, file = "data-raw/rda2merge/taoyuan-mspct.rda")

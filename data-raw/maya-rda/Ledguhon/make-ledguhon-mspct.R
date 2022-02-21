@@ -15,7 +15,7 @@ for (f in files) {
 spectra <- ls(pattern = "*\\.spct")
 
 new.names <- gsub(".350mA.spct", "14G24_Y6C_T4", spectra)
-new.names <- gsub("LEDGUHON", "Ledguhon", new.names)
+new.names <- gsub("LEDGUHON.", "Ledguhon_", new.names)
 names(new.names) <- spectra
 
 how.measured <- "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H; distance 70 mm; LED current 700 mA."
@@ -25,10 +25,11 @@ what.measured <- "10W 4000K COB LED from LEDGUHON"
 ledguhon.mspct <- source_mspct()
 for (s in spectra) {
   temp.spct <- get(s)
+  temp.spct <- fshift(temp.spct, c(320, 350))
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)
-  temp.spct <- clean(temp.spct)
+  temp.spct <- trim_wl(temp.spct, range = c(320, 900), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)
   comment(temp.spct) <- comment.text
@@ -40,10 +41,10 @@ for (s in spectra) {
   readline("next:")
 }
 
-ledguhon <- names(ledguhon.mspct)
+Ledguhon_leds <- names(ledguhon.mspct)
 
 autoplot(ledguhon.mspct)
 
-cat("Saving:", ledguhon, sep = "\n")
+cat("Saving:", Ledguhon_leds, sep = "\n")
 
-save(ledguhon, ledguhon.mspct, file = "data-raw/rda2merge/ledguhon-mspct.rda")
+save(Ledguhon_leds, ledguhon.mspct, file = "data-raw/rda2merge/ledguhon-mspct.rda")
