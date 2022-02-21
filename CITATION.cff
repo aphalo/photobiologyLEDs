@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.1.1
+# CITATION file created with {cffr} R package, v0.2.1
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -8,7 +8,7 @@ message: 'To cite package "photobiologyLEDs" in publications use:'
 type: software
 license: GPL-2.0-or-later
 title: 'photobiologyLEDs: Spectral Data for Light-Emitting-Diodes'
-version: 0.4.5
+version: 0.4.5.9000
 doi: 10.19232/uv4pb.2015.1.14
 abstract: Spectral emission data for some frequently used light emitting diodes available
   as electronic components. Part of the 'r4photobiology' suite, Aphalo P. J. (2015)
@@ -24,18 +24,121 @@ preferred-citation:
   authors:
   - family-names: Aphalo
     given-names: Pedro J.
+    email: pedro.aphalo@helsinki.fi
+    orcid: https://orcid.org/0000-0003-3385-972X
   journal: UV4Plants Bulletin
   volume: '2015'
-  number: '1'
-  pages: 21-29
+  issue: '1'
   year: '2015'
   doi: 10.19232/uv4pb.2015.1.14
+  start: 21-29
 repository: https://CRAN.R-project.org/package=photobiologyLEDs
 repository-code: https://bitbucket.org/aphalo/photobiologyleds
 url: https://docs.r4photobiology.info/photobiologyLEDs
-date-released: '2021-05-14'
+date-released: '2022-02-19'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
   email: pedro.aphalo@helsinki.fi
   orcid: https://orcid.org/0000-0003-3385-972X
+references:
+- type: software
+  title: 'R: A Language and Environment for Statistical Computing'
+  notes: Depends
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2022'
+  url: https://www.R-project.org/
+  institution:
+    name: R Foundation for Statistical Computing
+  version: '>= 3.6.0'
+- type: software
+  title: photobiology
+  abstract: 'photobiology: Photobiological Calculations'
+  notes: Depends
+  authors:
+  - family-names: Aphalo
+    given-names: Pedro J.
+    email: pedro.aphalo@helsinki.fi
+    orcid: https://orcid.org/0000-0003-3385-972X
+  year: '2022'
+  url: https://CRAN.R-project.org/package=photobiology
+  version: '>= 0.10.2'
+- type: software
+  title: knitr
+  abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
+  notes: Suggests
+  authors:
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  year: '2022'
+  url: https://CRAN.R-project.org/package=knitr
+  version: '>= 1.31'
+- type: software
+  title: rmarkdown
+  abstract: 'rmarkdown: Dynamic Documents for R'
+  notes: Suggests
+  authors:
+  - family-names: Allaire
+    given-names: JJ
+    email: jj@rstudio.com
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  - family-names: McPherson
+    given-names: Jonathan
+    email: jonathan@rstudio.com
+  - family-names: Luraschi
+    given-names: Javier
+    email: javier@rstudio.com
+  - family-names: Ushey
+    given-names: Kevin
+    email: kevin@rstudio.com
+  - family-names: Atkins
+    given-names: Aron
+    email: aron@rstudio.com
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  - family-names: Cheng
+    given-names: Joe
+    email: joe@rstudio.com
+  - family-names: Chang
+    given-names: Winston
+    email: winston@rstudio.com
+  - family-names: Iannone
+    given-names: Richard
+    email: rich@rstudio.com
+    orcid: https://orcid.org/0000-0003-3925-190X
+  year: '2022'
+  url: https://CRAN.R-project.org/package=rmarkdown
+  version: '>= 2.7'
+- type: software
+  title: photobiologyWavebands
+  abstract: 'photobiologyWavebands: Waveband Definitions for UV, VIS, and IR Radiation'
+  notes: Suggests
+  authors:
+  - family-names: Aphalo
+    given-names: Pedro J.
+    email: pedro.aphalo@helsinki.fi
+    orcid: https://orcid.org/0000-0003-3385-972X
+  year: '2022'
+  url: https://CRAN.R-project.org/package=photobiologyWavebands
+  version: '>= 0.4.3'
+- type: software
+  title: ggspectra
+  abstract: 'ggspectra: Extensions to ''ggplot2'' for Radiation Spectra'
+  notes: Suggests
+  authors:
+  - family-names: Aphalo
+    given-names: Pedro J.
+    email: pedro.aphalo@helsinki.fi
+    orcid: https://orcid.org/0000-0003-3385-972X
+  year: '2022'
+  url: https://CRAN.R-project.org/package=ggspectra
+  version: '>= 0.3.6'
