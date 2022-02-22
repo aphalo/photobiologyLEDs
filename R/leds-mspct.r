@@ -15,6 +15,14 @@
 #'   bench, so values of expectral irradiance are subject to errors due to
 #'   possible missalignment. The shape of the spectra, in contrast can be
 #'   relied upon as measurements were done with well calibrated instruments.
+#'   
+#'   The expectral data are not expressed at constant wavelength intervals. Not
+#'   only the intervals vary in the raw data from the array spectrometer, but in
+#'   addition function \code{\link[photobiology]{thin_wl}} has been applied to
+#'   reduce the storage space needed. In brief the wavelength interval has been
+#'   increased as much as possible in those regions of the spectrum that lack
+#'   detailed features (such as linear slopes and wavelength regions with zero
+#'   light emission).
 #'
 #' @note Please see the metadata in each spectrum and the help pages 
 #' corresponding to each supplier for contact information. The metadata is
