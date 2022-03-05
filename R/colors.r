@@ -39,38 +39,41 @@
 #' 
 #' @seealso \code{\link{leds.mspct}}
 #' 
+"led_colors"
+
+#' @rdname led_colors
 "uv_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "purple_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "ir_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "blue_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "green_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "yellow_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "orange_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "red_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "amber_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "white_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "multi_channel_leds"
 
-#' @rdname uv_leds
+#' @rdname led_colors
 "single_channel_leds"
 

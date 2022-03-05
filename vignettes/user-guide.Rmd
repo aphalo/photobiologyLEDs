@@ -39,21 +39,18 @@ spectra, and how to access individual spectra or subsets of spectra.
 
 The spectral data have been acquired mostly with one instrument, an array
 spectrometer. However, some spectra haver been measured with another 
-spectrometers that has lower wavelength resolution. This difference in
+spectrometer that has lower wavelength resolution. This difference in
 resolution and slit function can give, for the same LED, measured peaks 
 of slightly different width. This is an inevitable artefact of spectral 
 measurements, but as LEDs have relatively wide peaks the distortion is small.
 With well calibrated spectrometers, the area under a peak should not be
 affected by the difference in wavelength resolution.
 
-All the spectral data in this package are stored in a single R object, a
-collection of spectra of class `source_spct`. Individual or subsets of
-spectra can be retrieved by _name_. The package includes also several
-`character` vectors of _names_, each one containing names for LEDs of a 
-given _color_ or from a given _manufacturer_. These are listed in the 
-help index for the package. The _names_ used are in most cases the codes
-used by the manufacturers for the given type. Any dashes in these codes
-have been replaced by underscores.
+The spectral data in this package are stored in three R object, each of them a
+collection of spectra of class `source_spct`. Most of the spectra are in data object `leds.mspct`. Data object `COB_reflectors.mspct` contains spectra for a single COB LED combined with different reflectors while data object `COB_dimming.mspct` contains a collection of spectra from the same LED when driven at different current values. 
+
+Individual or subsets of spectra can be retrieved by _name_. The package
+includes also several `character` vectors of _names_, each one containing names for LEDs of a given _color_ or from a given _manufacturer_. These are listed in the help index for the package. The _names_ used are in most cases the codes used by the manufacturers for the given type. Any dashes in these codes have been replaced by underscores.
 
 ```{r}
 blue_leds
@@ -71,6 +68,14 @@ with updates to the package, their use is discouraged. Names as character
 strings should be used instead. The names are listed in the documentation
 and also available through the "Data Catalogue" vignette. They can also be
 listed with method `names()`.
+
+
+```{r}
+names(COB_reflectors.mspct)
+```
+```{r}
+# names(COB_dimming.mspct)
+```
 
 ```{r}
 names(leds.mspct)

@@ -99,6 +99,8 @@ red_leds <-  names_single[peak.wl_single > wl_min(Red()) &
                             peak.wl_single <= wl_max(Red())]
 amber_leds <- sort(c(yellow_leds, orange_leds))
 
+led_colors <- c("uv", "purle", "blue", "green", "yellow", "orange", "red", "ir")
+
 # Vector of brands as used when naming member spectra
 
 led_brands <- unique(str_split(names(leds.mspct), "_", simplify = TRUE)[ , 1])
@@ -106,7 +108,7 @@ led_brands <- unique(str_split(names(leds.mspct), "_", simplify = TRUE)[ , 1])
 # Vectors based on how spectra were acquired  
 oo_maya_leds <- names(leds.mspct)[grep("Maya", how_measured(leds.mspct)[["how.measured"]])]
 
-objects_to_save <- c("leds.mspct", "led_brands", ls(pattern = "_leds$"))
+objects_to_save <- c("leds.mspct", "led_brands", "led_colors", ls(pattern = "_leds$"))
 
 save(list = objects_to_save,
      file = "data/leds-mspct.rda")

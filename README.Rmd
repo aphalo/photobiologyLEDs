@@ -3,15 +3,6 @@ output:
   github_document
 ---
 
-```{r readme-01, echo = FALSE}
-knitr::opts_chunk$set(
-  fig.asp = 2/3,
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-"
-)
-```
-
 # photobiologyLEDs <img src="man/figures/logo.png" align="right" width="120" />
 
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs) 
@@ -21,7 +12,17 @@ Package '**photobiologyLEDs**' contains spectral emission data for diverse types
  
 ## Examples
 
+```{r readme-01, echo = FALSE}
+knitr::opts_chunk$set(
+  fig.asp = 2/3,
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-"
+)
+```
+
 ```{r example-02, message=FALSE}
+library(ggspectra)
 library(photobiologyLEDs)
 ```
 
@@ -38,36 +39,43 @@ What are the names of available spectra. We use `head()` to limit the output.
 head(names(leds.mspct), 10)
 ```
 
-To subset based on different criteria we can use predefined character vectors of LED names. For example, vector `nichia` lists the names of the spectra for filters made by NIchia. 
+To subset based on different criteria we can use predefined character vectors of LED names. For example, vector `nichia_leds` lists the names of the spectra for filters made by NIchia. 
 
 ```{r example-05}
-nichia
+Nichia_leds
 ```
 
 We can use the vector to extract all these spectra as a collection.
 
 ```{r example-05a}
-leds.mspct[nichia]
+leds.mspct[Nichia_leds]
 ```
 
-The package includes a character vector with the names of these vectors of names that are available.
+The package includes a character vector with the names LED brands and LED colors as used for indexing vectors.
 
 ```{r example-05b}
-all_led_accessors
+led_colors
 ```
 
-Please, see the _User Guide_ or documentation
-for the names of other vectors of names for materials, suppliers, and regions of
-the spectrum.
+```{r example-05c}
+led_brands
+```
 
-Summary calculations can be easily done with methods from package 'photobiology'. Here we calculate mean transmittance for two regions of the spectrum given by wavelengths in nanometres.
+Vectors like `Nichia_leds` or `blue_leds` exist for all the colors in `led_colors` and `led_brands` respectively.
+
+Summary calculations can be easily done with methods from package 'photobiology'. Here we calculate photon irradiance. As the spectra are normalised, 
 
 ```{r example-06}
-q_irrad(leds.mspct[["NS6L183AT_H1"]]) * 1e6
+q_irrad(leds.mspct[["Nichia_NS6L183AT_H1_sw"]], 
+        allow.scaled = TRUE, scale.factor = 1e6)
 ```
 
 The `autoplot()` methods from package 'ggspectra' can be used for plotting one or more spectra at a time. The classes of the objects used to store the spectral data are derived from `"data.frame"` making direct use of the data easy with functions and methods 
 from base R and various packages.
+
+```{r}
+autoplot(leds.mspct[["Nichia_NS6L183AT_H1_sw"]]) + theme_bw()
+```
 
 ## Installation
 
@@ -112,4 +120,4 @@ citation("photobiologyLEDs")
 
 ## License
 
-© 2012-2020 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2012-2022 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
