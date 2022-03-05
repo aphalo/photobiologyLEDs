@@ -6,6 +6,11 @@ editor_options:
 
 # photobiologyLEDs 0.5.0
 
+This is major and code-breaking update.
+Naming conventions have been changed and many new spectra have been added.
+Previously included spectra have in many cases been recomputed and may very slightly differ from earlier versions of the same data.
+In part this was done to reduce the size of the data objects, making it possible to include more spectra while keeping the size of the package reasonable.
+
 -   Revise for 'ggspectra' (\>= 0.3.1).
 -   Rebuild all data objects with 'photobiology' (== 0.10.9) taking care that all spectra are normalized.
 -   Apply function `photobiology::thin_wl()` to all spectra to reduce their stored size.

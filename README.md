@@ -6,10 +6,25 @@ version](https://www.r-pkg.org/badges/version-last-release/photobiologyLEDs)](ht
 [![cran
 checks](https://cranchecks.info/badges/worst/photobiologyLEDs)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html)
 
-Package ‘**photobiologyLEDs**’ contains spectral emission data for
-diverse types of light emitting diodes (LEDs) and LED arrays. It
-complements other packages in the suite of R packages for photobiology
-‘r4photobiology’. This package contains only data.
+Package ‘**photobiologyLEDs**’ complements other packages in the [*R for
+photobiology* suite](https://www.r4photobiology.info/). It contains
+spectral emission data for diverse types of light emitting diodes (LEDs)
+and LED arrays (`leds.mspct`). It also includes spectra from a COB LED
+when dimmed using the constant current approach (`COB_dimming.mspct`)
+and for a COB LED combined with reflectors with different beam angles
+(`COB_reflectors.mspct`).
+
+This package contains only data. Data are stored as collections of
+spectra of class `source_mspct` from package ‘photobiology’, which is
+the core of the [*R for photobiology*
+suite](https://www.r4photobiology.info/). Spectra can be easily plotted
+with functions and methods from package
+[‘ggspectra’](https://docs.r4photobiology.info/ggspectra/). The spectra
+can be used seamlesly with functions from package
+[‘photobioloy’](https://docs.r4photobiology.info/photobiology/).
+However, class `source_mspct` is derived from `list` and class
+`source_spct` is derived from `data.frame` making the data also usable
+as is with base R functions.
 
 ## Examples
 
@@ -24,6 +39,16 @@ How many spectra are included in the current version of
 ``` r
 length(leds.mspct)
 #> [1] 74
+```
+
+``` r
+length(COB_dimming.mspct)
+#> [1] 8
+```
+
+``` r
+length(COB_reflectors.mspct)
+#> [1] 4
 ```
 
 What are the names of available spectra. We use `head()` to limit the

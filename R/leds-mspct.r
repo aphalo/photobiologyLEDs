@@ -24,20 +24,28 @@
 #'   detailed features (such as linear slopes and wavelength regions with zero
 #'   light emission).
 #'
-#' @note Please see the metadata in each spectrum and the help pages 
-#' corresponding to each supplier for contact information. The metadata is
-#' stored in attributes and can accessed with functions 
-#' \code{\link[photobiology]{getWhatMeasured}} and
-#' \code{\link[photobiology]{getWhenMeasured}}. Some of the spectra also contain
+#' @note Please see the help page for \code{\link{led_brands}} for LED 
+#' suppliers' contact information. 
+#' Please see the metadata in each spectrum for other information. 
+#' These metadata are
+#' stored as attributes of the individual \code{source_spct} objects and can 
+#' accessed with functions
+#' \code{\link{comment}},
+#' \code{\link[photobiology]{getWhatMeasured}},
+#' \code{\link[photobiology]{getWhenMeasured}} and
+#' \code{\link[photobiology]{getHowMeasured}}.
+#' Some of the spectra also contain
 #' information on the measurement accessible with 
 #' \code{\link[photobiology]{getInstrDesc}} and
 #' \code{\link[photobiology]{getInstrSettings}}.
+#' See also the \code{\link{comment}} attribute of the \code{leds.mspct} 
+#' object.
 #'
 #' @seealso \code{\link{oo_maya_leds}}
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A \code{"source_mspct"} object containing 51
+#' @format A \code{"source_mspct"} object containing 74 
 #'   \code{"source_spct"} objects.
 #' 
 #' In each of the member spectra, the variables are as follows:

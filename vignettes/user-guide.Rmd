@@ -32,7 +32,7 @@ library(photobiologyLEDs)
 library(ggspectra)
 ```
 
-In this very brief User Guide we describe how to re-scale the normalized
+In this brief User Guide we describe how to re-scale the normalized
 spectra, and how to access individual spectra or subsets of spectra.
 
 ## The data
@@ -46,8 +46,8 @@ measurements, but as LEDs have relatively wide peaks the distortion is small.
 With well calibrated spectrometers, the area under a peak should not be
 affected by the difference in wavelength resolution.
 
-The spectral data in this package are stored in three R object, each of them a
-collection of spectra of class `source_spct`. Most of the spectra are in data object `leds.mspct`. Data object `COB_reflectors.mspct` contains spectra for a single COB LED combined with different reflectors while data object `COB_dimming.mspct` contains a collection of spectra from the same LED when driven at different current values. 
+The spectral data in this package are stored in three R objects, each of them a
+collection of spectra of class `source_spct`. Most of the spectra are in data object `leds.mspct`. Data object `COB_reflectors.mspct` contains spectra for a single COB LED combined with different reflectors while data object `COB_dimming.mspct` contains a collection of spectra from the same LED when driven at different currents. 
 
 Individual or subsets of spectra can be retrieved by _name_. The package
 includes also several `character` vectors of _names_, each one containing names for LEDs of a given _color_ or from a given _manufacturer_. These are listed in the help index for the package. The _names_ used are in most cases the codes used by the manufacturers for the given type. Any dashes in these codes have been replaced by underscores.

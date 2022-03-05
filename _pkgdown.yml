@@ -12,6 +12,7 @@ reference:
     contents:
     - leds.mspct
     - COB_reflectors.mspct
+    - COB_dimming.mspct
   - title: Indexing vectors by color
     contents:
     - led_colors

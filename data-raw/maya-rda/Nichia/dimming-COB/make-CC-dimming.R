@@ -16,12 +16,11 @@ for (f in files) {
 
 setwd(oldwd)
 
-COB_dimming.mspct <- 
-  collect2mspct()
+COB_dimming.mspct <- collect2mspct()
 rm(list = ls(pattern = "*\\.spct|*\\.raw_mspct"))
 
 comment(COB_dimming.mspct) <- 
-  "Constant current (CC) dimming of a Nichia NFCWL036B_V3_Rfcb0 COB LED."
+  "Constant current (CC) dimming of a Nichia NFCWL036B_V3_Rfcb0 COB LED with a LEDiL F15559_MIRELLA-G2-M 25 degrees nominal 50-mm-diameter reflector. Current and voltage were measured simultaneously with spectral irradiance."
 names(COB_dimming.mspct) <- 
   gsub("OptisolisRfl25", "CC", names(COB_dimming.mspct))
 names(COB_dimming.mspct) <- 
@@ -29,24 +28,23 @@ names(COB_dimming.mspct) <-
 names(COB_dimming.mspct) <- 
   gsub(".spct", "", names(COB_dimming.mspct))
 
-LED.type <- 
-  "Nichia Optisolis type NFCWL036B_V3 10W COB with 25 degrees nomical LEDiL reflector."
+formatted.conditions <- gsub("CC.", "", names(COB_dimming.mspct))
+formatted.conditions <- gsub("mA.","mA and ", formatted.conditions)
+names(formatted.conditions) <- names(COB_dimming.mspct)
 
-type2Rfl.map <- c(
-  RflNone = "no reflector",
-  Rfl15deg = "reflector 15 degrees",
-  Rfl25deg = "reflector 25 degrees",
-  Rfl35deg = "reflector 35 degrees"
-)
+LED.type <- 
+  "Nichia Optisolis type NFCWL036B_V3 10W COB with LEDiL F15559_MIRELLA-G2-M 25 degrees nominal 50-mm-diameter reflector."
 
 how.measured <- 
-  "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H; distance 159 mm; LED current 350 mA."
+  "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H; distance 159 mm."
 
-for (s in names(COB_reflectors.mspct)) {
-  comment.text <- paste("Nichia Optisolis type NFCWL036B_V3 10W COB", "from Nichia (https://www.nichia.co.jp/)\n", 
-                        "With", type2Rfl.map[s])
-  what.measured <- paste("COB LED with ", type2Rfl.map[s])
-  temp.spct <- COB_reflectors.mspct[[s]]
+for (s in names(COB_dimming.mspct)) {
+  comment.text <- paste("LED current and voltage:", formatted.conditions[s],
+                        ".\nOptisolis type NFCWL036B_V3 10W COB", 
+                        "from Nichia (https://www.nichia.co.jp/)\n", 
+                        "WithLEDiL F15559_MIRELLA-G2-M reflector 25 degrees")
+  what.measured <- paste("10W Optisolis COB LED driven at ",  formatted.conditions[s])
+  temp.spct <- COB_dimming.mspct[[s]]
   temp.spct <- thin_wl(temp.spct)
   temp.spct <- trim_wl(temp.spct, c(330, 900), fill = 0)
   setHowMeasured(temp.spct, how.measured)
@@ -55,14 +53,14 @@ for (s in names(COB_reflectors.mspct)) {
   trimInstrDesc(temp.spct)
   trimInstrSettings(temp.spct)
   print(str(get_attributes(temp.spct)))
-  print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment")))
-  COB_reflectors.mspct[[s]] <- temp.spct
+  print(autoplot(temp.spct, annotations = c("+", "title:what:when:how")))
+  COB_dimming.mspct[[s]] <- temp.spct
   readline("next:")
 }
 
-autoplot(COB_reflectors.mspct)
-summary(COB_reflectors.mspct)
-cat(comment(COB_reflectors.mspct))
+autoplot(COB_dimming.mspct)
+summary(COB_dimming.mspct)
+cat(comment(COB_dimming.mspct))
 irrads <- q_irrad(COB_dimming.mspct, scale.factor = 1e6)
 irrads$Q_Total_rel <- irrads$Q_Total / max(irrads$Q_Total) * 100
 irrads

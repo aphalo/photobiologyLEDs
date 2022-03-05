@@ -20,7 +20,7 @@ COB_reflectors.mspct <-
 rm(list = ls(pattern = "*\\.spct|*\\.raw_mspct"))
 
 comment(COB_reflectors.mspct) <- 
-  "Reflectors used with a Nichia NFCWL036B_V3_Rfcb0 COB LED.\n(Nominal angles not valid at 159 mm distance as measured.)"
+  "LEDiL Mirella-G2 series 50-mm-diameter reflectors used with a Nichia NFCWL036B_V3_Rfcb0 COB LED.\n(Nominal angles of approximately 15, 25 and 35 degrees not valid at 159 mm distance as used in these measurements.)"
 names(COB_reflectors.mspct) <- 
   gsub("Optisolis", "", names(COB_reflectors.mspct))
 names(COB_reflectors.mspct) <- 
@@ -33,9 +33,9 @@ LED.type <-
 
 type2Rfl.map <- c(
   RflNone = "no reflector",
-  Rfl15deg = "reflector 15 degrees",
-  Rfl25deg = "reflector 25 degrees",
-  Rfl35deg = "reflector 35 degrees"
+  Rfl15deg = "LEDiL F15558_MIRELLA-G2-S reflector 15 degrees",
+  Rfl25deg = "LEDiL F15559_MIRELLA-G2-M reflector 25 degrees",
+  Rfl35deg = "LEDiL F15560_MIRELLA-G2-W reflector 35 degrees"
 )
 
 how.measured <- 

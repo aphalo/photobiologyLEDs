@@ -1,16 +1,13 @@
-#' @title LEDs with reflectors
+#' @title Constant-current dimming of LEDs
 #'
 #' @description A collection of emission spectra of a light-emitting-diode
-#'   when combined with different reflectors.
+#'   driven with different constant current.
 #'
-#' @details The \code{"COB_reflectors.mspct"} object contains
+#' @details The \code{"COB_dimming.mspct"} object contains
 #'   \code{"source_spct"} objects with spectral irradiance data with the same
-#'   Optisolis COB LED from Nichia, and different reflectors from the Mirella-G2
-#'   series from LEDiL . Distance from LED to cosine diffuser was 159 mm.
-#'   Spectra are not normalized. It needs to be taken into account than even in
-#'   these cases measurements have not been done in an optical bench, so values
-#'   of spectral irradiance are subject to small errors due to possible
-#'   misalignment.
+#'   Optisolis COB LED from Nichia driven at different values of constant current. Distance from LED to cosine diffuser was 159 mm.
+#'   Spectra are not normalized. The position for the LED with respect to the
+#'   entrace optics did not vary.
 #'   
 #'   The spectral data are not expressed at constant wavelength intervals. Not
 #'   only the intervals vary in the raw data from the array spectrometer, but in
@@ -28,12 +25,12 @@
 #' \code{\link[photobiology]{getHowMeasured}}, 
 #' \code{\link[photobiology]{getInstrDesc}} and
 #' \code{\link[photobiology]{getInstrSettings}}.
-#' See also the \code{\link{comment}} attribute of the \code{COB_reflectors.mspct} 
+#' See also the \code{\link{comment}} attribute of the \code{COB_dimming.mspct} 
 #' object.
-#' 
+#'
 #' @docType data
 #' @keywords datasets
-#' @format A \code{"source_mspct"} object containing 4
+#' @format A \code{"source_mspct"} object containing 8
 #'   \code{"source_spct"} objects.
 #' 
 #' In each of the member spectra, the variables are as follows:
@@ -48,12 +45,12 @@
 #' library(photobiology)
 #' library(ggspectra)
 #' 
-#' names(COB_reflectors.mspct)
+#' names(COB_dimming.mspct)
 #' 
-#' irrads <- q_irrad(COB_reflectors.mspct, scale.factor = 1e6)
+#' irrads <- q_irrad(COB_dimming.mspct, scale.factor = 1e6)
 #' irrads$Q_Total_rel <- irrads$Q_Total / min(irrads$Q_Total)
 #' irrads
 #' 
-#' autoplot(COB_reflectors.mspct)
+#' autoplot(COB_dimming.mspct)
 
-"COB_reflectors.mspct"
+"COB_dimming.mspct"
