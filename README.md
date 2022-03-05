@@ -1,10 +1,14 @@
 
 # photobiologyLEDs <img src="man/figures/logo.png" align="right" width="120" />
 
+<!-- badges: start -->
+
 [![CRAN
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs)
 [![cran
 checks](https://cranchecks.info/badges/worst/photobiologyLEDs)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html)
+[![R-CMD-check](https://github.com/aphalo/photobiologyLEDs/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions)
+<!-- badges: end -->
 
 Package ‘**photobiologyLEDs**’ complements other packages in the [*R for
 photobiology* suite](https://www.r4photobiology.info/). It contains

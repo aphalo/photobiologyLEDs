@@ -5,8 +5,11 @@ output:
 
 # photobiologyLEDs <img src="man/figures/logo.png" align="right" width="120" />
 
+<!-- badges: start -->
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs) 
 [![cran checks](https://cranchecks.info/badges/worst/photobiologyLEDs)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html)
+[![R-CMD-check](https://github.com/aphalo/photobiologyLEDs/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions)
+<!-- badges: end -->
 
 Package '**photobiologyLEDs**' complements other packages in the [_R for photobiology_ suite](https://www.r4photobiology.info/). It contains spectral emission data for diverse types of light emitting diodes (LEDs) and LED arrays (`leds.mspct`). It also includes spectra from a COB LED when dimmed using the constant current approach (`COB_dimming.mspct`) and for a COB LED combined with reflectors with different beam angles (`COB_reflectors.mspct`).
 
