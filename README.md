@@ -13,10 +13,12 @@ checks](https://cranchecks.info/badges/worst/photobiologyLEDs)](https://cran.r-p
 Package ‘**photobiologyLEDs**’ complements other packages in the [*R for
 photobiology* suite](https://www.r4photobiology.info/). It contains
 spectral emission data for diverse types of light emitting diodes (LEDs)
-and LED arrays (`leds.mspct`). It also includes spectra from a COB LED
-when dimmed using the constant current approach (`COB_dimming.mspct`)
-and for a COB LED combined with reflectors with different beam angles
-(`COB_reflectors.mspct`).
+and LED arrays (`leds.mspct`) available as electronic components.
+Spectra for LED and other lamps are included in package
+[‘photobioloyLamps’](https://docs.r4photobiology.info/photobiologyLamps/)
+It also includes spectra from a COB LED when dimmed using the constant
+current approach (`COB_dimming.mspct`) and for a COB LED combined with
+reflectors with different beam angles (`COB_reflectors.mspct`).
 
 This package contains only data. Data are stored as collections of
 spectra of class `source_mspct` from package ‘photobiology’, which is
