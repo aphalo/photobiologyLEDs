@@ -95,9 +95,9 @@ Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://docs.r4photobiology.info/photobiologyLEDs}
-  \item \url{https://bitbucket.org/aphalo/photobiologyleds}
-  \item Report bugs at \url{https://bitbucket.org/aphalo/photobiologyleds/issues}
+  \item \url{https://docs.r4photobiology.info/photobiologyLEDs/}
+  \item \url{https://github.com/aphalo/photobiologyLEDs}
+  \item Report bugs at \url{https://github.com/aphalo/photobiologyLEDs/issues}
 }
 
 }

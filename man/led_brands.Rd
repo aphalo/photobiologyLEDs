@@ -194,7 +194,7 @@ LEDRISE Ltd. (Hong Kong, Germany and Romania) .
  
 Norlux is now part of Thomas Research Products. The LEDs we measured are
 some of the earliest COB designs from early 1990's. Each COB containing 90 
-LED chips.
+LED chips. (Norlux is no longer in bussiness.)
 }
 
 \section{Osram}{
@@ -247,21 +247,19 @@ Agilent_leds
 
 \url{https://www.ledguhon.com/}
 
-\url{https://www.marktechopto.com/}
+\url{https://marktechopto.com/}
 
-\url{https://www.cree-led.com/}
+\url{https://cree-led.com/}
 
 \url{https://www.epileds.com.tw/en/}
 
 \url{https://www.epistar.com/}
 
-\url{https://www.seoulsemicon.com/en}
+\url{http://www.seoulsemicon.com/en/}
 
 \url{https://www.bridgelux.com/}
 
 \url{https://www.nichia.co.jp/en/product/led.html}
-
-\url{https://www.trpssl.com/}
 
 \url{https://www.osram-os.com/}
 

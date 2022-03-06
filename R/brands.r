@@ -78,7 +78,7 @@
 #' Marktech Optoelectronics is a distributor and supplier of LEDs from the 
 #' U.S.A. that sells VIS and UV emitting LEDs.
 #'
-#' @references \url{https://www.marktechopto.com/}
+#' @references \url{https://marktechopto.com/}
 #' 
 "Marktech_leds"
 
@@ -88,7 +88,7 @@
 #' The former LED products group of Cree is now Cree LED (U.S.A.) and a part of
 #' SGH.
 #'
-#' @references \url{https://www.cree-led.com/}
+#' @references \url{https://cree-led.com/}
 #' 
 "CREE_leds"
 
@@ -119,7 +119,7 @@
 #' using 'phosphor' technology from Toshiba (Japan). Seoul Viosys supplies
 #' UV LEDs based on an agreement with SETi (U.S.A.).
 #'
-#' @references \url{https://www.seoulsemicon.com/en}
+#' @references \url{http://www.seoulsemicon.com/en/}
 #'   
 "SeoulSemicon_leds"
 
@@ -154,9 +154,7 @@
 #' @section Norlux: 
 #' Norlux is now part of Thomas Research Products. The LEDs we measured are
 #' some of the earliest COB designs from early 1990's. Each COB containing 90 
-#' LED chips.
-#'
-#' @references  \url{https://www.trpssl.com/}
+#' LED chips. (Norlux is no longer in bussiness.)
 #'   
 "Norlux_leds"
 
