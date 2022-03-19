@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2022-03-05" />
+<meta name="date" content="2022-03-20" />
 
 <title>User Guide</title>
 
@@ -333,9 +333,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 <h1 class="title toc-ignore">User Guide</h1>
-<h3 class="subtitle">Package ‘photobiologyLEDs’ 0.4.5.9000</h3>
+<h3 class="subtitle">Package ‘photobiologyLEDs’ 0.5.0</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
-<h4 class="date">2022-03-05</h4>
+<h4 class="date">2022-03-20</h4>
 
 
 <div id="TOC">
@@ -437,27 +437,28 @@ listed with method <code>names()</code>.</p>
 ## [27] &quot;LedEngin_LZ1_10R602_850nm&quot;       &quot;LedEngin_LZ1_10UB00_00U4_385nm&quot; 
 ## [29] &quot;LedEngin_LZ1_10UB00_00U8_405nm&quot;  &quot;LedEngin_LZ1_10UV00_365nm&quot;      
 ## [31] &quot;LedEngin_LZ4_40R208_660nm&quot;       &quot;Ledguhon_10WBVG14G24_Y6C_T4&quot;    
-## [33] &quot;Ledguhon_10WBVGIR14G24_Y6C_T4&quot;   &quot;Marktech_MTSM340UV_F5120_340nm&quot; 
-## [35] &quot;Nichia_NF2W757GT_F1_sm505_Rfc00&quot; &quot;Nichia_NFCWL036B_V3_Rfcb0&quot;      
-## [37] &quot;Nichia_NFSL757GT_Rsp0a&quot;          &quot;Nichia_NFSW757G_Rsp0a&quot;          
-## [39] &quot;Nichia_NS6L183AT_H1_sw&quot;          &quot;Nichia_NVSU119C_U385&quot;           
-## [41] &quot;Nichia_NVSU233B_U365&quot;            &quot;Nichia_unknown_757&quot;             
-## [43] &quot;Norlux_NHXRGB090S00S_blue&quot;       &quot;Norlux_NHXRGB090S00S_green&quot;     
-## [45] &quot;Norlux_NHXRGB090S00S_red&quot;        &quot;Norlux_NHXRGB090S00S_RGB&quot;       
-## [47] &quot;Osram_GF_CSHPM2.24_2T4T_1&quot;       &quot;Osram_GW_CSSRM3.HW&quot;             
-## [49] &quot;Osram_LY5436&quot;                    &quot;QuantumDevices_QDDH66002&quot;       
-## [51] &quot;QuantumDevices_QDDH68002&quot;        &quot;QuantumDevices_QDDH70002&quot;       
-## [53] &quot;QuantumDevices_QDDH73502&quot;        &quot;Roithner_BS436&quot;                 
-## [55] &quot;Roithner_CB30&quot;                   &quot;Roithner_DUV289_SD353EL&quot;        
-## [57] &quot;Roithner_DUV310_SD353EL&quot;         &quot;Roithner_DUV325_SD353EL&quot;        
-## [59] &quot;Roithner_DUV340_SD353EL&quot;         &quot;Roithner_LED405&quot;                
-## [61] &quot;Roithner_LED740&quot;                 &quot;Roithner_SMB1N_BB450&quot;           
-## [63] &quot;Roithner_UV395&quot;                  &quot;Roithner_UVMAX305&quot;              
-## [65] &quot;Roithner_UVMAX340&quot;               &quot;Roithner_XSL365&quot;                
-## [67] &quot;Roithner_XSL370&quot;                 &quot;Roithner_XSL375&quot;                
-## [69] &quot;SeoulSemicon_STW9C2SB_S&quot;         &quot;TaoYuan_LED_310nm&quot;              
-## [71] &quot;Weili_3W.nominal.500nm&quot;          &quot;Weili_3W.nominal.525nm&quot;         
-## [73] &quot;Weili_3W.nominal.550nm&quot;          &quot;Weili_3W.nominal.555nm&quot;</code></pre>
+## [33] &quot;Ledguhon_10WBVGIR14G24_Y6C_T4&quot;   &quot;Luminus_CXM_14_HS_12_36_AC30&quot;   
+## [35] &quot;Marktech_MTSM340UV_F5120_340nm&quot;  &quot;Nichia_NF2W757GT_F1_sm505_Rfc00&quot;
+## [37] &quot;Nichia_NFCWL036B_V3_Rfcb0&quot;       &quot;Nichia_NFSL757GT_Rsp0a&quot;         
+## [39] &quot;Nichia_NFSW757G_Rsp0a&quot;           &quot;Nichia_NS6L183AT_H1_sw&quot;         
+## [41] &quot;Nichia_NVSU119C_U385&quot;            &quot;Nichia_NVSU233B_U365&quot;           
+## [43] &quot;Nichia_unknown_757&quot;              &quot;Norlux_NHXRGB090S00S_blue&quot;      
+## [45] &quot;Norlux_NHXRGB090S00S_green&quot;      &quot;Norlux_NHXRGB090S00S_red&quot;       
+## [47] &quot;Norlux_NHXRGB090S00S_RGB&quot;        &quot;Osram_GF_CSHPM2.24_2T4T_1&quot;      
+## [49] &quot;Osram_GW_CSSRM3.HW&quot;              &quot;Osram_LY5436&quot;                   
+## [51] &quot;QuantumDevices_QDDH66002&quot;        &quot;QuantumDevices_QDDH68002&quot;       
+## [53] &quot;QuantumDevices_QDDH70002&quot;        &quot;QuantumDevices_QDDH73502&quot;       
+## [55] &quot;Roithner_BS436&quot;                  &quot;Roithner_CB30&quot;                  
+## [57] &quot;Roithner_DUV289_SD353EL&quot;         &quot;Roithner_DUV310_SD353EL&quot;        
+## [59] &quot;Roithner_DUV325_SD353EL&quot;         &quot;Roithner_DUV340_SD353EL&quot;        
+## [61] &quot;Roithner_LED405&quot;                 &quot;Roithner_LED740&quot;                
+## [63] &quot;Roithner_SMB1N_BB450&quot;            &quot;Roithner_UV395&quot;                 
+## [65] &quot;Roithner_UVMAX305&quot;               &quot;Roithner_UVMAX340&quot;              
+## [67] &quot;Roithner_XSL365&quot;                 &quot;Roithner_XSL370&quot;                
+## [69] &quot;Roithner_XSL375&quot;                 &quot;Samsung_SPHWHAHDND25YZT3D3&quot;     
+## [71] &quot;SeoulSemicon_STW9C2SB_S&quot;         &quot;TaoYuan_LED_310nm&quot;              
+## [73] &quot;Weili_3W.nominal.500nm&quot;          &quot;Weili_3W.nominal.525nm&quot;         
+## [75] &quot;Weili_3W.nominal.550nm&quot;          &quot;Weili_3W.nominal.555nm&quot;</code></pre>
 <p>We can use a character string as index to extract an individual
 <code>source_spct</code> object.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>leds.mspct<span class="sc">$</span>Roithner_UV395</span></code></pre></div>

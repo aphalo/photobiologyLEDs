@@ -9,7 +9,7 @@ path <- "./data-raw/rda2merge/"
 
 # load collections of spectra
 
-files2read <- list.files(path = path, pattern = "*[-.]mspct.rda$")
+files2read <- list.files(path = path, pattern = ".*[-.]mspct.rda$")
 files2read <- setdiff(files2read, "leds-mspct.rda")
 for (f in files2read) {
   load(paste(path, f, sep = ""))

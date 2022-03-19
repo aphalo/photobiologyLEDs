@@ -20,6 +20,8 @@
 \alias{Roithner_leds}
 \alias{Weili_leds}
 \alias{TaoYuan_leds}
+\alias{Luminus_leds}
+\alias{Samsung_leds}
 \title{Spectral data for LEDs from different suppliers}
 \format{
 A vector of character strings.
@@ -55,6 +57,10 @@ An object of class \code{character} of length 4.
 An object of class \code{character} of length 15.
 
 An object of class \code{character} of length 4.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 1.
 }
@@ -94,6 +100,10 @@ Roithner_leds
 Weili_leds
 
 TaoYuan_leds
+
+Luminus_leds
+
+Samsung_leds
 }
 \description{
 The collection of spectra \code{\link{leds.mspct}} contains spectra for light
@@ -235,6 +245,16 @@ and vary in power output from 10 W to 300 W.
 TaoYuan Electron (Hong Kong and China) is a supplier of LEDs and LED arrays.
 }
 
+\section{Luminus}{
+
+Luminus Devices (USA) is a supplier of SMD LEDs and COB LEDs as components.
+}
+
+\section{Samsung}{
+
+Samsung LEDs (South Korea) is a supplier of SMD LEDs and COB LEDs as components.
+}
+
 \examples{
 led_brands
 Agilent_leds
@@ -271,6 +291,10 @@ Agilent_leds
 \url{https://www.leds-global.com/}
 
 \url{https://www.ledwv.com/en/}
+
+\url{https://www.luminus.com/}
+
+\url{https://www.samsung.com/led/}
 }
 \seealso{
 \code{\link{leds.mspct}}

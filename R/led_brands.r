@@ -216,3 +216,22 @@
 #' @references \url{https://www.ledwv.com/en/}
 #'
 "TaoYuan_leds"
+
+#' @rdname led_brands
+#'
+#' @section Luminus:
+#' Luminus Devices (USA) is a supplier of SMD LEDs and COB LEDs as components.
+#' 
+#' @references \url{https://www.luminus.com/}
+#'
+"Luminus_leds"
+
+#' @rdname led_brands
+#'
+#' @section Samsung:
+#' Samsung LEDs (South Korea) is a supplier of SMD LEDs and COB LEDs as components.
+#' 
+#' @references \url{https://www.samsung.com/led/}
+#'
+"Samsung_leds"
+

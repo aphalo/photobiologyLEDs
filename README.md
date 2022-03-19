@@ -44,7 +44,7 @@ How many spectra are included in the current version of
 
 ``` r
 length(leds.mspct)
-#> [1] 74
+#> [1] 76
 ```
 
 ``` r
@@ -278,9 +278,9 @@ led_colors
 led_brands
 #>  [1] "Agilent"        "Bridgelux"      "CREE"           "Epileds"       
 #>  [5] "Epistar"        "HueyJann"       "LedEngin"       "Ledguhon"      
-#>  [9] "Marktech"       "Nichia"         "Norlux"         "Osram"         
-#> [13] "QuantumDevices" "Roithner"       "SeoulSemicon"   "TaoYuan"       
-#> [17] "Weili"
+#>  [9] "Luminus"        "Marktech"       "Nichia"         "Norlux"        
+#> [13] "Osram"          "QuantumDevices" "Roithner"       "Samsung"       
+#> [17] "SeoulSemicon"   "TaoYuan"        "Weili"
 ```
 
 Vectors like `Nichia_leds` or `blue_leds` exist for all the colors in

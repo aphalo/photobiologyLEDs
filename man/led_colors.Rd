@@ -40,11 +40,11 @@ An object of class \code{character} of length 11.
 
 An object of class \code{character} of length 4.
 
-An object of class \code{character} of length 10.
+An object of class \code{character} of length 12.
 
 An object of class \code{character} of length 4.
 
-An object of class \code{character} of length 70.
+An object of class \code{character} of length 72.
 }
 \usage{
 led_colors

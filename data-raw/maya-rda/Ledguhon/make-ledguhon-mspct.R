@@ -14,9 +14,12 @@ for (f in files) {
 
 spectra <- ls(pattern = "*\\.spct")
 
-new.names <- gsub(".350mA.spct", "14G24_Y6C_T4", spectra)
-new.names <- gsub("LEDGUHON.", "Ledguhon_", new.names)
-names(new.names) <- spectra
+new.names = c("LEDGUHON.COB.67mm.350mA.38.1V.spct" = "Ledguhon_10WBVG14G24_Y6C_T4", 
+              "LEDGUHON.WFR.4000K.65mm.350mA.36.6V.spct" = "Ledguhon_10WBVGIR14G24_Y6C_T4")
+
+# new.names <- gsub(".350mA.spct", "14G24_Y6C_T4", spectra)
+# new.names <- gsub("LEDGUHON.", "Ledguhon_", new.names)
+# names(new.names) <- spectra
 
 how.measured <- "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H; distance 70 mm; LED current 700 mA."
 comment.text <- "10W white 4000K COB 1414 (13.5x13.5mm square) LED from Bridgelux (?) https://www.bridgelux.com\nSupplied by AliExpress seller 'LEDGUHON (Guangzhou Juhong Optoelectronics, https://www.ledguhon.com/)' in 2022\nmounted on heat sink.\nType denomination is from LEDGUHON, spectrum matches that of Brigelux 'Thrive' series."
