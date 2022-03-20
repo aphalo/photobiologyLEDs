@@ -7,14 +7,12 @@
 #' additional vector, \code{led_brands} contains the names of the brands as used
 #' in the names of the spectra in the collection.
 #' 
-#' @note Some of the LEDs were bought from AliExpress sellers while others were
-#'   sourced from major electronic component distributors like Farnell, RS
-#'   components, Digi Key, Mouser and TME. In the case of some AliExpress
-#'   sellers or smaller webstores sometimes the exact type specifications are
-#'   not available. Some of the Chinese sellers package the LEDs they sell using
-#'   LED dies (= chips) from major brands and provide this brand name. In very
-#'   recent times this seems to have expanded in some cases to include high
-#'   density COB packages.
+#' As described for the individual brands, ownership of brands and companies has
+#' changed over the years through take-overs, mergers and sales of company
+#' divisions. Even when brand names have changed it has been the norm for
+#' electronic components that component type codes are maintained unchanged. In
+#' contrast to some integrated circuits, exact replacement types from multiple
+#' suppliers are not available for LEDs.
 #' 
 #' @docType data
 #' @keywords datasets

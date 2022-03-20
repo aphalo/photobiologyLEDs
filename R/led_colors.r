@@ -1,7 +1,8 @@
 #' Spectral data for LEDs of different colours
 #' 
 #' Names of members of the collection of emission spectra
-#' \code{\link{leds.mspct}} grouped by the wavelength at which they emit.
+#' \code{\link{leds.mspct}} grouped by the wavelength ranges or colors
+#' at which they predominantly emit energy.
 #' 
 #' @details
 #' The character vectors \code{"uv_leds"}, \code{"purple_leds"},
@@ -11,7 +12,7 @@
 #' corresponding to the light colours as defined by ISO standards. Vector
 #' \code{amber_leds} is the union of \code{"yellow_leds"} and
 #' \code{"orange_leds"}. Vector \code{white_leds} contains the names of spectra
-#' for LEDs with broad or multiple peaks of emession in the visible range.
+#' for LEDs with broad or multiple peaks of emission in the visible range.
 #' Vectors \code{"uv_leds"} and \code{"ir_leds"} contain the names for LEDs with
 #' peak emission at wavelengths < 400 nm and wavelengths > 700 nm, respectively.
 #' Vector \code{"multi_channel_leds"} contains names of spectra for LED arrays
@@ -37,7 +38,9 @@
 #' # select LEDs emitting in the amber (yellow to orange) region
 #' leds.mspct[amber_leds]
 #' 
-#' @seealso \code{\link{leds.mspct}}
+#' @seealso \code{\link{leds.mspct}}, 
+#' \code{\link[photobiologyWavebands]{VIS_bands}},
+#' \code{\link[photobiologyWavebands]{UV_bands}}.
 #' 
 "led_colors"
 

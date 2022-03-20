@@ -26,7 +26,7 @@ the core of the [*R for photobiology*
 suite](https://www.r4photobiology.info/). Spectra can be easily plotted
 with functions and methods from package
 [‘ggspectra’](https://docs.r4photobiology.info/ggspectra/). The spectra
-can be used seamlesly with functions from package
+can be used seamlessly with functions from package
 [‘photobioloy’](https://docs.r4photobiology.info/photobiology/).
 However, class `source_mspct` is derived from `list` and class
 `source_spct` is derived from `data.frame` making the data also usable
@@ -266,7 +266,7 @@ leds.mspct[Nichia_leds]
 #> --- END ---
 ```
 
-The package includes a character vector with the names LED brands and
+The package includes a character vector with the names of LED brands and
 LED colors as used for indexing vectors.
 
 ``` r
@@ -284,11 +284,11 @@ led_brands
 ```
 
 Vectors like `Nichia_leds` or `blue_leds` exist for all the colors in
-`led_colors` and `led_brands` respectively.
+`led_brands` and `led_colors`, respectively.
 
 Summary calculations can be easily done with methods from package
 ‘photobiology’. Here we calculate photon irradiance. As the spectra are
-normalised,
+normalised we pass `allow.scaled = TRUE`,
 
 ``` r
 q_irrad(leds.mspct[["Nichia_NS6L183AT_H1_sw"]], 
@@ -302,16 +302,17 @@ q_irrad(leds.mspct[["Nichia_NS6L183AT_H1_sw"]],
 ```
 
 The `autoplot()` methods from package ‘ggspectra’ can be used for
-plotting one or more spectra at a time. The classes of the objects used
-to store the spectral data are derived from `"data.frame"` making direct
-use of the data easy with functions and methods from base R and various
-packages.
+plotting one or more spectra at a time.
 
 ``` r
 autoplot(leds.mspct[["Nichia_NS6L183AT_H1_sw"]]) + theme_bw()
 ```
 
 ![](man/figures/README-unnamed-chunk-1-1.png)<!-- -->
+
+The classes of the objects used to store the spectral data are derived
+from `"data.frame"` making direct use of the data with functions and
+methods from base R and various packages easy.
 
 ## Installation
 

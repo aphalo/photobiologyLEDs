@@ -3,20 +3,33 @@
 #' @description A collection of emission spectra of light-emitting-diodes
 #'   from different suppliers.
 #'
-#' @details The \code{"leds.mspct"} object contains \code{"source_spct"}
-#'   objects with spectral irradiance data.
-#'   When the exact distance from LED to cosine diffuser is not known precisely
-#'   or when the driving current is unknown, the spectra have been normalized
-#'   to spectral energy irradiance equal to 1 W m-2 nm-1 at the wavelength
-#'   of maximum spectral irradiance. When the details of the measurement
-#'   conditions are know, this are given and the data are expressed in absolute
-#'   spectral irradiance units. In any case, it needs to be taken into account
-#'   than even in these cases measuremnts have not been done in an optical 
-#'   bench, so values of expectral irradiance are subject to errors due to
-#'   possible missalignment. The shape of the spectra, in contrast can be
-#'   relied upon as measurements were done with well calibrated instruments.
+#' @details The \code{"leds.mspct"} object contains \code{"source_spct"} objects
+#'   with spectral irradiance data. As the exact distance from LED to cosine
+#'   diffuser and/or the the driving current vary among spectra, they have been
+#'   all normalized to the wavelength of maximum spectral energy irradiance.
+#'   When the details of the measurement conditions are know, these are stored
+#'   as metadata attributes. In any case, it needs to be taken into account than even
+#'   in these cases measurements have not been done in an optical bench, so
+#'   values of spectral irradiance are subject to errors due to possible
+#'   misalignment. The shape of the spectra, in contrast can be relied upon as
+#'   measurements were done with well calibrated instruments.
 #'   
-#'   The expectral data are not expressed at constant wavelength intervals. Not
+#'   The output of LEDs at a given current decreases as their temperature
+#'   increases. The wavelength at the peak of emission can depend on the
+#'   temperature and current, but shifts tend to be only a couple of nanometres.
+#'   In LED arrays with heterogeneous LED chips or white LEDs based on secondary
+#'   emission from phosphor the shave of the spectrum can slightly change
+#'   depending on the drive current and temperature.
+#'   
+#'   There is variation among LEDs of the same type, specially with respect
+#'   wavelength and light output. The data included are for individual LEDs and
+#'   can be expected to differ to some extent from the typical values in the
+#'   manufacturers specifications. Some of the LEDs for which data are included
+#'   are only of historical interest as their production has been discontinued,
+#'   usually replaced by new types with enhanced performance. When known, the
+#'   approximate "vintage" is provided in the metadata.
+#'   
+#'   The spectral data are not expressed at constant wavelength intervals. Not
 #'   only the intervals vary in the raw data from the array spectrometer, but in
 #'   addition function \code{\link[photobiology]{thin_wl}} has been applied to
 #'   reduce the storage space needed. In brief the wavelength interval has been

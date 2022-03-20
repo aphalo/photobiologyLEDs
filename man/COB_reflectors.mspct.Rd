@@ -28,8 +28,13 @@ The \code{"COB_reflectors.mspct"} object contains
   series from LEDiL . Distance from LED to cosine diffuser was 159 mm.
   Spectra are not normalized. It needs to be taken into account than even in
   these cases measurements have not been done in an optical bench, so values
-  of spectral irradiance are subject to small errors due to possible
+  of spectral irradiance are subject to errors due to possible
   misalignment.
+  
+  The COB LED used is the chip-on-board (COB) Optisolis type
+  NFCWL036B-V3-Rfcb0 from Nichia with CRI > 95. Nominal electrical power of
+  10.3 W at nominal current of 270 mA. Spectra are for the COB over-driven at
+  350 mA, which is possible with enough cooling, but not recommended.
   
   The spectral data are not expressed at constant wavelength intervals. Not
   only the intervals vary in the raw data from the array spectrometer, but in
@@ -57,11 +62,13 @@ library(ggspectra)
 
 names(COB_reflectors.mspct)
 
+# calculate photon irradiances in umol m-2 s-2 and relative to no reflector
 irrads <- q_irrad(COB_reflectors.mspct, scale.factor = 1e6)
 irrads$Q_Total_rel <- irrads$Q_Total / min(irrads$Q_Total)
 irrads
 
 autoplot(COB_reflectors.mspct)
+
 }
 \references{
 \url{https://www.ledil.com/} \url{https://www.nichia.co.jp/en/}
