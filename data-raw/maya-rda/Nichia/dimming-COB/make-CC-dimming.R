@@ -58,6 +58,13 @@ for (s in names(COB_dimming.mspct)) {
   readline("next:")
 }
 
+ordering <- order(q_irrad(COB_dimming.mspct, scale.factor = 1e6)$Q_Total,
+                  decreasing = TRUE)
+COB_dimming.mspct <- COB_dimming.mspct[ordering]
+names(COB_dimming.mspct) <- gsub("\\.*3[0-9]\\.[0-9][0-9]*[vV]$", "", names(COB_dimming.mspct))
+
+q_irrad(COB_dimming.mspct, scale.factor = 1e6)
+
 autoplot(COB_dimming.mspct)
 summary(COB_dimming.mspct)
 cat(comment(COB_dimming.mspct))

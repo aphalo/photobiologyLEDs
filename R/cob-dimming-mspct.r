@@ -48,9 +48,9 @@
 #' names(COB_dimming.mspct)
 #' 
 #' irrads <- q_irrad(COB_dimming.mspct, scale.factor = 1e6)
-#' irrads$Q_Total_rel <- irrads$Q_Total / min(irrads$Q_Total)
+#' irrads$Q_Total_rel <- irrads$Q_Total / max(irrads$Q_Total)
 #' irrads
 #' 
-#' autoplot(COB_dimming.mspct)
-
+#' # autoplot(COB_dimming.mspct)
+#' 
 "COB_dimming.mspct"
