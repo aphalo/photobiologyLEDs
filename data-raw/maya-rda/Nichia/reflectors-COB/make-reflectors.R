@@ -27,15 +27,17 @@ names(COB_reflectors.mspct) <-
   gsub("5.spct", "5deg", names(COB_reflectors.mspct))
 names(COB_reflectors.mspct) <- 
   gsub(".spct", "", names(COB_reflectors.mspct))
+names(COB_reflectors.mspct) <- 
+  gsub("Rfl", "Rfl.", names(COB_reflectors.mspct))
 
 LED.type <- 
   "Nichia Optisolis type NFCWL036B_V3 10W COB"
 
 type2Rfl.map <- c(
-  RflNone = "no reflector",
-  Rfl15deg = "LEDiL F15558_MIRELLA-G2-S reflector 15 degrees",
-  Rfl25deg = "LEDiL F15559_MIRELLA-G2-M reflector 25 degrees",
-  Rfl35deg = "LEDiL F15560_MIRELLA-G2-W reflector 35 degrees"
+  Rfl.None = "no reflector",
+  Rfl.15deg = "LEDiL F15558_MIRELLA-G2-S reflector 15 degrees",
+  Rfl.25deg = "LEDiL F15559_MIRELLA-G2-M reflector 25 degrees",
+  Rfl.35deg = "LEDiL F15560_MIRELLA-G2-W reflector 35 degrees"
 )
 
 how.measured <- 
