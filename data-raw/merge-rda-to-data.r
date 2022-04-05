@@ -67,6 +67,7 @@ for (s in names(leds.mspct)) {
 }
 
 leds.mspct <- leds.mspct[order(names(leds.mspct))]
+# leds.mspct <- normalize(leds.mspct, norm = "max", unit.out = "energy")
 
 # Distinguish by number of channels
 multi_channel_leds <- grep("RGB", names(leds.mspct), value = TRUE)

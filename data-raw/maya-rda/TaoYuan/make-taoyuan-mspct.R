@@ -24,6 +24,8 @@ how_measured(taoyuan.mspct[["TaoYuan_LED_310nm"]]) <-
 what_measured(taoyuan.mspct[["TaoYuan_LED_310nm"]]) <- 
   "SMD LED 310nm from TaoYuan, China; ca. 2012"
 when_measured(taoyuan.mspct[["TaoYuan_LED_310nm"]]) <- ymd("2015-07-30")
+taoyuan.mspct[["TaoYuan_LED_310nm"]] <- normalize(taoyuan.mspct[["TaoYuan_LED_310nm"]], norm = "max")
+getNormalisation(taoyuan.mspct[["TaoYuan_LED_310nm"]])
 
 autoplot(taoyuan.mspct)
 

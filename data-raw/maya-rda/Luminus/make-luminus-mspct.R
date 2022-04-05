@@ -41,7 +41,6 @@ for (s in spectra) {
 
 Luminus_leds <- names(luminus.mspct)
 
-photon_as_default()
 autoplot(luminus.mspct)
 
 cat("Saving:", Luminus_leds, sep = "\n")

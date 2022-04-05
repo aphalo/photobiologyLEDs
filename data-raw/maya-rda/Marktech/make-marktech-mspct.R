@@ -3,6 +3,7 @@ library(ggspectra)
 
 # clear workspace
 rm(list = ls(pattern = "*"))
+energy_as_default()
 
 files <- list.files(path = "data-raw/maya-rda/Marktech",
                     pattern = ".spct.[Rr]da",
@@ -35,6 +36,7 @@ for (s in spectra) {
   comment(temp.spct) <- comment.text
   trimInstrDesc(temp.spct)
   trimInstrSettings(temp.spct)
+  temp.spct <- normalize(temp.spct, norm = "max")
   print(str(get_attributes(temp.spct)))
   print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment")))
   marktech.mspct[[new.names[s]]] <- temp.spct

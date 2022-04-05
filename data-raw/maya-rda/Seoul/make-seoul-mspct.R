@@ -5,6 +5,8 @@ library(lubridate)
 # clear workspace
 rm(list = ls(pattern = "*"))
 
+energy_as_default()
+
 files <- list.files(path = "data-raw/maya-rda/Seoul",
                     pattern = ".spct.[Rr]da",
                     full.names = TRUE)
@@ -47,7 +49,7 @@ for (s in type2name.map) {
                         "from Lumitronix, Germany; ca. 2018-2019.")
   what.measured <- paste("LED type", name2type.map[s], "from Seoul Semiconductor")
   temp.spct <- get(s)
-  temp.spct <- normalize(temp.spct)
+  temp.spct <- normalize(temp.spct, norm = "max", unit.out = "energy")
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)
   setHowMeasured(temp.spct, how.measured)
@@ -61,7 +63,7 @@ for (s in type2name.map) {
   readline("next:")
 }
 
-autoplot(seoul.mspct)
+autoplot(seoul.mspct, unit.out = "energy")
 
 SeoulSemicon_leds <- names(seoul.mspct)
 

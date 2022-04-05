@@ -86,9 +86,9 @@ cat(getWhatMeasured(leds.mspct$Nichia_NS6L183AT_H1_sw))
 
 peaks(leds.mspct$Nichia_NS6L183AT_H1_sw, span = 100)
 
-range(leds.mspct$Nichia_NS6L183AT_H1_sw)
+wl_range(leds.mspct$Nichia_NS6L183AT_H1_sw)
 
-stepsize(leds.mspct$Nichia_NS6L183AT_H1_sw)
+wl_stepsize(leds.mspct$Nichia_NS6L183AT_H1_sw)
 
 autoplot(leds.mspct$Nichia_NS6L183AT_H1_sw)
 

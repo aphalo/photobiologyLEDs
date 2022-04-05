@@ -2,7 +2,7 @@ library(photobiology)
 library(ggspectra)
 library(lubridate)
 
-photon_as_default()
+# photon_as_default()
 
 # clear workspace
 rm(list = ls(pattern = "*"))

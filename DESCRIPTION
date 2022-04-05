@@ -16,12 +16,13 @@ License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
     R (>= 3.6.0),
-    photobiology (>= 0.10.2)
-Suggests:
-    knitr (>= 1.31),
-    rmarkdown (>= 2.7),
+    photobiology (>= 0.10.9)
+Imports:
     photobiologyWavebands (>= 0.4.3),
-    ggspectra (>= 0.3.6)
+    ggspectra (>= 0.3.7)
+Suggests:
+    knitr (>= 1.37),
+    rmarkdown (>= 2.13)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true

@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2022-03-20" />
+<meta name="date" content="2022-03-24" />
 
 <title>User Guide</title>
 
@@ -335,7 +335,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">User Guide</h1>
 <h3 class="subtitle">Package ‘photobiologyLEDs’ 0.5.0</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
-<h4 class="date">2022-03-20</h4>
+<h4 class="date">2022-03-24</h4>
 
 
 <div id="TOC">
@@ -418,7 +418,7 @@ should be used instead. The names are listed in the documentation and
 also available through the “Data Catalogue” vignette. They can also be
 listed with method <code>names()</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(COB_reflectors.mspct)</span></code></pre></div>
-<pre><code>## [1] &quot;Rfl15deg&quot; &quot;Rfl25deg&quot; &quot;Rfl35deg&quot; &quot;RflNone&quot;</code></pre>
+<pre><code>## [1] &quot;Rfl.15deg&quot; &quot;Rfl.25deg&quot; &quot;Rfl.35deg&quot; &quot;Rfl.None&quot;</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># names(COB_dimming.mspct)</span></span></code></pre></div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(leds.mspct)</span></code></pre></div>
 <pre><code>##  [1] &quot;Agilent_HLMB_CB30&quot;               &quot;Agilent_HLMB_CD31&quot;              
@@ -463,10 +463,10 @@ listed with method <code>names()</code>.</p>
 <code>source_spct</code> object.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>leds.mspct<span class="sc">$</span>Roithner_UV395</span></code></pre></div>
 <pre><code>## Object: source_spct [1,335 x 2]
-## Wavelength range 250.05 to 899.78 nm, step 0.43 to 7.45 nm 
+## Wavelength range 250.05-899.78 nm, step 0.43-7.45 nm 
 ## Label: LED type UV395 from Roithner-Laser 
 ## Time unit 1s
-## Spectral data normalized to 1 at 391.03 nm 
+## Spectral data normalized to s.e.irrad = 1 at 391.03 nm (max in 250.05-899.78 nm)
 ## 
 ## # A tibble: 1,335 x 2
 ##    w.length s.e.irrad
@@ -484,10 +484,10 @@ listed with method <code>names()</code>.</p>
 ## # ... with 1,325 more rows</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>leds.mspct[[<span class="st">&quot;Roithner_UV395&quot;</span>]]</span></code></pre></div>
 <pre><code>## Object: source_spct [1,335 x 2]
-## Wavelength range 250.05 to 899.78 nm, step 0.43 to 7.45 nm 
+## Wavelength range 250.05-899.78 nm, step 0.43-7.45 nm 
 ## Label: LED type UV395 from Roithner-Laser 
 ## Time unit 1s
-## Spectral data normalized to 1 at 391.03 nm 
+## Spectral data normalized to s.e.irrad = 1 at 391.03 nm (max in 250.05-899.78 nm)
 ## 
 ## # A tibble: 1,335 x 2
 ##    w.length s.e.irrad
@@ -511,10 +511,10 @@ the chunk immediately above.</p>
 <pre><code>## Object: source_mspct [1 x 1]
 ## --- Member: Roithner_UV395 ---
 ## Object: source_spct [1,335 x 2]
-## Wavelength range 250.05 to 899.78 nm, step 0.43 to 7.45 nm 
+## Wavelength range 250.05-899.78 nm, step 0.43-7.45 nm 
 ## Label: LED type UV395 from Roithner-Laser 
 ## Time unit 1s
-## Spectral data normalized to 1 at 391.03 nm 
+## Spectral data normalized to s.e.irrad = 1 at 391.03 nm (max in 250.05-899.78 nm)
 ## 
 ## # A tibble: 1,335 x 2
 ##    w.length s.e.irrad
@@ -545,11 +545,11 @@ computation. Here we use a vector defined by the package.</p>
 <pre><code>## Object: source_mspct [4 x 1]
 ## --- Member: Norlux_NHXRGB090S00S_blue ---
 ## Object: source_spct [1,235 x 2]
-## Wavelength range 250 to 900 nm, step 0.43 to 14.51 nm 
+## Wavelength range 250-900 nm, step 0.43-14.51 nm 
 ## Label: 12W RGB LED COB Type NHXRGB090S00S from Norlux 
 ## Measured on 2013-11-27 UTC 
 ## Time unit 1s
-## Spectral data normalized to 1 at 462.59 nm 
+## Spectral data normalized to s.e.irrad = 1 at 462.59 nm (max in NA-NA nm)
 ## 
 ## # A tibble: 1,235 x 2
 ##    w.length s.e.irrad
@@ -567,11 +567,11 @@ computation. Here we use a vector defined by the package.</p>
 ## # ... with 1,225 more rows
 ## --- Member: Norlux_NHXRGB090S00S_green ---
 ## Object: source_spct [1,190 x 2]
-## Wavelength range 250 to 900 nm, step 0.43 to 14.36 nm 
+## Wavelength range 250-900 nm, step 0.43-14.36 nm 
 ## Label: 12W RGB LED COB Type NHXRGB090S00S from Norlux 
 ## Measured on 2013-11-27 UTC 
 ## Time unit 1s
-## Spectral data normalized to 1 at 515.52 nm 
+## Spectral data normalized to s.e.irrad = 1 at 515.52 nm (max in NA-NA nm)
 ## 
 ## # A tibble: 1,190 x 2
 ##    w.length s.e.irrad
@@ -589,11 +589,11 @@ computation. Here we use a vector defined by the package.</p>
 ## # ... with 1,180 more rows
 ## --- Member: Norlux_NHXRGB090S00S_red ---
 ## Object: source_spct [1,282 x 2]
-## Wavelength range 250 to 900 nm, step 0.43 to 14.43 nm 
+## Wavelength range 250-900 nm, step 0.43-14.43 nm 
 ## Label: 12W RGB LED COB Type NHXRGB090S00S from Norlux 
 ## Measured on 2013-11-27 UTC 
 ## Time unit 1s
-## Spectral data normalized to 1 at 643.08 nm 
+## Spectral data normalized to s.e.irrad = 1 at 643.08 nm (max in NA-NA nm)
 ## 
 ## # A tibble: 1,282 x 2
 ##    w.length s.e.irrad
@@ -612,7 +612,7 @@ computation. Here we use a vector defined by the package.</p>
 ## --- Member: Norlux_NHXRGB090S00S_RGB ---
 ## Object: source_spct [4,323 x 3]
 ## containing 3 spectra in long form
-## Wavelength range 250 to 900 nm, step 0.01 to 1.81 nm 
+## Wavelength range 250-900 nm, step 0.01-1.81 nm 
 ## Label: 12W RGB LED COB Type NHXRGB090S00S from Norlux 
 ## Measured on 2013-11-27 UTC 
 ## Time unit 1s
@@ -640,11 +640,11 @@ spectra with names containing the string “QDDH”.</p>
 <pre><code>## Object: source_mspct [4 x 1]
 ## --- Member: QuantumDevices_QDDH66002 ---
 ## Object: source_spct [1,267 x 2]
-## Wavelength range 250.01 to 900 nm, step 0.43 to 7.19 nm 
+## Wavelength range 250.01-900 nm, step 0.43-7.19 nm 
 ## Label: LED, type: QDDH66002 from Quantum Devices, USA; ca. 1995 
 ## Measured on 2011-07-05 10:53:54 UTC 
 ## Time unit 1s
-## Spectral data normalized to 1 at 652.01 nm 
+## Spectral data normalized to s.e.irrad = 1 at 652.01 nm (max in NA-NA nm)
 ## 
 ## # A tibble: 1,267 x 2
 ##    w.length s.e.irrad
@@ -662,11 +662,11 @@ spectra with names containing the string “QDDH”.</p>
 ## # ... with 1,257 more rows
 ## --- Member: QuantumDevices_QDDH68002 ---
 ## Object: source_spct [1,264 x 2]
-## Wavelength range 250.01 to 900 nm, step 0.43 to 7.18 nm 
+## Wavelength range 250.01-900 nm, step 0.43-7.18 nm 
 ## Label: LED, type: QDDH68002 from Quantum Devices, USA; ca. 1995 
 ## Measured on 2011-07-05 10:50:36 UTC 
 ## Time unit 1s
-## Spectral data normalized to 1 at 673.4 nm 
+## Spectral data normalized to s.e.irrad = 1 at 673.4 nm (max in NA-NA nm)
 ## 
 ## # A tibble: 1,264 x 2
 ##    w.length s.e.irrad
@@ -684,11 +684,11 @@ spectra with names containing the string “QDDH”.</p>
 ## # ... with 1,254 more rows
 ## --- Member: QuantumDevices_QDDH70002 ---
 ## Object: source_spct [1,250 x 2]
-## Wavelength range 250.01 to 900 nm, step 0.43 to 7.17 nm 
+## Wavelength range 250.01-900 nm, step 0.43-7.17 nm 
 ## Label: LED, type: QDDH70002 from Quantum Devices, USA; ca. 1995 
 ## Measured on 2011-07-05 10:47:28 UTC 
 ## Time unit 1s
-## Spectral data normalized to 1 at 707.13 nm 
+## Spectral data normalized to s.e.irrad = 1 at 707.13 nm (max in NA-NA nm)
 ## 
 ## # A tibble: 1,250 x 2
 ##    w.length s.e.irrad
@@ -706,11 +706,11 @@ spectra with names containing the string “QDDH”.</p>
 ## # ... with 1,240 more rows
 ## --- Member: QuantumDevices_QDDH73502 ---
 ## Object: source_spct [1,256 x 2]
-## Wavelength range 250.01 to 900 nm, step 0.43 to 7.13 nm 
+## Wavelength range 250.01-900 nm, step 0.43-7.13 nm 
 ## Label: LED, type: QDDH73502 from Quantum Devices, USA; ca. 1995 
 ## Measured on 2011-07-05 10:42:51 UTC 
 ## Time unit 1s
-## Spectral data normalized to 1 at 746.42 nm 
+## Spectral data normalized to s.e.irrad = 1 at 746.42 nm (max in NA-NA nm)
 ## 
 ## # A tibble: 1,256 x 2
 ##    w.length s.e.irrad
@@ -736,11 +736,11 @@ spectra with names containing the string “QDDH”.</p>
 will be included in the header of the printout.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>leds.mspct<span class="sc">$</span>LedEngin_LZ1_10R302_740nm</span></code></pre></div>
 <pre><code>## Object: source_spct [894 x 2]
-## Wavelength range 251.29 to 900 nm, step 1.023182e-12 to 7.6 nm 
+## Wavelength range 251.29-900 nm, step 1.023182e-12-7.6 nm 
 ## Label: 3W SMD LED type LZ1-10R302 from Ledengin 
 ## Measured on 2021-10-09 23:02:03 UTC 
 ## Time unit 1s
-## Spectral data normalized to 1 at 729.66 nm 
+## Spectral data normalized to s.e.irrad = 1 at 729.66 nm (max in 251.29-898.97 nm)
 ## 
 ## # A tibble: 894 x 2
 ##    w.length s.e.irrad
@@ -771,11 +771,11 @@ will be included in the header of the printout.</p>
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>leds.mspct<span class="sc">$</span>Roithner_UVMAX305</span></code></pre></div>
 <pre><code>## Object: source_spct [1,389 x 2]
-## Wavelength range 250.14 to 899.77 nm, step 0.43 to 4.76 nm 
+## Wavelength range 250.14-899.77 nm, step 0.43-4.76 nm 
 ## Label: LED type UVMAX305 from Roithner-Laser 
 ## Measured on 2015-02-10 15:34:32 UTC 
 ## Time unit 1s
-## Spectral data normalized to 1 at 313.14 nm 
+## Spectral data normalized to s.e.irrad = 1 at 313.14 nm (max in 250.14-899.77 nm)
 ## 
 ## # A tibble: 1,389 x 2
 ##    w.length s.e.irrad
