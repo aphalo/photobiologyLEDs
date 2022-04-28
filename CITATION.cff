@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.2.1
+# CITATION file created with {cffr} R package, v0.2.2
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -35,7 +35,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=photobiologyLEDs
 repository-code: https://github.com/aphalo/photobiologyLEDs
 url: https://docs.r4photobiology.info/photobiologyLEDs/
-date-released: '2022-03-20'
+date-released: '2022-03-29'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
@@ -69,7 +69,7 @@ references:
 - type: software
   title: photobiologyWavebands
   abstract: 'photobiologyWavebands: Waveband Definitions for UV, VIS, and IR Radiation'
-  notes: Imports
+  notes: Suggests
   authors:
   - family-names: Aphalo
     given-names: Pedro J.
@@ -81,7 +81,7 @@ references:
 - type: software
   title: ggspectra
   abstract: 'ggspectra: Extensions to ''ggplot2'' for Radiation Spectra'
-  notes: Imports
+  notes: Suggests
   authors:
   - family-names: Aphalo
     given-names: Pedro J.
