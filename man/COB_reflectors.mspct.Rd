@@ -58,7 +58,6 @@ object.
 }
 \examples{
 library(photobiology)
-library(ggspectra)
 
 names(COB_reflectors.mspct)
 
@@ -66,8 +65,6 @@ names(COB_reflectors.mspct)
 irrads <- q_irrad(COB_reflectors.mspct, scale.factor = 1e6)
 irrads$Q_Total_rel <- irrads$Q_Total / min(irrads$Q_Total)
 irrads
-
-autoplot(COB_reflectors.mspct)
 
 }
 \references{

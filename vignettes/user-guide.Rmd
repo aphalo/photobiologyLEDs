@@ -27,9 +27,12 @@ documentation for package 'photobiology'.
 
 ```{r, message=FALSE}
 library(photobiology)
-library(photobiologyWavebands)
 library(photobiologyLEDs)
-library(ggspectra)
+# Are the packages used in examples installed?
+eval_bands <- requireNamespace("photobiologyWavebands", quietly = TRUE)
+if (eval_bands) library(photobiologyWavebands)
+eval_plots <- eval_bands && requireNamespace("ggspectra", quietly = TRUE)
+if (eval_plots) library(ggspectra)
 ```
 
 In this brief User Guide we describe how to re-scale the normalized
@@ -235,14 +238,14 @@ plotting spectra even easier.
 `autoplot()` methods use the metadata in the objects to set labels and decorations,
 as well as automatically setting the mapping of the _x_ and _y_ aesthetics.
 
-```{r}
+```{r, eval=eval_plots}
 autoplot(leds.mspct$LedEngin_LZ1_10R302_740nm, annotations = c("+", "wls"), )
 ```
 
 Package 'ggspectra' also defines specializations of method `ggplot()` for 
 spectra.
 
-```{r}
+```{r, eval=eval_plots}
 ggplot(leds.mspct$LedEngin_LZ1_10R302_740nm) +
   geom_line()
 ```
@@ -259,7 +262,7 @@ head(as.data.frame(leds.mspct$LedEngin_LZ1_10R302_740nm))
 
 Of course `attach` and `with` also work as expected.
 
-```{r}
+```{r, eval=eval_bands}
 attach(leds.mspct)
 q_ratio(Roithner_UV395, UVB(), UVA())
 detach(leds.mspct)
@@ -271,7 +274,7 @@ with(Roithner_UV395, max(w.length))
 detach(leds.mspct)
 ```
 
-```{r}
+```{r, eval=eval_bands}
 with(leds.mspct, q_ratio(Roithner_UV395, UVB(), UVA()))
 ```
 

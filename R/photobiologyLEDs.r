@@ -69,8 +69,6 @@
 #'
 #' @examples
 #' library(photobiology)
-#' library(photobiologyWavebands)
-#' library(ggspectra)
 #' 
 #' names(leds.mspct)
 #' 
@@ -78,20 +76,7 @@
 #' 
 #' white_leds
 #' 
-#' q_ratio(leds.mspct$Nichia_NS6L183AT_H1_sw, Blue(), Red())
-#' 
-#' autoplot(leds.mspct$Nichia_NS6L183AT_H1_sw)
-#' 
-#' \dontrun{
-#' autoplot(leds.mspct$Nichia_NS6L183AT_H1_sw, unit.out = "photon")
-#' }
-#' 
-#' \dontrun{
-#' autoplot(leds.mspct$Nichia_NS6L183AT_H1_sw, 
-#'      range = VIS(), 
-#'      w.band = VIS_bands(),
-#'      span = 101)
-#' }
+#' qe_ratio(leds.mspct$Nichia_NS6L183AT_H1_sw) * 1e6 # umol / J
 #' 
 #' is_normalized(leds.mspct$Nichia_NS6L183AT_H1_sw)
 #' 
