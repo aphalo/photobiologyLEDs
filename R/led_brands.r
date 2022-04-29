@@ -72,6 +72,14 @@
 
 #' @rdname led_brands
 #' 
+#' @section LCFOCUS:
+#' These LEDs where bought from LCFOCUS official store at AliExpress. They are 
+#' assembled  LCFOCUS TECH, Shenzhen China.
+#'
+"LCFOCUS_leds"
+
+#' @rdname led_brands
+#' 
 #' @section Marktech:
 #' Marktech Optoelectronics is a distributor and supplier of LEDs from the 
 #' U.S.A. that sells VIS and UV emitting LEDs.
