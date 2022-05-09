@@ -7,7 +7,7 @@ editor_options:
 # photobiologyLEDs 0.5.0
 
 This is a major and code-breaking update.
-Naming conventions have been changed and many new spectra have been added.
+Naming conventions have changed and many new spectra have been added.
 Previously included spectra have in most cases been recomputed and may slightly differ from earlier versions of the same data.
 In part this was done to reduce the size of the data objects, making it possible to include more spectra while keeping the size of the package reasonable.
 
@@ -15,7 +15,8 @@ In part this was done to reduce the size of the data objects, making it possible
 -   Rebuild all data objects with 'photobiology' (== 0.10.10) taking care that all spectra in `leds.mspct` are normalized.
 -   Apply function `photobiology::thin_wl()` to all spectra to reduce their stored size.
 -   Add data for new LED types and update the metadata of most of those carried over from earlier versions.
--   CODE BREAKING: change naming convention for members of the collection of spectra. Now names consist of "brand" and type.
+-   Add new lists of LEDs by intended use.
+-   CODE BREAKING: change naming convention for members of the collection of spectra. Now names consist of "brand" and type, and use underscores.
 -   CODE BREAKING: lists of LEDs by colour are now based on the wavelength at the peak of emission. We use ISO-standard wavelength boundaries for colours of visible radiation, except for purple \< 400 nm. For ultraviolet we follow ISO. All broad-spectrum LEDs are listed as white.
 -   Rewrite/revise all scripts used to prepare the spectral data.
 -   Migrate Git repository from Bitbucket to GitHub.

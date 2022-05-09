@@ -20,7 +20,7 @@ LedEngin_leds
 names(COB_reflectors.mspct)
 
 ## -----------------------------------------------------------------------------
-# names(COB_dimming.mspct)
+names(COB_dimming.mspct)
 
 ## -----------------------------------------------------------------------------
 names(leds.mspct)

@@ -50,4 +50,4 @@ LCFOCUS_leds <- names(lcfocus.mspct)
 
 cat("Saving:", LCFOCUS_leds, sep = "\n")
 
-save(LCFOCUS_leds, lcfocus.mspct, file = "data-raw/rda2merge/bridgelux-mspct.rda")
+save(LCFOCUS_leds, lcfocus.mspct, file = "data-raw/rda2merge/lcfocus-mspct.rda")

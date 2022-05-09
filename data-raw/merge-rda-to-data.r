@@ -102,6 +102,18 @@ amber_leds <- sort(c(yellow_leds, orange_leds))
 
 led_colors <- c("uv", "purle", "blue", "green", "yellow", "orange", "red", "ir")
 
+led_uses <- c("plant_grow", "high_CRI")
+
+plant_grow_leds <- c("Luminus_CXM_14_HS_12_36_AC30",
+                     "Nichia_NFSW757G_Rsp0a",
+                     "Nichia_NFSW757GT_Rsp0a",
+                     "Ledguhon_10WBVG14G24_Y6C_T4",
+                     "Ledguhon_10WBVGIR14G24_Y6C_T4",
+                     "LCFOCUS_LC_10FSCOB1917_4000",
+                     "Osram_GW_CSSRM3.HW")
+
+high_CRI_leds <- character()
+  
 # Vector of brands as used when naming member spectra
 
 led_brands <- unique(str_split(names(leds.mspct), "_", simplify = TRUE)[ , 1])
@@ -109,7 +121,8 @@ led_brands <- unique(str_split(names(leds.mspct), "_", simplify = TRUE)[ , 1])
 # Vectors based on how spectra were acquired  
 oo_maya_leds <- names(leds.mspct)[grep("Maya", how_measured(leds.mspct)[["how.measured"]])]
 
-objects_to_save <- c("leds.mspct", "led_brands", "led_colors", ls(pattern = "_leds$"))
+objects_to_save <- c("leds.mspct", "led_brands", "led_colors", "led_uses",
+                     ls(pattern = "_leds$"))
 
 save(list = objects_to_save,
      file = "data/leds-mspct.rda")

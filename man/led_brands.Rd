@@ -7,6 +7,7 @@
 \alias{HueyJann_leds}
 \alias{LedEngin_leds}
 \alias{Ledguhon_leds}
+\alias{LCFOCUS_leds}
 \alias{Marktech_leds}
 \alias{CREE_leds}
 \alias{Epileds_leds}
@@ -38,13 +39,15 @@ An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 1.
 
+An object of class \code{character} of length 1.
+
 An object of class \code{character} of length 8.
 
 An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 1.
 
-An object of class \code{character} of length 1.
+An object of class \code{character} of length 2.
 
 An object of class \code{character} of length 8.
 
@@ -74,6 +77,8 @@ HueyJann_leds
 LedEngin_leds
 
 Ledguhon_leds
+
+LCFOCUS_leds
 
 Marktech_leds
 
@@ -147,6 +152,12 @@ ceramic substrate packages. It is now part of Osram.
 
 These LEDs where bought from AliExpress. They are assembled using
 Bridgelux chips by Guangzhou Juhong Optoelectronics Co., Ltd., China.
+}
+
+\section{LCFOCUS}{
+
+These LEDs where bought from LCFOCUS official store at AliExpress. They are 
+assembled  LCFOCUS TECH, Shenzhen China.
 }
 
 \section{Marktech}{
