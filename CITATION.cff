@@ -35,7 +35,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=photobiologyLEDs
 repository-code: https://github.com/aphalo/photobiologyLEDs
 url: https://docs.r4photobiology.info/photobiologyLEDs/
-date-released: '2022-03-29'
+date-released: '2022-05-09'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
