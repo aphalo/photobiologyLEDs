@@ -70,8 +70,8 @@ leds.mspct <- leds.mspct[order(names(leds.mspct))]
 # leds.mspct <- normalize(leds.mspct, norm = "max", unit.out = "energy")
 
 # Distinguish by number of channels
-multi_channel_leds <- grep("RGB", names(leds.mspct), value = TRUE)
-single_channel_leds <- grep("RGB", names(leds.mspct), value = TRUE, invert = TRUE)
+multi_channel_leds <- grep("RGB|LZ7", names(leds.mspct), value = TRUE)
+single_channel_leds <- grep("RGB|LZ7", names(leds.mspct), value = TRUE, invert = TRUE)
 
 # Assemble vectors of names based on peak wavelengths
 
@@ -113,13 +113,15 @@ plant_grow_leds <- c("Luminus_CXM_14_HS_12_36_AC30",
                      "Osram_GW_CSSRM3.HW")
 
 high_CRI_leds <- character()
-  
+
 # Vector of brands as used when naming member spectra
 
 led_brands <- unique(str_split(names(leds.mspct), "_", simplify = TRUE)[ , 1])
 
 # Vectors based on how spectra were acquired  
 oo_maya_leds <- names(leds.mspct)[grep("Maya", how_measured(leds.mspct)[["how.measured"]])]
+
+length(leds.mspct)
 
 objects_to_save <- c("leds.mspct", "led_brands", "led_colors", "led_uses",
                      ls(pattern = "_leds$"))

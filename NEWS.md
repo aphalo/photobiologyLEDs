@@ -12,7 +12,7 @@ Previously included spectra have in most cases been recomputed and may slightly 
 In part this was done to reduce the size of the data objects, making it possible to include more spectra while keeping the size of the package reasonable.
 
 -   Revise for 'ggspectra' (\>= 0.3.1).
--   Rebuild all data objects with 'photobiology' (== 0.10.10) taking care that all spectra in `leds.mspct` are normalized.
+-   Rebuild all data objects with 'photobiology' (== 0.10.10) taking care that all individual spectra in `leds.mspct` are normalized (an exception are multichannel LEDs).
 -   Apply function `photobiology::thin_wl()` to all spectra to reduce their stored size.
 -   Add data for new LED types and update the metadata of most of those carried over from earlier versions.
 -   Add new lists of LEDs by intended use.
