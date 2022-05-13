@@ -19,6 +19,9 @@ reference:
   - title: Indexing vectors by manufacturer or supplier
     contents:
     - led_brands
+  - title: Indexing vectors by use
+    contents:
+    - led_uses
 
 navbar:
   structure:

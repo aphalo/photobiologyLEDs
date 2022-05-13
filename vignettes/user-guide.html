@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2022-05-09" />
+<meta name="date" content="2022-05-13" />
 
 <title>User Guide</title>
 
@@ -335,7 +335,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">User Guide</h1>
 <h3 class="subtitle">Package ‘photobiologyLEDs’ 0.5.0</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
-<h4 class="date">2022-05-09</h4>
+<h4 class="date">2022-05-13</h4>
 
 
 <div id="TOC">
@@ -407,10 +407,21 @@ replaced by underscores.</p>
 ##  [9] &quot;LedEngin_LZ1_10DB00_460nm&quot; &quot;Roithner_CB30&quot;            
 ## [11] &quot;Weili_3W.nominal.500nm&quot;</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>LedEngin_leds</span></code></pre></div>
-<pre><code>## [1] &quot;LedEngin_LZ1_10UV00_365nm&quot;      &quot;LedEngin_LZ1_10DB00_460nm&quot;     
-## [3] &quot;LedEngin_LZ4_40R208_660nm&quot;      &quot;LedEngin_LZ1_10R302_740nm&quot;     
-## [5] &quot;LedEngin_LZ1_10R602_850nm&quot;      &quot;LedEngin_LZ1_10UB00_00U4_385nm&quot;
-## [7] &quot;LedEngin_LZ1_10UB00_00U8_405nm&quot;</code></pre>
+<pre><code>##  [1] &quot;LedEngin_LZ1_10UV00_365nm&quot;             
+##  [2] &quot;LedEngin_LZ1_10DB00_460nm&quot;             
+##  [3] &quot;LedEngin_LZ4_40R208_660nm&quot;             
+##  [4] &quot;LedEngin_LZ1_10R302_740nm&quot;             
+##  [5] &quot;LedEngin_LZ1_10R602_850nm&quot;             
+##  [6] &quot;LedEngin_LZ1_10UB00_00U4_385nm&quot;        
+##  [7] &quot;LedEngin_LZ1_10UB00_00U8_405nm&quot;        
+##  [8] &quot;LedEngin_LZ7_N4M100&quot;                   
+##  [9] &quot;LedEngin_LZ7_N4M100_ch_A_Green&quot;        
+## [10] &quot;LedEngin_LZ7_N4M100_ch_B_Red&quot;          
+## [11] &quot;LedEngin_LZ7_N4M100_ch_C_Blue&quot;         
+## [12] &quot;LedEngin_LZ7_N4M100_ch_D_UV&quot;           
+## [13] &quot;LedEngin_LZ7_N4M100_ch_E_CW_Cool_white&quot;
+## [14] &quot;LedEngin_LZ7_N4M100_ch_F_PC_Amber&quot;     
+## [15] &quot;LedEngin_LZ7_N4M100_ch_G_Cyan&quot;</code></pre>
 </div>
 <div id="accessing-individual-spectra" class="section level2">
 <h2>Accessing individual spectra</h2>
@@ -427,45 +438,97 @@ listed with method <code>names()</code>.</p>
 <pre><code>## [1] &quot;CC.350mA&quot; &quot;CC.344mA&quot; &quot;CC.266mA&quot; &quot;CC.140mA&quot; &quot;CC.070mA&quot; &quot;CC.035mA&quot; &quot;CC.017mA&quot;
 ## [8] &quot;CC.011mA&quot;</code></pre>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(leds.mspct)</span></code></pre></div>
-<pre><code>##  [1] &quot;Agilent_HLMB_CB30&quot;               &quot;Agilent_HLMB_CD31&quot;              
-##  [3] &quot;Agilent_HLMP_CB31&quot;               &quot;Agilent_HLMP_CM30&quot;              
-##  [5] &quot;Agilent_HLMP_CM31&quot;               &quot;Agilent_HLMP_DJ32&quot;              
-##  [7] &quot;Agilent_HLMP_DL32&quot;               &quot;Bridgelux_3W_455nm&quot;             
-##  [9] &quot;Bridgelux_BXRE_50S2001_c_73&quot;     &quot;CREE_XPE_480nm&quot;                 
-## [11] &quot;Epileds_3W_410nm&quot;                &quot;Epileds_3W_420nm&quot;               
-## [13] &quot;Epileds_3W_430nm&quot;                &quot;Epileds_3W_445nm&quot;               
-## [15] &quot;Epileds_3W_460nm&quot;                &quot;Epileds_3W_470nm&quot;               
-## [17] &quot;Epileds_3W_495nm&quot;                &quot;Epileds_3W_520nm&quot;               
-## [19] &quot;Epileds_3W_560nm&quot;                &quot;Epileds_3W_590nm&quot;               
-## [21] &quot;Epileds_3W_600nm&quot;                &quot;Epileds_3W_620nm&quot;               
-## [23] &quot;Epistar_3W_Plant_Grow_LED&quot;       &quot;HueyJann_HPR40E_48K30BG&quot;        
-## [25] &quot;HueyJann_HPR40E_48K30BI&quot;         &quot;LCFOCUS_LC_10FSCOB1917_4000&quot;    
-## [27] &quot;LedEngin_LZ1_10DB00_460nm&quot;       &quot;LedEngin_LZ1_10R302_740nm&quot;      
-## [29] &quot;LedEngin_LZ1_10R602_850nm&quot;       &quot;LedEngin_LZ1_10UB00_00U4_385nm&quot; 
-## [31] &quot;LedEngin_LZ1_10UB00_00U8_405nm&quot;  &quot;LedEngin_LZ1_10UV00_365nm&quot;      
-## [33] &quot;LedEngin_LZ4_40R208_660nm&quot;       &quot;Ledguhon_10WBVG14G24_Y6C_T4&quot;    
-## [35] &quot;Ledguhon_10WBVGIR14G24_Y6C_T4&quot;   &quot;Luminus_CXM_14_HS_12_36_AC30&quot;   
-## [37] &quot;Marktech_MTSM340UV_F5120_340nm&quot;  &quot;Nichia_NF2W757GT_F1_sm505_Rfc00&quot;
-## [39] &quot;Nichia_NFCWL036B_V3_Rfcb0&quot;       &quot;Nichia_NFSL757GT_Rsp0a&quot;         
-## [41] &quot;Nichia_NFSW757G_Rsp0a&quot;           &quot;Nichia_NS6L183AT_H1_sw&quot;         
-## [43] &quot;Nichia_NVSU119C_U385&quot;            &quot;Nichia_NVSU233B_U365&quot;           
-## [45] &quot;Nichia_unknown_757&quot;              &quot;Norlux_NHXRGB090S00S_blue&quot;      
-## [47] &quot;Norlux_NHXRGB090S00S_green&quot;      &quot;Norlux_NHXRGB090S00S_red&quot;       
-## [49] &quot;Norlux_NHXRGB090S00S_RGB&quot;        &quot;Osram_GF_CSHPM2.24_2T4T_1&quot;      
-## [51] &quot;Osram_GW_CSSRM3.HW&quot;              &quot;Osram_LY5436&quot;                   
-## [53] &quot;QuantumDevices_QDDH66002&quot;        &quot;QuantumDevices_QDDH68002&quot;       
-## [55] &quot;QuantumDevices_QDDH70002&quot;        &quot;QuantumDevices_QDDH73502&quot;       
-## [57] &quot;Roithner_BS436&quot;                  &quot;Roithner_CB30&quot;                  
-## [59] &quot;Roithner_DUV289_SD353EL&quot;         &quot;Roithner_DUV310_SD353EL&quot;        
-## [61] &quot;Roithner_DUV325_SD353EL&quot;         &quot;Roithner_DUV340_SD353EL&quot;        
-## [63] &quot;Roithner_LED405&quot;                 &quot;Roithner_LED740&quot;                
-## [65] &quot;Roithner_SMB1N_BB450&quot;            &quot;Roithner_UV395&quot;                 
-## [67] &quot;Roithner_UVMAX305&quot;               &quot;Roithner_UVMAX340&quot;              
-## [69] &quot;Roithner_XSL365&quot;                 &quot;Roithner_XSL370&quot;                
-## [71] &quot;Roithner_XSL375&quot;                 &quot;Samsung_SPHWHAHDND25YZT3D3&quot;     
-## [73] &quot;SeoulSemicon_STW9C2SB_S&quot;         &quot;TaoYuan_LED_310nm&quot;              
-## [75] &quot;Weili_3W.nominal.500nm&quot;          &quot;Weili_3W.nominal.525nm&quot;         
-## [77] &quot;Weili_3W.nominal.550nm&quot;          &quot;Weili_3W.nominal.555nm&quot;</code></pre>
+<pre><code>##  [1] &quot;Agilent_HLMB_CB30&quot;                          
+##  [2] &quot;Agilent_HLMB_CD31&quot;                          
+##  [3] &quot;Agilent_HLMP_CB31&quot;                          
+##  [4] &quot;Agilent_HLMP_CM30&quot;                          
+##  [5] &quot;Agilent_HLMP_CM31&quot;                          
+##  [6] &quot;Agilent_HLMP_DJ32&quot;                          
+##  [7] &quot;Agilent_HLMP_DL32&quot;                          
+##  [8] &quot;Bridgelux_3W_455nm&quot;                         
+##  [9] &quot;Bridgelux_BXRE_50S2001_c_73&quot;                
+## [10] &quot;CREE_XPE_480nm&quot;                             
+## [11] &quot;Epileds_3W_410nm&quot;                           
+## [12] &quot;Epileds_3W_420nm&quot;                           
+## [13] &quot;Epileds_3W_430nm&quot;                           
+## [14] &quot;Epileds_3W_445nm&quot;                           
+## [15] &quot;Epileds_3W_460nm&quot;                           
+## [16] &quot;Epileds_3W_470nm&quot;                           
+## [17] &quot;Epileds_3W_495nm&quot;                           
+## [18] &quot;Epileds_3W_520nm&quot;                           
+## [19] &quot;Epileds_3W_560nm&quot;                           
+## [20] &quot;Epileds_3W_590nm&quot;                           
+## [21] &quot;Epileds_3W_600nm&quot;                           
+## [22] &quot;Epileds_3W_620nm&quot;                           
+## [23] &quot;Epistar_3W_Plant_Grow_LED&quot;                  
+## [24] &quot;HueyJann_HPR40E_48K30BG&quot;                    
+## [25] &quot;HueyJann_HPR40E_48K30BI&quot;                    
+## [26] &quot;LCFOCUS_LC_10FS504_G24&quot;                     
+## [27] &quot;LCFOCUS_LC_10FSCOB1411_2700&quot;                
+## [28] &quot;LCFOCUS_LC_10FSCOB1411_6000&quot;                
+## [29] &quot;LCFOCUS_LC_10FSCOB1917_4000&quot;                
+## [30] &quot;LedEngin_LZ1_10DB00_460nm&quot;                  
+## [31] &quot;LedEngin_LZ1_10R302_740nm&quot;                  
+## [32] &quot;LedEngin_LZ1_10R602_850nm&quot;                  
+## [33] &quot;LedEngin_LZ1_10UB00_00U4_385nm&quot;             
+## [34] &quot;LedEngin_LZ1_10UB00_00U8_405nm&quot;             
+## [35] &quot;LedEngin_LZ1_10UV00_365nm&quot;                  
+## [36] &quot;LedEngin_LZ4_40R208_660nm&quot;                  
+## [37] &quot;LedEngin_LZ7_N4M100&quot;                        
+## [38] &quot;LedEngin_LZ7_N4M100_ch_A_Green&quot;             
+## [39] &quot;LedEngin_LZ7_N4M100_ch_B_Red&quot;               
+## [40] &quot;LedEngin_LZ7_N4M100_ch_C_Blue&quot;              
+## [41] &quot;LedEngin_LZ7_N4M100_ch_D_UV&quot;                
+## [42] &quot;LedEngin_LZ7_N4M100_ch_E_CW_Cool_white&quot;     
+## [43] &quot;LedEngin_LZ7_N4M100_ch_F_PC_Amber&quot;          
+## [44] &quot;LedEngin_LZ7_N4M100_ch_G_Cyan&quot;              
+## [45] &quot;Ledguhon_10WBVG14G24_Y6C_T4&quot;                
+## [46] &quot;Ledguhon_10WBVGIR14G24_Y6C_T4&quot;              
+## [47] &quot;Luminus_CXM_14_HS_12_36_AC30&quot;               
+## [48] &quot;Marktech_MTSM340UV_F5120_340nm&quot;             
+## [49] &quot;Nichia_NF2W757GT_F1_sm505_Rfc00&quot;            
+## [50] &quot;Nichia_NFCWL036B_V3_Rfcb0&quot;                  
+## [51] &quot;Nichia_NFSL757GT_Rsp0a&quot;                     
+## [52] &quot;Nichia_NFSW757G_Rsp0a&quot;                      
+## [53] &quot;Nichia_NS6L183AT_H1_sw&quot;                     
+## [54] &quot;Nichia_NVSU119C_U385&quot;                       
+## [55] &quot;Nichia_NVSU233B_U365&quot;                       
+## [56] &quot;Nichia_unknown_757&quot;                         
+## [57] &quot;Norlux_NHXRGB090S00S_blue&quot;                  
+## [58] &quot;Norlux_NHXRGB090S00S_green&quot;                 
+## [59] &quot;Norlux_NHXRGB090S00S_red&quot;                   
+## [60] &quot;Norlux_NHXRGB090S00S_RGB&quot;                   
+## [61] &quot;Osram_GF_CSHPM2.24_2T4T_1&quot;                  
+## [62] &quot;Osram_GW_CSSRM3.HW&quot;                         
+## [63] &quot;Osram_LY5436&quot;                               
+## [64] &quot;QuantumDevices_QDDH66002&quot;                   
+## [65] &quot;QuantumDevices_QDDH68002&quot;                   
+## [66] &quot;QuantumDevices_QDDH70002&quot;                   
+## [67] &quot;QuantumDevices_QDDH73502&quot;                   
+## [68] &quot;Roithner_BS436&quot;                             
+## [69] &quot;Roithner_CB30&quot;                              
+## [70] &quot;Roithner_DUV289_SD353EL&quot;                    
+## [71] &quot;Roithner_DUV310_SD353EL&quot;                    
+## [72] &quot;Roithner_DUV325_SD353EL&quot;                    
+## [73] &quot;Roithner_DUV340_SD353EL&quot;                    
+## [74] &quot;Roithner_LED405&quot;                            
+## [75] &quot;Roithner_LED740&quot;                            
+## [76] &quot;Roithner_SMB1N_BB450&quot;                       
+## [77] &quot;Roithner_UV395&quot;                             
+## [78] &quot;Roithner_UVMAX305&quot;                          
+## [79] &quot;Roithner_UVMAX340&quot;                          
+## [80] &quot;Roithner_XSL365&quot;                            
+## [81] &quot;Roithner_XSL370&quot;                            
+## [82] &quot;Roithner_XSL375&quot;                            
+## [83] &quot;Samsung_SPHWHAHDND25YZT3D3&quot;                 
+## [84] &quot;SeoulSemicon_S4SM_1564359736_0B500H3S_00001&quot;
+## [85] &quot;SeoulSemicon_S4SM_1564509736_0B500H3S_00001&quot;
+## [86] &quot;SeoulSemicon_STW9C2SB_S&quot;                    
+## [87] &quot;TaoYuan_LED_310nm&quot;                          
+## [88] &quot;Weili_3W.nominal.500nm&quot;                     
+## [89] &quot;Weili_3W.nominal.525nm&quot;                     
+## [90] &quot;Weili_3W.nominal.550nm&quot;                     
+## [91] &quot;Weili_3W.nominal.555nm&quot;</code></pre>
 <p>We can use a character string as index to extract an individual
 <code>source_spct</code> object.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>leds.mspct<span class="sc">$</span>Roithner_UV395</span></code></pre></div>
@@ -744,7 +807,7 @@ will be included in the header of the printout.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>leds.mspct<span class="sc">$</span>LedEngin_LZ1_10R302_740nm</span></code></pre></div>
 <pre><code>## Object: source_spct [894 x 2]
 ## Wavelength range 251.29-900 nm, step 1.023182e-12-7.6 nm 
-## Label: 3W SMD LED type LZ1-10R302 from Ledengin 
+## Label: 3W SMD LED type LZ1-10R302 from LED Engin 
 ## Measured on 2021-10-09 23:02:03 UTC 
 ## Time unit 1s
 ## Spectral data normalized to s.e.irrad = 1 at 729.66 nm (max in 251.29-898.97 nm)
@@ -764,7 +827,7 @@ will be included in the header of the printout.</p>
 ## 10     279.         0
 ## # … with 884 more rows</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">getWhatMeasured</span>(leds.mspct<span class="sc">$</span>LedEngin_LZ1_10R302_740nm))</span></code></pre></div>
-<pre><code>## 3W SMD LED type LZ1-10R302 from Ledengin</code></pre>
+<pre><code>## 3W SMD LED type LZ1-10R302 from LED Engin</code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getWhenMeasured</span>(leds.mspct<span class="sc">$</span>LedEngin_LZ1_10R302_740nm)</span></code></pre></div>
 <pre><code>## [1] &quot;2021-10-09 23:02:03 UTC&quot;</code></pre>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getInstrDesc</span>(leds.mspct<span class="sc">$</span>LedEngin_LZ1_10R302_740nm)</span></code></pre></div>

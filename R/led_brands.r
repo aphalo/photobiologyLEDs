@@ -182,10 +182,9 @@
 #' @section Quantum Devices: 
 #' Quantum Devices (U.S.A.) sold in the past both individual LEDs and luminaires.
 #' They were in the late 1980's and early 1990's the supplier of choice for LEDs
-#' emitting in the far-red region of the spectrum.
+#' emitting in the far-red region of the spectrum. The company still exists but 
+#' no longer sells LEDs.
 #' 
-#' @references \url{https://www.quantumdev.com/} 
-#'   
 "QuantumDevices_leds"
 
 #' @rdname led_brands

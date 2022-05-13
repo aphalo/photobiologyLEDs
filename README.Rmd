@@ -77,7 +77,11 @@ led_colors
 led_brands
 ```
 
-Vectors like `Nichia_leds` or `blue_leds` exist for all the colors in `led_brands` and `led_colors`, respectively.
+```{r example-05d}
+led_uses
+```
+
+Vectors like `Nichia_leds` shown above are available for all the brands listed in `led_brands`, all the colors in `led_colors`, and all the uses in `led_uses`.
 
 Summary calculations can be easily done with methods from package 'photobiology'. Here we calculate photon irradiance. As the spectra are normalised we pass `allow.scaled = TRUE`, 
 

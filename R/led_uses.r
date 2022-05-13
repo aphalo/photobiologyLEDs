@@ -42,12 +42,13 @@
 #' @section High color reproduction index:
 #' The character vector \code{high_CRI_leds} contains the names of the spectra
 #' to facilitate their extraction from the collection. This includes white LEDs
-#' with a high color reproduction index (CRI). Nowadays these types of LEDs are
-#' not only advertised as good from illumination in museums, exhibitions and as
-#' light sources for video and photography, but also as less stressful to human
-#' vision and in some cases as good for the entraining of the human circadian
-#' clock. In practice this means an emission spectrum covering most of visible
-#' light with only minor peaks and valleys.
+#' with a high color reproduction index (CRI > 95) as computed from the actual
+#' measured spectra. Nowadays some of these types of LEDs are not only
+#' advertised as good from illumination in museums, exhibitions and as light
+#' sources for video and photography, but also as less stressful to human vision
+#' and in some cases as good for the entraining of the human circadian clock. In
+#' practice this means an emission spectrum covering most of visible light with
+#' only minor peaks and valleys.
 #' 
 "high_CRI_leds"
 

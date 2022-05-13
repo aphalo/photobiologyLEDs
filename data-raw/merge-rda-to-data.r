@@ -1,4 +1,5 @@
 library(photobiology)
+library(photobiologyInOut)
 library(photobiologyWavebands)
 library(dplyr)
 library(stringr)
@@ -112,7 +113,10 @@ plant_grow_leds <- c("Luminus_CXM_14_HS_12_36_AC30",
                      "LCFOCUS_LC_10FSCOB1917_4000",
                      "Osram_GW_CSSRM3.HW")
 
-high_CRI_leds <- character()
+CRI <- sapply(leds.mspct[white_leds], spct_CRI)
+
+high_CRI_leds <- names(CRI)[!is.na(CRI) & CRI > 95]
+white_leds <- names(CRI)[!is.na(CRI)]
 
 # Vector of brands as used when naming member spectra
 

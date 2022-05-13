@@ -6,10 +6,11 @@ editor_options:
 
 # photobiologyLEDs 0.5.0
 
-This is a major and code-breaking update.
-Naming conventions have changed and many new spectra have been added.
-Previously included spectra have in most cases been recomputed and may slightly differ from earlier versions of the same data.
-In part this was done to reduce the size of the data objects, making it possible to include more spectra while keeping the size of the package reasonable.
+This is a major and code-breaking update. Naming conventions have changed and
+many new spectra have been added. Previously included spectra have in most cases
+been recomputed and may slightly differ from earlier versions of the same data.
+In part this was done to reduce the size of the data objects, making it possible
+to include more spectra while keeping the size of the package reasonable.
 
 -   Revise for 'ggspectra' (\>= 0.3.1).
 -   Rebuild all data objects with 'photobiology' (== 0.10.10) taking care that all individual spectra in `leds.mspct` are normalized (an exception are multichannel LEDs).

@@ -277,4 +277,3 @@ detach(leds.mspct)
 ```{r, eval=eval_bands}
 with(leds.mspct, q_ratio(Roithner_UV395, UVB(), UVA()))
 ```
-

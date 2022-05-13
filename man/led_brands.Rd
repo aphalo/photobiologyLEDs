@@ -229,7 +229,8 @@ mostly in the packages' thermal properties and contact layout.
  
 Quantum Devices (U.S.A.) sold in the past both individual LEDs and luminaires.
 They were in the late 1980's and early 1990's the supplier of choice for LEDs
-emitting in the far-red region of the spectrum.
+emitting in the far-red region of the spectrum. The company still exists but 
+no longer sells LEDs.
 }
 
 \section{Roithner LaserTechnik}{
@@ -291,8 +292,6 @@ Agilent_leds
 \url{https://www.nichia.co.jp/en/product/led.html}
 
 \url{https://www.osram-os.com/}
-
-\url{https://www.quantumdev.com/}
 
 \url{https://www.roithner-laser.com/} and 
 \url{http://www.s-et.com/en/}
