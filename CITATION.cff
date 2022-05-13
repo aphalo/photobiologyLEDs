@@ -35,7 +35,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=photobiologyLEDs
 repository-code: https://github.com/aphalo/photobiologyLEDs
 url: https://docs.r4photobiology.info/photobiologyLEDs/
-date-released: '2022-05-09'
+date-released: '2022-05-14'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
@@ -65,7 +65,7 @@ references:
     orcid: https://orcid.org/0000-0003-3385-972X
   year: '2022'
   url: https://CRAN.R-project.org/package=photobiology
-  version: '>= 0.10.9'
+  version: '>= 0.10.10'
 - type: software
   title: photobiologyWavebands
   abstract: 'photobiologyWavebands: Waveband Definitions for UV, VIS, and IR Radiation'
@@ -77,7 +77,7 @@ references:
     orcid: https://orcid.org/0000-0003-3385-972X
   year: '2022'
   url: https://CRAN.R-project.org/package=photobiologyWavebands
-  version: '>= 0.4.3'
+  version: '>= 0.4.5'
 - type: software
   title: ggspectra
   abstract: 'ggspectra: Extensions to ''ggplot2'' for Radiation Spectra'
@@ -89,7 +89,7 @@ references:
     orcid: https://orcid.org/0000-0003-3385-972X
   year: '2022'
   url: https://CRAN.R-project.org/package=ggspectra
-  version: '>= 0.3.7'
+  version: '>= 0.3.8'
 - type: software
   title: knitr
   abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
