@@ -107,13 +107,13 @@ led_uses <- c("plant_grow", "high_CRI")
 
 plant_grow_leds <- c("Luminus_CXM_14_HS_12_36_AC30",
                      "Nichia_NFSW757G_Rsp0a",
-                     "Nichia_NFSW757GT_Rsp0a",
+                     "Nichia_NFSL757GT_Rsp0a",
                      "Ledguhon_10WBVG14G24_Y6C_T4",
                      "Ledguhon_10WBVGIR14G24_Y6C_T4",
                      "LCFOCUS_LC_10FSCOB1917_4000",
                      "Osram_GW_CSSRM3.HW")
 
-CRI <- sapply(leds.mspct[white_leds], spct_CRI)
+CRI <- sapply(leds.mspct[white_leds], spct_CRI, tol = 0.1)
 
 high_CRI_leds <- names(CRI)[!is.na(CRI) & CRI > 95]
 white_leds <- names(CRI)[!is.na(CRI)]

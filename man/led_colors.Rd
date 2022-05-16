@@ -40,7 +40,7 @@ An object of class \code{character} of length 11.
 
 An object of class \code{character} of length 4.
 
-An object of class \code{character} of length 16.
+An object of class \code{character} of length 18.
 
 An object of class \code{character} of length 12.
 
