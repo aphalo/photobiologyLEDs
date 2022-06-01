@@ -93,6 +93,9 @@ for (s in type2name.map) {
   readline("next:")
 }
 
+load("data-raw/maya-rda/Nichia/digitized/hortisolis.rda")
+nichia.mspct[["Nichia_NFSW757G_V3_Rs060"]] <- Nichia_Hortisolis.spct
+
 autoplot(nichia.mspct)
 
 Nichia_leds <- names(nichia.mspct)

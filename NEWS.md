@@ -4,6 +4,10 @@ editor_options:
     wrap: sentence
 ---
 
+# photobiologyLEDs 0.5.1
+
+-   Add data for one LED.
+
 # photobiologyLEDs 0.5.0
 
 This is a major and code-breaking update. Naming conventions have changed and

@@ -6,9 +6,9 @@
 \alias{photobiologyLEDs-package}
 \title{photobiologyLEDs: Spectral Data for Light-Emitting-Diodes}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Spectral emission data for some frequently used light emitting diodes available as electronic components. Part of the 'r4photobiology' suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.
+Spectral emission data for some frequently used light emitting diodes available as electronic components. Part of the 'r4photobiology' suite, Aphalo P. J. (2015) \doi{10.19232/uv4pb.2015.1.14}.
 }
 \details{
 Data for emission spectra of different types of LEDs and LED arrays.
