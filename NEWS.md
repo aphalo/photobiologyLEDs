@@ -7,6 +7,7 @@ editor_options:
 # photobiologyLEDs 0.5.1
 
 -   Add data for one LED.
+-   Rebuild documentation for HTML5 compliance.
 
 # photobiologyLEDs 0.5.0
 
