@@ -8,7 +8,7 @@ message: 'To cite package "photobiologyLEDs" in publications use:'
 type: software
 license: GPL-2.0-or-later
 title: 'photobiologyLEDs: Spectral Data for Light-Emitting-Diodes'
-version: 0.5.0.9000
+version: 0.5.1
 doi: 10.19232/uv4pb.2015.1.14
 abstract: Spectral emission data for some frequently used light emitting diodes available
   as electronic components. Part of the 'r4photobiology' suite, Aphalo P. J. (2015)
@@ -35,7 +35,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=photobiologyLEDs
 repository-code: https://github.com/aphalo/photobiologyLEDs
 url: https://docs.r4photobiology.info/photobiologyLEDs/
-date-released: '2022-06-01'
+date-released: '2022-08-13'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
