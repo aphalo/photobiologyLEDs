@@ -44,7 +44,7 @@ How many spectra are included in the current version of
 
 ``` r
 length(leds.mspct)
-#> [1] 91
+#> [1] 92
 ```
 
 ``` r
@@ -79,14 +79,15 @@ Nichia_leds
 #> [1] "Nichia_NVSU233B_U365"            "Nichia_NVSU119C_U385"           
 #> [3] "Nichia_NFSW757G_Rsp0a"           "Nichia_NFSL757GT_Rsp0a"         
 #> [5] "Nichia_NFCWL036B_V3_Rfcb0"       "Nichia_NF2W757GT_F1_sm505_Rfc00"
-#> [7] "Nichia_unknown_757"              "Nichia_NS6L183AT_H1_sw"
+#> [7] "Nichia_unknown_757"              "Nichia_NS6L183AT_H1_sw"         
+#> [9] "Nichia_NFSW757G_V3_Rs060"
 ```
 
 We can use the vector to extract all these spectra as a collection.
 
 ``` r
 leds.mspct[Nichia_leds]
-#> Object: source_mspct [8 x 1]
+#> Object: source_mspct [9 x 1]
 #> --- Member: Nichia_NVSU233B_U365 ---
 #> Object: source_spct [1,313 x 2]
 #> Wavelength range 251.29-900 nm, step 1.023182e-12-7.53 nm 
@@ -263,6 +264,26 @@ leds.mspct[Nichia_leds]
 #>  9     259.         0
 #> 10     260.         0
 #> # … with 894 more rows
+#> --- Member: Nichia_NFSW757G_V3_Rs060 ---
+#> Object: source_spct [187 x 2]
+#> Wavelength range 350-799.30696 nm, step 1-16 nm 
+#> Time unit 1s
+#> Spectral data normalized to s.e.irrad = 1 at 450 nm (max in 350-799.31 nm)
+#> 
+#> # A tibble: 187 × 2
+#>    w.length s.e.irrad
+#>       <dbl>     <dbl>
+#>  1      350  0       
+#>  2      366  0.000254
+#>  3      369  0       
+#>  4      370  0       
+#>  5      371  0       
+#>  6      372  0       
+#>  7      373  0       
+#>  8      374  0       
+#>  9      375  0       
+#> 10      376  0       
+#> # … with 177 more rows
 #> 
 #> --- END ---
 ```

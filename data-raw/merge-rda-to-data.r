@@ -4,6 +4,8 @@ library(photobiologyWavebands)
 library(dplyr)
 library(stringr)
 
+energy_as_default()
+
 rm(list = ls(pattern = "*"))
 
 path <- "./data-raw/rda2merge/"
@@ -25,6 +27,8 @@ for (mspct in mget(collections2bind)) {
 }
 rm(list = c(collections2bind, "mspct"))
 
+leds.mspct <- normalize(leds.mspct, norm = "max")
+
 names(leds.mspct)
 
 # metadata
@@ -39,6 +43,7 @@ for (s in names(leds.mspct)) {
   normalized.ls[[s]] <- getNormalised(leds.mspct[[s]])
 }
 peak.wl <- unlist(normalized.ls)
+peak.wl <- ifelse(peak.wl < 100, NA, peak.wl)
 
 # led.whats <- list(#"BS436" = "Blue LED Roithner-Laser B5-436, 5mm",
 #                   "LY5436" = "Amber LED Osram",
@@ -74,10 +79,12 @@ leds.mspct <- leds.mspct[order(names(leds.mspct))]
 multi_channel_leds <- grep("RGB|LZ7", names(leds.mspct), value = TRUE)
 single_channel_leds <- grep("RGB|LZ7", names(leds.mspct), value = TRUE, invert = TRUE)
 
+multiple_wl <- sapply(leds.mspct, function(x) {getMultipleWl(x) > 1})
+
 # Assemble vectors of names based on peak wavelengths
 
-# as the spectra are normalised, a broad spectrum with have a large integral
-white_leds <- single_channel_leds[q_irrad(leds.mspct[single_channel_leds], allow.scaled = TRUE)[["Q_Total"]] > 3e-4]
+# as the spectra are normalised, a broad spectrum will have a large integral
+white_leds <- single_channel_leds[q_irrad(leds.mspct[single_channel_leds], allow.scaled = TRUE)[["Q_Total"]] > 100]
 
 names_single <- setdiff(single_channel_leds, white_leds)
 
