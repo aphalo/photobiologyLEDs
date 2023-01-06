@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.2.2
+# CITATION file created with {cffr} R package, v0.4.0
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -8,7 +8,7 @@ message: 'To cite package "photobiologyLEDs" in publications use:'
 type: software
 license: GPL-2.0-or-later
 title: 'photobiologyLEDs: Spectral Data for Light-Emitting-Diodes'
-version: 0.5.1
+version: 0.5.1.9000
 doi: 10.19232/uv4pb.2015.1.14
 abstract: Spectral emission data for some frequently used light emitting diodes available
   as electronic components. Part of the 'r4photobiology' suite, Aphalo P. J. (2015)
@@ -35,7 +35,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=photobiologyLEDs
 repository-code: https://github.com/aphalo/photobiologyLEDs
 url: https://docs.r4photobiology.info/photobiologyLEDs/
-date-released: '2022-08-13'
+date-released: '2023-01-06'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
@@ -45,79 +45,86 @@ references:
 - type: software
   title: 'R: A Language and Environment for Statistical Computing'
   notes: Depends
+  url: https://www.R-project.org/
   authors:
   - name: R Core Team
   location:
     name: Vienna, Austria
-  year: '2022'
-  url: https://www.R-project.org/
+  year: '2023'
   institution:
     name: R Foundation for Statistical Computing
-  version: '>= 3.6.0'
+  version: '>= 4.0.0'
 - type: software
   title: photobiology
   abstract: 'photobiology: Photobiological Calculations'
   notes: Depends
+  url: https://docs.r4photobiology.info/photobiology/
+  repository: https://CRAN.R-project.org/package=photobiology
   authors:
   - family-names: Aphalo
     given-names: Pedro J.
     email: pedro.aphalo@helsinki.fi
     orcid: https://orcid.org/0000-0003-3385-972X
-  year: '2022'
-  url: https://CRAN.R-project.org/package=photobiology
-  version: '>= 0.10.10'
+  year: '2023'
+  version: '>= 0.10.14'
 - type: software
   title: photobiologyWavebands
   abstract: 'photobiologyWavebands: Waveband Definitions for UV, VIS, and IR Radiation'
   notes: Suggests
+  url: https://docs.r4photobiology.info/photobiologyWavebands/
+  repository: https://CRAN.R-project.org/package=photobiologyWavebands
   authors:
   - family-names: Aphalo
     given-names: Pedro J.
     email: pedro.aphalo@helsinki.fi
     orcid: https://orcid.org/0000-0003-3385-972X
-  year: '2022'
-  url: https://CRAN.R-project.org/package=photobiologyWavebands
+  year: '2023'
   version: '>= 0.4.5'
 - type: software
   title: photobiologyLamps
   abstract: 'photobiologyLamps: Spectral Irradiance Data for Lamps'
   notes: Suggests
+  url: https://www.r4photobiology.info/
+  repository: https://CRAN.R-project.org/package=photobiologyLamps
   authors:
   - family-names: Aphalo
     given-names: Pedro J.
     email: pedro.aphalo@helsinki.fi
     orcid: https://orcid.org/0000-0003-3385-972X
-  year: '2022'
-  url: https://CRAN.R-project.org/package=photobiologyLamps
+  year: '2023'
   version: '>= 0.5.0'
 - type: software
   title: ggspectra
   abstract: 'ggspectra: Extensions to ''ggplot2'' for Radiation Spectra'
   notes: Suggests
+  url: https://docs.r4photobiology.info/ggspectra/
+  repository: https://CRAN.R-project.org/package=ggspectra
   authors:
   - family-names: Aphalo
     given-names: Pedro J.
     email: pedro.aphalo@helsinki.fi
     orcid: https://orcid.org/0000-0003-3385-972X
-  year: '2022'
-  url: https://CRAN.R-project.org/package=ggspectra
+  year: '2023'
   version: '>= 0.3.8'
 - type: software
   title: knitr
   abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
   notes: Suggests
+  url: https://yihui.org/knitr/
+  repository: https://CRAN.R-project.org/package=knitr
   authors:
   - family-names: Xie
     given-names: Yihui
     email: xie@yihui.name
     orcid: https://orcid.org/0000-0003-0645-5666
-  year: '2022'
-  url: https://CRAN.R-project.org/package=knitr
+  year: '2023'
   version: '>= 1.37'
 - type: software
   title: rmarkdown
   abstract: 'rmarkdown: Dynamic Documents for R'
   notes: Suggests
+  url: https://pkgs.rstudio.com/rmarkdown/
+  repository: https://CRAN.R-project.org/package=rmarkdown
   authors:
   - family-names: Allaire
     given-names: JJ
@@ -151,6 +158,5 @@ references:
     given-names: Richard
     email: rich@rstudio.com
     orcid: https://orcid.org/0000-0003-3925-190X
-  year: '2022'
-  url: https://CRAN.R-project.org/package=rmarkdown
+  year: '2023'
   version: '>= 2.13'
