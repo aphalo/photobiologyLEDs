@@ -7,11 +7,11 @@ output:
 
 <!-- badges: start -->
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs) 
-[![cran checks](https://cranchecks.info/badges/worst/photobiologyLEDs)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html)
-[![R-CMD-check](https://github.com/aphalo/photobiologyLEDs/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions)
+[![cran checks](https://badges.cranchecks.info/worst/photobiologyLEDs.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html)
+[![R-CMD-check](https://github.com/aphalo/photobiologyLEDs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-Package '**photobiologyLEDs**' complements other packages in the [_R for photobiology_ suite](https://www.r4photobiology.info/). It contains spectral emission data for diverse types of light emitting diodes (LEDs) and LED arrays (`leds.mspct`) available as electronic components. Spectra for LED and other lamps are included in package ['photobioloyLamps'](https://docs.r4photobiology.info/photobiologyLamps/) It also includes spectra from a COB LED when dimmed using the constant current approach (`COB_dimming.mspct`) and for a COB LED combined with reflectors with different beam angles (`COB_reflectors.mspct`).
+Package '**photobiologyLEDs**' complements other packages in the [_R for photobiology_ suite](https://www.r4photobiology.info/). It contains spectral emission data for diverse types of light emitting diodes (LEDs) and LED arrays (`leds.mspct`) available as electronic components. Spectra for LED-based lamps and other lamps are included in package ['photobioloyLamps'](https://docs.r4photobiology.info/photobiologyLamps/). Package 'photobiologyLEDs' also includes spectra from a COB LED when dimmed using the constant current approach (`COB_dimming.mspct`) and for a COB LED combined with reflectors with different beam angles (`COB_reflectors.mspct`).
 
 This package contains only data. Data are stored as collections of spectra of class `source_mspct` from package 'photobiology', which is the core of the 
 [_R for photobiology_ suite](https://www.r4photobiology.info/). Spectra can
@@ -55,7 +55,7 @@ What are the names of available spectra. We use `head()` to limit the output.
 head(names(leds.mspct), 10)
 ```
 
-To subset based on different criteria we can use predefined character vectors of LED names. For example, vector `nichia_leds` lists the names of the spectra for filters made by NIchia. 
+To subset based on different criteria we can use predefined character vectors of LED names. For example, vector `nichia_leds` lists the names of the spectra for LEDs made by NIchia. 
 
 ```{r example-05}
 Nichia_leds
@@ -129,7 +129,7 @@ Aphalo, P. J., Albert, A., Björn, L. O., McLeod, A. R., Robson, T. M., & Rosenq
 
 ## Contributing
 
-Pull requests, bug reports, and feature requests are welcome at (https://bitbucket.org/aphalo/photobiologyfilters).
+Pull requests, bug reports, and feature requests are welcome at (https://github.com/aphalo/photobiologyfilters).
 
 ## Citation
 
@@ -141,4 +141,4 @@ citation("photobiologyLEDs")
 
 ## License
 
-© 2012-2022 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2012-2023 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.

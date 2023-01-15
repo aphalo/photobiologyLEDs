@@ -4,6 +4,10 @@ editor_options:
     wrap: sentence
 ---
 
+# photobiologyLEDs 0.5.2
+
+-   Rebuild all data objects with 'photobiology' (== 0.10.15).
+
 # photobiologyLEDs 0.5.1
 
 -   Add data for one LED.

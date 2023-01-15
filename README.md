@@ -6,19 +6,20 @@
 [![CRAN
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs)
 [![cran
-checks](https://cranchecks.info/badges/worst/photobiologyLEDs)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html)
-[![R-CMD-check](https://github.com/aphalo/photobiologyLEDs/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions)
+checks](https://badges.cranchecks.info/worst/photobiologyLEDs.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html)
+[![R-CMD-check](https://github.com/aphalo/photobiologyLEDs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Package ‘**photobiologyLEDs**’ complements other packages in the [*R for
 photobiology* suite](https://www.r4photobiology.info/). It contains
 spectral emission data for diverse types of light emitting diodes (LEDs)
 and LED arrays (`leds.mspct`) available as electronic components.
-Spectra for LED and other lamps are included in package
-[‘photobioloyLamps’](https://docs.r4photobiology.info/photobiologyLamps/)
-It also includes spectra from a COB LED when dimmed using the constant
-current approach (`COB_dimming.mspct`) and for a COB LED combined with
-reflectors with different beam angles (`COB_reflectors.mspct`).
+Spectra for LED-based lamps and other lamps are included in package
+[‘photobioloyLamps’](https://docs.r4photobiology.info/photobiologyLamps/).
+Package ‘photobiologyLEDs’ also includes spectra from a COB LED when
+dimmed using the constant current approach (`COB_dimming.mspct`) and for
+a COB LED combined with reflectors with different beam angles
+(`COB_reflectors.mspct`).
 
 This package contains only data. Data are stored as collections of
 spectra of class `source_mspct` from package ‘photobiology’, which is
@@ -72,7 +73,7 @@ head(names(leds.mspct), 10)
 
 To subset based on different criteria we can use predefined character
 vectors of LED names. For example, vector `nichia_leds` lists the names
-of the spectra for filters made by NIchia.
+of the spectra for LEDs made by NIchia.
 
 ``` r
 Nichia_leds
@@ -94,7 +95,7 @@ leds.mspct[Nichia_leds]
 #> Label: LED type NVSU233B_U365 from Nichia 
 #> Measured on 2021-10-09 22:35:17 UTC 
 #> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 366.03 nm (max in 251.29-898.97 nm)
+#> Spectral data normalized to s.e.irrad = 1 at 366.03 nm (max in 251.29-900 nm)
 #> 
 #> # A tibble: 1,313 × 2
 #>    w.length s.e.irrad
@@ -116,7 +117,7 @@ leds.mspct[Nichia_leds]
 #> Label: LED type NVSU119C_U385 from Nichia 
 #> Measured on 2021-10-09 22:29:03 UTC 
 #> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 385.25 nm (max in 251.29-898.97 nm)
+#> Spectral data normalized to s.e.irrad = 1 at 385.25 nm (max in 251.29-900 nm)
 #> 
 #> # A tibble: 1,269 × 2
 #>    w.length s.e.irrad
@@ -138,7 +139,7 @@ leds.mspct[Nichia_leds]
 #> Label: LED type NFSW757G_Rsp0a from Nichia 
 #> Measured on 2019-06-25 14:03:10 UTC 
 #> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 451.3 nm (max in 251.16-898.81 nm)
+#> Spectral data normalized to s.e.irrad = 1 at 451.3 nm (max in 251.16-900 nm)
 #> 
 #> # A tibble: 568 × 2
 #>    w.length s.e.irrad
@@ -160,7 +161,7 @@ leds.mspct[Nichia_leds]
 #> Label: LED type NFSL757GT_Rsp0a from Nichia 
 #> Measured on 2019-06-25 14:07:51 UTC 
 #> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 622.27 nm (max in 251.16-898.81 nm)
+#> Spectral data normalized to s.e.irrad = 1 at 622.27 nm (max in 251.16-900 nm)
 #> 
 #> # A tibble: 645 × 2
 #>    w.length s.e.irrad
@@ -182,7 +183,7 @@ leds.mspct[Nichia_leds]
 #> Label: LED type NFCWL036B_V3_Rfcb0 from Nichia 
 #> Measured on 2021-10-09 20:43:51 UTC 
 #> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 458.44 nm (max in 251.29-898.97 nm)
+#> Spectral data normalized to s.e.irrad = 1 at 458.44 nm (max in 251.29-900 nm)
 #> 
 #> # A tibble: 796 × 2
 #>    w.length s.e.irrad
@@ -204,7 +205,7 @@ leds.mspct[Nichia_leds]
 #> Label: LED type NF2W757GT_F1_sm505_Rfc00 from Nichia 
 #> Measured on 2019-06-25 14:22:46 UTC 
 #> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 419.18 nm (max in 251.16-898.81 nm)
+#> Spectral data normalized to s.e.irrad = 1 at 419.18 nm (max in 251.16-900 nm)
 #> 
 #> # A tibble: 729 × 2
 #>    w.length s.e.irrad
@@ -226,7 +227,7 @@ leds.mspct[Nichia_leds]
 #> Label: LED type unknown_757 from Nichia 
 #> Measured on 2016-09-14 16:19:00 UTC 
 #> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 454.48 nm (max in 250.14-899.77 nm)
+#> Spectral data normalized to s.e.irrad = 1 at 454.48 nm (max in 250.14-900 nm)
 #> 
 #> # A tibble: 526 × 3
 #>    w.length s.e.irrad s.e.irrad.good
@@ -248,7 +249,7 @@ leds.mspct[Nichia_leds]
 #> Label: LED type NS6L183AT_H1_sw from Nichia 
 #> Measured on 2021-10-09 20:15:17 UTC 
 #> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 620.12 nm (max in 251.29-898.97 nm)
+#> Spectral data normalized to s.e.irrad = 1 at 620.12 nm (max in 251.29-900 nm)
 #> 
 #> # A tibble: 904 × 2
 #>    w.length s.e.irrad
@@ -321,8 +322,8 @@ normalised we pass `allow.scaled = TRUE`,
 ``` r
 q_irrad(leds.mspct[["Nichia_NS6L183AT_H1_sw"]], 
         allow.scaled = TRUE, scale.factor = 1e6)
-#>  Q_Total 
-#> 784.2347 
+#>   Q_Total 
+#> 151086898 
 #> attr(,"time.unit")
 #> [1] "second"
 #> attr(,"radiation.unit")
@@ -387,7 +388,7 @@ Division of Plant Biology. ISBN 978-952-10-8363-1 (PDF),
 ## Contributing
 
 Pull requests, bug reports, and feature requests are welcome at
-(<https://bitbucket.org/aphalo/photobiologyfilters>).
+(<https://github.com/aphalo/photobiologyfilters>).
 
 ## Citation
 
@@ -418,6 +419,6 @@ citation("photobiologyLEDs")
 
 ## License
 
-© 2012-2022 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2023 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.
