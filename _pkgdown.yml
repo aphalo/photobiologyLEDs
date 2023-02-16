@@ -40,10 +40,10 @@ navbar:
     articles:
       text: User Guide
       menu:
-      - text: 'The R for Photobiology Suite'
-        href: articles/r4p-introduction.html
-      - text: 'User Guide'
-        href: articles/user-guide.html
+      - text: '0 The R for Photobiology Suite'
+        href: articles/userguide-0-r4p-introduction.html
+      - text: '1 Data and their use'
+        href: articles/userguide-1-data-use.html
     tutorials:
       text: Resources
       menu:
