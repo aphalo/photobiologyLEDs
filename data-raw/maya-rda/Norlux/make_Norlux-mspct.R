@@ -4,7 +4,7 @@ library(ggspectra)
 # clear workspace
 rm(list = ls(pattern = "*"))
 
-files <- list.files(path = "data-raw/maya-rda/Norlux",
+files <- list.files(path = "./data-raw/maya-rda/Norlux",
                     pattern = "RGB\\.spct\\.[Rr]da",
                     full.names = TRUE)
 
@@ -41,6 +41,7 @@ when.measured <- when_measured(red.spct)
 norlux.mspct <- source_mspct()
 for (s in spectra) {
   temp.spct <- get(s)
+  temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)

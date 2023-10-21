@@ -34,6 +34,7 @@ for (s in spectra) {
                         "Supplied ca. 2010\nmounted on heat sink.")
   what.measured <- paste("LED array type", types[s], "from Huey Jann")
   temp.spct <- get(s)
+  temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)

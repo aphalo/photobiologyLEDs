@@ -5,7 +5,7 @@ library(ggspectra)
 rm(list = ls(pattern = "*"))
 
 files <- list.files(path = "data-raw/maya-rda/Luminus",
-                    pattern = ".spct.[Rr]da",
+                    pattern = "mA.spct.[Rr]da$",
                     full.names = TRUE)
 
 for (f in files) {
@@ -24,6 +24,7 @@ luminus.mspct <- source_mspct()
 for (s in spectra) {
   temp.spct <- get(s)
   temp.spct <- fshift(temp.spct, c(320, 350))
+  temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)

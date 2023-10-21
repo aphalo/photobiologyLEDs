@@ -29,6 +29,7 @@ for (f in files) {
       descriptor = a.descriptor)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- clean(temp.spct)
+  temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
   temp.spct <- thin_wl(temp.spct)
   setWhatMeasured(temp.spct, 

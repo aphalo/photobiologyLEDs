@@ -46,6 +46,7 @@ names(how.measured) <- new.names
 lcfocus.mspct <- source_mspct()
 for (s in spectra) {
   temp.spct <- get(s)
+  temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)

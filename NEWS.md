@@ -6,7 +6,7 @@ editor_options:
 
 # photobiologyLEDs 0.5.2
 
--   Rebuild all data objects with 'photobiology' (== 0.10.15).
+-   Rebuild all data objects with 'photobiology' (== 0.11.0).
 
 # photobiologyLEDs 0.5.1
 

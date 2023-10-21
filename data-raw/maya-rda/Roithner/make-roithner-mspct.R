@@ -31,6 +31,7 @@ for (s in spectra) {
                         ".", sep = "")
   what.measured <- paste("LED type", types[s], "from Roithner-Laser")
   temp.spct <- get(s)
+  temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)

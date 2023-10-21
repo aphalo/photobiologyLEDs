@@ -61,6 +61,7 @@ for (s in type2name.map) {
                         type2supplier.map[name2type.map[s]])
   what.measured <- paste("LED type", name2type.map[s], "from Osram")
   temp.spct <- get(s)
+  temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)

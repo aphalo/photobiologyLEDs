@@ -6,7 +6,7 @@ library(lubridate)
 rm(list = ls(pattern = "*"))
 
 oldwd <-
-  setwd("~/RPackages/photobiologyLEDs/data-raw/maya-rda/Nichia/dimming-COB")
+  setwd("./data-raw/maya-rda/Nichia/dimming-COB")
 
 files <- list.files(pattern = "\\.spct.Rda")
 

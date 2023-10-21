@@ -1,7 +1,7 @@
-## ---- echo=FALSE--------------------------------------------------------------
+## ----echo=FALSE---------------------------------------------------------------
 knitr::opts_chunk$set(fig.width=8, fig.height=4)
 
-## ---- message=FALSE-----------------------------------------------------------
+## ----message=FALSE------------------------------------------------------------
 library(photobiology)
 library(photobiologyLEDs)
 # Are the packages used in examples installed?
@@ -95,17 +95,17 @@ e_irrad(my.UV395)
 ## -----------------------------------------------------------------------------
 q_ratio(leds.mspct$Roithner_UV395, UVB(), UVA())
 
-## ---- eval=eval_plots---------------------------------------------------------
+## ----eval=eval_plots----------------------------------------------------------
 autoplot(leds.mspct$LedEngin_LZ1_10R302_740nm, annotations = c("+", "wls"), )
 
-## ---- eval=eval_plots---------------------------------------------------------
+## ----eval=eval_plots----------------------------------------------------------
 ggplot(leds.mspct$LedEngin_LZ1_10R302_740nm) +
   geom_line()
 
 ## -----------------------------------------------------------------------------
 head(as.data.frame(leds.mspct$LedEngin_LZ1_10R302_740nm))
 
-## ---- eval=eval_bands---------------------------------------------------------
+## ----eval=eval_bands----------------------------------------------------------
 attach(leds.mspct)
 q_ratio(Roithner_UV395, UVB(), UVA())
 detach(leds.mspct)
@@ -115,6 +115,6 @@ attach(leds.mspct)
 with(Roithner_UV395, max(w.length))
 detach(leds.mspct)
 
-## ---- eval=eval_bands---------------------------------------------------------
+## ----eval=eval_bands----------------------------------------------------------
 with(leds.mspct, q_ratio(Roithner_UV395, UVB(), UVA()))
 

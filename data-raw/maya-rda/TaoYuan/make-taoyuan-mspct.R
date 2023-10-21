@@ -5,7 +5,7 @@ library(lubridate)
 # clear workspace
 rm(list = ls(pattern = "*"))
 
-files <- list.files(path = "data-raw/maya-rda/TaoYuan",
+files <- list.files(path = "./data-raw/maya-rda/TaoYuan",
                     pattern = ".mspct.[Rr]da",
                     full.names = TRUE)
 
@@ -15,7 +15,9 @@ for (f in files) {
 
 names(taoyuan.mspct) <- "TaoYuan_LED_310nm"
 
-uncollect2spct(taoyuan.mspct)
+attr(taoyuan.mspct[["TaoYuan_LED_310nm"]], "normalized") <- NULL
+
+TaoYuan_LED_310nm.spct <- normalise(taoyuan.mspct[["TaoYuan_LED_310nm"]], norm = "max")
 
 TaoYuan_leds <- "TaoYuan_LED_310nm"
 

@@ -79,6 +79,7 @@ for (s in spectra) {
                         "soldered on 20 mm starboard mounted on heat sink.")
   what.measured <- paste(type2pwrchar.map[types[s]], "SMD LED type", gsub("_", "-", types[s]), "from LED Engin")
   temp.spct <- get(s)
+  temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)

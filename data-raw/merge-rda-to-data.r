@@ -27,9 +27,14 @@ for (mspct in mget(collections2bind)) {
 }
 rm(list = c(collections2bind, "mspct"))
 
-leds.mspct <- normalize(leds.mspct, norm = "max")
-
 names(leds.mspct)
+
+for (s in names(leds.mspct)) {
+  leds.mspct[[s]] <- setNormalised(leds.mspct[[s]], FALSE)
+  if (getMultipleWl(leds.mspct[[s]]) == 1) {
+    leds.mspct[[s]] <- normalize(leds.mspct[[s]])
+  }
+}
 
 # metadata
 

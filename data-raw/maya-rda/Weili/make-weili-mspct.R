@@ -32,7 +32,6 @@ for (s in spct.names) {
   comment.text <- paste("LED type unknown, rated at 3W, \"bat wing\" package; supplied by Shenzhen Weili Optical, Shenzhen, China; ca. 2015")
   what.measured <- "LED type unknown, rated at 3W, \"bat wing\" package"
   temp.spct <- get(s)
-  temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)
   temp.spct <- trim_wl(temp.spct, range = c(300, 900), fill = 0)

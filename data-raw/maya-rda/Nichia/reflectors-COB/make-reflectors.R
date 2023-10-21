@@ -6,7 +6,7 @@ library(lubridate)
 rm(list = ls(pattern = "*"))
 
 oldwd <-
-  setwd("~/RPackages/photobiologyLEDs/data-raw/maya-rda/Nichia/reflectors-COB")
+  setwd("./data-raw/maya-rda/Nichia/reflectors-COB")
 
 load("OptisolisRflNone.spct.Rda")
 load("OptisolisRfl35.spct.Rda")

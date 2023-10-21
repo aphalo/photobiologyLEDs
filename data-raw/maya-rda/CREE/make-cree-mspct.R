@@ -25,6 +25,7 @@ what.measured <- "3W SMD LED type XPE R3 from CREE"
 cree.mspct <- source_mspct()
 for (s in spectra) {
   temp.spct <- get(s)
+  temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)
