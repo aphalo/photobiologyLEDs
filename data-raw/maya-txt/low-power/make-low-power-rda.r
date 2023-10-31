@@ -20,6 +20,7 @@ path <- "data-raw/maya-txt/low-power/"
 a.method <- MAYP11278_ylianttila.mthd
 a.descriptor <- which_descriptor(ymd("2012-05-06"))
 
+led_names <- c("BS436" = , "CB30", "LED740")
 
 led_lowpower.mspct <- source_mspct()
 for (led in c("BS436", "CB30", "LED740")) {

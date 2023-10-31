@@ -93,7 +93,7 @@ leds.mspct[Nichia_leds]
 #> Object: source_spct [1,313 x 2]
 #> Wavelength range 251.29-900 nm, step 1.023182e-12-7.53 nm 
 #> Label: LED type NVSU233B_U365 from Nichia 
-#> Measured on 2021-10-09 22:35:17 UTC 
+#> Measured on 2021-10-09 22:35:17.181825 UTC 
 #> Time unit 1s
 #> Spectral data normalized to s.e.irrad = 1 at 366.03 nm (max in 251.29-900 nm)
 #> 
@@ -110,12 +110,12 @@ leds.mspct[Nichia_leds]
 #>  8     259.         0
 #>  9     259.         0
 #> 10     260.         0
-#> # … with 1,303 more rows
+#> # ℹ 1,303 more rows
 #> --- Member: Nichia_NVSU119C_U385 ---
 #> Object: source_spct [1,269 x 2]
 #> Wavelength range 251.29-900 nm, step 1.023182e-12-7.52 nm 
 #> Label: LED type NVSU119C_U385 from Nichia 
-#> Measured on 2021-10-09 22:29:03 UTC 
+#> Measured on 2021-10-09 22:29:03.495034 UTC 
 #> Time unit 1s
 #> Spectral data normalized to s.e.irrad = 1 at 385.25 nm (max in 251.29-900 nm)
 #> 
@@ -132,12 +132,12 @@ leds.mspct[Nichia_leds]
 #>  8     258.         0
 #>  9     258.         0
 #> 10     259.         0
-#> # … with 1,259 more rows
+#> # ℹ 1,259 more rows
 #> --- Member: Nichia_NFSW757G_Rsp0a ---
 #> Object: source_spct [568 x 2]
 #> Wavelength range 251.16-900 nm, step 1.023182e-12-7.59 nm 
 #> Label: LED type NFSW757G_Rsp0a from Nichia 
-#> Measured on 2019-06-25 14:03:10 UTC 
+#> Measured on 2019-06-25 14:03:10.946064 UTC 
 #> Time unit 1s
 #> Spectral data normalized to s.e.irrad = 1 at 451.3 nm (max in 251.16-900 nm)
 #> 
@@ -154,12 +154,12 @@ leds.mspct[Nichia_leds]
 #>  8     263.         0
 #>  9     264.         0
 #> 10     266.         0
-#> # … with 558 more rows
+#> # ℹ 558 more rows
 #> --- Member: Nichia_NFSL757GT_Rsp0a ---
 #> Object: source_spct [645 x 2]
 #> Wavelength range 251.16-900 nm, step 1.023182e-12-7.59 nm 
 #> Label: LED type NFSL757GT_Rsp0a from Nichia 
-#> Measured on 2019-06-25 14:07:51 UTC 
+#> Measured on 2019-06-25 14:07:51.674266 UTC 
 #> Time unit 1s
 #> Spectral data normalized to s.e.irrad = 1 at 622.27 nm (max in 251.16-900 nm)
 #> 
@@ -176,12 +176,12 @@ leds.mspct[Nichia_leds]
 #>  8     258.         0
 #>  9     259.         0
 #> 10     266.         0
-#> # … with 635 more rows
+#> # ℹ 635 more rows
 #> --- Member: Nichia_NFCWL036B_V3_Rfcb0 ---
 #> Object: source_spct [796 x 2]
 #> Wavelength range 251.29-900 nm, step 1.023182e-12-7.55 nm 
 #> Label: LED type NFCWL036B_V3_Rfcb0 from Nichia 
-#> Measured on 2021-10-09 20:43:51 UTC 
+#> Measured on 2021-10-09 20:43:51.476858 UTC 
 #> Time unit 1s
 #> Spectral data normalized to s.e.irrad = 1 at 458.44 nm (max in 251.29-900 nm)
 #> 
@@ -198,12 +198,12 @@ leds.mspct[Nichia_leds]
 #>  8     260.         0
 #>  9     260.         0
 #> 10     261.         0
-#> # … with 786 more rows
+#> # ℹ 786 more rows
 #> --- Member: Nichia_NF2W757GT_F1_sm505_Rfc00 ---
 #> Object: source_spct [729 x 2]
 #> Wavelength range 251.16-900 nm, step 1.023182e-12-7.59 nm 
 #> Label: LED type NF2W757GT_F1_sm505_Rfc00 from Nichia 
-#> Measured on 2019-06-25 14:22:46 UTC 
+#> Measured on 2019-06-25 14:22:46.214559 UTC 
 #> Time unit 1s
 #> Spectral data normalized to s.e.irrad = 1 at 419.18 nm (max in 251.16-900 nm)
 #> 
@@ -220,7 +220,7 @@ leds.mspct[Nichia_leds]
 #>  8     271.         0
 #>  9     272.         0
 #> 10     274.         0
-#> # … with 719 more rows
+#> # ℹ 719 more rows
 #> --- Member: Nichia_unknown_757 ---
 #> Object: source_spct [526 x 3]
 #> Wavelength range 250.14-900 nm, step 1.023182e-12-7.59 nm 
@@ -242,12 +242,12 @@ leds.mspct[Nichia_leds]
 #>  8     288.         0              0
 #>  9     296.         0              0
 #> 10     303.         0              0
-#> # … with 516 more rows
+#> # ℹ 516 more rows
 #> --- Member: Nichia_NS6L183AT_H1_sw ---
 #> Object: source_spct [904 x 2]
 #> Wavelength range 251.29-900 nm, step 1.023182e-12-7.48 nm 
 #> Label: LED type NS6L183AT_H1_sw from Nichia 
-#> Measured on 2021-10-09 20:15:17 UTC 
+#> Measured on 2021-10-09 20:15:17.948579 UTC 
 #> Time unit 1s
 #> Spectral data normalized to s.e.irrad = 1 at 620.12 nm (max in 251.29-900 nm)
 #> 
@@ -264,7 +264,7 @@ leds.mspct[Nichia_leds]
 #>  8     259.         0
 #>  9     259.         0
 #> 10     260.         0
-#> # … with 894 more rows
+#> # ℹ 894 more rows
 #> --- Member: Nichia_NFSW757G_V3_Rs060 ---
 #> Object: source_spct [187 x 2]
 #> Wavelength range 350-799.30696 nm, step 1-16 nm 
@@ -284,7 +284,7 @@ leds.mspct[Nichia_leds]
 #>  8      374  0       
 #>  9      375  0       
 #> 10      376  0       
-#> # … with 177 more rows
+#> # ℹ 177 more rows
 #> 
 #> --- END ---
 ```
@@ -397,7 +397,6 @@ publications, please cite according to:
 
 ``` r
 citation("photobiologyLEDs")
-#> 
 #> To cite package 'photobiologyLEDs' in publications, please use:
 #> 
 #>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin,

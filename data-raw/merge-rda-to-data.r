@@ -8,6 +8,35 @@ energy_as_default()
 
 rm(list = ls(pattern = "*"))
 
+load("./data-raw/MAY11278-desc-donnor.rda")
+
+add_instr_desc <- function(receptor, donnor = MAYP11278_cal_2023a.spct) {
+  stopifnot(is.generic_spct(receptor), is.generic_spct(donnor))
+
+  receptor.desc <- getInstrDesc(receptor)
+  if (getMultipleWl(receptor) > 1) {
+    receptor.desc <- receptor.desc[[1]]
+  }
+  
+  donnor.desc <- 
+    getInstrDesc(
+      trimInstrDesc(donnor, 
+                    fields = c("spectrometer.name", "spectrometer.sn", "bench.grating",
+                               "bench.slit", "entrance.optics")
+                    )
+      )
+  
+  if (all(is.na(receptor.desc))) {
+    setInstrDesc(receptor, donnor.desc)
+  } else if (receptor.desc$spectrometer.sn == donnor.desc$spectrometer.sn &&
+      !"entrance.optics" %in% names(receptor.desc)) {
+    receptor.desc$entrance.optics <- donnor.desc$entrance.optics
+    setInstrDesc(receptor, receptor.desc)
+  } else {
+    receptor
+  }
+}
+
 path <- "./data-raw/rda2merge/"
 
 # load collections of spectra
@@ -30,6 +59,7 @@ rm(list = c(collections2bind, "mspct"))
 names(leds.mspct)
 
 for (s in names(leds.mspct)) {
+  leds.mspct[[s]] <- add_instr_desc(leds.mspct[[s]])
   leds.mspct[[s]] <- setNormalised(leds.mspct[[s]], FALSE)
   if (getMultipleWl(leds.mspct[[s]]) == 1) {
     leds.mspct[[s]] <- normalize(leds.mspct[[s]])
@@ -147,3 +177,4 @@ save(list = objects_to_save,
 
 tools::resaveRdaFiles("data", compress="auto")
 print(tools::checkRdaFiles("data"))
+

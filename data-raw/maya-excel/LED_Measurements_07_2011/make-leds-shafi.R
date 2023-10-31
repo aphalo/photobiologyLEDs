@@ -12,7 +12,9 @@ files <- list.files(path2files, pattern = "*.xlsx", full.names = TRUE)
 spct.names <- gsub("Mayameasurement_slitcorrected_|.xlsx", "", 
                    list.files(path2files, pattern = "*.xlsx", full.names = FALSE))
 
-when <- file.mtime(files)
+# when <- file.mtime(files)
+# best guess available
+when <- "2011-07-30"
 
 shafi.mspct <- source_mspct()
 
@@ -31,7 +33,7 @@ for (i in seq_along(files)) {
   setSourceSpct(temp.spct)
   temp.spct <- trim_wl(temp.spct, range = c(250,900)) # calibration range
   temp.spct <- normalize(temp.spct)
-  setWhenMeasured(temp.spct, ymd_hms(when[i], tz = "EET"))
+  setWhenMeasured(temp.spct, ymd(when, tz = "UTC"))
  
   if (grepl("^QDD", spct.names[i])) {
     supplier <- "Quantum Devices, USA"

@@ -7,6 +7,8 @@ editor_options:
 # photobiologyLEDs 0.5.2
 
 -   Rebuild all data objects with 'photobiology' (== 0.11.0).
+-   Add missing metadata to spectra when possible.
+-   Add `COB_dimming.tb` with summaries from `COB_dimming.mspct`.
 
 # photobiologyLEDs 0.5.1
 
@@ -25,6 +27,8 @@ to include more spectra while keeping the size of the package reasonable.
 -   Rebuild all data objects with 'photobiology' (== 0.10.10) taking care that all individual spectra in `leds.mspct` are normalized (an exception are multichannel LEDs).
 -   Apply function `photobiology::thin_wl()` to all spectra to reduce their stored size.
 -   Add data for new LED types and update the metadata of most of those carried over from earlier versions.
+-   Add `COB_dimming.mspct` with data for constant current dimming.
+-   Add `COB_reflectors.mspct` with data for three different reflectors.
 -   Add new lists of LEDs by intended use.
 -   CODE BREAKING: change naming convention for members of the collection of spectra. Now names consist of "brand" and type, and use underscores.
 -   CODE BREAKING: lists of LEDs by colour are now based on the wavelength at the peak of emission. We use ISO-standard wavelength boundaries for colours of visible radiation, except for purple \< 400 nm. For ultraviolet we follow ISO. All broad-spectrum LEDs are listed as white.

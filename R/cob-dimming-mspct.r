@@ -53,8 +53,13 @@
 #' names(COB_dimming.mspct)
 #' 
 #' # photon irradiance in umol m-2 s-1, and relative to maximum
-#' irrads <- q_irrad(COB_dimming.mspct, scale.factor = 1e6)
-#' irrads$Q_Total_rel <- irrads$Q_Total / max(irrads$Q_Total)
-#' irrads
+#' q_irrad(COB_dimming.mspct, scale.factor = 1e6)
+#' 
+#' # precomputed values and measured supply current
+#' COB_dimming.tb
 #' 
 "COB_dimming.mspct"
+
+#' @rdname COB_dimming.mspct
+#' 
+"COB_dimming.tb"

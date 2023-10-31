@@ -3,6 +3,7 @@
 \docType{data}
 \name{COB_dimming.mspct}
 \alias{COB_dimming.mspct}
+\alias{COB_dimming.tb}
 \title{Constant-current dimming of LEDs}
 \format{
 A \code{"source_mspct"} object containing 8
@@ -13,9 +14,13 @@ In each of the member spectra, the variables are as follows:
   \item w.length (nm)  
   \item s.e.irrad (W m-2 nm-1)
 }
+
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8 rows and 6 columns.
 }
 \usage{
 COB_dimming.mspct
+
+COB_dimming.tb
 }
 \description{
 A collection of emission spectra of a light-emitting-diode
@@ -60,9 +65,10 @@ library(photobiology)
 names(COB_dimming.mspct)
 
 # photon irradiance in umol m-2 s-1, and relative to maximum
-irrads <- q_irrad(COB_dimming.mspct, scale.factor = 1e6)
-irrads$Q_Total_rel <- irrads$Q_Total / max(irrads$Q_Total)
-irrads
+q_irrad(COB_dimming.mspct, scale.factor = 1e6)
+
+# precomputed values and measured supply current
+COB_dimming.tb
 
 }
 \references{

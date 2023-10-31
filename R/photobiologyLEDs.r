@@ -9,7 +9,7 @@
 #' \code{\link[photobiologyLamps]{photobiologyLamps-package}}. Two smaller
 #' collections, provide spectra for a COB LED driven with varying current or
 #' constant-current (CC) dimming, \code{\link{COB_dimming.mspct}}, and at fixed
-#' current but in conbination with different reflectors,
+#' current but in combination with different reflectors,
 #' \code{\link{COB_reflectors.mspct}}.
 #' 
 #' In addition to the spectra the package provides character vectors of names to
@@ -57,11 +57,11 @@
 #'   different colour and electrical characteristics. In addition, the
 #'   performance of LEDs deteriorates with use, with light output decreasing
 #'   faster if driven with high current or if they overheat as a consequence of
-#'   insufficient cooled. \strong{In other words, the data provided here are not
+#'   insufficient cooling. \strong{In other words, the data provided here are not
 #'   a substitute for actual measurements of radiation emission and spectrum of
 #'   the LEDs actually used in a given piece of scientific research or other
 #'   important work.} For less demanding situations, such as planning of
-#'   experiemnts or testing the sanity of independent measurements, the data are
+#'   experiments or testing the sanity of independent measurements, the data are
 #'   in most cases reliable enough but perfect agreement with measurements on
 #'   other LEDs of the same exact type should not be expected.
 #' 

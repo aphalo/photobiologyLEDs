@@ -52,7 +52,7 @@ for (s in names(COB_reflectors.mspct)) {
   temp.spct <- trim_wl(temp.spct, c(330, 900), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)
-  comment(temp.spct) <- "Comparison of reflectors at close range (159 mm) rather than design distance. This is most likely why highest irradiance is not observed with the narrowest beam reflector, but with a wider one."
+  comment(temp.spct) <- "Comparison of reflectors at close range (159 mm) rather than at the much longer design distance.\nThis is most likely why highest irradiance is not observed with the narrowest beam reflector, but with a wider one."
   trimInstrDesc(temp.spct)
   trimInstrSettings(temp.spct)
   print(str(get_attributes(temp.spct)))
