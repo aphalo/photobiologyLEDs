@@ -34,7 +34,7 @@ library(ggspectra)
 library(photobiologyLEDs)
 ```
 
-How many spectra are included in the current version of 'photobiologyFilters'?
+How many spectra are included in the current version of 'photobiologyLEDs'?
 
 ```{r example-03}
 length(leds.mspct)
@@ -106,11 +106,11 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyLEDs")
 ```
 
-Installation of the current unstable version from Bitbucket:
+Installation of the current unstable version from GitHub:
 
 ```{r, eval=FALSE}
 # install.packages("devtools")
-devtools::install_bitbucket("aphalo/photobiologyleds")
+remotes::install_github("aphalo/photobiologyLEDs")
 ```
 
 ## Documentation 
@@ -129,7 +129,7 @@ Aphalo, P. J., Albert, A., Björn, L. O., McLeod, A. R., Robson, T. M., & Rosenq
 
 ## Contributing
 
-Pull requests, bug reports, and feature requests are welcome at (https://github.com/aphalo/photobiologyfilters).
+Pull requests, bug reports, and feature requests are welcome at (https://github.com/aphalo/photobiologyLEDs).
 
 ## Citation
 

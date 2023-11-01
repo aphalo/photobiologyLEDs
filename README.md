@@ -41,11 +41,11 @@ library(photobiologyLEDs)
 ```
 
 How many spectra are included in the current version of
-‘photobiologyFilters’?
+‘photobiologyLEDs’?
 
 ``` r
 length(leds.mspct)
-#> [1] 92
+#> [1] 93
 ```
 
 ``` r
@@ -351,11 +351,11 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyLEDs")
 ```
 
-Installation of the current unstable version from Bitbucket:
+Installation of the current unstable version from GitHub:
 
 ``` r
 # install.packages("devtools")
-devtools::install_bitbucket("aphalo/photobiologyleds")
+remotes::install_github("aphalo/photobiologyLEDs")
 ```
 
 ## Documentation
@@ -388,7 +388,7 @@ Division of Plant Biology. ISBN 978-952-10-8363-1 (PDF),
 ## Contributing
 
 Pull requests, bug reports, and feature requests are welcome at
-(<https://github.com/aphalo/photobiologyfilters>).
+(<https://github.com/aphalo/photobiologyLEDs>).
 
 ## Citation
 
@@ -397,7 +397,7 @@ publications, please cite according to:
 
 ``` r
 citation("photobiologyLEDs")
-#> To cite package 'photobiologyLEDs' in publications, please use:
+#> To cite package ‘photobiologyLEDs’ in publications use:
 #> 
 #>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin,
 #>   2015:1, 21-29. DOI:10.19232/uv4pb.2015.1.14
