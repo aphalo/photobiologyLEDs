@@ -279,7 +279,7 @@ Agilent_leds
 
 \url{https://marktechopto.com/}
 
-\url{https://cree-led.com/}
+\url{https://www.cree-led.com/}
 
 \url{https://www.epileds.com.tw/en/}
 
@@ -302,7 +302,7 @@ Agilent_leds
 
 \url{https://www.luminus.com/}
 
-\url{https://www.samsung.com/led/}
+\url{https://led.samsung.com/}
 }
 \seealso{
 \code{\link{leds.mspct}}

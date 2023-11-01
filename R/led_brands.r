@@ -94,7 +94,7 @@
 #' The former LED products group of Cree is now Cree LED (U.S.A.) and a part of
 #' SGH.
 #'
-#' @references \url{https://cree-led.com/}
+#' @references \url{https://www.cree-led.com/}
 #' 
 "CREE_leds"
 
@@ -236,7 +236,7 @@
 #' @section Samsung:
 #' Samsung LEDs (South Korea) is a supplier of SMD LEDs and COB LEDs as components.
 #' 
-#' @references \url{https://www.samsung.com/led/}
+#' @references \url{https://led.samsung.com/}
 #'
 "Samsung_leds"
 
