@@ -2,7 +2,7 @@ library(photobiology)
 library(ggspectra)
 library(lubridate)
 
-# photon_as_default()
+energy_as_default()
 
 # clear workspace
 rm(list = ls(pattern = "*"))
@@ -29,7 +29,7 @@ how.measured <- "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine 
 
 weili.mspct <- source_mspct()
 for (s in spct.names) {
-  comment.text <- paste("LED type unknown, rated at 3W, \"bat wing\" package; supplied by Shenzhen Weili Optical, Shenzhen, China; ca. 2015")
+  comment.text <- paste("LED type unknown, rated at 3W, \"bat wing\" package;\nsupplied by Shenzhen Weili Optical, Shenzhen, China; ca. 2015")
   what.measured <- "LED type unknown, rated at 3W, \"bat wing\" package"
   temp.spct <- get(s)
   temp.spct <- smooth_spct(temp.spct)
@@ -47,6 +47,17 @@ for (s in spct.names) {
 }
 
 autoplot(weili.mspct)
+weili.mspct <- normalise(weili.mspct)
+weili.mspct <- setNormalised(weili.mspct)
+
+autoplot(weili.mspct)
+
+weili.mspct[["Weili_120W.array.12ch.custom.A"]] <- 
+  readRDS("data-raw/maya-rda/Weili/12-channels-arrays/weili_12ch_A.rds")
+
+autoplot(weili.mspct)
+
+weili.mspct
 
 Weili_leds <- names(weili.mspct)
 

@@ -22,21 +22,21 @@
 \format{
 A vector of character strings.
 
-An object of class \code{character} of length 17.
+An object of class \code{character} of length 18.
 
-An object of class \code{character} of length 8.
+An object of class \code{character} of length 9.
 
-An object of class \code{character} of length 6.
+An object of class \code{character} of length 7.
 
-An object of class \code{character} of length 11.
+An object of class \code{character} of length 12.
 
-An object of class \code{character} of length 8.
+An object of class \code{character} of length 9.
 
-An object of class \code{character} of length 0.
+An object of class \code{character} of length 1.
 
-An object of class \code{character} of length 4.
+An object of class \code{character} of length 5.
 
-An object of class \code{character} of length 11.
+An object of class \code{character} of length 12.
 
 An object of class \code{character} of length 4.
 
@@ -44,7 +44,7 @@ An object of class \code{character} of length 19.
 
 An object of class \code{character} of length 12.
 
-An object of class \code{character} of length 80.
+An object of class \code{character} of length 81.
 }
 \usage{
 led_colors

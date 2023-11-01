@@ -9,6 +9,7 @@ editor_options:
 -   Rebuild all data objects with 'photobiology' (== 0.11.0).
 -   Add missing metadata to spectra when possible.
 -   Add `COB_dimming.tb` with summaries from `COB_dimming.mspct`.
+-   Add data for a custom-assembled 120W, 12-channel LED array.
 
 # photobiologyLEDs 0.5.1
 
