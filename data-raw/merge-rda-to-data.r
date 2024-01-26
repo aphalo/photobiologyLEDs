@@ -111,8 +111,8 @@ leds.mspct <- leds.mspct[order(names(leds.mspct))]
 # leds.mspct <- normalize(leds.mspct, norm = "max", unit.out = "energy")
 
 # Distinguish by number of channels
-multi_channel_leds <- grep("RGB|LZ7", names(leds.mspct), value = TRUE)
-single_channel_leds <- grep("RGB|LZ7", names(leds.mspct), value = TRUE, invert = TRUE)
+multi_channel_leds <- grep("RGB|LZ7|array.12ch", names(leds.mspct), value = TRUE)
+single_channel_leds <- grep("RGB|LZ7|array.12ch", names(leds.mspct), value = TRUE, invert = TRUE)
 
 multiple_wl <- sapply(leds.mspct, function(x) {getMultipleWl(x) > 1})
 
