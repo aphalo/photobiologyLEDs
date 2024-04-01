@@ -7,7 +7,10 @@
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs)
 [![cran
 checks](https://badges.cranchecks.info/worst/photobiologyLEDs.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html)
-[![R-CMD-check](https://github.com/aphalo/photobiologyLEDs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions/workflows/R-CMD-check.yaml)
+[![R Universe
+vwersion](https://aphalo.r-universe.dev/badges/photobiologyLEDs)](https://aphalo.r-universe.dev/photobiologyLEDs)
+[![R build
+status](https://github.com/aphalo/photobiologyLEDs/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions)
 <!-- badges: end -->
 
 Package ‘**photobiologyLEDs**’ complements other packages in the [*R for
@@ -36,7 +39,8 @@ as is with base R functions.
 ## Examples
 
 ``` r
-library(ggspectra)
+eval_plots <- requireNamespace("ggspectra", quietly = TRUE)
+if (eval_plots) library(ggspectra)
 library(photobiologyLEDs)
 ```
 
@@ -345,16 +349,27 @@ methods from base R and various packages easy.
 
 ## Installation
 
-Installation of the most recent stable version from CRAN:
+Installation of the most recent released version from CRAN (source and
+binaries available):
 
 ``` r
 install.packages("photobiologyLEDs")
 ```
 
-Installation of the current unstable version from GitHub:
+Installation of the current unstable version from R-Universe CRAN-like
+repository (source and binaries available):
 
 ``` r
-# install.packages("devtools")
+install.packages('photobiologyLEDs', 
+                 repos = c('https://aphalo.r-universe.dev', 
+                           'https://cloud.r-project.org'))
+```
+
+Installation of the current unstable version from GitHub (only source
+available):
+
+``` r
+# install.packages("remotes")
 remotes::install_github("aphalo/photobiologyLEDs")
 ```
 
@@ -418,6 +433,6 @@ citation("photobiologyLEDs")
 
 ## License
 
-© 2012-2023 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2024 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

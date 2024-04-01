@@ -6,9 +6,9 @@ output:
 # photobiologyLEDs <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
-[![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs) 
-[![cran checks](https://badges.cranchecks.info/worst/photobiologyLEDs.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html)
-[![R-CMD-check](https://github.com/aphalo/photobiologyLEDs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions/workflows/R-CMD-check.yaml)
+[![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyLEDs)](https://cran.r-project.org/package=photobiologyLEDs) [![cran checks](https://badges.cranchecks.info/worst/photobiologyLEDs.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyLEDs.html) 
+[![R Universe vwersion](https://aphalo.r-universe.dev/badges/photobiologyLEDs)](https://aphalo.r-universe.dev/photobiologyLEDs)
+[![R build status](https://github.com/aphalo/photobiologyLEDs/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions)
 <!-- badges: end -->
 
 Package '**photobiologyLEDs**' complements other packages in the [_R for photobiology_ suite](https://www.r4photobiology.info/). It contains spectral emission data for diverse types of light emitting diodes (LEDs) and LED arrays (`leds.mspct`) available as electronic components. Spectra for LED-based lamps and other lamps are included in package ['photobioloyLamps'](https://docs.r4photobiology.info/photobiologyLamps/). Package 'photobiologyLEDs' also includes spectra from a COB LED when dimmed using the constant current approach (`COB_dimming.mspct`) and for a COB LED combined with reflectors with different beam angles (`COB_reflectors.mspct`).
@@ -30,7 +30,8 @@ knitr::opts_chunk$set(
 ```
 
 ```{r example-02, message=FALSE}
-library(ggspectra)
+eval_plots <- requireNamespace("ggspectra", quietly = TRUE)
+if (eval_plots) library(ggspectra)
 library(photobiologyLEDs)
 ```
 
@@ -92,7 +93,7 @@ q_irrad(leds.mspct[["Nichia_NS6L183AT_H1_sw"]],
 
 The `autoplot()` methods from package 'ggspectra' can be used for plotting one or more spectra at a time.
 
-```{r}
+```{r, eval=eval_plots}
 autoplot(leds.mspct[["Nichia_NS6L183AT_H1_sw"]]) + theme_bw()
 ```
 
@@ -100,16 +101,24 @@ The classes of the objects used to store the spectral data are derived from `"da
 
 ## Installation
 
-Installation of the most recent stable version from CRAN:
+Installation of the most recent released version from CRAN (source and binaries available):
 
 ```{r, eval=FALSE}
 install.packages("photobiologyLEDs")
 ```
 
-Installation of the current unstable version from GitHub:
+Installation of the current unstable version from R-Universe CRAN-like repository (source and binaries available):
 
 ```{r, eval=FALSE}
-# install.packages("devtools")
+install.packages('photobiologyLEDs', 
+                 repos = c('https://aphalo.r-universe.dev', 
+                           'https://cloud.r-project.org'))
+```
+
+Installation of the current unstable version from GitHub (only source available):
+
+```{r, eval=FALSE}
+# install.packages("remotes")
 remotes::install_github("aphalo/photobiologyLEDs")
 ```
 
@@ -141,4 +150,4 @@ citation("photobiologyLEDs")
 
 ## License
 
-© 2012-2023 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2012-2024 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.

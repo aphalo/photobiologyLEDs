@@ -4,6 +4,10 @@ editor_options:
     wrap: sentence
 ---
 
+# photobiologyLEDs 0.5.3
+
+-   Update documentation for better CRAN compliance.
+
 # photobiologyLEDs 0.5.2
 
 -   Rebuild all data objects with 'photobiology' (== 0.11.0).

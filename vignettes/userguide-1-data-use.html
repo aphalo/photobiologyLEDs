@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2023-10-21" />
+<meta name="date" content="2024-04-01" />
 
 <title>User Guide: 1 Data and their use</title>
 
@@ -339,9 +339,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 <h1 class="title toc-ignore">User Guide: 1 Data and their use</h1>
-<h3 class="subtitle">Package ‘photobiologyLEDs’ 0.5.1.9000</h3>
+<h3 class="subtitle">Package ‘photobiologyLEDs’ 0.5.2.9000</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
-<h4 class="date">2023-10-21</h4>
+<h4 class="date">2024-04-01</h4>
 
 
 <div id="TOC">
@@ -370,6 +370,9 @@ more details on plotting spectra, please consult the documentation for
 package ‘ggspectra’, and for information on the calculation of summaries
 and maths operations between spectra, please, consult the documentation
 for package ‘photobiology’.</p>
+<p>As packages ‘photobiologyWavebands’ and ‘ggspectra’ are only
+suggested, in this vignette they are loaded and used conditionally on
+its availability.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(photobiology)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(photobiologyLEDs)</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co"># Are the packages used in examples installed?</span></span>
@@ -533,10 +536,11 @@ listed with method <code>names()</code>.</p>
 ## [86] &quot;SeoulSemicon_S4SM_1564509736_0B500H3S_00001&quot;
 ## [87] &quot;SeoulSemicon_STW9C2SB_S&quot;                    
 ## [88] &quot;TaoYuan_LED_310nm&quot;                          
-## [89] &quot;Weili_3W.nominal.500nm&quot;                     
-## [90] &quot;Weili_3W.nominal.525nm&quot;                     
-## [91] &quot;Weili_3W.nominal.550nm&quot;                     
-## [92] &quot;Weili_3W.nominal.555nm&quot;</code></pre>
+## [89] &quot;Weili_120W.array.12ch.custom.A&quot;             
+## [90] &quot;Weili_3W.nominal.500nm&quot;                     
+## [91] &quot;Weili_3W.nominal.525nm&quot;                     
+## [92] &quot;Weili_3W.nominal.550nm&quot;                     
+## [93] &quot;Weili_3W.nominal.555nm&quot;</code></pre>
 <p>We can use a character string as index to extract an individual
 <code>source_spct</code> object.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>leds.mspct<span class="sc">$</span>Roithner_UV395</span></code></pre></div>
@@ -719,7 +723,7 @@ spectra with names containing the string “QDDH”.</p>
 ## Object: source_spct [1,267 x 2]
 ## Wavelength range 250.01-900 nm, step 0.43-7.19 nm 
 ## Label: LED, type: QDDH66002 from Quantum Devices, USA; ca. 1995 
-## Measured on 2023-10-09 11:43:37.413824 UTC 
+## Measured on 2011-07-30 UTC 
 ## Time unit 1s
 ## Spectral data normalized to s.e.irrad = 1 at 652.01 nm (max in 250.01-900 nm)
 ## 
@@ -741,7 +745,7 @@ spectra with names containing the string “QDDH”.</p>
 ## Object: source_spct [1,264 x 2]
 ## Wavelength range 250.01-900 nm, step 0.43-7.18 nm 
 ## Label: LED, type: QDDH68002 from Quantum Devices, USA; ca. 1995 
-## Measured on 2023-10-09 11:43:37.408836 UTC 
+## Measured on 2011-07-30 UTC 
 ## Time unit 1s
 ## Spectral data normalized to s.e.irrad = 1 at 673.4 nm (max in 250.01-900 nm)
 ## 
@@ -763,7 +767,7 @@ spectra with names containing the string “QDDH”.</p>
 ## Object: source_spct [1,250 x 2]
 ## Wavelength range 250.01-900 nm, step 0.43-7.17 nm 
 ## Label: LED, type: QDDH70002 from Quantum Devices, USA; ca. 1995 
-## Measured on 2023-10-09 11:43:37.425795 UTC 
+## Measured on 2011-07-30 UTC 
 ## Time unit 1s
 ## Spectral data normalized to s.e.irrad = 1 at 707.13 nm (max in 250.01-900 nm)
 ## 
@@ -785,7 +789,7 @@ spectra with names containing the string “QDDH”.</p>
 ## Object: source_spct [1,256 x 2]
 ## Wavelength range 250.01-900 nm, step 0.43-7.13 nm 
 ## Label: LED, type: QDDH73502 from Quantum Devices, USA; ca. 1995 
-## Measured on 2023-10-09 11:43:37.4228 UTC 
+## Measured on 2011-07-30 UTC 
 ## Time unit 1s
 ## Spectral data normalized to s.e.irrad = 1 at 746.42 nm (max in 250.01-900 nm)
 ## 
@@ -840,7 +844,7 @@ will be included in the header of the printout.</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">getInstrDesc</span>(leds.mspct<span class="sc">$</span>LedEngin_LZ1_10R302_740nm)</span></code></pre></div>
 <pre><code>## Data acquired with &#39;MayaPro2000&#39; s.n. MAYP11278
 ## grating &#39;HC1&#39;, slit &#39;010s&#39;
-## diffuser &#39;unknown&#39;</code></pre>
+## diffuser &#39;cosine&#39;</code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="fu">getInstrSettings</span>(leds.mspct<span class="sc">$</span>LedEngin_LZ1_10R302_740nm)</span></code></pre></div>
 <pre><code>## integ. time (s): 0.067, 0.67
 ## total time (s): 10.1, 10.1

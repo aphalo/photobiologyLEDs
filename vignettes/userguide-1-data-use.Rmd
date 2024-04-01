@@ -25,6 +25,9 @@ documentation for package 'ggspectra', and for information on the calculation
 of summaries and maths operations  between spectra, please, consult the 
 documentation for package 'photobiology'.
 
+As packages 'photobiologyWavebands' and 'ggspectra' are only suggested, in this
+vignette they are loaded and used conditionally on its availability.
+
 ```{r, message=FALSE}
 library(photobiology)
 library(photobiologyLEDs)
