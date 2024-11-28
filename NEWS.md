@@ -7,6 +7,9 @@ editor_options:
 # photobiologyLEDs 0.5.3
 
 -   Update documentation for better CRAN compliance.
+-   Move three spectra for multichannel LED arrays from `leds.mspct` to a new
+object `led_arrays.mspct`.
+-   Rebuild all data objects with 'photobiology' (== 0.11.4).
 
 # photobiologyLEDs 0.5.2
 

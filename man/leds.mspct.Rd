@@ -3,6 +3,7 @@
 \docType{data}
 \name{leds.mspct}
 \alias{leds.mspct}
+\alias{led_arrays.mspct}
 \title{Spectral irradiance for diverse LEDs}
 \format{
 A \code{"source_mspct"} object containing 74 
@@ -13,31 +14,36 @@ In each of the member spectra, the variables are as follows:
   \item w.length (nm)  
   \item s.e.irrad (W m-2 nm-1)
 }
+
+An object of class \code{source_mspct} (inherits from \code{generic_mspct}, \code{list}) with 3 rows and 1 columns.
 }
 \usage{
 leds.mspct
+
+led_arrays.mspct
 }
 \description{
 A collection of emission spectra of light-emitting-diodes
   from different suppliers.
 }
 \details{
-The \code{"leds.mspct"} object contains \code{"source_spct"} objects
-  with spectral irradiance data. As the exact distance from LED to cosine
-  diffuser and/or the the driving current vary among spectra, they have been
-  all normalized to the wavelength of maximum spectral energy irradiance.
-  When the details of the measurement conditions are know, these are stored
-  as metadata attributes. In any case, it needs to be taken into account than even
-  in these cases measurements have not been done in an optical bench, so
-  values of spectral irradiance are subject to errors due to possible
-  misalignment. The shape of the spectra, in contrast can be relied upon as
-  measurements were done with well calibrated instruments.
+The \code{leds.mspct} and \code{led_arrays.mspct} objects contain
+  \code{"source_spct"} objects with spectral irradiance data, for single
+  channel and multichannel LEDs, respectively. As the exact distance from LED
+  to cosine diffuser and/or the driving current vary among spectra, they have
+  been all normalized to the wavelength of maximum spectral energy
+  irradiance. When the details of the measurement conditions are know, these
+  are stored as metadata attributes. In any case, it needs to be taken into
+  account than even in these cases measurements have not been done in an
+  optical bench, so values of spectral irradiance are subject to errors due
+  to possible misalignment. The shape of the spectra, in contrast can be
+  relied upon as measurements were done with well calibrated instruments.
   
   The output of LEDs at a given current decreases as their temperature
   increases. The wavelength at the peak of emission can depend on the
   temperature and current, but shifts tend to be only a couple of nanometres.
   In LED arrays with heterogeneous LED chips or white LEDs based on secondary
-  emission from phosphor the shave of the spectrum can slightly change
+  emission from phosphor the shape of the spectrum can slightly change
   depending on the drive current and temperature.
   
   There is variation among LEDs of the same type, specially with respect
@@ -48,13 +54,19 @@ The \code{"leds.mspct"} object contains \code{"source_spct"} objects
   usually replaced by new types with enhanced performance. When known, the
   approximate "vintage" is provided in the metadata.
   
+  Some LEDs are "generic" ones which lacked detailed data sheets at the time
+  of purchase, or even lacked a manufacturer's type denomination code. For
+  them, the metadata is necessarily less detailed.
+  
   The spectral data are not expressed at constant wavelength intervals. Not
   only the intervals vary in the raw data from the array spectrometer, but in
   addition function \code{\link[photobiology]{thin_wl}} has been applied to
   reduce the storage space needed. In brief the wavelength interval has been
   increased as much as possible in those regions of the spectrum that lack
   detailed features (such as linear slopes and wavelength regions with zero
-  light emission).
+  light emission). The algorithm used preserved the location and height of 
+  significant energy emission peaks, i.e., the global peak and clear local 
+  peaks.
 }
 \note{
 Please see the help page for \code{\link{led_brands}} for LED 
@@ -67,17 +79,16 @@ accessed with functions
 \code{\link[photobiology]{getWhatMeasured}},
 \code{\link[photobiology]{getWhenMeasured}} and
 \code{\link[photobiology]{getHowMeasured}}.
-Some of the spectra also contain
-information on the measurement accessible with 
+Many of the spectra also contain information on the measurement procedure accessible with 
 \code{\link[photobiology]{getInstrDesc}} and
 \code{\link[photobiology]{getInstrSettings}}.
-See also the \code{\link{comment}} attribute of the \code{leds.mspct} 
-object.
 }
 \examples{
 library(photobiology)
 
 names(leds.mspct)
+
+names(led_arrays.mspct)
 
 leds.mspct$Nichia_NS6L183AT_H1_sw
 

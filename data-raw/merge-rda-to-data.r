@@ -60,9 +60,14 @@ names(leds.mspct)
 
 for (s in names(leds.mspct)) {
   leds.mspct[[s]] <- add_instr_desc(leds.mspct[[s]])
-  leds.mspct[[s]] <- setNormalised(leds.mspct[[s]], FALSE)
   if (getMultipleWl(leds.mspct[[s]]) == 1) {
+    leds.mspct[[s]] <- setNormalised(leds.mspct[[s]], FALSE)
     leds.mspct[[s]] <- normalize(leds.mspct[[s]])
+  } else {
+    temp.mspct <- subset2mspct(leds.mspct[[s]])
+    temp.mspct <- setNormalised(temp.mspct, FALSE)
+    temp.mspct <- normalise(temp.mspct)
+    leds.mspct[[s]] <- rbindspct(temp.mspct)
   }
 }
 
@@ -73,6 +78,17 @@ for (s in names(leds.mspct)) {
   how_measured.ls[[s]] <- getHowMeasured(leds.mspct[[s]])
 }
 
+# Distinguish by number of channels
+multi_channel_leds <- grep("RGB|LZ7|array.12ch", names(leds.mspct), value = TRUE)
+single_channel_leds <- grep("RGB|LZ7|array.12ch", names(leds.mspct), value = TRUE, invert = TRUE)
+
+# To make use easier, we separate multichannel and single channel LEDs
+multiple_wl <- sapply(leds.mspct, function(x) {getMultipleWl(x) > 1})
+
+led_arrays.mspct <- leds.mspct[multiple_wl]
+leds.mspct <- leds.mspct[-which(multiple_wl)]
+
+# All should be normalised
 normalized.ls <- list()
 for (s in names(leds.mspct)) {
   normalized.ls[[s]] <- getNormalised(leds.mspct[[s]])
@@ -109,12 +125,6 @@ for (s in names(leds.mspct)) {
 
 leds.mspct <- leds.mspct[order(names(leds.mspct))]
 # leds.mspct <- normalize(leds.mspct, norm = "max", unit.out = "energy")
-
-# Distinguish by number of channels
-multi_channel_leds <- grep("RGB|LZ7|array.12ch", names(leds.mspct), value = TRUE)
-single_channel_leds <- grep("RGB|LZ7|array.12ch", names(leds.mspct), value = TRUE, invert = TRUE)
-
-multiple_wl <- sapply(leds.mspct, function(x) {getMultipleWl(x) > 1})
 
 # Assemble vectors of names based on peak wavelengths
 
@@ -169,8 +179,9 @@ oo_maya_leds <- names(leds.mspct)[grep("Maya", how_measured(leds.mspct)[["how.me
 
 length(leds.mspct)
 
-objects_to_save <- c("leds.mspct", "led_brands", "led_colors", "led_uses",
-                     ls(pattern = "_leds$"))
+objects_to_save <-
+  c("leds.mspct", "led_arrays.mspct", "led_brands", "led_colors", "led_uses",
+    ls(pattern = "_leds$"))
 
 save(list = objects_to_save,
      file = "data/leds-mspct.rda")

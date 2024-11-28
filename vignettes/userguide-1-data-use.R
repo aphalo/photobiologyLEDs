@@ -26,6 +26,9 @@ names(COB_dimming.mspct)
 names(leds.mspct)
 
 ## -----------------------------------------------------------------------------
+names(led_arrays.mspct)
+
+## -----------------------------------------------------------------------------
 leds.mspct$Roithner_UV395
 
 ## -----------------------------------------------------------------------------
@@ -96,7 +99,14 @@ e_irrad(my.UV395)
 q_ratio(leds.mspct$Roithner_UV395, UVB(), UVA())
 
 ## ----eval=eval_plots----------------------------------------------------------
-autoplot(leds.mspct$LedEngin_LZ1_10R302_740nm, annotations = c("+", "wls"), )
+autoplot(leds.mspct$LedEngin_LZ1_10R302_740nm, annotations = c("+", "wls"))
+
+## ----eval=eval_plots----------------------------------------------------------
+autoplot(leds.mspct[Osram_leds]) + 
+  theme(legend.position = "bottom")
+
+## ----eval=eval_plots, fig.asp=1-----------------------------------------------
+autoplot(leds.mspct[Osram_leds], facets = 1) # 1 column
 
 ## ----eval=eval_plots----------------------------------------------------------
 ggplot(leds.mspct$LedEngin_LZ1_10R302_740nm) +

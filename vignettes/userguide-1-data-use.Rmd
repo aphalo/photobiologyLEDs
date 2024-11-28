@@ -61,7 +61,7 @@ driven at different currents.
 
 Individual or subsets of spectra can be retrieved by _name_. The package
 includes also several `character` vectors of _names_, each one containing names
-for LEDs of a given _color_, from a given _manufacturer_ or intended mainly for
+for LEDs of a given _colour_, from a given _manufacturer_ or intended mainly for
 a specific use. These are listed in the help index for the package. The _names_
 used are in most cases the codes used by the manufacturers for the given type.
 Any dashes in these codes have been replaced by underscores.
@@ -87,12 +87,17 @@ listed with method `names()`.
 ```{r}
 names(COB_reflectors.mspct)
 ```
+
 ```{r}
 names(COB_dimming.mspct)
 ```
 
 ```{r}
 names(leds.mspct)
+```
+
+```{r}
+names(led_arrays.mspct)
 ```
 
 We can use a character string as index to extract an individual `source_spct`
@@ -174,13 +179,18 @@ is_normalized(leds.mspct$Roithner_UVMAX305)
 
 ## Calculating summaries from the normalized data
 
-Many of the spectra are normalized, and consequently, several summaries expressed in
-absolute units are undefined, and trigger errors. Summaries like ratios which
-are not affected by normalization are allowed and valid. The data have been
-normalized when the measuring conditions used are not well known, and in many
-cases not well characterized (e.g. distance from LED to cosine diffuser or exact 
-alignment of the spectrometer input optics with respect to light source was
-not recorded or attempted at the time of measurement).
+The spectra in `leds.mspct` and `led_arrays.mspct` are normalized, and
+consequently, several summaries that are normally expressed in absolute units
+are undefined, and trigger errors. Summaries like waveband ratios and
+photon:energy ratios which are not affected by normalization are allowed and
+valid. The data have been normalized when the measuring conditions used are not
+well known, and in many cases not well characterized (e.g. distance from LED to
+cosine diffuser or exact alignment of the spectrometer input optics with respect
+to light source was not recorded or attempted at the time of measurement).
+
+_It is important to keep in mind that normalization based on peak energy emission and based on peak photon emission in most cases differ._ In some situations the normalization will be
+automatically updated when data are converted between these to bases of 
+expression. One example are `autoplot()` methods from package 'ggspectra'.
 
 What we will do in this section is to rescale the spectral data so that after 
 conversion a given target value for a summary quantity will be true. As an 
@@ -224,7 +234,7 @@ e_irrad(my.spct, waveband(c(315,400)))
 
 If for some obscure reason we want to simply "pretend" that the spectral data
 have not been normalized, we can permanently override the attribute on a copy 
-of the data. Most of the time this is a very bad idea!
+of the data. Most of the time this is a bad idea!
 
 ```{r}
 my.UV395 <- leds.mspct$Roithner_UV395
@@ -243,18 +253,31 @@ q_ratio(leds.mspct$Roithner_UV395, UVB(), UVA())
 
 Spectra can be plotted in the same ways as other data stored in
 data frames, using base R graphics, package 'lattice' or 'ggplot2'. However, another
-package in our suite, 'ggspectra', built as an extension to 'ggplot2' makes 
+package in this suite, 'ggspectra', built as an extension to 'ggplot2' makes 
 plotting spectra even easier.
 
 `autoplot()` methods use the metadata in the objects to set labels and decorations,
 as well as automatically setting the mapping of the _x_ and _y_ aesthetics.
 
 ```{r, eval=eval_plots}
-autoplot(leds.mspct$LedEngin_LZ1_10R302_740nm, annotations = c("+", "wls"), )
+autoplot(leds.mspct$LedEngin_LZ1_10R302_740nm, annotations = c("+", "wls"))
+```
+
+Multiple LEDs can be plotted together.
+
+```{r, eval=eval_plots}
+autoplot(leds.mspct[Osram_leds]) + 
+  theme(legend.position = "bottom")
+```
+
+They can alternatively be plotted in separate panels.
+
+```{r, eval=eval_plots, fig.asp=1}
+autoplot(leds.mspct[Osram_leds], facets = 1) # 1 column
 ```
 
 Package 'ggspectra' also defines specializations of method `ggplot()` for 
-spectra.
+spectra, that by default set the aesthetic mapping automatically.
 
 ```{r, eval=eval_plots}
 ggplot(leds.mspct$LedEngin_LZ1_10R302_740nm) +
