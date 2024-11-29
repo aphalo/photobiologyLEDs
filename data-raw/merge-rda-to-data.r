@@ -58,17 +58,20 @@ rm(list = c(collections2bind, "mspct"))
 
 names(leds.mspct)
 
+# To make use easier, we separate multichannel and single channel LEDs
+multiple_wl <- sapply(leds.mspct, function(x) {getMultipleWl(x) > 1})
+
+led_arrays.mspct <- leds.mspct[multiple_wl]
+
+# we do not normalise multichannel LED spectra
+
+leds.mspct <- leds.mspct[-which(multiple_wl)]
+
+# we normalise spectra for single channel LED spectra
 for (s in names(leds.mspct)) {
   leds.mspct[[s]] <- add_instr_desc(leds.mspct[[s]])
-  if (getMultipleWl(leds.mspct[[s]]) == 1) {
-    leds.mspct[[s]] <- setNormalised(leds.mspct[[s]], FALSE)
-    leds.mspct[[s]] <- normalize(leds.mspct[[s]])
-  } else {
-    temp.mspct <- subset2mspct(leds.mspct[[s]])
-    temp.mspct <- setNormalised(temp.mspct, FALSE)
-    temp.mspct <- normalise(temp.mspct)
-    leds.mspct[[s]] <- rbindspct(temp.mspct)
-  }
+  leds.mspct[[s]] <- setNormalised(leds.mspct[[s]], FALSE)
+  leds.mspct[[s]] <- normalize(leds.mspct[[s]])
 }
 
 # metadata
@@ -81,12 +84,6 @@ for (s in names(leds.mspct)) {
 # Distinguish by number of channels
 multi_channel_leds <- grep("RGB|LZ7|array.12ch", names(leds.mspct), value = TRUE)
 single_channel_leds <- grep("RGB|LZ7|array.12ch", names(leds.mspct), value = TRUE, invert = TRUE)
-
-# To make use easier, we separate multichannel and single channel LEDs
-multiple_wl <- sapply(leds.mspct, function(x) {getMultipleWl(x) > 1})
-
-led_arrays.mspct <- leds.mspct[multiple_wl]
-leds.mspct <- leds.mspct[-which(multiple_wl)]
 
 # All should be normalised
 normalized.ls <- list()

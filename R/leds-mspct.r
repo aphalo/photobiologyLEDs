@@ -6,9 +6,13 @@
 #' @details The \code{leds.mspct} and \code{led_arrays.mspct} objects contain
 #'   \code{"source_spct"} objects with spectral irradiance data, for single
 #'   channel and multichannel LEDs, respectively. As the exact distance from LED
-#'   to cosine diffuser and/or the driving current vary among spectra, they have
-#'   been all normalized to the wavelength of maximum spectral energy
-#'   irradiance. When the details of the measurement conditions are know, these
+#'   to cosine diffuser and/or the driving current vary among spectra for
+#'   different LEDs, members of \code{leds.mspct} have been all normalized to
+#'   the wavelength of maximum spectral energy irradiance. In contrast, spectra
+#'   in \code{led_arrays.mspct} have not been normalised as comparisons among
+#'   channels of each array are meaningful, even if approximate.
+#'   
+#'   When the details of the measurement conditions are know, these
 #'   are stored as metadata attributes. In any case, it needs to be taken into
 #'   account than even in these cases measurements have not been done in an
 #'   optical bench, so values of spectral irradiance are subject to errors due

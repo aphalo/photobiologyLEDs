@@ -13,7 +13,12 @@ for (f in files) {
   load(f)
 }
 
+rm(list = ls(pattern = "raw_mspct$"))
 spectra <- ls(pattern = "\\.spct")
+
+# must be very old!
+Q36_4000K.spct$s.e.irrad.good <- NULL
+attr(Q36_4000K.spct, ".internal.selfref") <- NULL
 
 type2name.map <- c(
   NVSU233B_U365 = "lumitronix.power.bar.365nm.spct",

@@ -54,10 +54,10 @@ for (s in names(Weili_120W_12ch_A.mspct)) {
 
 # comment(LedEngin_LZ7_N4M100.mspct) <- comment.text
 autoplot(Weili_120W_12ch_A.mspct)
-Weili_120W_12ch_A.mspct <- normalise(Weili_120W_12ch_A.mspct)
-Weili_120W_12ch_A.mspct <- setNormalised(Weili_120W_12ch_A.mspct)
+# Weili_120W_12ch_A.mspct <- normalise(Weili_120W_12ch_A.mspct)
+# Weili_120W_12ch_A.mspct <- setNormalised(Weili_120W_12ch_A.mspct)
 
-autoplot(Weili_120W_12ch_A.mspct)
+# autoplot(Weili_120W_12ch_A.mspct)
 
 Weili_120W_12ch_A.spct <- rbindspct(Weili_120W_12ch_A.mspct, idfactor = "channel")
 how_measured(Weili_120W_12ch_A.spct) <- how.measured

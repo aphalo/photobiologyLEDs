@@ -48,17 +48,16 @@ for (s in spct.names) {
 
 autoplot(weili.mspct)
 weili.mspct <- normalise(weili.mspct)
-weili.mspct <- setNormalised(weili.mspct)
 
 autoplot(weili.mspct)
 
-weili.mspct[["Weili_120W.array.12ch.custom.A"]] <- 
+weili_array.mspct <- source_mspct()
+weili_array.mspct[["Weili_120W.array.12ch.custom.A"]] <- 
   readRDS("data-raw/maya-rda/Weili/12-channels-arrays/weili_12ch_A.rds")
 
-autoplot(weili.mspct)
+autoplot(weili_array.mspct)
 
-weili.mspct
+Weili_leds <- c(names(weili.mspct), names(weili_array.mspct))
 
-Weili_leds <- names(weili.mspct)
 
-save(Weili_leds, weili.mspct, file = "data-raw/rda2merge/weili-mspct.rda")
+save(Weili_leds, weili.mspct, weili_array.mspct, file = "data-raw/rda2merge/weili-mspct.rda")
