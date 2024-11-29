@@ -16,7 +16,7 @@ License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
     R (>= 4.0.0),
-    photobiology (>= 0.11.2)
+    photobiology (> 0.11.3)
 Suggests:
     photobiologyWavebands (>= 0.5.2),
     photobiologyLamps (>= 0.5.2),

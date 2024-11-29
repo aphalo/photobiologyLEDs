@@ -11,6 +11,8 @@ checks](https://badges.cranchecks.info/worst/photobiologyLEDs.svg)](https://cran
 vwersion](https://aphalo.r-universe.dev/badges/photobiologyLEDs)](https://aphalo.r-universe.dev/photobiologyLEDs)
 [![R build
 status](https://github.com/aphalo/photobiologyLEDs/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLEDs/actions)
+[![Documentation](https://img.shields.io/badge/documentation-photobiologyLEDs-informational.svg)](https://docs.r4photobiology.info/photobiologyLEDs/)
+[![doi](https://img.shields.io/badge/doi-10.32614/CRAN.package.photobiologyLEDs-blue.svg)](https://doi.org/10.32614/CRAN.package.photobiologyLEDs)
 <!-- badges: end -->
 
 Package ‘**photobiologyLEDs**’ complements other packages in the [*R for
@@ -49,7 +51,7 @@ How many spectra are included in the current version of
 
 ``` r
 length(leds.mspct)
-#> [1] 93
+#> [1] 90
 ```
 
 ``` r
@@ -76,225 +78,99 @@ head(names(leds.mspct), 10)
 ```
 
 To subset based on different criteria we can use predefined character
-vectors of LED names. For example, vector `nichia_leds` lists the names
-of the spectra for LEDs made by NIchia.
+vectors of LED names. For example, vector `Osram_leds` lists the names
+of the spectra for LEDs made by Osram.
 
 ``` r
-Nichia_leds
-#> [1] "Nichia_NVSU233B_U365"            "Nichia_NVSU119C_U385"           
-#> [3] "Nichia_NFSW757G_Rsp0a"           "Nichia_NFSL757GT_Rsp0a"         
-#> [5] "Nichia_NFCWL036B_V3_Rfcb0"       "Nichia_NF2W757GT_F1_sm505_Rfc00"
-#> [7] "Nichia_unknown_757"              "Nichia_NS6L183AT_H1_sw"         
-#> [9] "Nichia_NFSW757G_V3_Rs060"
+Osram_leds
+#> [1] "Osram_GF_CSHPM2.24_2T4T_1" "Osram_LY5436"             
+#> [3] "Osram_GW_CSSRM3.HW"
 ```
 
 We can use the vector to extract all these spectra as a collection.
 
 ``` r
-leds.mspct[Nichia_leds]
-#> Object: source_mspct [9 x 1]
-#> --- Member: Nichia_NVSU233B_U365 ---
-#> Object: source_spct [1,313 x 2]
-#> Wavelength range 251.29-900 nm, step 1.023182e-12-7.53 nm 
-#> Label: LED type NVSU233B_U365 from Nichia 
-#> Measured on 2021-10-09 22:35:17.181825 UTC 
-#> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 366.03 nm (max in 251.29-900 nm)
-#> 
-#> # A tibble: 1,313 × 2
-#>    w.length s.e.irrad
-#>       <dbl>     <dbl>
-#>  1     251.         0
-#>  2     256.         0
-#>  3     257.         0
-#>  4     257.         0
-#>  5     257.         0
-#>  6     258.         0
-#>  7     258.         0
-#>  8     259.         0
-#>  9     259.         0
-#> 10     260.         0
-#> # ℹ 1,303 more rows
-#> --- Member: Nichia_NVSU119C_U385 ---
-#> Object: source_spct [1,269 x 2]
-#> Wavelength range 251.29-900 nm, step 1.023182e-12-7.52 nm 
-#> Label: LED type NVSU119C_U385 from Nichia 
-#> Measured on 2021-10-09 22:29:03.495034 UTC 
-#> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 385.25 nm (max in 251.29-900 nm)
-#> 
-#> # A tibble: 1,269 × 2
+leds.mspct[Osram_leds]
+#> Object: source_mspct [3 x 1]
+#> --- Member: Osram_GF_CSHPM2.24_2T4T_1 ---
+#> Object: source_spct [764 x 2]
+#> Wavelength range 251.29-900.1 nm, step 1.023182e-12-7.58 nm 
+#> Label: LED type GF_CSHPM2.24_2T4T_1 from Osram 
+#> Measured on 2021-10-09 22:19:15.2049 UTC 
+#> Spectral data normalized to s.e.irrad = 1 at 728.76 nm (max in 251.29-900.1 nm)
+#> Variables:
+#>  w.length: Wavelength [nm]
+#>  s.e.irrad: Spectral energy irradiance [normalized] 
+#> --
+#> # A tibble: 764 × 2
 #>    w.length s.e.irrad
 #>       <dbl>     <dbl>
 #>  1     251.         0
 #>  2     254.         0
-#>  3     254.         0
-#>  4     256.         0
-#>  5     257.         0
-#>  6     257.         0
-#>  7     257.         0
-#>  8     258.         0
-#>  9     258.         0
-#> 10     259.         0
-#> # ℹ 1,259 more rows
-#> --- Member: Nichia_NFSW757G_Rsp0a ---
-#> Object: source_spct [568 x 2]
-#> Wavelength range 251.16-900 nm, step 1.023182e-12-7.59 nm 
-#> Label: LED type NFSW757G_Rsp0a from Nichia 
-#> Measured on 2019-06-25 14:03:10.946064 UTC 
-#> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 451.3 nm (max in 251.16-900 nm)
-#> 
-#> # A tibble: 568 × 2
+#>  3     256.         0
+#>  4     259.         0
+#>  5     260.         0
+#>  6     260.         0
+#>  7     262.         0
+#>  8     262.         0
+#>  9     263.         0
+#> 10     264.         0
+#> # ℹ 754 more rows
+#> --- Member: Osram_LY5436 ---
+#> Object: source_spct [1,329 x 2]
+#> Wavelength range 250.01-900.1 nm, step 1.023182e-12-9.5 nm 
+#> Label: LED type LY5436 from Osram 
+#> Measured on 2011-07-30 UTC 
+#> Spectral data normalized to s.e.irrad = 1 at 594.22 nm (max in 250.01-900.1 nm)
+#> Variables:
+#>  w.length: Wavelength [nm]
+#>  s.e.irrad: Spectral energy irradiance [normalized] 
+#> --
+#> # A tibble: 1,329 × 2
 #>    w.length s.e.irrad
 #>       <dbl>     <dbl>
-#>  1     251.         0
+#>  1     250.         0
 #>  2     259.         0
-#>  3     260.         0
-#>  4     261.         0
-#>  5     261.         0
-#>  6     263.         0
-#>  7     263.         0
-#>  8     263.         0
-#>  9     264.         0
-#> 10     266.         0
-#> # ℹ 558 more rows
-#> --- Member: Nichia_NFSL757GT_Rsp0a ---
-#> Object: source_spct [645 x 2]
-#> Wavelength range 251.16-900 nm, step 1.023182e-12-7.59 nm 
-#> Label: LED type NFSL757GT_Rsp0a from Nichia 
-#> Measured on 2019-06-25 14:07:51.674266 UTC 
-#> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 622.27 nm (max in 251.16-900 nm)
-#> 
-#> # A tibble: 645 × 2
+#>  3     259.         0
+#>  4     260.         0
+#>  5     260.         0
+#>  6     261.         0
+#>  7     261.         0
+#>  8     262.         0
+#>  9     262.         0
+#> 10     263.         0
+#> # ℹ 1,319 more rows
+#> --- Member: Osram_GW_CSSRM3.HW ---
+#> Object: source_spct [625 x 2]
+#> Wavelength range 251.29-900.1 nm, step 1.023182e-12-7.57 nm 
+#> Label: LED type GW_CSSRM3.HW from Osram 
+#> Measured on 2022-01-06 17:48:51.853322 UTC 
+#> Spectral data normalized to s.e.irrad = 1 at 436.59 nm (max in 251.29-900.1 nm)
+#> Variables:
+#>  w.length: Wavelength [nm]
+#>  s.e.irrad: Spectral energy irradiance [normalized] 
+#> --
+#> # A tibble: 625 × 2
 #>    w.length s.e.irrad
 #>       <dbl>     <dbl>
 #>  1     251.         0
-#>  2     252.         0
-#>  3     252.         0
-#>  4     253.         0
-#>  5     253.         0
-#>  6     255.         0
-#>  7     258.         0
-#>  8     258.         0
-#>  9     259.         0
-#> 10     266.         0
-#> # ℹ 635 more rows
-#> --- Member: Nichia_NFCWL036B_V3_Rfcb0 ---
-#> Object: source_spct [796 x 2]
-#> Wavelength range 251.29-900 nm, step 1.023182e-12-7.55 nm 
-#> Label: LED type NFCWL036B_V3_Rfcb0 from Nichia 
-#> Measured on 2021-10-09 20:43:51.476858 UTC 
-#> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 458.44 nm (max in 251.29-900 nm)
-#> 
-#> # A tibble: 796 × 2
-#>    w.length s.e.irrad
-#>       <dbl>     <dbl>
-#>  1     251.         0
-#>  2     254.         0
+#>  2     253.         0
 #>  3     254.         0
-#>  4     256.         0
-#>  5     257.         0
-#>  6     259.         0
-#>  7     259.         0
-#>  8     260.         0
-#>  9     260.         0
-#> 10     261.         0
-#> # ℹ 786 more rows
-#> --- Member: Nichia_NF2W757GT_F1_sm505_Rfc00 ---
-#> Object: source_spct [729 x 2]
-#> Wavelength range 251.16-900 nm, step 1.023182e-12-7.59 nm 
-#> Label: LED type NF2W757GT_F1_sm505_Rfc00 from Nichia 
-#> Measured on 2019-06-25 14:22:46.214559 UTC 
-#> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 419.18 nm (max in 251.16-900 nm)
-#> 
-#> # A tibble: 729 × 2
-#>    w.length s.e.irrad
-#>       <dbl>     <dbl>
-#>  1     251.         0
-#>  2     252.         0
-#>  3     253.         0
 #>  4     254.         0
-#>  5     254          0
-#>  6     259.         0
-#>  7     266.         0
-#>  8     271.         0
-#>  9     272.         0
-#> 10     274.         0
-#> # ℹ 719 more rows
-#> --- Member: Nichia_unknown_757 ---
-#> Object: source_spct [526 x 3]
-#> Wavelength range 250.14-900 nm, step 1.023182e-12-7.59 nm 
-#> Label: LED type unknown_757 from Nichia 
-#> Measured on 2016-09-14 16:19:00 UTC 
-#> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 454.48 nm (max in 250.14-900 nm)
-#> 
-#> # A tibble: 526 × 3
-#>    w.length s.e.irrad s.e.irrad.good
-#>       <dbl>     <dbl>          <dbl>
-#>  1     250.         0              0
-#>  2     251.         0              0
-#>  3     252.         0              0
-#>  4     258.         0              0
-#>  5     265.         0              0
-#>  6     273.         0              0
-#>  7     281.         0              0
-#>  8     288.         0              0
-#>  9     296.         0              0
-#> 10     303.         0              0
-#> # ℹ 516 more rows
-#> --- Member: Nichia_NS6L183AT_H1_sw ---
-#> Object: source_spct [904 x 2]
-#> Wavelength range 251.29-900 nm, step 1.023182e-12-7.48 nm 
-#> Label: LED type NS6L183AT_H1_sw from Nichia 
-#> Measured on 2021-10-09 20:15:17.948579 UTC 
-#> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 620.12 nm (max in 251.29-900 nm)
-#> 
-#> # A tibble: 904 × 2
-#>    w.length s.e.irrad
-#>       <dbl>     <dbl>
-#>  1     251.         0
-#>  2     256.         0
-#>  3     257.         0
-#>  4     257.         0
-#>  5     257.         0
-#>  6     258.         0
-#>  7     258.         0
+#>  5     255.         0
+#>  6     256.         0
+#>  7     256.         0
 #>  8     259.         0
-#>  9     259.         0
-#> 10     260.         0
-#> # ℹ 894 more rows
-#> --- Member: Nichia_NFSW757G_V3_Rs060 ---
-#> Object: source_spct [187 x 2]
-#> Wavelength range 350-799.30696 nm, step 1-16 nm 
-#> Time unit 1s
-#> Spectral data normalized to s.e.irrad = 1 at 450 nm (max in 350-799.31 nm)
-#> 
-#> # A tibble: 187 × 2
-#>    w.length s.e.irrad
-#>       <dbl>     <dbl>
-#>  1      350  0       
-#>  2      366  0.000254
-#>  3      369  0       
-#>  4      370  0       
-#>  5      371  0       
-#>  6      372  0       
-#>  7      373  0       
-#>  8      374  0       
-#>  9      375  0       
-#> 10      376  0       
-#> # ℹ 177 more rows
+#>  9     266          0
+#> 10     266.         0
+#> # ℹ 615 more rows
 #> 
 #> --- END ---
 ```
 
-The package includes a character vector with the names of LED brands and
-LED colors as used for indexing vectors.
+The package includes character vectors with the names of LEDs grouped by
+brand, colors, and uses. These names can be used as indexing vectors to
+extract one or more spectra from the `leds.mspct` collection.
 
 ``` r
 led_colors
@@ -315,7 +191,7 @@ led_uses
 #> [1] "plant_grow" "high_CRI"
 ```
 
-Vectors like `Nichia_leds` shown above are available for all the brands
+Vectors like `Osram_leds` shown above are available for all the brands
 listed in `led_brands`, all the colors in `led_colors`, and all the uses
 in `led_uses`.
 

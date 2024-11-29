@@ -6,6 +6,8 @@ editor_options:
 
 # photobiologyLEDs 0.5.3
 
+-   Fix bugs in the handling of attributes in `rbindspct()` and `subset2mspct()`
+that triggered warnings or errors in some borderline situations.
 -   Update documentation for better CRAN compliance.
 -   Move three spectra for multichannel LED arrays from `leds.mspct` to a new
 object `led_arrays.mspct`.
