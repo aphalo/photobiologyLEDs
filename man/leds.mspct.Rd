@@ -15,7 +15,7 @@ In each of the member spectra, the variables are as follows:
   \item s.e.irrad (W m-2 nm-1)
 }
 
-An object of class \code{source_mspct} (inherits from \code{generic_mspct}, \code{list}) with 3 rows and 1 columns.
+An object of class \code{source_mspct} (inherits from \code{generic_mspct}, \code{list}) with 4 rows and 1 columns.
 }
 \usage{
 leds.mspct

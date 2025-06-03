@@ -68,7 +68,7 @@ for (s in type2name.map) {
   what.measured <- paste("LED type", name2type.map[s], "from Seoul Semiconductor")
   temp.spct <- get(s)
   temp.spct <- setNormalised(temp.spct)
-  temp.spct <- normalize(temp.spct, norm = "max", unit.out = "energy")
+  temp.spct <- normalize(temp.spct, norm = "max")
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- thin_wl(temp.spct)
   setHowMeasured(temp.spct, how.measured[name2type.map[s]])
