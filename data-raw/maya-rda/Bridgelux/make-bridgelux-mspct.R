@@ -36,7 +36,7 @@ for (s in spectra) {
   temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 6, span = 15, max.slope.delta = 0.0005)
   setHowMeasured(temp.spct, unname(how.measured[new.names[s]]))
   setWhatMeasured(temp.spct, unname(what.measured[new.names[s]]))
   comment(temp.spct) <- unname(comment.text[new.names[s]])

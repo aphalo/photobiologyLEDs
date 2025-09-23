@@ -2,7 +2,7 @@ Package: photobiologyLEDs
 Type: Package
 Title: Spectral Data for Light-Emitting-Diodes
 Version: 0.5.2.9001
-Date: 2025-06-03
+Date: 2025-09-23
 Authors@R:
    c(
     person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre"), comment = c(ORCID = "https://orcid.org/0000-0003-3385-972X")),
@@ -30,4 +30,4 @@ Encoding: UTF-8
 URL: https://docs.r4photobiology.info/photobiologyLEDs/, 
      https://github.com/aphalo/photobiologyLEDs
 BugReports: https://github.com/aphalo/photobiologyLEDs/issues
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3

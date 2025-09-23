@@ -97,7 +97,7 @@ leds.mspct[Osram_leds]
 #> Wavelength range 251.29-900.1 nm, step 1.023182e-12-7.58 nm 
 #> Label: LED type GF_CSHPM2.24_2T4T_1 from Osram 
 #> Measured on 2021-10-09 22:19:15.2049 UTC 
-#> Spectral data normalized to s.e.irrad = 1 at 728.76 nm (max in 251.29-900.1 nm)
+#> Spectral data in s.e.irrad normalized to 1 at 728.76 nm (max in 251.29-900.1 nm)
 #> Variables:
 #>  w.length: Wavelength [nm]
 #>  s.e.irrad: Spectral energy irradiance [normalized] 
@@ -121,7 +121,7 @@ leds.mspct[Osram_leds]
 #> Wavelength range 250.01-900.1 nm, step 1.023182e-12-9.5 nm 
 #> Label: LED type LY5436 from Osram 
 #> Measured on 2011-07-30 UTC 
-#> Spectral data normalized to s.e.irrad = 1 at 594.22 nm (max in 250.01-900.1 nm)
+#> Spectral data in s.e.irrad normalized to 1 at 594.22 nm (max in 250.01-900.1 nm)
 #> Variables:
 #>  w.length: Wavelength [nm]
 #>  s.e.irrad: Spectral energy irradiance [normalized] 
@@ -145,7 +145,7 @@ leds.mspct[Osram_leds]
 #> Wavelength range 251.29-900.1 nm, step 1.023182e-12-7.57 nm 
 #> Label: LED type GW_CSSRM3.HW from Osram 
 #> Measured on 2022-01-06 17:48:51.853322 UTC 
-#> Spectral data normalized to s.e.irrad = 1 at 436.59 nm (max in 251.29-900.1 nm)
+#> Spectral data in s.e.irrad normalized to 1 at 436.59 nm (max in 251.29-900.1 nm)
 #> Variables:
 #>  w.length: Wavelength [nm]
 #>  s.e.irrad: Spectral energy irradiance [normalized] 

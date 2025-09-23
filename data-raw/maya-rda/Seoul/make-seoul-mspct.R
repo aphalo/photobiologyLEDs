@@ -70,7 +70,7 @@ for (s in type2name.map) {
   temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct, norm = "max")
   temp.spct <- smooth_spct(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 6, span = 15, max.slope.delta = 0.0005)
   setHowMeasured(temp.spct, how.measured[name2type.map[s]])
   setWhatMeasured(temp.spct, what.measured)
   comment(temp.spct) <- comment.text

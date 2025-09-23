@@ -18,6 +18,7 @@ names(taoyuan.mspct) <- "TaoYuan_LED_310nm"
 attr(taoyuan.mspct[["TaoYuan_LED_310nm"]], "normalized") <- NULL
 
 TaoYuan_LED_310nm.spct <- normalise(taoyuan.mspct[["TaoYuan_LED_310nm"]], norm = "max")
+TaoYuan_LED_310nm.spct <- thin_wl(TaoYuan_LED_310nm.spct, max.wl.step = 6, span = 15, max.slope.delta = 0.0005)
 
 TaoYuan_leds <- "TaoYuan_LED_310nm"
 

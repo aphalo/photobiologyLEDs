@@ -10,7 +10,7 @@ editor_options:
 -   Move three spectra for multichannel LED arrays from `leds.mspct` to a new
 object `led_arrays.mspct`.
 -   Add data for a 12-channel array.
--   Rebuild all data objects with 'photobiology' (== 0.12.1).
+-   Rebuild all data objects with 'photobiology' (== 0.14.0).
 
 # photobiologyLEDs 0.5.2
 

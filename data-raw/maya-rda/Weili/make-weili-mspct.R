@@ -33,7 +33,7 @@ for (s in spct.names) {
   what.measured <- "LED type unknown, rated at 3W, \"bat wing\" package"
   temp.spct <- get(s)
   temp.spct <- smooth_spct(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 6, span = 15, max.slope.delta = 0.0005)
   temp.spct <- trim_wl(temp.spct, range = c(300, 900), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)
@@ -57,6 +57,7 @@ weili_array.mspct[["Weili_120W.array.12ch.custom.A"]] <-
 weili_array.mspct[["Weili_120W.array.12ch.custom.B"]] <- 
   readRDS("data-raw/maya-rda/Weili/12-channels-arrays/weili_12ch_B.rds")
 
+setWhereMeasured(weili_array.mspct, na_geocode())
 autoplot(weili_array.mspct[[1]])
 autoplot(weili_array.mspct[[2]])
 

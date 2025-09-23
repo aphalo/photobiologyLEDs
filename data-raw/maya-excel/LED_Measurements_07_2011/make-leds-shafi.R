@@ -65,7 +65,7 @@ for (i in seq_along(files)) {
     "Measured by Shafiuddin Ahmed\nat SenPEP, OEB, FBES, Univ. of Helsinki"
   temp.spct <- clean(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 5, span = 15, max.slope.delta = 0.0005)
   shafi.mspct[[new.name]] <- clean(temp.spct)
 }
 
