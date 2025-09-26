@@ -287,7 +287,7 @@ Agilent_leds
 
 \url{http://www.seoulsemicon.com/en/}
 
-\url{https://www.bridgelux.com/}
+\url{https://www.bridgelux.com/bridgleux}
 
 \url{https://www.nichia.co.jp/en/product/led.html}
 
