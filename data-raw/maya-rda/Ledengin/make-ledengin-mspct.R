@@ -13,7 +13,8 @@ for (f in files) {
   load(f)
 }
 
-spectra <- ls(pattern = "[Ll]ed[Ee]ngin[.]")
+rm(list = ls(pattern = ".*\\.raw_mspct$"))
+spectra <- ls(pattern = "[Ll]ed_|LZ1_")
 spectra <- grep("[.]spct", spectra, value = TRUE)
 
 names <- gsub("[.]spct|\\.350mA.50mm\\.spct", "", spectra)

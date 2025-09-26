@@ -1,0 +1,10 @@
+# missing spectra for 'photobiologyLEDs' with wavelength to 1050nm
+# 2025-09-26
+
+# LedEngin
+
+LZ1_10R102 = 623 nm
+LZ1_10B202 = 457 nm # dominant
+LZ1_10DB00 = 460 nm # dental blue
+
+# 
