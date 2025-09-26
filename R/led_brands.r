@@ -135,7 +135,7 @@
 #' Bridgelux, Inc. (U.S.A.) is a supplier of LEDs partnering with Epistar and
 #' Kaistar for the manufacture of their LEDs.
 #'
-#' @references \url{https://www.bridgelux.com/}
+#' @references \url{https://www.bridgelux.com/bridgleux}
 #'   
 "Bridgelux_leds"
 
