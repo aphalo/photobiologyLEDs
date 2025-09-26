@@ -16,7 +16,7 @@
 #'   
 #' @note Ocean Optics is now named Ocean Insight.
 #' 
-#' @references \url{https://www.oceaninsight.com/}
+#' @references \url{https://www.oceanoptics.com/}
 #'
 #' @docType data
 #' @keywords datasets internal
