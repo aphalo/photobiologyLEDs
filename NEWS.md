@@ -6,11 +6,23 @@ editor_options:
 
 # photobiologyLEDs 0.5.3
 
+This update tracks changes up to 'photobiology' 0.14.0, the main changes
+being in the metadata stored in R attributes and the decreased agressiveness of
+the wavelength thinning applied to reduce the size of objects. In addition, as
+the most recent calibration of our spectroradiometer extends farther into the
+NIR than earlier calibrations, many spectra for many LEDs have been measured
+anew, to take avantage of it. Thus, although naming conventions remain the same
+the data for many LEDs are not exactly the same as in earlier versions.
+
 -   Update documentation for better CRAN compliance.
 -   Move spectra for multichannel LED arrays from `leds.mspct` to a new
 object `led_arrays.mspct`.
 -   Add data for a second custom-assembled 120W, 12-channel LED array.
--   Rebuild all data objects with 'photobiology' (== 0.14.0), using less
+-   Add data for several "3W" 3535 LEDs.
+-   Replace data for many LEDs with freshly measured data extending farther
+into the infrared region: from 250 nm to 1050 nm, instead of from 250 nm to 900
+nm. (comming soon)
+-   Build all data objects with 'photobiology' (== 0.14.0), using less
 aggressive wavelength thinning: size of objects has increased and spectral
 features are better preserved.
 
