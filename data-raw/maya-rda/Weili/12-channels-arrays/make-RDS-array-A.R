@@ -32,7 +32,7 @@ what.measured <- "Custom assembled 120W 12 channel LED array"
 for (s in names(Weili_120W_12ch_A.mspct)) {
   temp.spct <- Weili_120W_12ch_A.mspct[[s]]
   temp.spct <- smooth_spct(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 5, max.slope.delta = 0.0005, span = 15)
   temp.spct <- trim_wl(temp.spct, range = c(260, 900), fill = 0)
   if (s == "ch10") {
     idx <- which(abs(temp.spct[["w.length"]] - 407.69) < 0.1)

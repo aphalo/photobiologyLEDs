@@ -20,7 +20,9 @@ path <- "data-raw/maya-txt/low-power/"
 a.method <- MAYP11278_ylianttila.mthd
 a.descriptor <- which_descriptor(ymd("2012-05-06"))
 
-led_names <- c("BS436" = , "CB30", "LED740")
+led_names <- c("BS436" = "Roithner_BS436",
+               "CB30" = "Roithner_CB30", 
+               "LED740" = "Roithner_LED740")
 
 led_lowpower.mspct <- source_mspct()
 for (led in c("BS436", "CB30", "LED740")) {
@@ -34,7 +36,7 @@ for (led in c("BS436", "CB30", "LED740")) {
   temp.spct <-smooth_spct(temp.spct)
   temp.spct <-clean(temp.spct)
   temp.spct <-normalize(temp.spct)
-  temp.spct <-thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 5, max.slope.delta = 0.0005, span = 15)
   setWhatMeasured(temp.spct, paste("LED type", led, "from Roithner Laser, Austria; ca. 2005"))
   setHowMeasured(temp.spct, "Ocean Optics Maya 2000Pro")
   trimInstrDesc(temp.spct)
@@ -43,6 +45,7 @@ for (led in c("BS436", "CB30", "LED740")) {
 #  assign(paste(led, "spct", sep="."), temp.led.spct)
 }
 
+names(led_lowpower.mspct)
 summary(led_lowpower.mspct)
 
 for (i in seq_along(led_lowpower.mspct)) {
@@ -50,5 +53,5 @@ for (i in seq_along(led_lowpower.mspct)) {
   readline("next:")
 }
 
-save(led_lowpower.mspct, file = "./data-raw/rda2merge/led-lowpower-mspct.rda")
+# save(led_lowpower.mspct, file = "./data-raw/rda2merge/led-lowpower-mspct.rda")
 

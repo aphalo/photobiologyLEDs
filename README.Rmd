@@ -19,6 +19,11 @@ This package contains only data. Data are stored as collections of spectra of cl
 [_R for photobiology_ suite](https://www.r4photobiology.info/). Spectra can
 be easily plotted with functions and methods from package ['ggspectra'](https://docs.r4photobiology.info/ggspectra/). The spectra can be used seamlessly with functions from package ['photobioloy'](https://docs.r4photobiology.info/photobiology/). However,
 class `source_mspct` is derived from `list` and class `source_spct` is derived from `data.frame` making the data also usable as is with base R functions.
+
+## What are these data useful for?
+
+As LED specifications have tolerances, data obtained from individual LEDs are
+to be considered only examples. 
  
 ## Examples
 

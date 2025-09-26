@@ -1,6 +1,7 @@
 library(photobiology)
 library(ggspectra)
 library(lubridate)
+library(dplyr)
 
 # clear workspace
 rm(list = ls(pattern = "*"))
@@ -45,7 +46,7 @@ for (s in names(COB_dimming.mspct)) {
                         "WithLEDiL F15559_MIRELLA-G2-M reflector 25 degrees")
   what.measured <- paste("10W Optisolis COB LED driven at ",  formatted.conditions[s])
   temp.spct <- COB_dimming.mspct[[s]]
-  temp.spct <- thin_wl(temp.spct, max.wl.step = 5, max.slope.delta = 0.0005)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 5, max.slope.delta = 0.0005, span = 15)
   temp.spct <- trim_wl(temp.spct, c(330, 900), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)

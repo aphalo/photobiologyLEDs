@@ -14,7 +14,7 @@ read.csv2("data-raw/maya-rda/Nichia/digitized/hortisolis.csv",
   smooth_spct(method = "supsmu", strength = 0.1) |> 
   clean() |> 
   normalize() |> 
-  thin_wl(max.wl.step = 10) -> Nichia_Hortisolis.spct
+  thin_wl(max.wl.step = 5, max.slope.delta = 5e-04, span = 15) -> Nichia_Hortisolis.spct
 what_measured(Nichia_Hortisolis.spct) <- "LED type NFSW757G-V3 (Rs060) from Nichia"
 how_measured(Nichia_Hortisolis.spct) <- "Spectrum digitized from plot in manufacturer's datasheet"
 when_measured(Nichia_Hortisolis.spct) <- ymd("2022-06-01")

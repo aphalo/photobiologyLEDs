@@ -48,7 +48,7 @@ for (s in names(COB_reflectors.mspct)) {
                         "With", type2Rfl.map[s])
   what.measured <- paste("COB LED with ", type2Rfl.map[s])
   temp.spct <- COB_reflectors.mspct[[s]]
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 5, max.slope.delta = 0.0005, span = 15)
   temp.spct <- trim_wl(temp.spct, c(330, 900), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)

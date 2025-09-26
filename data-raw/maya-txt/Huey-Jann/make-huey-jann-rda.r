@@ -30,7 +30,7 @@ for (f in files) {
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- clean(temp.spct)
   temp.spct <- normalize(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 5, max.slope.delta = 0.0005, span = 15)
   temp.spct <- trim_spct(temp.spct, low.limit = 380, fill = 0)
   setWhatMeasured(temp.spct, "30W LED array from Huey-Jann, Taiwan; ca. 2005.")
   setHowMeasured(temp.spct, "Ocean Optics Maya 2000Pro")

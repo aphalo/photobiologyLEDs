@@ -31,7 +31,7 @@ An object of class \code{character} of length 7.
 
 An object of class \code{character} of length 2.
 
-An object of class \code{character} of length 15.
+An object of class \code{character} of length 14.
 
 An object of class \code{character} of length 2.
 
@@ -41,7 +41,7 @@ An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 1.
 
-An object of class \code{character} of length 8.
+An object of class \code{character} of length 12.
 
 An object of class \code{character} of length 1.
 
@@ -51,7 +51,7 @@ An object of class \code{character} of length 2.
 
 An object of class \code{character} of length 9.
 
-An object of class \code{character} of length 4.
+An object of class \code{character} of length 3.
 
 An object of class \code{character} of length 3.
 
@@ -59,7 +59,7 @@ An object of class \code{character} of length 4.
 
 An object of class \code{character} of length 15.
 
-An object of class \code{character} of length 6.
+An object of class \code{character} of length 4.
 
 An object of class \code{character} of length 1.
 
@@ -213,7 +213,7 @@ LEDRISE Ltd. (Hong Kong, Germany and Romania) .
  
 Norlux is now part of Thomas Research Products. The LEDs we measured are
 some of the earliest COB designs from early 1990's. Each COB containing 90 
-LED chips. (Norlux is no longer in bussiness.)
+LED chips. (Norlux is no longer in business.)
 }
 
 \section{Osram}{

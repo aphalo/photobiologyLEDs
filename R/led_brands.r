@@ -160,7 +160,7 @@
 #' @section Norlux: 
 #' Norlux is now part of Thomas Research Products. The LEDs we measured are
 #' some of the earliest COB designs from early 1990's. Each COB containing 90 
-#' LED chips. (Norlux is no longer in bussiness.)
+#' LED chips. (Norlux is no longer in business.)
 #'   
 "Norlux_leds"
 
@@ -239,4 +239,3 @@
 #' @references \url{https://led.samsung.com/}
 #'
 "Samsung_leds"
-

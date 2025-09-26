@@ -47,6 +47,7 @@ for (f in files2read) {
   load(paste(path, f, sep = ""))
 }
 
+rm(list = ls(pattern = "_leds$"))
 # concatenate collections
 
 collections2bind <- ls(pattern = "*.mspct$")
@@ -69,7 +70,16 @@ leds.mspct <- leds.mspct[-which(multiple_wl)]
 
 # we normalise spectra for single channel LED spectra
 for (s in names(leds.mspct)) {
+  if (is.null(s)) {
+    cat("missing name!!")
+    next()
+    }
   leds.mspct[[s]] <- add_instr_desc(leds.mspct[[s]])
+  # if (all(is.na(getInstrDesc(leds.mspct[[s]])))) {
+  #   cat("Setting instrument descriptor to: ", s)
+  #   # could replace donnor with one listing the diffuser
+  #   setInstrDesc(leds.mspct[[s]], getInstrDesc(leds.mspct[["LCFOCUS_LC_10FS504_G24"]]))
+  # }
   leds.mspct[[s]] <- setNormalised(leds.mspct[[s]], FALSE)
   leds.mspct[[s]] <- normalize(leds.mspct[[s]])
 }
@@ -82,8 +92,8 @@ for (s in names(leds.mspct)) {
 }
 
 # Distinguish by number of channels
-multi_channel_leds <- grep("RGB|LZ7|array.12ch", names(leds.mspct), value = TRUE)
-single_channel_leds <- grep("RGB|LZ7|array.12ch", names(leds.mspct), value = TRUE, invert = TRUE)
+multi_channel_leds <- names(led_arrays.mspct)
+single_channel_leds <- names(leds.mspct)
 
 # All should be normalised
 normalized.ls <- list()
@@ -170,14 +180,19 @@ white_leds <- names(CRI)[!is.na(CRI)]
 # Vector of brands as used when naming member spectra
 
 led_brands <- unique(str_split(names(leds.mspct), "_", simplify = TRUE)[ , 1])
-
+for (b in led_brands) {
+  assign(paste(b, "leds", sep = "_"), 
+         grep(b, names(leds.mspct), value = TRUE))
+}
 # Vectors based on how spectra were acquired  
 oo_maya_leds <- names(leds.mspct)[grep("Maya", how_measured(leds.mspct)[["how.measured"]])]
 
 length(leds.mspct)
 
 objects_to_save <-
-  c("leds.mspct", "led_arrays.mspct", "led_brands", "led_colors", "led_uses",
+  c("leds.mspct", "led_arrays.mspct", 
+    "led_brands", "led_colors", "led_uses",
+    "multi_channel_leds", "single_channel_leds",
     ls(pattern = "_leds$"))
 
 save(list = objects_to_save,

@@ -28,7 +28,7 @@ for (f in files) {
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- clean(temp.spct)
   temp.spct <- normalize(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 5, max.slope.delta = 0.0005, span = 15)
   setWhatMeasured(temp.spct, "Custom LED light source for Walz GFS-3000")
   setHowMeasured(temp.spct, "Ocean Optics Maya 2000Pro")
   comment(temp.spct) <- "Custom LED light source for Walz GFS-3000, using LED array Red-Green-Blue 90 Die Hex type NHXRGB090S00S, Norlux, USA"

@@ -38,6 +38,11 @@ However, class `source_mspct` is derived from `list` and class
 `source_spct` is derived from `data.frame` making the data also usable
 as is with base R functions.
 
+## What are these data useful for?
+
+As LED specifications have tolerances, data obtained from individual
+LEDs are to be considered only examples.
+
 ## Examples
 
 ``` r
@@ -83,8 +88,8 @@ of the spectra for LEDs made by Osram.
 
 ``` r
 Osram_leds
-#> [1] "Osram_GF_CSHPM2.24_2T4T_1" "Osram_LY5436"             
-#> [3] "Osram_GW_CSSRM3.HW"
+#> [1] "Osram_GF_CSHPM2.24_2T4T_1" "Osram_GW_CSSRM3.HW"       
+#> [3] "Osram_LY5436"
 ```
 
 We can use the vector to extract all these spectra as a collection.
@@ -93,64 +98,40 @@ We can use the vector to extract all these spectra as a collection.
 leds.mspct[Osram_leds]
 #> Object: source_mspct [3 x 1]
 #> --- Member: Osram_GF_CSHPM2.24_2T4T_1 ---
-#> Object: source_spct [764 x 2]
-#> Wavelength range 251.29-900.1 nm, step 1.023182e-12-7.58 nm 
+#> Object: source_spct [925 x 2]
+#> Wavelength range 251.29-900.1 nm, step 1.023182e-12-3.79 nm 
 #> Label: LED type GF_CSHPM2.24_2T4T_1 from Osram 
 #> Measured on 2021-10-09 22:19:15.2049 UTC 
-#> Spectral data in s.e.irrad normalized to 1 at 728.76 nm (max in 251.29-900.1 nm)
+#> Spectral data in s.e.irrad normalized to 1 at 728.8 nm (max in 251.29-900.1 nm)
 #> Variables:
 #>  w.length: Wavelength [nm]
 #>  s.e.irrad: Spectral energy irradiance [normalized] 
 #> --
-#> # A tibble: 764 × 2
+#> # A tibble: 925 × 2
 #>    w.length s.e.irrad
 #>       <dbl>     <dbl>
 #>  1     251.         0
-#>  2     254.         0
-#>  3     256.         0
-#>  4     259.         0
-#>  5     260.         0
-#>  6     260.         0
-#>  7     262.         0
-#>  8     262.         0
-#>  9     263.         0
-#> 10     264.         0
-#> # ℹ 754 more rows
-#> --- Member: Osram_LY5436 ---
-#> Object: source_spct [1,329 x 2]
-#> Wavelength range 250.01-900.1 nm, step 1.023182e-12-9.5 nm 
-#> Label: LED type LY5436 from Osram 
-#> Measured on 2011-07-30 UTC 
-#> Spectral data in s.e.irrad normalized to 1 at 594.22 nm (max in 250.01-900.1 nm)
-#> Variables:
-#>  w.length: Wavelength [nm]
-#>  s.e.irrad: Spectral energy irradiance [normalized] 
-#> --
-#> # A tibble: 1,329 × 2
-#>    w.length s.e.irrad
-#>       <dbl>     <dbl>
-#>  1     250.         0
-#>  2     259.         0
-#>  3     259.         0
-#>  4     260.         0
-#>  5     260.         0
-#>  6     261.         0
-#>  7     261.         0
-#>  8     262.         0
-#>  9     262.         0
-#> 10     263.         0
-#> # ℹ 1,319 more rows
+#>  2     253.         0
+#>  3     253.         0
+#>  4     254.         0
+#>  5     254.         0
+#>  6     255.         0
+#>  7     255.         0
+#>  8     256.         0
+#>  9     256.         0
+#> 10     257.         0
+#> # ℹ 915 more rows
 #> --- Member: Osram_GW_CSSRM3.HW ---
-#> Object: source_spct [625 x 2]
-#> Wavelength range 251.29-900.1 nm, step 1.023182e-12-7.57 nm 
+#> Object: source_spct [833 x 2]
+#> Wavelength range 251.29-900.1 nm, step 1.023182e-12-3.79 nm 
 #> Label: LED type GW_CSSRM3.HW from Osram 
 #> Measured on 2022-01-06 17:48:51.853322 UTC 
-#> Spectral data in s.e.irrad normalized to 1 at 436.59 nm (max in 251.29-900.1 nm)
+#> Spectral data in s.e.irrad normalized to 1 at 436.6 nm (max in 251.29-900.1 nm)
 #> Variables:
 #>  w.length: Wavelength [nm]
 #>  s.e.irrad: Spectral energy irradiance [normalized] 
 #> --
-#> # A tibble: 625 × 2
+#> # A tibble: 833 × 2
 #>    w.length s.e.irrad
 #>       <dbl>     <dbl>
 #>  1     251.         0
@@ -158,12 +139,36 @@ leds.mspct[Osram_leds]
 #>  3     254.         0
 #>  4     254.         0
 #>  5     255.         0
-#>  6     256.         0
+#>  6     255.         0
 #>  7     256.         0
+#>  8     256.         0
+#>  9     257.         0
+#> 10     259.         0
+#> # ℹ 823 more rows
+#> --- Member: Osram_LY5436 ---
+#> Object: source_spct [1,368 x 2]
+#> Wavelength range 250.01-900.1 nm, step 1.023182e-12-6.11 nm 
+#> Label: LED type LY5436 from Osram 
+#> Measured on 2011-07-30 UTC 
+#> Spectral data in s.e.irrad normalized to 1 at 594.2 nm (max in 250.01-900.1 nm)
+#> Variables:
+#>  w.length: Wavelength [nm]
+#>  s.e.irrad: Spectral energy irradiance [normalized] 
+#> --
+#> # A tibble: 1,368 × 2
+#>    w.length s.e.irrad
+#>       <dbl>     <dbl>
+#>  1     250.         0
+#>  2     256.         0
+#>  3     257.         0
+#>  4     257.         0
+#>  5     258.         0
+#>  6     258          0
+#>  7     258.         0
 #>  8     259.         0
-#>  9     266          0
-#> 10     266.         0
-#> # ℹ 615 more rows
+#>  9     259.         0
+#> 10     260.         0
+#> # ℹ 1,358 more rows
 #> 
 #> --- END ---
 ```
@@ -203,7 +208,7 @@ normalised we pass `allow.scaled = TRUE`,
 q_irrad(leds.mspct[["Nichia_NS6L183AT_H1_sw"]], 
         allow.scaled = TRUE, scale.factor = 1e6)
 #>   Q_Total 
-#> 151086898 
+#> 151080953 
 #> attr(,"time.unit")
 #> [1] "second"
 #> attr(,"radiation.unit")
@@ -309,6 +314,6 @@ citation("photobiologyLEDs")
 
 ## License
 
-© 2012-2024 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2025 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

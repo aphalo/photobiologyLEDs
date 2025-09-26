@@ -22,9 +22,9 @@ a.descriptor <- which_descriptor(ymd("2012-04-12"),
 channels.map <- c("Licor_15v_blue" = "blue",
                   "Licor_15v_green" = "green",
                   "Licor_15v_red" = "red")
-names.map <- c("Licor_15v_blue" = "NHXRGB090_B",
-                  "Licor_15v_green" = "NHXRGB090_G",
-                  "Licor_15v_red" = "NHXRGB090_R")
+names.map <- c("Licor_15v_blue" = "Norlux_NHXRGB090_B",
+                  "Licor_15v_green" = "Norlux_NHXRGB090_G",
+                  "Licor_15v_red" = "Norlux_NHXRGB090_R")
 norlux.mspct <- source_mspct()
 for (f in files) {
   temp.spct <- 
@@ -36,7 +36,7 @@ for (f in files) {
   temp.spct <- smooth_spct(temp.spct)
   temp.spct <- clean(temp.spct)
   temp.spct <- normalize(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 5, max.slope.delta = 0.0005, span = 15)
   setWhatMeasured(temp.spct, 
                   paste("90 die RGB LED array type NHXRGB0905005, ", 
                         channels.map[f], " channel, ",
@@ -47,14 +47,15 @@ for (f in files) {
   norlux.mspct[[names.map[f]]] <- temp.spct
 }
 
-NHXRGB090.spct <- rbindspct(list(R = norlux.mspct$NHXRGB090_R,
-                                 G = norlux.mspct$NHXRGB090_G,
-                                 B = norlux.mspct$NHXRGB090_B),
-                            idfactor = "channel")
+Norlux_NHXRGB090.spct <- rbindspct(list(R = norlux.mspct$Norlux_NHXRGB090_R,
+                                        G = norlux.mspct$Norlux_NHXRGB090_G,
+                                        B = norlux.mspct$Norlux_NHXRGB090_B),
+                                   idfactor = "channel")
 
-norlux.mspct[["NHXRGB090"]] <- NHXRGB090.spct
-getWhenMeasured(norlux.mspct[["NHXRGB090"]])
-
+norlux.mspct[["Norlux_NHXRGB090"]] <- Norlux_NHXRGB090.spct
+getWhenMeasured(norlux.mspct[["Norlux_NHXRGB090"]])
+what_measured(norlux.mspct[["Norlux_NHXRGB090"]])
+how_measured(norlux.mspct[["Norlux_NHXRGB090"]])
 names(norlux.mspct)
 
 summary(norlux.mspct)

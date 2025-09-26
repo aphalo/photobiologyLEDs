@@ -1,3 +1,6 @@
+## This script is no longer in use!!
+## Kept for historical reference only
+
 library(ooacquire)
 library(photobiology)
 library(lubridate)
@@ -31,7 +34,7 @@ for (f in files) {
   temp.spct <- clean(temp.spct)
   temp.spct <- setNormalised(temp.spct)
   temp.spct <- normalize(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 5, max.slope.delta = 0.0005, span = 15)
   setWhatMeasured(temp.spct, 
                   paste("LED: ", f, " from Roithner-Laser; ca. 2005", sep = ""))
   setHowMeasured(temp.spct, "Ocean Optics Maya 2000Pro")
