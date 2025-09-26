@@ -34,7 +34,7 @@ oo_maya_leds
 
 }
 \references{
-\url{https://www.oceaninsight.com/}
+\url{https://www.oceanoptics.com/}
 }
 \seealso{
 \code{\link{leds.mspct}}
