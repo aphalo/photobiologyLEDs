@@ -4,6 +4,14 @@ editor_options:
     wrap: sentence
 ---
 
+# photobiologyLEDs 0.6.0
+
+-   Replace data for most LEDs with freshly measured data extending farther
+into the infrared region: from 250 nm to 1050 nm, instead of from 250 nm to 900
+nm maintaing the same member names, except in the case of three misnamed ones.
+-   Add data for several LEDs, both newly acquired and "historical" ones, all
+newly measured.
+
 # photobiologyLEDs 0.5.3
 
 This update tracks changes up to 'photobiology' 0.14.0, the main changes
@@ -19,9 +27,9 @@ the data for many LEDs are not exactly the same as in earlier versions.
 object `led_arrays.mspct`.
 -   Add data for a second custom-assembled 120W, 12-channel LED array.
 -   Add data for several "3W" 3535 LEDs.
--   Replace data for many LEDs with freshly measured data extending farther
+-   Replace data for some LEDs with freshly measured data extending farther
 into the infrared region: from 250 nm to 1050 nm, instead of from 250 nm to 900
-nm. (comming soon)
+nm.
 -   Build all data objects with 'photobiology' (== 0.14.0), using less
 aggressive wavelength thinning: size of objects has increased and spectral
 features are better preserved.

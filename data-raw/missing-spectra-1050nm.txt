@@ -6,5 +6,3 @@
 LZ1_10R102 = 623 nm
 LZ1_10B202 = 457 nm # dominant
 LZ1_10DB00 = 460 nm # dental blue
-
-# 
