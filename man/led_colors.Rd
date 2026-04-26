@@ -26,7 +26,7 @@ An object of class \code{character} of length 18.
 
 An object of class \code{character} of length 8.
 
-An object of class \code{character} of length 6.
+An object of class \code{character} of length 10.
 
 An object of class \code{character} of length 14.
 
@@ -36,7 +36,7 @@ An object of class \code{character} of length 0.
 
 An object of class \code{character} of length 4.
 
-An object of class \code{character} of length 13.
+An object of class \code{character} of length 15.
 
 An object of class \code{character} of length 4.
 
@@ -44,7 +44,7 @@ An object of class \code{character} of length 20.
 
 An object of class \code{character} of length 6.
 
-An object of class \code{character} of length 91.
+An object of class \code{character} of length 95.
 }
 \usage{
 led_colors
