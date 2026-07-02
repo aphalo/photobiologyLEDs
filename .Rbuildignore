@@ -9,3 +9,5 @@
 ^CITATION\.cff$
 ^\.github$
 ^pkgdown
+^\.positai$
+^\.claude$

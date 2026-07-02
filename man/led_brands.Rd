@@ -23,6 +23,7 @@
 \alias{TaoYuan_leds}
 \alias{Luminus_leds}
 \alias{Samsung_leds}
+\alias{HotRed_leds}
 \title{Spectral data for LEDs from different suppliers}
 \format{
 A vector of character strings.
@@ -59,13 +60,15 @@ An object of class \code{character} of length 4.
 
 An object of class \code{character} of length 15.
 
+An object of class \code{character} of length 5.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
 An object of class \code{character} of length 4.
-
-An object of class \code{character} of length 1.
-
-An object of class \code{character} of length 1.
-
-An object of class \code{character} of length 1.
 }
 \usage{
 led_brands
@@ -109,6 +112,8 @@ TaoYuan_leds
 Luminus_leds
 
 Samsung_leds
+
+HotRed_leds
 }
 \description{
 The collection of spectra \code{\link{leds.mspct}} contains spectra for light
@@ -124,21 +129,26 @@ changed over the years through take-overs, mergers and sales of company
 divisions. Even when brand names have changed it has been the norm for
 electronic components that component type codes are maintained unchanged. In
 contrast to some integrated circuits, exact replacement types from multiple
-suppliers are not available for LEDs.
+suppliers are not available for LEDs. 
+
+Some small suppliers sell under their own brand names, rarely with type
+codes, LEDs that seem to be based on out-of-specifications LED chips. Some
+are plain bad, such with low output, but others emit at wavelengths that are
+not otherwise available, at least in small numbers.
 }
 \section{Agilent/Hewlett Packard}{
 
-The character vector \code{Agilent_leds} contains the names of the spectra to
-facilitate their extraction from the collection.The division of Hewlett
-Packard which supplied these LEDs became part of Agilent when this division
-spin-off the mother company. More recently the electronic components division
-of Agilent became Avago Technologies for a while. Currently, BROADCOM
-supplies some of these LEDs or similar improved types.
+Hewlett Packard (HP) manufactured sold LEDs in the 1990's. This division
+later became part of Agilent, during its spin-off HP. Later the electronic 
+components division of Agilent operated as Avago Technologies for some
+time. Currently, BROADCOM supplies some of these LEDs or similar improved 
+types.
 }
 
 \section{Huey Jann}{
 
-Huey Jann was a Taiwanese supplier of high power LED arrays. It is no longer
+Huey Jann was a Taiwanese supplier of high power LED arrays. The arrays
+measured were bought from their European distributors. Huey Jann is no longer
 in business.
 }
 
@@ -150,14 +160,15 @@ ceramic substrate packages. It is now part of Osram.
 
 \section{LEDGUHON}{
 
-These LEDs where bought from AliExpress. They are assembled using
+LEDGUHON (AliExpress seller) advertised the LEDs measured as assembled using
 Bridgelux chips by Guangzhou Juhong Optoelectronics Co., Ltd., China.
 }
 
 \section{LCFOCUS}{
 
-These LEDs where bought from LCFOCUS official store at AliExpress. They are 
-assembled  LCFOCUS TECH, Shenzhen China.
+LCFOCUS TECH (Shenzhen, China) sell LEDs and LED arrays. The ones measured
+where bought from LCFOCUS official store at AliExpress. The suppliers of
+LED chips are not allways informed.
 }
 
 \section{Marktech}{
@@ -206,7 +217,7 @@ invention of the white LEDs based on blue-emitting LED chips.
 
 Some of the Nichia LEDs we measured were assembled into arrays of the series
 names SmartArray and LinearZ from LUMITRONIX (Germany), and/or supplied by
-LEDRISE Ltd. (Hong Kong, Germany and Romania) .
+LEDRISE Ltd. (Hong Kong, Germany and Romania).
 }
 
 \section{Norlux}{
@@ -230,7 +241,7 @@ mostly in the packages' thermal properties and contact layout.
 Quantum Devices (U.S.A.) sold in the past both individual LEDs and luminaires.
 They were in the late 1980's and early 1990's the supplier of choice for LEDs
 emitting in the far-red region of the spectrum. The company still exists but 
-no longer sells LEDs.
+no longer sells LEDs as components.
 }
 
 \section{Roithner LaserTechnik}{
@@ -247,7 +258,8 @@ provided. For example some of short UV LEDs sold are from SETi.
 Leds Global and Shenzhen Weili are trade names of the same supplier of LEDs and LED
 arrays. They sell both standard types and also assemble customized arrays
 upon request. Customized arrays may have up to twelve independent channels
-and vary in power output from 10 W to 300 W.
+and vary in power output from 10 W to 300 W. The LED chips they use are from
+multiple suppliers, including Epileds, Epistar and Bridgelux.
 }
 
 \section{Tao Yuan}{
@@ -263,6 +275,13 @@ Luminus Devices (USA) is a supplier of SMD LEDs and COB LEDs as components.
 \section{Samsung}{
 
 Samsung LEDs (South Korea) is a supplier of SMD LEDs and COB LEDs as components.
+}
+
+\section{Hot Red}{
+
+Hot Red (AliExpress, China) is a seller of LEDs and LED arrays, most as 
+components. Original manufacturers and item types in most cases are not 
+published.
 }
 
 \examples{
@@ -301,6 +320,8 @@ Agilent_leds
 \url{https://www.ledwv.com/en/}
 
 \url{https://www.luminus.com/}
+
+\url{https://led.samsung.com/}
 
 \url{https://led.samsung.com/}
 }

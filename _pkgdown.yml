@@ -1,5 +1,6 @@
 destination: ../docs/photobiologyLEDs
 url: https://docs.r4photobiology.info/photobiologyLEDs/
+llm-docs: false
 
 template:
   bootstrap: 5
