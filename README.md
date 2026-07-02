@@ -56,7 +56,7 @@ How many spectra are included in the current version of
 
 ``` r
 length(leds.mspct)
-#> [1] 90
+#> [1] 95
 ```
 
 ``` r
@@ -102,7 +102,7 @@ leds.mspct[Osram_leds]
 #> Wavelength range 251.29-900.1 nm, step 1.023182e-12-3.79 nm 
 #> Label: LED type GF_CSHPM2.24_2T4T_1 from Osram 
 #> Measured on 2021-10-09 22:19:15.2049 UTC 
-#> Spectral data in s.e.irrad normalized to 1 at 728.8 nm (max in 251.29-900.1 nm)
+#> Spct: data in s.e.irrad normalized to 1 at 728.8 nm (max in 251-900 nm)
 #> Variables:
 #>  w.length: Wavelength [nm]
 #>  s.e.irrad: Spectral energy irradiance [normalized] 
@@ -126,7 +126,7 @@ leds.mspct[Osram_leds]
 #> Wavelength range 251.29-900.1 nm, step 1.023182e-12-3.79 nm 
 #> Label: LED type GW_CSSRM3.HW from Osram 
 #> Measured on 2022-01-06 17:48:51.853322 UTC 
-#> Spectral data in s.e.irrad normalized to 1 at 436.6 nm (max in 251.29-900.1 nm)
+#> Spct: data in s.e.irrad normalized to 1 at 436.6 nm (max in 251-900 nm)
 #> Variables:
 #>  w.length: Wavelength [nm]
 #>  s.e.irrad: Spectral energy irradiance [normalized] 
@@ -150,7 +150,7 @@ leds.mspct[Osram_leds]
 #> Wavelength range 250.01-900.1 nm, step 1.023182e-12-6.11 nm 
 #> Label: LED type LY5436 from Osram 
 #> Measured on 2011-07-30 UTC 
-#> Spectral data in s.e.irrad normalized to 1 at 594.2 nm (max in 250.01-900.1 nm)
+#> Spct: data in s.e.irrad normalized to 1 at 594.2 nm (max in 250-900 nm)
 #> Variables:
 #>  w.length: Wavelength [nm]
 #>  s.e.irrad: Spectral energy irradiance [normalized] 
@@ -185,10 +185,11 @@ led_colors
 ``` r
 led_brands
 #>  [1] "Agilent"        "Bridgelux"      "CREE"           "Epileds"       
-#>  [5] "Epistar"        "HueyJann"       "LCFOCUS"        "LedEngin"      
-#>  [9] "Ledguhon"       "Luminus"        "Marktech"       "Nichia"        
-#> [13] "Norlux"         "Osram"          "QuantumDevices" "Roithner"      
-#> [17] "Samsung"        "SeoulSemicon"   "TaoYuan"        "Weili"
+#>  [5] "Epistar"        "HotRed"         "HueyJann"       "LCFOCUS"       
+#>  [9] "LedEngin"       "Ledguhon"       "Luminus"        "Marktech"      
+#> [13] "Nichia"         "Norlux"         "Osram"          "QuantumDevices"
+#> [17] "Roithner"       "Samsung"        "SeoulSemicon"   "TaoYuan"       
+#> [21] "Weili"
 ```
 
 ``` r
@@ -314,6 +315,6 @@ citation("photobiologyLEDs")
 
 ## License
 
-© 2012-2025 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2026 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.
